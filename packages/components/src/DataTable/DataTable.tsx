@@ -277,8 +277,8 @@ const DataTable = <T,>({
   const wrapperClasses = cn(
     l_prx,
     {
-      `${[^}]*}[^`]*`: enableVirtualization,
-      `${[^}]*}[^`]*`: infiniteScroll?.enabled,
+      [`${l_prx}--virtualized`]: enableVirtualization,
+      [`${l_prx}--infinite-scroll`]: infiniteScroll?.enabled,
     }
   );
   

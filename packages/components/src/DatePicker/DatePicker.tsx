@@ -323,12 +323,12 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
     getSizeClass(),
     getVariantClass(),
     {
-      `${[^}]*}[^`]*`: isFocused,
-      `${[^}]*}[^`]*`: disabled,
-      `${[^}]*}[^`]*`: readOnly,
-      `${[^}]*}[^`]*`: loading,
-      `${[^}]*}[^`]*`: isOpen,
-      `${[^}]*}[^`]*`: fullWidth,
+      [`${l_prx}--focused`]: isFocused,
+      [`${l_prx}--disabled`]: disabled,
+      [`${l_prx}--readonly`]: readOnly,
+      [`${l_prx}--loading`]: loading,
+      [`${l_prx}--open`]: isOpen,
+      [`${l_prx}--fullwidth`]: fullWidth,
     },
     className
   );
@@ -526,10 +526,10 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
                     className={cn(
                       `${l_prx}-day`,
                       {
-                        `${[^}]*}[^`]*`: isSelected,
-                        `${[^}]*}[^`]*`: isToday,
-                        `${[^}]*}[^`]*`: isCurrentMonth,
-                        `${[^}]*}[^`]*`: isDisabled,
+                        [`${l_prx}-day--selected`]: isSelected,
+                        [`${l_prx}-day--today`]: isToday,
+                        [`${l_prx}-day--current-month`]: isCurrentMonth,
+                        [`${l_prx}-day--disabled`]: isDisabled,
                       }
                     )}
                     onClick={() => handleDateSelect(day)}

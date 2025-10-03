@@ -257,10 +257,10 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
         disabled={disabled || isActive}
         className={cn(
           `${l_prx}-page`,
-          `optimui-pagination-page-${size}`,
+          `${l_prx}-page-${size}`,
           {
-            `${[^}]*}[^`]*`: isActive,
-            `${[^}]*}[^`]*`: disabled,
+            [`${l_prx}-page--active`]: isActive,
+            [`${l_prx}-page--disabled`]: disabled,
           }
         )}
         aria-label={`Go to page ${page}`}
@@ -293,10 +293,10 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
         disabled={disabled || isDisabled}
         className={cn(
           `${l_prx}-nav`,
-          `optimui-pagination-nav-${size}`,
-          `optimui-pagination-nav-${type}`,
+          `${l_prx}-nav-${size}`,
+          `${l_prx}-nav-${type}`,
           {
-            `${[^}]*}[^`]*`: disabled || isDisabled,
+            [`${l_prx}-nav--disabled`]: disabled || isDisabled,
           }
         )}
         aria-label={`${type.charAt(0).toUpperCase() + type.slice(1)} page`}
@@ -312,10 +312,10 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
   
   const wrapperClasses = cn(
     l_prx,
-    `optimui-pagination-${size}`,
+    `${l_prx}-${size}`,
     {
-      `${[^}]*}[^`]*`: compact,
-      `${[^}]*}[^`]*`: disabled,
+      [`${l_prx}--compact`]: compact,
+      [`${l_prx}--disabled`]: disabled,
     },
     className
   );

@@ -351,12 +351,12 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
   }
   
   const containerClasses = cn(
-    `${lib}-avatar`,
-    `optimui-avatar-${shape}`,
-    `optimui-avatar-${size}`,
+    l_prx,
+    `${l_prx}-${shape}`,
+    `${l_prx}-${size}`,
     {
-      `${[^}]*}[^`]*`: onClick,
-      `${[^}]*}[^`]*`: loading || imageLoading,
+      [`${l_prx}-clickable`]: onClick,
+      [`${l_prx}-loading`]: loading || imageLoading,
     },
     className
   );

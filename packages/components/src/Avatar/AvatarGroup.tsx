@@ -7,6 +7,7 @@ import React from 'react';
 import { cn, generateBackgroundColor, generateInitials } from '@optimui/utils';
 
 const lib = "optimui";
+const l_prx = `${lib}-avatar-group`;
 
 export interface AvatarGroupUser {
   src?: string;
@@ -71,10 +72,10 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
         <div
           key={index}
           className={cn(
-            `${lib}-avatar-group-item`,
-            `optimui-avatar-group-item--${shape}`,
+            `${l_prx}-item`,
+            `${l_prx}-item--${shape}`,
             {
-              `${[^}]*}[^`]*`: onClick,
+              [`${l_prx}-item--clickable`]: onClick,
             }
           )}
           style={{

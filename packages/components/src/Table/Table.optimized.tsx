@@ -11,6 +11,7 @@ import { useTableSelection } from './hooks/useTableSelection';
 import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
+const l_prx = `${lib}-table`;
 
 // Re-export types from hooks for convenience
 export type { SortConfig } from './hooks/useTableSorting';
@@ -251,23 +252,23 @@ const Table = <T,>({
   }, [onRowClick]);
   
   const tableClasses = cn(
-    `${lib}-table`,
+    l_prx,
     {
-      `${[^}]*}[^`]*`: size === 'sm',
-      `${[^}]*}[^`]*`: size === 'md',
-      `${[^}]*}[^`]*`: size === 'lg',
-      `${[^}]*}[^`]*`: variant === 'striped',
-      `${[^}]*}[^`]*`: variant === 'bordered',
-      `${[^}]*}[^`]*`: hoverable,
-      `${[^}]*}[^`]*`: loading,
+      [`${l_prx}--sm`]: size === 'sm',
+      [`${l_prx}--md`]: size === 'md',
+      [`${l_prx}--lg`]: size === 'lg',
+      [`${l_prx}--striped`]: variant === 'striped',
+      [`${l_prx}--bordered`]: variant === 'bordered',
+      [`${l_prx}--hoverable`]: hoverable,
+      [`${l_prx}--loading`]: loading,
     },
     className
   );
   
   const wrapperClasses = cn(
-    `${lib}-table-wrapper`,
+    `${l_prx}-wrapper`,
     {
-      `${[^}]*}[^`]*`: responsive,
+      [`${l_prx}-wrapper--responsive`]: responsive,
     }
   );
   
@@ -344,10 +345,10 @@ const Table = <T,>({
                 <tr
                   key={rowKey}
                   className={cn(
-                    `${lib}-table-row`,
+                    `${l_prx}-row`,
                     {
-                      `${[^}]*}[^`]*`: selected,
-                      `${[^}]*}[^`]*`: Boolean(onRowClick),
+                      [`${l_prx}-row--selected`]: selected,
+                      [`${l_prx}-row--clickable`]: Boolean(onRowClick),
                     }
                   )}
                   onClick={() => handleRowClick(row, rowIndex)}
