@@ -102,7 +102,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
         <button
           type="button"
           onClick={handlePreviousMonth}
-          className={`${lib}-datepicker-nav-button`
+          className={`${lib}-datepicker-nav-button`}
           aria-label="Previous month"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -117,7 +117,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
         <button
           type="button"
           onClick={handleNextMonth}
-          className={`${lib}-datepicker-nav-button`
+          className={`${lib}-datepicker-nav-button`}
           aria-label="Next month"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

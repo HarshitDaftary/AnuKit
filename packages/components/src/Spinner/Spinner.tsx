@@ -139,7 +139,7 @@ const RingSpinner: React.FC<{ size: number; className: string; trackColor?: stri
       r="10"
       stroke={trackColor}
       strokeWidth="2"
-      className={`${l_prx}-track`
+      className={`${l_prx}-track`}
     />
     <circle
       cx="12"
@@ -150,7 +150,7 @@ const RingSpinner: React.FC<{ size: number; className: string; trackColor?: stri
       strokeLinecap="round"
       strokeDasharray="31.416"
       strokeDashoffset="7.854"
-      className={`${l_prx}-progress`
+      className={`${l_prx}-progress`}
     />
   </svg>
 );
@@ -209,7 +209,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
       case 'ring':
         return <RingSpinner size={sizeValue} className={spinnerElementClass} trackColor={trackColor} />;
       case 'circular':
-      [encodeSizeMode('default')]:
+      default:
         return <CircularSpinner size={sizeValue} className={spinnerElementClass} />;
     }
   };
