@@ -26,6 +26,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
   error,
   className = '',
   id,
+  checked = false,
   ...props
 }, ref) => {
   const generatedId = useSSRSafeId('radio');
@@ -35,24 +36,36 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
 
   const hasError = Boolean(error);
 
-  const sizeClasses = {
-    [encodeSizeMode('sm')]: {
-      radio: 'h-4 w-4',
-      dot: 'h-2 w-2',
-      label: 'text-sm',
-      description: 'text-xs'
-    },
-    [encodeSizeMode('md')]: {
-      radio: 'h-5 w-5',
-      dot: 'h-2.5 w-2.5',
-      label: 'text-sm',
-      description: 'text-sm'
-    },
-    [encodeSizeMode('lg')]: {
-      radio: 'h-6 w-6',
-      dot: 'h-3 w-3',
-      label: 'text-base',
-      description: 'text-sm'
+  const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
+    switch (size) {
+      case 'sm':
+        return {
+          radio: 'h-4 w-4',
+          dot: 'h-2 w-2',
+          label: 'text-sm',
+          description: 'text-xs'
+        };
+      case 'md':
+        return {
+          radio: 'h-5 w-5',
+          dot: 'h-2.5 w-2.5',
+          label: 'text-sm',
+          description: 'text-sm'
+        };
+      case 'lg':
+        return {
+          radio: 'h-6 w-6',
+          dot: 'h-3 w-3',
+          label: 'text-base',
+          description: 'text-sm'
+        };
+      default:
+        return {
+          radio: 'h-5 w-5',
+          dot: 'h-2.5 w-2.5',
+          label: 'text-sm',
+          description: 'text-sm'
+        };
     }
   };
 
@@ -89,17 +102,18 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
   const radioClasses = [
     ...baseRadioClasses,
     ...stateClasses,
-    encodeSizeMode(size)Classes[size].radio,
+    getSizeClasses(size).radio,
     className
   ].filter(Boolean).join(' ');
 
   const dotClasses = [
     'absolute',
     'rounded-full',
-    'transition-all',
+    'bg-current',
+    'transition-opacity',
     'duration-200',
-    encodeSizeMode(size)Classes[size].dot,
-    hasError ? 'bg-red-500' : 'bg-blue-600'
+    getSizeClasses(size).dot,
+    checked ? 'opacity-100' : 'opacity-0'
   ].join(' ');
 
   return (
@@ -124,7 +138,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
             aria-hidden="true"
           >
             <span
-              className={`${dotClasses} ${props.checked ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
+              className={`${dotClasses} ${checked ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
             />
           </label>
         </div>
@@ -134,7 +148,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
           {label && (
             <label
               htmlFor={radioId}
-              className={`block font-medium text-gray-700 cursor-pointer ${encodeSizeMode(size)Classes[size].label}`}
+              className={`block font-medium text-gray-700 cursor-pointer ${getSizeClasses(size).label}`}
             >
               {label}
             </label>
@@ -142,7 +156,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
           {description && (
             <p
               id={descriptionId}
-              className={`text-gray-500 ${encodeSizeMode(size)Classes[size].description} ${label ? 'mt-1' : ''}`}
+              className={`text-gray-500 ${getSizeClasses(size).description} ${label ? 'mt-1' : ''}`}
             >
               {description}
             </p>
