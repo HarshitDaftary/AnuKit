@@ -6,7 +6,8 @@
     "build": "rollup -c rollup.config.simple.js",
     "analyze": "node ../../tools/simple-bundle-analyzer.js .",
     "lint": "eslint src --ext .ts,.tsx --fix",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "validate-syntax": "node validate-syntax.mjs"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
