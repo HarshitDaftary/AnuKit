@@ -7,6 +7,7 @@ import React, { useMemo, useCallback } from 'react';
 import { cn, isSameDay } from '@optimui/utils';
 
 const lib = "optimui";
+const l_prx = `${lib}-datepicker-calendar`;
 
 export interface DatePickerCalendarProps {
   currentMonth: Date;
@@ -167,11 +168,11 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                     className={cn(
                       `${lib}-datepicker-day`,
                       {
-                        `${[^}]*}[^`]*`: isCurrentMonth,
-                        `${[^}]*}[^`]*`: !isCurrentMonth,
-                        `${[^}]*}[^`]*`: isSelected,
-                        `${[^}]*}[^`]*`: isDisabled,
-                        `${[^}]*}[^`]*`: isToday,
+                        [`${lib}-datepicker-day--current-month`]: isCurrentMonth,
+                        [`${lib}-datepicker-day--other-month`]: !isCurrentMonth,
+                        [`${lib}-datepicker-day--selected`]: isSelected,
+                        [`${lib}-datepicker-day--disabled`]: isDisabled,
+                        [`${lib}-datepicker-day--today`]: isToday,
                       }
                     )}
                     aria-label={`${date.toDateString()}`}

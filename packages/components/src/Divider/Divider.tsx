@@ -65,14 +65,14 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(({
   
   const dividerClasses = cn(
     l_prx,
-    `optimui-divider-${orientation}`,
-    `optimui-divider-${variant}`,
-    `optimui-divider-${thickness}`,
-    `optimui-divider-margin-${margin}`,
+    `${l_prx}-${orientation}`,
+    `${l_prx}-${variant}`,
+    `${l_prx}-${thickness}`,
+    `${l_prx}-margin-${margin}`,
     {
-      `${[^}]*}[^`]*`: hasLabel,
-      [`optimui-divider-text-${textAlign}`]: hasLabel,
-      `${[^}]*}[^`]*`: fullSize,
+      [`${l_prx}--labeled`]: hasLabel,
+      [`${l_prx}-text-${textAlign}`]: hasLabel,
+      [`${l_prx}--fullsize`]: fullSize,
     },
     className
   );

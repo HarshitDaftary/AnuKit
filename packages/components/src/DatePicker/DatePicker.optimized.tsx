@@ -13,6 +13,7 @@ import { DatePickerProps } from './types';
 import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
+const l_prx = `${lib}-datepicker`;
 
 const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   value,
@@ -118,14 +119,14 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
 
   // Wrapper classes
   const wrapperClasses = cn(
-    `${lib}-datepicker`,
-    `optimui-datepicker--${variant}`,
-    `optimui-datepicker--${size}`,
+    l_prx,
+    `${l_prx}--${variant}`,
+    `${l_prx}--${size}`,
     {
-      `${[^}]*}[^`]*`: datePicker.isOpen,
-      `${[^}]*}[^`]*`: disabled,
-      `${[^}]*}[^`]*`: error,
-      `${[^}]*}[^`]*`: datePicker.isFocused,
+      [`${l_prx}--open`]: datePicker.isOpen,
+      [`${l_prx}--disabled`]: disabled,
+      [`${l_prx}--error`]: error,
+      [`${l_prx}--focused`]: datePicker.isFocused,
     },
     className
   );

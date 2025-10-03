@@ -7,6 +7,7 @@ import React, { forwardRef } from 'react';
 import { cn } from '@optimui/utils';
 
 const lib = "optimui";
+const l_prx = `${lib}-datepicker-input`;
 
 export interface DatePickerInputProps {
   value: string;
@@ -45,13 +46,13 @@ const DatePickerInput = forwardRef<HTMLInputElement, DatePickerInputProps>(({
   ...props
 }, ref) => {
   const inputClasses = cn(
-    `${lib}-datepicker-input`,
-    `optimui-datepicker-input--${variant}`,
-    `optimui-datepicker-input--${size}`,
+    l_prx,
+    `${l_prx}--${variant}`,
+    `${l_prx}--${size}`,
     {
-      `${[^}]*}[^`]*`: disabled,
-      `${[^}]*}[^`]*`: readOnly,
-      `${[^}]*}[^`]*`: error,
+      [`${l_prx}--disabled`]: disabled,
+      [`${l_prx}--readonly`]: readOnly,
+      [`${l_prx}--error`]: error,
     },
     className
   );

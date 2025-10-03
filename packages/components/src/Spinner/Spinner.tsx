@@ -175,13 +175,13 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
   
   const spinnerClasses = cn(
     l_prx,
-    `optimui-spinner-${variant}`,
-    `optimui-spinner-${color}`,
-    `optimui-spinner-${speed}`,
+    `${l_prx}-${variant}`,
+    `${l_prx}-${color}`,
+    `${l_prx}-${speed}`,
     {
-      `${[^}]*}[^`]*`: center,
-      `${[^}]*}[^`]*`: overlay,
-      [`optimui-spinner-label-${labelPosition}`]: label && !labelHidden,
+      [`${l_prx}--center`]: center,
+      [`${l_prx}--overlay`]: overlay,
+      [`${l_prx}-label-${labelPosition}`]: label && !labelHidden,
     },
     className
   );
@@ -220,7 +220,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
       {label && (
         <span
           className={cn(`${l_prx}-label`, {
-            `${[^}]*}[^`]*`: labelHidden,
+            [`${l_prx}-label--hidden`]: labelHidden,
           })}
         >
           {label}
