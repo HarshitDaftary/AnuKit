@@ -1,0 +1,462 @@
+/**
+ * OptimUI Navigation Components CSS
+ * Styles for Tabs, Menu, and Breadcrumb components
+ */
+
+/* Tabs Component */
+.optimui-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--optimui-space-4);
+}
+
+.optimui-tabs-vertical {
+  flex-direction: row;
+  gap: var(--optimui-space-6);
+}
+
+.optimui-tabs-full-width .optimui-tabs-list {
+  width: 100%;
+}
+
+/* Tab List */
+.optimui-tabs-list {
+  display: flex;
+  border-bottom: 1px solid var(--optimui-color-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.optimui-tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.optimui-tabs-list-vertical {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 1px solid var(--optimui-color-border);
+  width: auto;
+  min-width: 200px;
+}
+
+.optimui-tabs-list-horizontal {
+  flex-direction: row;
+}
+
+/* Tab Items */
+.optimui-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--optimui-space-2);
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--optimui-color-text-secondary);
+  font-size: var(--optimui-text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  white-space: nowrap;
+  outline: none;
+}
+
+.optimui-tab:hover:not(.optimui-tab-disabled) {
+  color: var(--optimui-color-text-primary);
+}
+
+.optimui-tab:focus-visible {
+  outline: 2px solid var(--optimui-color-primary);
+  outline-offset: 2px;
+}
+
+.optimui-tab-active {
+  color: var(--optimui-color-primary);
+  border-bottom-color: var(--optimui-color-primary);
+}
+
+.optimui-tab-disabled {
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Tab Variants */
+.optimui-tabs-pills .optimui-tab {
+  border-radius: var(--optimui-border-radius-md);
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.optimui-tabs-pills .optimui-tab-active {
+  background-color: var(--optimui-color-primary);
+  color: white;
+}
+
+.optimui-tabs-underline .optimui-tab {
+  border-bottom: 2px solid transparent;
+}
+
+.optimui-tabs-underline .optimui-tab-active {
+  border-bottom-color: var(--optimui-color-primary);
+}
+
+/* Tab Sizes */
+.optimui-tabs-sm .optimui-tab {
+  padding: var(--optimui-space-2) var(--optimui-space-3);
+  font-size: var(--optimui-text-sm);
+}
+
+.optimui-tabs-lg .optimui-tab {
+  padding: var(--optimui-space-4) var(--optimui-space-6);
+  font-size: var(--optimui-text-lg);
+}
+
+/* Tab Elements */
+.optimui-tab-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.optimui-tab-label {
+  flex: 1;
+}
+
+.optimui-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 var(--optimui-space-1);
+  background-color: var(--optimui-color-error);
+  color: white;
+  border-radius: 9999px;
+  font-size: var(--optimui-text-xs);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Tab Content */
+.optimui-tabs-content {
+  position: relative;
+}
+
+.optimui-tab-panel {
+  outline: none;
+}
+
+.optimui-tab-panel-hidden {
+  display: none;
+}
+
+.optimui-tab-panel-active {
+  display: block;
+}
+
+/* Menu Component */
+.optimui-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.optimui-menu-trigger {
+  background: none;
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-md);
+  padding: var(--optimui-space-2) var(--optimui-space-3);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.optimui-menu-trigger:hover {
+  border-color: var(--optimui-color-primary);
+}
+
+.optimui-menu-trigger:focus-visible {
+  border-color: var(--optimui-color-primary);
+  box-shadow: 0 0 0 3px var(--optimui-color-primary-alpha);
+}
+
+.optimui-menu {
+  position: absolute;
+  z-index: 50;
+  min-width: 200px;
+  background-color: var(--optimui-color-background);
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-md);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: var(--optimui-space-2);
+  outline: none;
+}
+
+.optimui-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: transparent;
+}
+
+/* Menu Positioning */
+.optimui-menu-bottom-start {
+  top: 100%;
+  left: 0;
+  margin-top: var(--optimui-space-2);
+}
+
+.optimui-menu-bottom-end {
+  top: 100%;
+  right: 0;
+  margin-top: var(--optimui-space-2);
+}
+
+.optimui-menu-top-start {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: var(--optimui-space-2);
+}
+
+.optimui-menu-top-end {
+  bottom: 100%;
+  right: 0;
+  margin-bottom: var(--optimui-space-2);
+}
+
+.optimui-menu-right-start {
+  top: 0;
+  left: 100%;
+  margin-left: var(--optimui-space-2);
+}
+
+.optimui-menu-left-start {
+  top: 0;
+  right: 100%;
+  margin-right: var(--optimui-space-2);
+}
+
+/* Menu Items */
+.optimui-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--optimui-space-3);
+  width: 100%;
+  padding: var(--optimui-space-2) var(--optimui-space-3);
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: var(--optimui-border-radius-sm);
+  color: var(--optimui-color-text-primary);
+  font-size: var(--optimui-text-sm);
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.optimui-menu-item:hover:not(.optimui-menu-item-disabled) {
+  background-color: var(--optimui-color-background-disabled);
+}
+
+.optimui-menu-item:focus,
+.optimui-menu-item-focused {
+  background-color: var(--optimui-color-primary-alpha);
+}
+
+.optimui-menu-item-disabled {
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.optimui-menu-item-nested {
+  padding-left: var(--optimui-space-6);
+}
+
+/* Menu Item Elements */
+.optimui-menu-item-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.optimui-menu-item-label {
+  flex: 1;
+}
+
+.optimui-menu-item-shortcut {
+  font-size: var(--optimui-text-xs);
+  color: var(--optimui-color-text-secondary);
+  margin-left: auto;
+}
+
+.optimui-menu-item-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-menu-divider {
+  height: 1px;
+  background-color: var(--optimui-color-border);
+  margin: var(--optimui-space-1) 0;
+}
+
+/* Menu Sizes */
+.optimui-menu-sm {
+  min-width: 160px;
+}
+
+.optimui-menu-sm .optimui-menu-item {
+  padding: var(--optimui-space-1-5) var(--optimui-space-2);
+  font-size: var(--optimui-text-xs);
+}
+
+.optimui-menu-lg {
+  min-width: 240px;
+}
+
+.optimui-menu-lg .optimui-menu-item {
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  font-size: var(--optimui-text-base);
+}
+
+/* Breadcrumb Component */
+.optimui-breadcrumb {
+  font-size: var(--optimui-text-sm);
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--optimui-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.optimui-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: var(--optimui-space-1-5);
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+  outline: none;
+  border-radius: var(--optimui-border-radius-sm);
+  padding: var(--optimui-space-1) var(--optimui-space-1-5);
+}
+
+.optimui-breadcrumb-link:hover:not(.optimui-breadcrumb-current) {
+  color: var(--optimui-color-primary);
+}
+
+.optimui-breadcrumb-link:focus-visible {
+  outline: 2px solid var(--optimui-color-primary);
+  outline-offset: 2px;
+}
+
+.optimui-breadcrumb-current {
+  color: var(--optimui-color-text-primary);
+  font-weight: 500;
+  cursor: default;
+}
+
+.optimui-breadcrumb-collapsed {
+  cursor: pointer;
+}
+
+.optimui-breadcrumb-collapsed:hover {
+  color: var(--optimui-color-primary);
+}
+
+/* Breadcrumb Elements */
+.optimui-breadcrumb-home-icon,
+.optimui-breadcrumb-item-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.optimui-breadcrumb-item-label {
+  white-space: nowrap;
+}
+
+.optimui-breadcrumb-separator {
+  display: flex;
+  align-items: center;
+  color: var(--optimui-color-text-secondary);
+  user-select: none;
+}
+
+/* Breadcrumb Sizes */
+.optimui-breadcrumb-sm {
+  font-size: var(--optimui-text-xs);
+}
+
+.optimui-breadcrumb-sm .optimui-breadcrumb-link {
+  padding: var(--optimui-space-0-5) var(--optimui-space-1);
+  gap: var(--optimui-space-1);
+}
+
+.optimui-breadcrumb-lg {
+  font-size: var(--optimui-text-base);
+}
+
+.optimui-breadcrumb-lg .optimui-breadcrumb-link {
+  padding: var(--optimui-space-1-5) var(--optimui-space-2);
+  gap: var(--optimui-space-2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .optimui-tabs-list {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .optimui-menu {
+    min-width: 180px;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .optimui-breadcrumb-item-label {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .optimui-tab:focus-visible,
+  .optimui-menu-trigger:focus-visible,
+  .optimui-breadcrumb-link:focus-visible {
+    outline-width: 3px;
+  }
+  
+  .optimui-menu {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .optimui-tab,
+  .optimui-menu-trigger,
+  .optimui-menu-item,
+  .optimui-breadcrumb-link {
+    transition: none;
+  }
+}

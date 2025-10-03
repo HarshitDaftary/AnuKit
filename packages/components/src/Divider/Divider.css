@@ -1,0 +1,254 @@
+/* Divider Styles */
+
+/* Base divider */
+.optimui-divider {
+  display: flex;
+  align-items: center;
+  color: var(--optimui-border, #d1d5db);
+  border: 0;
+  position: relative;
+}
+
+/* Orientation */
+.optimui-divider-horizontal {
+  width: 100%;
+  flex-direction: row;
+}
+
+.optimui-divider-vertical {
+  height: 100%;
+  flex-direction: column;
+  writing-mode: vertical-lr;
+}
+
+.optimui-divider-full-size.optimui-divider-horizontal {
+  width: 100vw;
+}
+
+.optimui-divider-full-size.optimui-divider-vertical {
+  height: 100vh;
+}
+
+/* Variants and thickness */
+.optimui-divider-horizontal::before,
+.optimui-divider-horizontal::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--divider-color, currentColor);
+}
+
+.optimui-divider-vertical::before,
+.optimui-divider-vertical::after {
+  content: '';
+  flex: 1;
+  width: 1px;
+  background-color: var(--divider-color, currentColor);
+}
+
+/* Thickness variants */
+.optimui-divider-medium.optimui-divider-horizontal::before,
+.optimui-divider-medium.optimui-divider-horizontal::after {
+  height: 2px;
+}
+
+.optimui-divider-thick.optimui-divider-horizontal::before,
+.optimui-divider-thick.optimui-divider-horizontal::after {
+  height: 3px;
+}
+
+.optimui-divider-medium.optimui-divider-vertical::before,
+.optimui-divider-medium.optimui-divider-vertical::after {
+  width: 2px;
+}
+
+.optimui-divider-thick.optimui-divider-vertical::before,
+.optimui-divider-thick.optimui-divider-vertical::after {
+  width: 3px;
+}
+
+/* Style variants */
+.optimui-divider-dashed::before,
+.optimui-divider-dashed::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--divider-color, currentColor) 0,
+    var(--divider-color, currentColor) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-color: transparent;
+}
+
+.optimui-divider-dotted::before,
+.optimui-divider-dotted::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--divider-color, currentColor) 0,
+    var(--divider-color, currentColor) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  background-color: transparent;
+}
+
+.optimui-divider-vertical.optimui-divider-dashed::before,
+.optimui-divider-vertical.optimui-divider-dashed::after {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--divider-color, currentColor) 0,
+    var(--divider-color, currentColor) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.optimui-divider-vertical.optimui-divider-dotted::before,
+.optimui-divider-vertical.optimui-divider-dotted::after {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--divider-color, currentColor) 0,
+    var(--divider-color, currentColor) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+/* Margin variants */
+.optimui-divider-margin-sm {
+  margin: 8px 0;
+}
+
+.optimui-divider-margin-md {
+  margin: 16px 0;
+}
+
+.optimui-divider-margin-lg {
+  margin: 24px 0;
+}
+
+.optimui-divider-margin-none {
+  margin: 0;
+}
+
+.optimui-divider-vertical.optimui-divider-margin-sm {
+  margin: 0 8px;
+}
+
+.optimui-divider-vertical.optimui-divider-margin-md {
+  margin: 0 16px;
+}
+
+.optimui-divider-vertical.optimui-divider-margin-lg {
+  margin: 0 24px;
+}
+
+/* Label support */
+.optimui-divider-with-label::before,
+.optimui-divider-with-label::after {
+  flex: 1;
+}
+
+.optimui-divider-label {
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--optimui-text-muted, #6b7280);
+  background-color: var(--optimui-background, white);
+  white-space: nowrap;
+}
+
+/* Text alignment */
+.optimui-divider-text-left .optimui-divider-label {
+  padding-left: 0;
+}
+
+.optimui-divider-text-left::before {
+  flex: 0 0 24px;
+}
+
+.optimui-divider-text-right .optimui-divider-label {
+  padding-right: 0;
+}
+
+.optimui-divider-text-right::after {
+  flex: 0 0 24px;
+}
+
+/* Without label (simple line) */
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-horizontal {
+  border-top: 1px solid var(--divider-color, currentColor);
+  height: 0;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-vertical {
+  border-left: 1px solid var(--divider-color, currentColor);
+  width: 0;
+  min-height: 24px;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-medium.optimui-divider-horizontal {
+  border-top-width: 2px;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-thick.optimui-divider-horizontal {
+  border-top-width: 3px;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-medium.optimui-divider-vertical {
+  border-left-width: 2px;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-thick.optimui-divider-vertical {
+  border-left-width: 3px;
+}
+
+/* Style variants for simple dividers */
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-dashed {
+  border-style: dashed;
+}
+
+.optimui-divider:not(.optimui-divider-with-label).optimui-divider-dotted {
+  border-style: dotted;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .optimui-divider {
+    color: var(--optimui-border-dark, #374151);
+  }
+  
+  .optimui-divider-label {
+    color: var(--optimui-text-muted-dark, #9ca3af);
+    background-color: var(--optimui-background-dark, #1f2937);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .optimui-divider {
+    color: currentColor;
+  }
+  
+  .optimui-divider-thick::before,
+  .optimui-divider-thick::after {
+    height: 4px;
+  }
+  
+  .optimui-divider-vertical.optimui-divider-thick::before,
+  .optimui-divider-vertical.optimui-divider-thick::after {
+    width: 4px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .optimui-divider {
+    color: #000;
+  }
+  
+  .optimui-divider-label {
+    color: #000;
+    background-color: #fff;
+  }
+}

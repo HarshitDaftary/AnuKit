@@ -1,0 +1,46 @@
+{
+  "name": "@optimui/icons",
+  "version": "0.1.0",
+  "description": "Optimized SVG icon components for OptimUI",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "build:icons": "node scripts/generate-icons.js",
+    "dev": "rollup -c rollup.config.js --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "size": "bundlesize"
+  },
+  "dependencies": {
+    "@optimui/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "react": "^18.2.0",
+    "svgo": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/index.js",
+      "maxSize": "15KB"
+    }
+  ]
+}

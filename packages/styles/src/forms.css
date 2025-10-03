@@ -1,0 +1,815 @@
+/**
+ * OptimUI Form Components CSS
+ * Styles for Input, Select, Textarea, and FormControl components
+ */
+
+/* Form Control Wrapper */
+.optimui-form-control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-form-control-full-width {
+  width: 100%;
+}
+
+.optimui-form-control-sm {
+  gap: var(--optimui-space-1-5);
+}
+
+.optimui-form-control-lg {
+  gap: var(--optimui-space-3);
+}
+
+.optimui-form-control-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.optimui-form-control-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.optimui-form-label,
+.optimui-label {
+  display: block;
+  font-size: var(--optimui-text-sm);
+  font-weight: 500;
+  color: var(--optimui-color-text-primary);
+  line-height: 1.5;
+}
+
+.optimui-form-label-required {
+  color: var(--optimui-color-text-primary);
+}
+
+.optimui-form-label-disabled {
+  color: var(--optimui-color-text-disabled);
+}
+
+.optimui-form-required-indicator {
+  color: var(--optimui-color-error);
+  margin-left: var(--optimui-space-1);
+}
+
+/* Base Form Element Styles */
+.optimui-input,
+.optimui-select,
+.optimui-textarea {
+  width: 100%;
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-md);
+  background-color: var(--optimui-color-background);
+  color: var(--optimui-color-text-primary);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+}
+
+.optimui-input:focus,
+.optimui-select:focus,
+.optimui-textarea:focus {
+  border-color: var(--optimui-color-primary);
+  box-shadow: 0 0 0 3px var(--optimui-color-primary-alpha);
+}
+
+.optimui-input:disabled,
+.optimui-select:disabled,
+.optimui-textarea:disabled {
+  background-color: var(--optimui-color-background-disabled);
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Size Variations */
+.optimui-input-sm,
+.optimui-select-sm,
+.optimui-textarea-sm {
+  padding: var(--optimui-space-2) var(--optimui-space-3);
+  font-size: var(--optimui-text-sm);
+  line-height: 1.4;
+}
+
+.optimui-input-md,
+.optimui-select-md,
+.optimui-textarea-md {
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  font-size: var(--optimui-text-base);
+  line-height: 1.5;
+}
+
+.optimui-input-lg,
+.optimui-select-lg,
+.optimui-textarea-lg {
+  padding: var(--optimui-space-4) var(--optimui-space-5);
+  font-size: var(--optimui-text-lg);
+  line-height: 1.6;
+}
+
+/* Variant Styles */
+.optimui-input-error,
+.optimui-select-error,
+.optimui-textarea-error {
+  border-color: var(--optimui-color-error);
+}
+
+.optimui-input-error:focus,
+.optimui-select-error:focus,
+.optimui-textarea-error:focus {
+  border-color: var(--optimui-color-error);
+  box-shadow: 0 0 0 3px var(--optimui-color-error-alpha);
+}
+
+.optimui-input-success,
+.optimui-select-success,
+.optimui-textarea-success {
+  border-color: var(--optimui-color-success);
+}
+
+.optimui-input-success:focus,
+.optimui-select-success:focus,
+.optimui-textarea-success:focus {
+  border-color: var(--optimui-color-success);
+  box-shadow: 0 0 0 3px var(--optimui-color-success-alpha);
+}
+
+/* Full Width */
+.optimui-input-full-width,
+.optimui-select-full-width,
+.optimui-textarea-full-width {
+  width: 100%;
+}
+
+/* Select Specific Styles */
+.optimui-select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.optimui-select {
+  appearance: none;
+  background-image: none;
+  padding-right: var(--optimui-space-10);
+}
+
+.optimui-select-with-icon {
+  padding-left: var(--optimui-space-10);
+}
+
+.optimui-select-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optimui-select-icon-left {
+  left: var(--optimui-space-3);
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-select-icon-chevron {
+  right: var(--optimui-space-3);
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-select-loading {
+  color: var(--optimui-color-text-disabled);
+}
+
+/* Textarea Specific Styles */
+.optimui-textarea {
+  resize: vertical;
+  min-height: calc(var(--optimui-space-12) * 1.5);
+}
+
+.optimui-textarea-auto-resize {
+  resize: none;
+  overflow: hidden;
+}
+
+.optimui-textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Form Messages */
+.optimui-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-form-messages {
+  flex: 1;
+}
+
+.optimui-form-error {
+  font-size: var(--optimui-text-sm);
+  color: var(--optimui-color-error);
+  line-height: 1.4;
+}
+
+.optimui-form-helper {
+  font-size: var(--optimui-text-sm);
+  color: var(--optimui-color-text-secondary);
+  line-height: 1.4;
+}
+
+.optimui-form-character-count {
+  font-size: var(--optimui-text-xs);
+  color: var(--optimui-color-text-secondary);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.optimui-form-character-count-near {
+  color: var(--optimui-color-warning);
+}
+
+.optimui-form-character-count-over {
+  color: var(--optimui-color-error);
+  font-weight: 600;
+}
+
+/* Input with Icons */
+.optimui-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.optimui-input-with-left-icon {
+  padding-left: var(--optimui-space-10);
+}
+
+.optimui-input-with-right-icon {
+  padding-right: var(--optimui-space-10);
+}
+
+.optimui-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-input-icon-left {
+  left: var(--optimui-space-3);
+}
+
+.optimui-input-icon-right {
+  right: var(--optimui-space-3);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .optimui-form-control {
+    gap: var(--optimui-space-1-5);
+  }
+  
+  .optimui-form-footer {
+    flex-direction: column;
+    gap: var(--optimui-space-1);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .optimui-input,
+  .optimui-select,
+  .optimui-textarea {
+    border-width: 2px;
+  }
+  
+  .optimui-input:focus,
+  .optimui-select:focus,
+  .optimui-textarea:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
+}
+
+/* TextField Component */
+.optimui-textfield {
+  display: flex;
+  flex-direction: column;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-textfield-full-width {
+  width: 100%;
+}
+
+.optimui-textfield-label {
+  font-size: var(--optimui-text-sm);
+  font-weight: 500;
+  color: var(--optimui-color-text-primary);
+  line-height: 1.5;
+}
+
+.optimui-textfield-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.optimui-textfield-input {
+  flex: 1;
+  padding: var(--optimui-space-2) var(--optimui-space-3);
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-md);
+  font-size: var(--optimui-text-base);
+  color: var(--optimui-color-text-primary);
+  background-color: var(--optimui-color-background);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.optimui-textfield-input:focus {
+  outline: none;
+  border-color: var(--optimui-color-primary);
+  box-shadow: 0 0 0 2px var(--optimui-color-primary-alpha);
+}
+
+.optimui-textfield-input:disabled {
+  background-color: var(--optimui-color-background-disabled);
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.optimui-textfield-input:read-only {
+  background-color: var(--optimui-color-background-subtle);
+}
+
+/* TextField Variants */
+.optimui-textfield-outlined .optimui-textfield-input {
+  border-width: 2px;
+}
+
+.optimui-textfield-filled .optimui-textfield-input {
+  background-color: var(--optimui-color-background-subtle);
+  border: none;
+}
+
+.optimui-textfield-error .optimui-textfield-input {
+  border-color: var(--optimui-color-error);
+}
+
+.optimui-textfield-error .optimui-textfield-input:focus {
+  box-shadow: 0 0 0 2px var(--optimui-color-error-alpha);
+}
+
+.optimui-textfield-success .optimui-textfield-input {
+  border-color: var(--optimui-color-success);
+}
+
+.optimui-textfield-success .optimui-textfield-input:focus {
+  box-shadow: 0 0 0 2px var(--optimui-color-success-alpha);
+}
+
+/* TextField Sizes */
+.optimui-textfield-sm .optimui-textfield-input {
+  padding: var(--optimui-space-1) var(--optimui-space-2);
+  font-size: var(--optimui-text-sm);
+}
+
+.optimui-textfield-lg .optimui-textfield-input {
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  font-size: var(--optimui-text-lg);
+}
+
+/* TextField Icons and Affixes */
+.optimui-textfield-has-left-icon .optimui-textfield-input {
+  padding-left: var(--optimui-space-10);
+}
+
+.optimui-textfield-has-right-icon .optimui-textfield-input {
+  padding-right: var(--optimui-space-10);
+}
+
+.optimui-textfield-has-prefix .optimui-textfield-input {
+  padding-left: var(--optimui-space-1);
+}
+
+.optimui-textfield-has-suffix .optimui-textfield-input {
+  padding-right: var(--optimui-space-1);
+}
+
+.optimui-textfield-left-icon,
+.optimui-textfield-right-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--optimui-color-text-secondary);
+  pointer-events: none;
+}
+
+.optimui-textfield-left-icon {
+  left: var(--optimui-space-3);
+}
+
+.optimui-textfield-right-section {
+  position: absolute;
+  right: var(--optimui-space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--optimui-space-1);
+}
+
+.optimui-textfield-prefix,
+.optimui-textfield-suffix {
+  padding: 0 var(--optimui-space-2);
+  color: var(--optimui-color-text-secondary);
+  font-size: var(--optimui-text-sm);
+  white-space: nowrap;
+}
+
+.optimui-textfield-clear,
+.optimui-textfield-password-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--optimui-color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--optimui-border-radius-sm);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.optimui-textfield-clear:hover,
+.optimui-textfield-password-toggle:hover {
+  color: var(--optimui-color-text-primary);
+  background-color: var(--optimui-color-background-subtle);
+}
+
+.optimui-textfield-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-textfield-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-textfield-messages {
+  flex: 1;
+}
+
+.optimui-textfield-error {
+  color: var(--optimui-color-error);
+  font-size: var(--optimui-text-sm);
+  line-height: 1.4;
+}
+
+.optimui-textfield-helper {
+  color: var(--optimui-color-text-secondary);
+  font-size: var(--optimui-text-sm);
+  line-height: 1.4;
+}
+
+.optimui-textfield-character-count {
+  font-size: var(--optimui-text-xs);
+  color: var(--optimui-color-text-secondary);
+  white-space: nowrap;
+}
+
+.optimui-textfield-character-count-near {
+  color: var(--optimui-color-warning);
+}
+
+.optimui-textfield-character-count-over {
+  color: var(--optimui-color-error);
+}
+
+/* DatePicker Component */
+.optimui-datepicker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--optimui-space-2);
+}
+
+.optimui-datepicker-full-width {
+  width: 100%;
+}
+
+.optimui-datepicker-label {
+  font-size: var(--optimui-text-sm);
+  font-weight: 500;
+  color: var(--optimui-color-text-primary);
+  line-height: 1.5;
+}
+
+.optimui-datepicker-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.optimui-datepicker-input {
+  flex: 1;
+  padding: var(--optimui-space-2) var(--optimui-space-10) var(--optimui-space-2) var(--optimui-space-3);
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-md);
+  font-size: var(--optimui-text-base);
+  color: var(--optimui-color-text-primary);
+  background-color: var(--optimui-color-background);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.optimui-datepicker-input:focus {
+  outline: none;
+  border-color: var(--optimui-color-primary);
+  box-shadow: 0 0 0 2px var(--optimui-color-primary-alpha);
+}
+
+.optimui-datepicker-input:disabled {
+  background-color: var(--optimui-color-background-disabled);
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.optimui-datepicker-trigger {
+  position: absolute;
+  right: var(--optimui-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--optimui-color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--optimui-border-radius-sm);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.optimui-datepicker-trigger:hover {
+  color: var(--optimui-color-text-primary);
+  background-color: var(--optimui-color-background-subtle);
+}
+
+.optimui-datepicker-trigger:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* DatePicker Calendar */
+.optimui-datepicker-calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  margin-top: var(--optimui-space-2);
+  padding: var(--optimui-space-4);
+  background-color: var(--optimui-color-background);
+  border: 1px solid var(--optimui-color-border);
+  border-radius: var(--optimui-border-radius-lg);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.optimui-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--optimui-space-4);
+}
+
+.optimui-datepicker-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--optimui-color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--optimui-border-radius-md);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.optimui-datepicker-nav-button:hover {
+  color: var(--optimui-color-text-primary);
+  background-color: var(--optimui-color-background-subtle);
+}
+
+.optimui-datepicker-month-year {
+  font-weight: 600;
+  color: var(--optimui-color-text-primary);
+}
+
+.optimui-datepicker-grid {
+  display: grid;
+  gap: var(--optimui-space-1);
+}
+
+.optimui-datepicker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--optimui-space-1);
+  margin-bottom: var(--optimui-space-2);
+}
+
+.optimui-datepicker-weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-size: var(--optimui-text-sm);
+  font-weight: 500;
+  color: var(--optimui-color-text-secondary);
+}
+
+.optimui-datepicker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--optimui-space-1);
+}
+
+.optimui-datepicker-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--optimui-color-text-primary);
+  cursor: pointer;
+  border-radius: var(--optimui-border-radius-md);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.optimui-datepicker-day:hover {
+  background-color: var(--optimui-color-background-subtle);
+}
+
+.optimui-datepicker-day-current-month {
+  color: var(--optimui-color-text-primary);
+}
+
+.optimui-datepicker-day:not(.optimui-datepicker-day-current-month) {
+  color: var(--optimui-color-text-disabled);
+}
+
+.optimui-datepicker-day-selected {
+  background-color: var(--optimui-color-primary);
+  color: white;
+}
+
+.optimui-datepicker-day-selected:hover {
+  background-color: var(--optimui-color-primary);
+}
+
+.optimui-datepicker-day-today {
+  font-weight: 600;
+  color: var(--optimui-color-primary);
+}
+
+.optimui-datepicker-day-today.optimui-datepicker-day-selected {
+  color: white;
+}
+
+.optimui-datepicker-day-disabled {
+  color: var(--optimui-color-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.optimui-datepicker-day-disabled:hover {
+  background-color: transparent;
+}
+
+.optimui-datepicker-footer {
+  margin-top: var(--optimui-space-2);
+}
+
+.optimui-datepicker-error {
+  color: var(--optimui-color-error);
+  font-size: var(--optimui-text-sm);
+  line-height: 1.4;
+}
+
+.optimui-datepicker-helper {
+  color: var(--optimui-color-text-secondary);
+  font-size: var(--optimui-text-sm);
+  line-height: 1.4;
+}
+
+/* DatePicker Variants */
+.optimui-datepicker-error .optimui-datepicker-input {
+  border-color: var(--optimui-color-error);
+}
+
+.optimui-datepicker-error .optimui-datepicker-input:focus {
+  box-shadow: 0 0 0 2px var(--optimui-color-error-alpha);
+}
+
+.optimui-datepicker-success .optimui-datepicker-input {
+  border-color: var(--optimui-color-success);
+}
+
+.optimui-datepicker-success .optimui-datepicker-input:focus {
+  box-shadow: 0 0 0 2px var(--optimui-color-success-alpha);
+}
+
+/* DatePicker Sizes */
+.optimui-datepicker-sm .optimui-datepicker-input {
+  padding: var(--optimui-space-1) var(--optimui-space-8) var(--optimui-space-1) var(--optimui-space-2);
+  font-size: var(--optimui-text-sm);
+}
+
+.optimui-datepicker-lg .optimui-datepicker-input {
+  padding: var(--optimui-space-3) var(--optimui-space-12) var(--optimui-space-3) var(--optimui-space-4);
+  font-size: var(--optimui-text-lg);
+}
+
+/* Form Component */
+.optimui-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--optimui-space-4);
+}
+
+.optimui-form-full-width {
+  width: 100%;
+}
+
+.optimui-form-sm {
+  gap: var(--optimui-space-3);
+}
+
+.optimui-form-lg {
+  gap: var(--optimui-space-6);
+}
+
+.optimui-form-submitting {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.optimui-form-has-errors {
+  /* Additional styles for forms with errors */
+}
+
+/* Spinner Animation */
+@keyframes optimui-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.optimui-spinner {
+  animation: optimui-spin 1s linear infinite;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .optimui-input,
+  .optimui-select,
+  .optimui-textarea,
+  .optimui-textfield-input,
+  .optimui-datepicker-input,
+  .optimui-textfield-clear,
+  .optimui-textfield-password-toggle,
+  .optimui-datepicker-trigger,
+  .optimui-datepicker-nav-button,
+  .optimui-datepicker-day {
+    transition: none;
+  }
+  
+  .optimui-spinner {
+    animation: none;
+  }
+}

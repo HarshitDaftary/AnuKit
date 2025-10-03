@@ -1,0 +1,383 @@
+/* Pagination Styles */
+
+/* Container */
+.optimui-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.optimui-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+.optimui-pagination-compact .optimui-pagination-container {
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Size variants */
+.optimui-pagination-sm {
+  font-size: 12px;
+}
+
+.optimui-pagination-md {
+  font-size: 14px;
+}
+
+.optimui-pagination-lg {
+  font-size: 16px;
+}
+
+/* Page size selector */
+.optimui-pagination-page-size {
+  display: flex;
+  align-items: center;
+  color: var(--optimui-text, #374151);
+}
+
+.optimui-pagination-page-size-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: inherit;
+  color: inherit;
+}
+
+.optimui-pagination-page-size-select {
+  padding: 4px 8px;
+  border: 1px solid var(--optimui-border, #d1d5db);
+  border-radius: 4px;
+  background-color: var(--optimui-background, white);
+  color: var(--optimui-text, #374151);
+  font-size: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.optimui-pagination-page-size-select:hover:not(:disabled) {
+  border-color: var(--optimui-border-hover, #9ca3af);
+}
+
+.optimui-pagination-page-size-select:focus {
+  outline: none;
+  border-color: var(--optimui-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.1));
+}
+
+.optimui-pagination-page-size-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Info display */
+.optimui-pagination-info {
+  color: var(--optimui-text-muted, #6b7280);
+  font-size: inherit;
+}
+
+.optimui-pagination-range,
+.optimui-pagination-total {
+  white-space: nowrap;
+}
+
+/* Navigation container */
+.optimui-pagination-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Navigation buttons */
+.optimui-pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--optimui-border, #d1d5db);
+  border-radius: 4px;
+  background-color: var(--optimui-background, white);
+  color: var(--optimui-text, #374151);
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.optimui-pagination-nav:hover:not(:disabled) {
+  background-color: var(--optimui-background-hover, #f9fafb);
+  border-color: var(--optimui-border-hover, #9ca3af);
+}
+
+.optimui-pagination-nav:active:not(:disabled) {
+  background-color: var(--optimui-background-active, #f3f4f6);
+}
+
+.optimui-pagination-nav:focus {
+  outline: none;
+  border-color: var(--optimui-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.1));
+}
+
+.optimui-pagination-nav-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Size variants for navigation */
+.optimui-pagination-sm .optimui-pagination-nav {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+}
+
+.optimui-pagination-lg .optimui-pagination-nav {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+/* Page buttons */
+.optimui-pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.optimui-pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--optimui-border, #d1d5db);
+  border-radius: 4px;
+  background-color: var(--optimui-background, white);
+  color: var(--optimui-text, #374151);
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.optimui-pagination-page:hover:not(:disabled):not(.optimui-pagination-page-active) {
+  background-color: var(--optimui-background-hover, #f9fafb);
+  border-color: var(--optimui-border-hover, #9ca3af);
+}
+
+.optimui-pagination-page:focus {
+  outline: none;
+  border-color: var(--optimui-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.1));
+}
+
+.optimui-pagination-page-active {
+  background-color: var(--optimui-primary, #3b82f6);
+  border-color: var(--optimui-primary, #3b82f6);
+  color: white;
+  cursor: default;
+}
+
+.optimui-pagination-page-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Size variants for pages */
+.optimui-pagination-sm .optimui-pagination-page {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+}
+
+.optimui-pagination-lg .optimui-pagination-page {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+/* Jump to page */
+.optimui-pagination-jump {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.optimui-pagination-jump-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--optimui-text, #374151);
+  font-size: inherit;
+}
+
+.optimui-pagination-jump-input {
+  width: 60px;
+  padding: 4px 8px;
+  border: 1px solid var(--optimui-border, #d1d5db);
+  border-radius: 4px;
+  background-color: var(--optimui-background, white);
+  color: var(--optimui-text, #374151);
+  font-size: inherit;
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+.optimui-pagination-jump-input:hover:not(:disabled) {
+  border-color: var(--optimui-border-hover, #9ca3af);
+}
+
+.optimui-pagination-jump-input:focus {
+  outline: none;
+  border-color: var(--optimui-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.1));
+}
+
+.optimui-pagination-jump-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.optimui-pagination-jump-button {
+  padding: 4px 12px;
+  border: 1px solid var(--optimui-primary, #3b82f6);
+  border-radius: 4px;
+  background-color: var(--optimui-primary, #3b82f6);
+  color: white;
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.optimui-pagination-jump-button:hover:not(:disabled) {
+  background-color: var(--optimui-primary-hover, #2563eb);
+  border-color: var(--optimui-primary-hover, #2563eb);
+}
+
+.optimui-pagination-jump-button:active:not(:disabled) {
+  background-color: var(--optimui-primary-active, #1d4ed8);
+  border-color: var(--optimui-primary-active, #1d4ed8);
+}
+
+.optimui-pagination-jump-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.3));
+}
+
+.optimui-pagination-jump-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Disabled state */
+.optimui-pagination-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .optimui-pagination-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .optimui-pagination-nav-container {
+    justify-content: center;
+  }
+  
+  .optimui-pagination-info {
+    text-align: center;
+    order: -1;
+  }
+  
+  .optimui-pagination-page-size {
+    justify-content: center;
+  }
+  
+  .optimui-pagination-jump {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .optimui-pagination-container {
+    gap: 8px;
+  }
+  
+  .optimui-pagination-pages {
+    gap: 1px;
+  }
+  
+  .optimui-pagination-nav-container {
+    gap: 2px;
+  }
+  
+  .optimui-pagination-page,
+  .optimui-pagination-nav {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 4px;
+    font-size: 12px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .optimui-pagination-page,
+  .optimui-pagination-nav,
+  .optimui-pagination-page-size-select,
+  .optimui-pagination-jump-input {
+    background-color: var(--optimui-background-dark, #1f2937);
+    border-color: var(--optimui-border-dark, #374151);
+    color: var(--optimui-text-dark, #f9fafb);
+  }
+  
+  .optimui-pagination-page:hover:not(:disabled):not(.optimui-pagination-page-active),
+  .optimui-pagination-nav:hover:not(:disabled) {
+    background-color: var(--optimui-background-hover-dark, #374151);
+    border-color: var(--optimui-border-hover-dark, #4b5563);
+  }
+  
+  .optimui-pagination-info {
+    color: var(--optimui-text-muted-dark, #9ca3af);
+  }
+  
+  .optimui-pagination-page-size {
+    color: var(--optimui-text-dark, #f9fafb);
+  }
+  
+  .optimui-pagination-jump-label {
+    color: var(--optimui-text-dark, #f9fafb);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .optimui-pagination-page,
+  .optimui-pagination-nav {
+    border-width: 2px;
+  }
+  
+  .optimui-pagination-page-active {
+    box-shadow: 0 0 0 2px var(--optimui-primary, #3b82f6);
+  }
+}

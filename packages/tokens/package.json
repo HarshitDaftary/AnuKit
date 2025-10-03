@@ -1,0 +1,40 @@
+{
+  "name": "@optimui/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for OptimUI theme system",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./dist/tokens.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/tokens.css"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js && npm run build:css",
+    "build:css": "node scripts/build-css.js",
+    "dev": "rollup -c rollup.config.js --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "clean": "rm -rf dist"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/index.js",
+      "maxSize": "3KB"
+    },
+    {
+      "path": "./dist/tokens.css",
+      "maxSize": "10KB"
+    }
+  ]
+}

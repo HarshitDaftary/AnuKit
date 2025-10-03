@@ -1,0 +1,131 @@
+/**
+ * OptimUI Layout Variables
+ * CSS custom properties for spacing, breakpoints, and layout utilities
+ */
+
+:root {
+  /* Spacing Scale (based on 4px grid) */
+  --optimui-space-0: 0;
+  --optimui-space-px: 1px;
+  --optimui-space-0-5: 0.125rem;  /* 2px */
+  --optimui-space-1: 0.25rem;     /* 4px */
+  --optimui-space-1-5: 0.375rem;  /* 6px */
+  --optimui-space-2: 0.5rem;      /* 8px */
+  --optimui-space-2-5: 0.625rem;  /* 10px */
+  --optimui-space-3: 0.75rem;     /* 12px */
+  --optimui-space-3-5: 0.875rem;  /* 14px */
+  --optimui-space-4: 1rem;        /* 16px */
+  --optimui-space-5: 1.25rem;     /* 20px */
+  --optimui-space-6: 1.5rem;      /* 24px */
+  --optimui-space-7: 1.75rem;     /* 28px */
+  --optimui-space-8: 2rem;        /* 32px */
+  --optimui-space-9: 2.25rem;     /* 36px */
+  --optimui-space-10: 2.5rem;     /* 40px */
+  --optimui-space-11: 2.75rem;    /* 44px */
+  --optimui-space-12: 3rem;       /* 48px */
+  --optimui-space-14: 3.5rem;     /* 56px */
+  --optimui-space-16: 4rem;       /* 64px */
+  --optimui-space-20: 5rem;       /* 80px */
+  --optimui-space-24: 6rem;       /* 96px */
+  --optimui-space-28: 7rem;       /* 112px */
+  --optimui-space-32: 8rem;       /* 128px */
+  --optimui-space-36: 9rem;       /* 144px */
+  --optimui-space-40: 10rem;      /* 160px */
+  --optimui-space-44: 11rem;      /* 176px */
+  --optimui-space-48: 12rem;      /* 192px */
+  --optimui-space-52: 13rem;      /* 208px */
+  --optimui-space-56: 14rem;      /* 224px */
+  --optimui-space-60: 15rem;      /* 240px */
+  --optimui-space-64: 16rem;      /* 256px */
+  --optimui-space-72: 18rem;      /* 288px */
+  --optimui-space-80: 20rem;      /* 320px */
+  --optimui-space-96: 24rem;      /* 384px */
+
+  /* Breakpoint Values */
+  --optimui-breakpoint-sm: 640px;
+  --optimui-breakpoint-md: 768px;
+  --optimui-breakpoint-lg: 1024px;
+  --optimui-breakpoint-xl: 1280px;
+  --optimui-breakpoint-2xl: 1536px;
+
+  /* Container Max Widths */
+  --optimui-container-sm: 100%;
+  --optimui-container-md: 768px;
+  --optimui-container-lg: 1024px;
+  --optimui-container-xl: 1280px;
+  --optimui-container-2xl: 1536px;
+
+  /* Grid System */
+  --optimui-grid-columns: 12;
+  --optimui-grid-gap-default: var(--optimui-space-4);
+
+  /* Layout Utilities */
+  --optimui-border-radius-none: 0;
+  --optimui-border-radius-sm: 0.125rem;
+  --optimui-border-radius-default: 0.25rem;
+  --optimui-border-radius-md: 0.375rem;
+  --optimui-border-radius-lg: 0.5rem;
+  --optimui-border-radius-xl: 0.75rem;
+  --optimui-border-radius-2xl: 1rem;
+  --optimui-border-radius-3xl: 1.5rem;
+  --optimui-border-radius-full: 9999px;
+
+  /* Z-Index Scale */
+  --optimui-z-0: 0;
+  --optimui-z-10: 10;
+  --optimui-z-20: 20;
+  --optimui-z-30: 30;
+  --optimui-z-40: 40;
+  --optimui-z-50: 50;
+  --optimui-z-auto: auto;
+
+  /* Transition Durations */
+  --optimui-duration-75: 75ms;
+  --optimui-duration-100: 100ms;
+  --optimui-duration-150: 150ms;
+  --optimui-duration-200: 200ms;
+  --optimui-duration-300: 300ms;
+  --optimui-duration-500: 500ms;
+  --optimui-duration-700: 700ms;
+  --optimui-duration-1000: 1000ms;
+
+  /* Transition Timing Functions */
+  --optimui-ease-linear: linear;
+  --optimui-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --optimui-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --optimui-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Color System */
+  --optimui-color-primary: #2563eb;
+  --optimui-color-primary-alpha: rgba(37, 99, 235, 0.1);
+  --optimui-color-error: #dc2626;
+  --optimui-color-error-alpha: rgba(220, 38, 38, 0.1);
+  --optimui-color-success: #16a34a;
+  --optimui-color-success-alpha: rgba(22, 163, 74, 0.1);
+  --optimui-color-warning: #d97706;
+  --optimui-color-warning-alpha: rgba(217, 119, 6, 0.1);
+
+  /* Text Colors */
+  --optimui-color-text-primary: #1f2937;
+  --optimui-color-text-secondary: #6b7280;
+  --optimui-color-text-disabled: #9ca3af;
+
+  /* Background Colors */
+  --optimui-color-background: #ffffff;
+  --optimui-color-background-disabled: #f9fafb;
+
+  /* Border Colors */
+  --optimui-color-border: #d1d5db;
+  --optimui-color-border-focus: #3b82f6;
+
+  /* Typography Scale */
+  --optimui-text-xs: 0.75rem;
+  --optimui-text-sm: 0.875rem;
+  --optimui-text-base: 1rem;
+  --optimui-text-lg: 1.125rem;
+
+  /* Border Radius */
+  --optimui-border-radius-sm: 0.25rem;
+  --optimui-border-radius-md: 0.375rem;
+  --optimui-border-radius-lg: 0.5rem;
+}

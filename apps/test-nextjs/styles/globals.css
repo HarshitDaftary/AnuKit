@@ -1,0 +1,97 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* OptimUI CSS Variables */
+:root {
+  --optimui-primary: 59 130 246;
+  --optimui-secondary: 107 114 128;
+  --optimui-danger: 239 68 68;
+  --optimui-success: 34 197 94;
+  --optimui-warning: 245 158 11;
+  --optimui-background: 255 255 255;
+  --optimui-foreground: 17 24 39;
+  --optimui-border: 229 231 235;
+  --optimui-input: 255 255 255;
+  --optimui-ring: 59 130 246;
+}
+
+[data-theme="dark"] {
+  --optimui-primary: 96 165 250;
+  --optimui-secondary: 156 163 175;
+  --optimui-danger: 248 113 113;
+  --optimui-success: 74 222 128;
+  --optimui-warning: 251 191 36;
+  --optimui-background: 17 24 39;
+  --optimui-foreground: 243 244 246;
+  --optimui-border: 55 65 81;
+  --optimui-input: 31 41 55;
+  --optimui-ring: 96 165 250;
+}
+
+/* SSR-safe styles */
+.optimui-button {
+  background-color: rgb(var(--optimui-primary));
+  color: rgb(var(--optimui-background));
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.optimui-button:hover {
+  background-color: rgb(var(--optimui-primary) / 0.9);
+}
+
+.optimui-button:focus-visible {
+  outline: 2px solid rgb(var(--optimui-ring));
+  outline-offset: 2px;
+}
+
+.optimui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ensure no layout shift during hydration */
+.optimui-modal-placeholder {
+  display: none;
+}
+
+/* Dark mode utilities */
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] {
+    --optimui-primary: 96 165 250;
+    --optimui-secondary: 156 163 175;
+    --optimui-danger: 248 113 113;
+    --optimui-success: 74 222 128;
+    --optimui-warning: 251 191 36;
+    --optimui-background: 17 24 39;
+    --optimui-foreground: 243 244 246;
+    --optimui-border: 55 65 81;
+    --optimui-input: 31 41 55;
+    --optimui-ring: 96 165 250;
+  }
+}
+
+/* Animation utilities */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Focus utilities */
+.focus-visible\:outline:focus-visible {
+  outline: 2px solid rgb(var(--optimui-ring));
+}
+
+.focus-visible\:outline-2:focus-visible {
+  outline-width: 2px;
+}
+
+.focus-visible\:outline-offset-2:focus-visible {
+  outline-offset: 2px;
+}

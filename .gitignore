@@ -1,0 +1,256 @@
+# ===========================================
+# OptimUI Component Library .gitignore
+# Comprehensive patterns for monorepo setup
+# ===========================================
+
+# Dependencies and Package Managers
+# ===================================
+node_modules/
+.pnpm-store/
+.pnpm-lock.yaml
+.npm/
+.yarn/
+.yarnrc.yml
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+yarn-error.log*
+npm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build Outputs and Distributions
+# ================================
+dist/
+build/
+lib/
+es/
+cjs/
+esm/
+umd/
+.next/
+.turbo/
+out/
+coverage/
+.nyc_output/
+storybook-static/
+docs-build/
+.docusaurus/
+
+# Monorepo and Workspace Files
+# =============================
+.turbo/
+.rush/
+nx-cache/
+.nx/cache/
+.nx/workspace-data/
+
+# Environment and Configuration
+# =============================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+
+# TypeScript and Build Cache
+# ===========================
+*.tsbuildinfo
+.tsbuildinfo
+tsconfig.tsbuildinfo
+.typescript/
+
+# Bundler and Build Tool Cache
+# =============================
+.cache/
+.parcel-cache/
+.rollup.cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.swc/
+.babel-cache/
+.vite/
+.webpack/
+
+# Testing and Coverage
+# ====================
+coverage/
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+test-results.xml
+junit.xml
+.jest-cache/
+
+# Linting and Formatting Cache
+# =============================
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# Documentation and Demo Sites
+# =============================
+.docusaurus/
+.vuepress/dist/
+.vitepress/dist/
+.gitbook/
+
+# Runtime and Process Files
+# ==========================
+pids/
+*.pid
+*.seed
+*.pid.lock
+.node_repl_history
+
+# Package Archives
+# ================
+*.tgz
+*.tar.gz
+*.zip
+
+# IDE and Editor Files
+# ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+.metadata/
+
+# OS Generated Files
+# ==================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Component Library Specific
+# ===========================
+# Size analysis reports
+bundle-analyzer-report.html
+bundle-report.html
+webpack-bundle-analyzer-report.html
+.size-limit.json
+size-report.json
+
+# Storybook
+storybook-static/
+.storybook/public/
+.out/
+
+# Package publishing
+*.tgz
+.changeset/*.json
+
+# Performance and Profiling
+# ==========================
+.clinic/
+isolate-*.log
+v8-compile-cache-*/
+
+# Temporary Files and Directories
+# ================================
+tmp/
+temp/
+.tmp/
+.temp/
+scratch/
+
+# Development Servers and Local Registry
+# =======================================
+verdaccio/
+storage/
+.verdaccio/
+
+# Generated Files (DO NOT EDIT)
+# ==============================
+# Auto-generated component exports
+**/generated/
+**/auto-generated/
+
+# Build artifacts for different formats
+**/*.d.ts.map
+**/*.js.map
+
+# Component library demos and examples
+examples/**/dist/
+examples/**/build/
+examples/**/.next/
+
+# Documentation artifacts
+docs/api/
+docs/dist/
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Local development overrides
+.local/
+local/
+
+# Performance benchmarks
+benchmarks/results/
+.benchmarks/
+
+# Database files (if using local dev DB)
+*.sqlite
+*.db
+
+# Lock files (uncomment if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Custom ignore patterns for OptimUI
+# ===================================
+# Bundle size reports and analysis
+BUNDLE_*.md
+OPTIMIZATION_*.md
+COMPETITIVE_*.md
+PHASE_*.md
+
+# Development scripts (if temporary)
+analyze-*.js
+apply-*.js
+debug-*.js
+diagnostic-*.js
+estimate-*.js
+implement-*.js
+update-*.js
+validate-*.js
+comprehensive-*.js
+simple-*.js
+
+# Shell scripts for automation
+*.sh
+
+# Analysis and optimization reports
+*_ANALYSIS.md
+*_REPORT.md
+*_SUMMARY.md
+*_STATUS.md
+*_COMPLETE.md
+*_IMPLEMENTATION.md
+*_ACHIEVEMENT.md
+*_RESULTS.md
+*_FINAL_*.md

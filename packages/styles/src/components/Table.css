@@ -1,0 +1,136 @@
+.optimui-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--optimui-color-background);
+  border-radius: var(--optimui-border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.optimui-table th,
+.optimui-table td {
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--optimui-color-border);
+}
+
+.optimui-table th {
+  background-color: var(--optimui-color-background-disabled);
+  font-weight: 600;
+  color: var(--optimui-color-text-primary);
+  font-size: var(--optimui-text-sm);
+}
+
+.optimui-table tr:hover {
+  background-color: var(--optimui-color-background-disabled);
+}
+
+/* List Component (Future) */
+.optimui-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--optimui-color-background);
+  border-radius: var(--optimui-border-radius-md);
+  overflow: hidden;
+}
+
+.optimui-list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--optimui-space-3) var(--optimui-space-4);
+  border-bottom: 1px solid var(--optimui-color-border);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.optimui-list-item:last-child {
+  border-bottom: none;
+}
+
+.optimui-list-item:hover {
+  background-color: var(--optimui-color-background-disabled);
+}
+
+.optimui-list-item-interactive {
+  cursor: pointer;
+}
+
+.optimui-list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.optimui-list-item-title {
+  font-weight: 500;
+  color: var(--optimui-color-text-primary);
+  line-height: 1.5;
+}
+
+.optimui-list-item-subtitle {
+  font-size: var(--optimui-text-sm);
+  color: var(--optimui-color-text-secondary);
+  margin-top: var(--optimui-space-1);
+}
+
+.optimui-list-item-icon {
+  margin-right: var(--optimui-space-3);
+  flex-shrink: 0;
+}
+
+.optimui-list-item-actions {
+  margin-left: var(--optimui-space-3);
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .optimui-card-header,
+  .optimui-card-content,
+  .optimui-card-footer {
+    padding: var(--optimui-space-3);
+  }
+  
+  .optimui-card-lg .optimui-card-header,
+  .optimui-card-lg .optimui-card-content,
+  .optimui-card-lg .optimui-card-footer {
+    padding: var(--optimui-space-4);
+  }
+  
+  .optimui-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--optimui-space-2);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .optimui-card {
+    border-width: 2px;
+  }
+  
+  .optimui-card:focus-within {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .optimui-card,
+  .optimui-card-interactive,
+  .optimui-card-clickable,
+  .optimui-list-item {
+    transition: none;
+  }
+  
+  .optimui-card-interactive:hover,
+  .optimui-card-clickable:hover {
+    transform: none;
+  }
+  
+  .optimui-card-loading::after {
+    animation: none;
+  }
+}/* DataTable Styles - High-performance virtualized table */
+
+/* Container styles */

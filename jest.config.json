@@ -1,0 +1,48 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+  "moduleNameMapping": {
+    "^@optimui/components$": "<rootDir>/packages/components/src/index.ts",
+    "^@optimui/components/(.*)$": "<rootDir>/packages/components/src/$1",
+    "^@optimui/utils$": "<rootDir>/packages/utils/src/index.ts",
+    "^@optimui/utils/(.*)$": "<rootDir>/packages/utils/src/$1",
+    "^@optimui/core$": "<rootDir>/packages/core/src/index.ts",
+    "^@optimui/tokens$": "<rootDir>/packages/tokens/src/index.ts",
+    "^@optimui/styles$": "<rootDir>/packages/styles/src/index.ts",
+    "^@optimui/icons$": "<rootDir>/packages/icons/src/index.ts"
+  },
+  "transform": {
+    "^.+\\.(ts|tsx)$": ["@swc/jest", {
+      "jsc": {
+        "parser": {
+          "syntax": "typescript",
+          "tsx": true
+        },
+        "transform": {
+          "react": {
+            "runtime": "automatic"
+          }
+        }
+      }
+    }]
+  },
+  "testMatch": [
+    "<rootDir>/packages/**/src/**/*.test.{ts,tsx}",
+    "<rootDir>/apps/**/src/**/*.test.{ts,tsx}",
+    "<rootDir>/apps/**/__tests__/**/*.{ts,tsx}"
+  ],
+  "collectCoverageFrom": [
+    "packages/*/src/**/*.{ts,tsx}",
+    "!packages/*/src/**/*.d.ts",
+    "!packages/*/src/**/index.ts"
+  ],
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["text", "lcov", "html"],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+  "testPathIgnorePatterns": [
+    "<rootDir>/node_modules/",
+    "<rootDir>/dist/",
+    "<rootDir>/build/"
+  ]
+}

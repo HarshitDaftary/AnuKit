@@ -1,0 +1,53 @@
+{
+  "name": "@optimui/styles",
+  "version": "0.1.0",
+  "description": "CSS styling system for OptimUI components",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./globals.css": "./dist/globals.css",
+    "./components.css": "./dist/components.css",
+    "./utilities.css": "./dist/utilities.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js && npm run build:css",
+    "build:css": "node scripts/build-css.js",
+    "dev": "rollup -c rollup.config.js --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "clean": "rm -rf dist",
+    "size": "bundlesize"
+  },
+  "dependencies": {
+    "@optimui/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/globals.css",
+      "maxSize": "8KB"
+    },
+    {
+      "path": "./dist/components.css",
+      "maxSize": "25KB"
+    }
+  ]
+}

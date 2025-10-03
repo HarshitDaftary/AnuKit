@@ -1,0 +1,142 @@
+import React, { forwardRef } from 'react';
+import { cn } from '@optimui/utils';
+import { encodeSizeMode } from '@optimui/utils/sizeMode';
+
+const lib = "optimui";
+
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Visual variant of the card */
+  variant?: 'default' | 'outlined' | 'elevated' | 'ghost';
+  
+  /** Size of the card */
+  size?: 'sm' | 'md' | 'lg';
+  
+  /** Whether card is interactive (clickable) */
+  interactive?: boolean;
+  
+  /** Whether card should take full width */
+  fullWidth?: boolean;
+  
+  /** Card header content */
+  header?: React.ReactNode;
+  
+  /** Card footer content */
+  footer?: React.ReactNode;
+  
+  /** Card image/media content */
+  media?: React.ReactNode;
+  
+  /** Loading state */
+  loading?: boolean;
+  
+  /** Disabled state */
+  disabled?: boolean;
+}
+
+const l_prx = `${lib}-card`
+
+// Size-based CSS classes
+const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
+  switch (size) {
+    case 'sm':
+      return `${l_prx}-sm`;
+    case 'lg':
+      return `${l_prx}-lg`;
+    default:
+      return `${l_prx}-md`;
+  }
+};
+
+// Variant-based CSS classes
+const getVariantClasses = (variant: 'default' | 'outlined' | 'elevated' | 'ghost') => {
+  switch (variant) {
+    case 'outlined':
+      return `${l_prx}-outlined`;
+    case 'elevated':
+      return `${l_prx}-elevated`;
+    case 'ghost':
+      return `${l_prx}-ghost`;
+    default:
+      return `${l_prx}-default`;
+  }
+};
+
+/* @__PURE__ */
+const Card = forwardRef<HTMLDivElement, CardProps>(({
+  variant = 'default',
+  size = 'md',
+  interactive = false,
+  fullWidth = false,
+  header,
+  footer,
+  media,
+  loading = false,
+  disabled = false,
+  children,
+  className = '',
+  onClick,
+  ...props
+}, ref) => {
+  // Build CSS classes
+  const cardClasses = cn(
+    l_prx,
+    getSizeClasses(size),
+    getVariantClasses(variant),
+    interactive && `${l_prx}-interactive`,
+    fullWidth && `${l_prx}-full-width`,
+    loading && `${l_prx}-loading`,
+    disabled && `${l_prx}-disabled`,
+    className
+  );
+  
+  // Determine if we should render as button for accessibility
+  const Component = interactive && onClick ? 'button' : 'div';
+  const isButton = Component === 'button';
+
+  return (
+    <Component
+      ref={ref as any}
+      className={cardClasses}
+      onClick={disabled ? undefined : onClick}
+      disabled={isButton ? disabled : undefined}
+      tabIndex={interactive && !disabled ? 0 : undefined}
+      role={interactive && !isButton ? 'button' : undefined}
+      aria-disabled={disabled}
+      {...props}
+    >
+      {loading && (
+        <div className={`${l_prx}-loading-overlay`}>
+          <div className={`${l_prx}-spinner`} aria-label="Loading" />
+        </div>
+      )}
+      
+      {media && (
+        <div className={`${l_prx}-media`}>
+          {media}
+        </div>
+      )}
+      
+      {header && (
+        <div className={`${l_prx}-header`}>
+          {header}
+        </div>
+      )}
+      
+      {children && (
+        <div className={`${l_prx}-content`}>
+          {children}
+        </div>
+      )}
+      
+      {footer && (
+        <div className={`${l_prx}-footer`}>
+          {footer}
+        </div>
+      )}
+    </Component>
+  );
+});
+
+Card.displayName = 'Card';
+
+export { Card };
