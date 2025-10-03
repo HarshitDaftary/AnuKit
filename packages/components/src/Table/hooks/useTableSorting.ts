@@ -83,8 +83,8 @@ export const useTableSorting = <T,>({
       const bValue = getValue(b);
       
       // Optimized null handling
-      if (aValue == null) return bValue == null ? 0 : 1;
-      if (bValue == null) return -1;
+      if (aValue === null || aValue === undefined) return bValue === null || bValue === undefined ? 0 : 1;
+      if (bValue === null || bValue === undefined) return -1;
       
       // Type-specific comparison
       if (typeof aValue === 'string' && typeof bValue === 'string') {

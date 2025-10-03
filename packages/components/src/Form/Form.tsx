@@ -58,7 +58,7 @@ export const useFormField = (name: string, rules?: ValidationRule) => {
   const context = useFormContext();
   const fieldState = context.formState[name] || {
     value: '',
-    [encodeSizeMode('error')]: undefined,
+    error: undefined,
     touched: false,
     dirty: false,
   };
@@ -142,7 +142,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
     Object.keys(initialValues).forEach(key => {
       initialState[key] = {
         value: initialValues[key],
-        [encodeSizeMode('error')]: undefined,
+        error: undefined,
         touched: false,
         dirty: false,
       };
@@ -216,7 +216,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
           ...prev[name],
           value,
           dirty: true,
-          [encodeSizeMode('error')]: mode === 'onChange' ? validateField(name) : prev[name]?.error,
+          error: mode === 'onChange' ? validateField(name) : prev[name]?.error,
         },
       };
       return newState;
@@ -240,7 +240,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
         [name]: {
           ...prev[name],
           touched,
-          [encodeSizeMode('error')]: mode === 'onBlur' && touched ? validateField(name) : prev[name]?.error,
+          error: mode === 'onBlur' && touched ? validateField(name) : prev[name]?.error,
         },
       };
       return newState;
@@ -252,7 +252,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
     Object.keys(initialValues).forEach(key => {
       resetState[key] = {
         value: initialValues[key],
-        [encodeSizeMode('error')]: undefined,
+        error: undefined,
         touched: false,
         dirty: false,
       };
@@ -286,7 +286,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
       Object.keys(formState).forEach(name => {
         errorState[name] = {
           ...formState[name],
-          [encodeSizeMode('error')]: errors[name],
+          error: errors[name],
           touched: true,
         };
       });
@@ -310,7 +310,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
           Object.keys(formState).forEach(name => {
             errorState[name] = {
               ...formState[name],
-              [encodeSizeMode('error')]: errors[name],
+              error: errors[name],
             };
           });
           setFormState(prev => ({ ...prev, ...errorState }));
