@@ -212,7 +212,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(({
       return (
         <div 
           key={`divider-${item.id}`} 
-          className={`${l_prx}-divider`
+          className={`${l_prx}-divider`}
           role="separator"
         />
       );
@@ -292,7 +292,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(({
       {trigger && (
         <button
           ref={triggerRef}
-          className={`${l_prx}-trigger`
+          className={`${l_prx}-trigger`}
           aria-expanded={isOpen}
           aria-haspopup="menu"
           onClick={() => handleOpenChange(!isOpen)}
@@ -306,7 +306,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(({
         <>
           {modal && (
             <div 
-              className={`${l_prx}-overlay`
+              className={`${l_prx}-overlay`}
               onClick={() => handleOpenChange(false)}
             />
           )}

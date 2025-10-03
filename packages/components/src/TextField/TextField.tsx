@@ -138,7 +138,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
         return `${l_prx}-filled`;
       case 'success':
         return `${l_prx}-success`;
-      [encodeSizeMode('default')]:
+      default:
         return `${l_prx}-default`;
     }
   };
@@ -207,7 +207,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
       {label && (
         <label
           htmlFor={fieldId}
-          className={`${l_prx}-label`
+          className={`${l_prx}-label`}
         >
           {label}
         </label>
@@ -257,7 +257,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
           {loading && (
             <div className={`${l_prx}-spinner`} aria-label="Loading">
               <svg
-                className={`${lib}-spinner`
+                className={`${lib}-spinner`}
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -293,7 +293,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
           {clearable && hasValue && !loading && !disabled && !readOnly && (
             <button
               type="button"
-              className={`${l_prx}-clear`
+              className={`${l_prx}-clear`}
               onClick={handleClear}
               aria-label="Clear input"
               tabIndex={-1}
@@ -313,7 +313,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
           {showPasswordToggle && type === 'password' && !loading && (
             <button
               type="button"
-              className={`${l_prx}-password-toggle`
+              className={`${l_prx}-password-toggle`}
               onClick={togglePasswordVisibility}
               aria-label={showPassword ? 'Hide password' : 'Show password'}
               tabIndex={-1}
@@ -371,7 +371,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
           {error && (
             <div
               id={errorId}
-              className={`${l_prx}-error`
+              className={`${l_prx}-error`}
               role="alert"
               aria-live="polite"
             >
@@ -382,7 +382,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
           {helperText && !error && (
             <div
               id={helperTextId}
-              className={`${l_prx}-helper`
+              className={`${l_prx}-helper`}
             >
               {helperText}
             </div>

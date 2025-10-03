@@ -96,7 +96,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
             <img
               src={user.src}
               alt={user.alt || user.name || ''}
-              className={`${lib}-avatar-group-image`
+              className={`${lib}-avatar-group-image`}
               style={{
                 width: '100%',
                 height: '100%',
@@ -105,7 +105,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
             />
           ) : (
             <div
-              className={`${lib}-avatar-group-initials`
+              className={`${lib}-avatar-group-initials`}
               style={{
                 width: '100%',
                 height: '100%',

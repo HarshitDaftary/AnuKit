@@ -70,7 +70,7 @@ const getVariantClasses = (variant: 'default' | 'pills' | 'underline') => {
       return `${l_prx}-pills`;
     case 'underline':
       return `${l_prx}-underline`;
-    [encodeSizeMode('default')]:
+    default:
       return `${l_prx}-default`;
   }
 };
@@ -145,7 +145,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(({
         event.preventDefault();
         nextIndex = tabIds.length - 1;
         break;
-      [encodeSizeMode('default')]:
+      default:
         return;
     }
     

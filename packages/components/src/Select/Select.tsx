@@ -116,7 +116,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       {label && (
         <label
           htmlFor={selectId}
-          className={`${lib}-label`
+          className={`${lib}-label`}
         >
           {label}
         </label>
@@ -186,7 +186,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       {error && (
         <div
           id={errorId}
-          className={`${lib}-form-error`
+          className={`${lib}-form-error`}
           role="alert"
           aria-live="polite"
         >
@@ -197,7 +197,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       {helperText && !error && (
         <div
           id={helperTextId}
-          className={`${lib}-form-helper`
+          className={`${lib}-form-helper`}
         >
           {helperText}
         </div>

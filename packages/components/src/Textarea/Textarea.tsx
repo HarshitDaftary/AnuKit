@@ -144,7 +144,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
       {label && (
         <label
           htmlFor={textareaId}
-          className={`${lib}-label`
+          className={`${lib}-label`}
         >
           {label}
         </label>
@@ -171,7 +171,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
             {error && (
               <div
                 id={errorId}
-                className={`${lib}-form-error`
+                className={`${lib}-form-error`}
                 role="alert"
                 aria-live="polite"
               >
@@ -182,7 +182,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
             {helperText && !error && (
               <div
                 id={helperTextId}
-                className={`${lib}-form-helper`
+                className={`${lib}-form-helper`}
               >
                 {helperText}
               </div>

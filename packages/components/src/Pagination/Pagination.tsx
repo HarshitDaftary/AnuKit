@@ -332,7 +332,7 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
                 value={itemsPerPage}
                 onChange={handleItemsPerPageChange}
                 disabled={disabled}
-                className={`${l_prx}-page-size-select`
+                className={`${l_prx}-page-size-select`}
               >
                 {pageSizeOptions.map((option) => (
                   <option key={option} value={option}>
@@ -400,14 +400,14 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
                 value={jumpToPageValue}
                 onChange={(e) => setJumpToPageValue(e.target.value)}
                 disabled={disabled}
-                className={`${l_prx}-jump-input`
+                className={`${l_prx}-jump-input`}
                 placeholder="1"
               />
             </label>
             <button
               type="submit"
               disabled={disabled || !jumpToPageValue}
-              className={`${l_prx}-jump-button`
+              className={`${l_prx}-jump-button`}
             >
               Go
             </button>

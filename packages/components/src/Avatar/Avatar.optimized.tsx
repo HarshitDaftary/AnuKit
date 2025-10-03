@@ -209,7 +209,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     if (fallbackIcon) {
       return (
         <div
-          className={`${lib}-avatar-fallback`
+          className={`${lib}-avatar-fallback`}
           style={{
             backgroundColor: backgroundColor || avatarState.backgroundColor,
             color: textColor || 'white',
@@ -228,7 +228,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     // Default user icon
     return (
       <div
-        className={`${lib}-avatar-fallback`
+        className={`${lib}-avatar-fallback`}
         style={{
           backgroundColor: backgroundColor || avatarState.backgroundColor,
           color: textColor || 'white',

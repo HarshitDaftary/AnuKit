@@ -321,7 +321,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
         resetForm();
       }
     } catch (error) {
-      console.error('Form submission [encodeSizeMode('error')]:', error);
+      console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }

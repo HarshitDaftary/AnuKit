@@ -338,7 +338,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
       {label && (
         <label
           htmlFor={fieldId}
-          className={`${l_prx}-label`
+          className={`${l_prx}-label`}
         >
           {label}
         </label>
@@ -351,7 +351,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           type="text"
           value={inputValue}
           placeholder={placeholder || format.toLowerCase()}
-          className={`${l_prx}-input`
+          className={`${l_prx}-input`}
           disabled={disabled}
           readOnly={readOnly}
           aria-invalid={hasError}
@@ -371,7 +371,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
         <button
           ref={buttonRef}
           type="button"
-          className={`${l_prx}-trigger`
+          className={`${l_prx}-trigger`}
           onClick={toggleCalendar}
           disabled={disabled || readOnly}
           aria-label="Open calendar"
@@ -382,7 +382,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           {loading ? (
             <div className={`${l_prx}-spinner`}>
               <svg
-                className={`${lib}-spinner`
+                className={`${lib}-spinner`}
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -458,7 +458,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
         <div
           ref={calendarRef}
           id={calendarId}
-          className={`${l_prx}-calendar`
+          className={`${l_prx}-calendar`}
           role="dialog"
           aria-label="Choose date"
           aria-modal="true"
@@ -466,7 +466,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           <div className={`${l_prx}-header`}>
             <button
               type="button"
-              className={`${l_prx}-nav-button`
+              className={`${l_prx}-nav-button`}
               onClick={() => navigateMonth('prev')}
               aria-label="Previous month"
             >
@@ -487,7 +487,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
             
             <button
               type="button"
-              className={`${l_prx}-nav-button`
+              className={`${l_prx}-nav-button`}
               onClick={() => navigateMonth('next')}
               aria-label="Next month"
             >
@@ -550,7 +550,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
         {error && (
           <div
             id={errorId}
-            className={`${l_prx}-error`
+            className={`${l_prx}-error`}
             role="alert"
             aria-live="polite"
           >
@@ -561,7 +561,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
         {helperText && !error && (
           <div
             id={helperTextId}
-            className={`${l_prx}-helper`
+            className={`${l_prx}-helper`}
           >
             {helperText}
           </div>

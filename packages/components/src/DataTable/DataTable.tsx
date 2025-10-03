@@ -235,7 +235,7 @@ const DataTable = <T,>({
         ref={containerRef}
         style={containerStyle}
         onScroll={handleScroll}
-        className={`${l_prx}-virtual-container`
+        className={`${l_prx}-virtual-container`}
       >
         <div style={innerStyle}>
           <div style={contentStyle}>
@@ -292,7 +292,7 @@ const DataTable = <T,>({
           {infiniteScroll.hasMore ? (
             <div
               ref={loadMoreRef}
-              className={`${l_prx}-load-more`
+              className={`${l_prx}-load-more`}
             >
               {infiniteScroll.loading ? loadMoreIndicator : null}
             </div>
@@ -344,7 +344,7 @@ export const VirtualTableRow = <T,>({
         return (
           <div
             key={column.id}
-            className={`${l_prx}-virtual-cell`
+            className={`${l_prx}-virtual-cell`}
             style={{
               width: column.width,
               minWidth: column.minWidth,

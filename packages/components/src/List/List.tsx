@@ -222,7 +222,7 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
       return (
         <li ref={ref} className={classes} style={style} {...props}>
           <button
-            className={`${l_prx}-item-button-wrapper`
+            className={`${l_prx}-item-button-wrapper`}
             onClick={onClick}
             disabled={disabled}
           >
@@ -333,7 +333,7 @@ export const NestedList: React.FC<NestedListProps> = ({
           <div className={`${lib}-nested-list-controls`}>
             {trailing}
             <button
-              className={`${lib}-nested-list-toggle`
+              className={`${lib}-nested-list-toggle`}
               onClick={handleToggle}
               disabled={disabled}
               aria-expanded={expanded}
