@@ -1,0 +1,10 @@
+{
+  "name": "@optimui/tsconfig",
+  "version": "0.1.0",
+  "description": "TypeScript configuration for OptimUI projects",
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-library.json"
+  ]
+}

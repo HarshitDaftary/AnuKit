@@ -1,0 +1,29 @@
+{
+  "name": "@optimui/build-tools",
+  "version": "0.1.0",
+  "description": "Shared build tools and configurations for OptimUI packages",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "configs"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.2.0",
+    "rollup-plugin-swc3": "^0.10.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-filesize": "^10.0.0",
+    "bundlesize": "^0.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "typescript": "^5.2.2"
+  }
+}
