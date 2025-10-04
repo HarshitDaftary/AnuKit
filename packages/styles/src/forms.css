@@ -41,9 +41,9 @@
   font-weight: 500 !important;
   color: rgba(0, 0, 0, 0.88) !important;
   line-height: 1.5715 !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 0 !important;
   margin-top: 0 !important;
-  padding-bottom: 4px !important;
+  padding-bottom: 0 !important;
 }
 
 .anukit-form-label-required {
@@ -379,9 +379,9 @@
   font-weight: 500 !important;
   color: rgba(0, 0, 0, 0.88) !important;
   line-height: 1.5715 !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 0 !important;
   margin-top: 0 !important;
-  padding-bottom: 4px !important;
+  padding-bottom: 0 !important;
 }
 
 .anukit-textfield-container {
