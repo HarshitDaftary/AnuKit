@@ -2,6 +2,17 @@
 
 A comprehensive example application built with AnuKit components, showcasing how to build a beautiful, production-ready medicine tracking application with plastic/glassmorphism UI and smooth animations.
 
+## Screenshots
+
+### Welcome Screen
+![Welcome Screen](https://github.com/user-attachments/assets/6ac2d815-beb9-40a5-8ec8-adb30a0bb5a7)
+
+### Medicine List View
+![Medicine List](https://github.com/user-attachments/assets/fca4d784-a027-43c7-8b38-56be69840590)
+
+### Search Functionality
+![Search Feature](https://github.com/user-attachments/assets/2c66ee3b-efab-4cf2-8087-34d94e4031bc)
+
 ## Features
 
 ### 🔐 Authentication
