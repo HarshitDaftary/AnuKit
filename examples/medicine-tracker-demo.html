@@ -111,10 +111,10 @@
     
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.011em;
     }
 
     /* Glassmorphism styles */
@@ -145,36 +145,36 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
       color: white;
-      box-shadow: 0 4px 15px 0 rgba(102, 126, 234, 0.4);
+      box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.25);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 6px 20px 0 rgba(102, 126, 234, 0.6);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 0 rgba(99, 102, 241, 0.35);
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
       color: white;
-      box-shadow: 0 4px 15px 0 rgba(240, 147, 251, 0.4);
+      box-shadow: 0 2px 8px 0 rgba(236, 72, 153, 0.25);
     }
 
     .btn-secondary:hover {
-      box-shadow: 0 6px 20px 0 rgba(240, 147, 251, 0.6);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 0 rgba(236, 72, 153, 0.35);
+      transform: translateY(-1px);
     }
 
     .btn-danger {
-      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
       color: white;
-      box-shadow: 0 4px 15px 0 rgba(250, 112, 154, 0.4);
+      box-shadow: 0 2px 8px 0 rgba(249, 115, 22, 0.25);
     }
 
     .btn-danger:hover {
-      box-shadow: 0 6px 20px 0 rgba(250, 112, 154, 0.6);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 0 rgba(249, 115, 22, 0.35);
+      transform: translateY(-1px);
     }
 
     .btn-sm {
@@ -280,7 +280,7 @@
       border-radius: 9999px;
       font-size: 0.875rem;
       font-weight: 600;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
       color: white;
     }
 
@@ -289,7 +289,7 @@
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -527,9 +527,9 @@
       
       return `
         <div class="space-y-6">
-          <!-- Search Bar -->
+          <!-- Search Bar and Add Button -->
           <div class="glass-card rounded-2xl shadow-xl p-6">
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex items-center gap-4">
               <input
                 type="text"
                 class="input-field flex-1"
@@ -544,7 +544,7 @@
           </div>
 
           <!-- Count Badge -->
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2" style="max-width: 900px; margin: 0 auto;">
             <span class="badge">
               ${filtered.length} ${filtered.length === 1 ? 'Medicine' : 'Medicines'}
             </span>
@@ -555,9 +555,9 @@
             ` : ''}
           </div>
 
-          <!-- Medicine Cards -->
+          <!-- Medicine Cards with side padding -->
           ${filtered.length === 0 ? `
-            <div class="glass-card rounded-2xl p-12 text-center">
+            <div class="glass-card rounded-2xl p-12 text-center" style="max-width: 900px; margin: 0 auto;">
               <div class="text-6xl mb-4">📋</div>
               <h3 class="text-xl font-semibold text-gray-900 mb-2">
                 ${state.searchQuery ? 'No medicines found' : 'No medicines yet'}
@@ -567,7 +567,7 @@
               </p>
             </div>
           ` : `
-            <div class="grid gap-4">
+            <div class="grid gap-4" style="max-width: 900px; margin: 0 auto;">
               ${filtered.map((medicine, index) => `
                 <div class="glass-card rounded-2xl p-6 card-item" style="animation-delay: ${index * 50}ms;">
                   <div class="flex items-start justify-between">
