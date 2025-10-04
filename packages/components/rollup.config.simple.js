@@ -5,7 +5,16 @@ import filesize from 'rollup-plugin-filesize';
 
 const createOptimizedConfig = (input, file, format) => ({
   input,
-  external: ['react', 'react-dom', 'react/jsx-runtime'],
+  external: [
+    'react', 
+    'react-dom', 
+    'react/jsx-runtime',
+    '@optimui/utils',
+    '@optimui/utils/sizeMode',
+    '@optimui/core',
+    '@optimui/core/providers/SSRProvider',
+    '@optimui/core/hooks/accessibility-hooks'
+  ],
   output: {
     file,
     format,
@@ -21,7 +30,8 @@ const createOptimizedConfig = (input, file, format) => ({
       tsconfig: './tsconfig.json',
       declaration: true,
       declarationDir: './dist',
-      rootDir: './src'
+      rootDir: './src',
+      exclude: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx']
     }),
     terser({
       compress: {
