@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cn, useReducedMotion, useSSRSafeId } from '@anukit/utils';
+import { useReducedMotion, useSSRSafeId, CSS_UTILITIES, cn } from '@anukit/utils';
 
 const lib = "anukit";
 
@@ -41,16 +41,8 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
   
   const baseClasses = [
     l_prx,
-    'inline-flex',
-    'items-center',
-    'justify-center',
-    'font-medium',
-    'rounded-md',
-    'transition-colors',
-    'focus-visible:outline',
-    'focus-visible:outline-2',
-    'focus-visible:outline-offset-2',
-    'disabled:opacity-50',
+    CSS_UTILITIES.BUTTON_BASE,
+    CSS_UTILITIES.DISABLED,
     'disabled:pointer-events-none',
     // Add reduced motion support
     ...(reducedMotion ? ['transition-none'] : [])
@@ -60,37 +52,32 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
     switch (variant) {
       case 'primary':
         return [
-          'bg-blue-600',
-          'text-white',
-          'hover:bg-blue-700',
+          CSS_UTILITIES.PRIMARY_BG,
+          CSS_UTILITIES.PRIMARY_TEXT,
           'focus-visible:outline-blue-600'
         ];
       case 'secondary':
         return [
-          'bg-gray-100',
-          'text-gray-900',
-          'hover:bg-gray-200',
+          CSS_UTILITIES.SECONDARY_BG,
+          CSS_UTILITIES.SECONDARY_TEXT,
           'focus-visible:outline-gray-600'
         ];
       case 'danger':
         return [
-          'bg-red-600',
-          'text-white',
-          'hover:bg-red-700',
+          CSS_UTILITIES.DANGER_BG,
+          CSS_UTILITIES.DANGER_TEXT,
           'focus-visible:outline-red-600'
         ];
       case 'ghost':
         return [
-          'bg-transparent',
-          'text-gray-700',
-          'hover:bg-gray-100',
+          CSS_UTILITIES.GHOST_BG,
+          CSS_UTILITIES.GHOST_TEXT,
           'focus-visible:outline-gray-600'
         ];
       default:
         return [
-          'bg-blue-600',
-          'text-white',
-          'hover:bg-blue-700',
+          CSS_UTILITIES.PRIMARY_BG,
+          CSS_UTILITIES.PRIMARY_TEXT,
           'focus-visible:outline-blue-600'
         ];
     }
@@ -99,13 +86,13 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
   const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
     switch (size) {
       case 'sm':
-        return ['px-3', 'py-1.5', 'text-sm'];
+        return [CSS_UTILITIES.PADDING_SM, CSS_UTILITIES.TEXT_SM];
       case 'md':
-        return ['px-4', 'py-2', 'text-sm'];
+        return [CSS_UTILITIES.PADDING_MD, CSS_UTILITIES.TEXT_SM];
       case 'lg':
-        return ['px-6', 'py-3', 'text-base'];
+        return [CSS_UTILITIES.PADDING_LG, CSS_UTILITIES.TEXT_BASE];
       default:
-        return ['px-4', 'py-2', 'text-sm'];
+        return [CSS_UTILITIES.PADDING_MD, CSS_UTILITIES.TEXT_SM];
     }
   };
 
@@ -134,7 +121,7 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
       {loading && (
         <>
           <svg
-            className="animate-spin -ml-1 mr-2 h-4 w-4"
+            className={`${CSS_UTILITIES.SPINNER} -ml-1 mr-2 ${CSS_UTILITIES.ICON_SM}`}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

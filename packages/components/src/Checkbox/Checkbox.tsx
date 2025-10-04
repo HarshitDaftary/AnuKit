@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { useSSRSafeId } from '@anukit/core/providers/SSRProvider';
-import { encodeSizeMode } from '@anukit/utils';
+import { encodeSizeMode, CSS_UTILITIES } from '@anukit/utils';
 
 const lib = "anukit";
 const l_prx = `${lib}-checkbox`;
@@ -99,13 +99,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
     'rounded',
     'border-2',
     'bg-white',
-    'transition-all',
-    'duration-200',
+    CSS_UTILITIES.TRANSITION_ALL,
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-offset-2',
-    'disabled:opacity-50',
-    'disabled:cursor-not-allowed',
+    CSS_UTILITIES.DISABLED,
     'cursor-pointer'
   ];
 

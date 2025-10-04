@@ -4,7 +4,7 @@
  */
 
 import React, { forwardRef } from 'react';
-import { useSSRSafeId, encodeSizeMode as enc } from '@anukit/utils';
+import { useSSRSafeId, encodeSizeMode as enc, cn, CSS_UTILITIES } from '@anukit/utils';
 
 const lib = "anukit";
 
@@ -44,17 +44,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   const hasSuccess = enc(variant) === enc('success');
 
   const baseClasses = [
-    'appearance-none',
-    'rounded-md',
-    'border',
-    'bg-white',
-    'transition-colors',
-    'duration-200',
-    'focus:outline-none',
-    'focus:ring-2',
-    'focus:ring-offset-2',
-    'disabled:opacity-50',
-    'disabled:cursor-not-allowed',
+    CSS_UTILITIES.INPUT_BASE,
+    CSS_UTILITIES.DISABLED,
     fullWidth ? 'w-full' : ''
   ];
 

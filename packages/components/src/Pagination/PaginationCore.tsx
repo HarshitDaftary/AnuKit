@@ -5,7 +5,7 @@
  */
 
 import React, { forwardRef } from 'react';
-import { cn } from '@anukit/utils';
+import { CSS_UTILITIES, cn } from '@anukit/utils';
 
 const lib = "anukit";
 const l_prx = `${lib}-pagination`;
@@ -134,7 +134,7 @@ const PaginationCore = /* @__PURE__ */ forwardRef<HTMLDivElement, PaginationCore
     'px-3 py-1 border border-gray-300 text-gray-700',
     'hover:bg-gray-50 focus:outline-none focus:ring-2',
     'focus:ring-blue-500 focus:border-blue-500',
-    'disabled:opacity-50 disabled:cursor-not-allowed',
+    CSS_UTILITIES.DISABLED,
     getSizeClasses(size)
   );
   
@@ -146,7 +146,8 @@ const PaginationCore = /* @__PURE__ */ forwardRef<HTMLDivElement, PaginationCore
   const containerClasses = cn(
     l_prx,
     `${l_prx}--${size}`,
-    'flex items-center space-x-1',
+    CSS_UTILITIES.FLEX_ITEMS_CENTER,
+    CSS_UTILITIES.SPACE_X_1,
     disabled && `${l_prx}--disabled`,
     className
   );

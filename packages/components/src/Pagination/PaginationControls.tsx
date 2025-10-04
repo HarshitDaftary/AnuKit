@@ -5,7 +5,7 @@
  */
 
 import React, { forwardRef, useState } from 'react';
-import { cn } from '@anukit/utils';
+import { CSS_UTILITIES, cn } from '@anukit/utils';
 
 const lib = "anukit";
 const l_prx = `${lib}-pagination-controls`;
@@ -110,7 +110,7 @@ const PaginationControls = /* @__PURE__ */ forwardRef<HTMLDivElement, Pagination
     'px-3 py-1 border border-gray-300 text-gray-700',
     'hover:bg-gray-50 focus:outline-none focus:ring-2',
     'focus:ring-blue-500 focus:border-blue-500',
-    'disabled:opacity-50 disabled:cursor-not-allowed',
+    CSS_UTILITIES.DISABLED,
     getSizeClasses(size)
   );
   
@@ -118,7 +118,7 @@ const PaginationControls = /* @__PURE__ */ forwardRef<HTMLDivElement, Pagination
     `${l_prx}-select`,
     'px-2 py-1 border border-gray-300 rounded-md',
     'focus:outline-none focus:ring-2 focus:ring-blue-500',
-    'disabled:opacity-50 disabled:cursor-not-allowed',
+    CSS_UTILITIES.DISABLED,
     getSizeClasses(size)
   );
   
@@ -126,14 +126,14 @@ const PaginationControls = /* @__PURE__ */ forwardRef<HTMLDivElement, Pagination
     `${l_prx}-input`,
     'w-16 px-2 py-1 border border-gray-300 rounded-md',
     'focus:outline-none focus:ring-2 focus:ring-blue-500',
-    'disabled:opacity-50 disabled:cursor-not-allowed',
+    CSS_UTILITIES.DISABLED,
     getSizeClasses(size)
   );
   
   const containerClasses = cn(
     l_prx,
     `${l_prx}--${size}`,
-    'flex items-center space-x-4',
+    CSS_UTILITIES.FLEX_CENTER_SPACE,
     disabled && `${l_prx}--disabled`,
     className
   );
