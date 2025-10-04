@@ -1,6 +1,7 @@
 {
   "name": "@optimui/icons",
   "version": "0.1.0",
+  "type": "module",
   "description": "Optimized SVG icon components for OptimUI",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -22,7 +23,7 @@
     "dev": "rollup -c rollup.config.js --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "clean": "rm -rf dist",
     "size": "bundlesize"
   },

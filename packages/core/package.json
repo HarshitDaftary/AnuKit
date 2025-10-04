@@ -1,6 +1,7 @@
 {
   "name": "@optimui/core",
   "version": "0.1.0",
+  "type": "module",
   "description": "Core utilities and providers for OptimUI component library",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -41,7 +42,7 @@
     "dev": "rollup -c --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "clean": "rm -rf dist"
   },

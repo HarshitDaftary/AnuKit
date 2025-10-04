@@ -87,12 +87,13 @@ export {
   formUtils,
 } from './utils/accessibility-utils';
 
-// Testing utilities
-export {
-  testSSRCompatibility,
-  testProgressiveEnhancement,
-  measureHydrationTime,
-  testSSRAccessibility,
-  testThemeCompatibility,
-  testResponsiveSSR,
-} from './testing/ssr-test-utils';
+// Testing utilities - Note: These require a .tsx runtime and are exported separately
+// Re-export from testing module when needed in test environments
+// export {
+//   testSSRCompatibility,
+//   testProgressiveEnhancement,
+//   measureHydrationTime,
+//   testSSRAccessibility,
+//   testThemeCompatibility,
+//   testResponsiveSSR,
+// } from './testing/ssr-test-utils';
