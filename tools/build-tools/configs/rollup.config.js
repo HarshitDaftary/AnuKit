@@ -44,7 +44,10 @@ export function createRollupConfig(pkg, options = {}) {
  * Creates a Rollup configuration for icon packages
  */
 export function createIconsRollupConfig(pkg) {
-  return createRollupConfig(pkg, {
+  const config = createRollupConfig(pkg, {
     external: ['react', 'react-dom']
   });
+  // Icons use JSX, so use .tsx extension
+  config.input = 'src/index.tsx';
+  return config;
 }
