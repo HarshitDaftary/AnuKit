@@ -4,10 +4,10 @@
  */
 
 import React, { useMemo, useCallback } from 'react';
-import { cn, isSameDay } from '@anukit/utils';
+import { cn, isSameDay, encodeSizeMode } from '@anukit/utils';
 
-const lib = "anukit";
-const l_prx = `${lib}-datepicker-calendar`;
+const cNam = `anukit-datepicker-calendar`;
+const enc = encodeSizeMode;
 
 export interface DatePickerCalendarProps {
   currentMonth: Date;
@@ -102,13 +102,13 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
   }, [firstDayOfWeek]);
 
   return (
-    <div className={cn(`${lib}-datepicker-calendar`, className)}>
+    <div className={enc(cn(cNam, className))}>
       {/* Calendar Header */}
-      <div className={`${lib}-datepicker-calendar-header`}>
+      <div className={enc(`${cNam}-header`)}>
         <button
           type="button"
           onClick={handlePreviousMonth}
-          className={`${lib}-datepicker-nav-button`}
+          className={enc(`${cNam}-nav-button`)}
           aria-label="Previous month"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -116,14 +116,14 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
           </svg>
         </button>
         
-        <div className={`${lib}-datepicker-month-year`}>
+        <div className={enc(`${cNam}-month-year`)}>
           {MONTH_NAMES[currentMonth.getMonth()]} {currentMonth.getFullYear()}
         </div>
         
         <button
           type="button"
           onClick={handleNextMonth}
-          className={`${lib}-datepicker-nav-button`}
+          className={enc(`${cNam}-nav-button`)}
           aria-label="Next month"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -132,14 +132,14 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
         </button>
       </div>
       {/* Calendar Grid */}
-      <div className={`${lib}-datepicker-calendar-grid`}>
+      <div className={enc(`${cNam}-grid`)}>
         {/* Day headers */}
-        <div className={`${lib}-datepicker-calendar-row anukit-datepicker-calendar-header-row`}>
+        <div className={enc(`${cNam}-row ${cNam}-header-row`)}>
           {showWeekNumbers && (
-            <div className={`${lib}-datepicker-week-number-header`}>Wk</div>
+            <div className={enc(`${cNam}-week-number-header`)}>Wk</div>
           )}
           {reorderedDayNames.map(day => (
-            <div key={day} className={`${lib}-datepicker-day-header`}>
+            <div key={day} className={enc(`${cNam}-day-header`)}>
               {day}
             </div>
           ))}
@@ -151,9 +151,9 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
           const weekDays = calendarDays.slice(weekStart, weekStart + 7);
           
           return (
-            <div key={weekIndex} className={`${lib}-datepicker-calendar-row`}>
+            <div key={weekIndex} className={enc(`${cNam}-row`)}>
               {showWeekNumbers && (
-                <div className={`${lib}-datepicker-week-number`}>
+                <div className={enc(`${cNam}-week-number`)}>
                   {getWeekNumber(weekDays[0])}
                 </div>
               )}
@@ -169,14 +169,14 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                     type="button"
                     onClick={() => handleDateClick(date)}
                     disabled={isDisabled}
-                    className={cn(
-                      `${lib}-datepicker-day`,
-                      isCurrentMonth && `${lib}-datepicker-day--current-month`,
-                      !isCurrentMonth && `${lib}-datepicker-day--other-month`,
-                      isSelected && `${lib}-datepicker-day--selected`,
-                      isDisabled && `${lib}-datepicker-day--disabled`,
-                      isToday && `${lib}-datepicker-day--today`
-                    )}
+                    className={enc(cn(
+                      `${cNam}-day`,
+                      isCurrentMonth && `${cNam}-day--current-month`,
+                      !isCurrentMonth && `${cNam}-day--other-month`,
+                      isSelected && `${cNam}-day--selected`,
+                      isDisabled && `${cNam}-day--disabled`,
+                      isToday && `${cNam}-day--today`
+                    ))}
                     aria-label={`${date.toDateString()}`}
                     aria-selected={isSelected || undefined}
                   >
