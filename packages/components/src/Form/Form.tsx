@@ -340,14 +340,12 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
   
   const formClasses = cn(
     l_prx,
-    {
-      [`${l_prx}--size-sm`]: size === 'sm',
-      [`${l_prx}--size-md`]: size === 'md',
-      [`${l_prx}--size-lg`]: size === 'lg',
-      [`${l_prx}--full-width`]: fullWidth,
-      [`${l_prx}--submitting`]: isSubmitting,
-      [`${l_prx}--has-errors`]: hasErrors,
-    },
+    size === 'sm' && `${l_prx}--size-sm`,
+    size === 'md' && `${l_prx}--size-md`,
+    size === 'lg' && `${l_prx}--size-lg`,
+    fullWidth && `${l_prx}--full-width`,
+    isSubmitting && `${l_prx}--submitting`,
+    hasErrors && `${l_prx}--has-errors`,
     className
   );
   

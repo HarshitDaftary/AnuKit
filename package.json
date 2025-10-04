@@ -21,7 +21,9 @@
     "dev:playground": "turbo run dev --filter=@optimui/playground",
     "lint": "turbo run lint",
     "lint:check": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+  "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+  "lint:strict": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings=0",
+  "codemod:cn": "pnpm dlx jscodeshift -t tools/codemods/cn-object-to-conditions.js 'packages/**/*.{ts,tsx,js,jsx}'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "turbo run test",
@@ -42,6 +44,7 @@
     "setup": "npm install && npm run build:packages"
   },
   "devDependencies": {
+    
     "@changesets/cli": "^2.26.2",
     "@swc/core": "^1.3.95",
     "@swc/jest": "^0.2.29",

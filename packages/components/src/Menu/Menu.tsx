@@ -223,7 +223,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(({
     return (
       <ItemComponent
         key={item.id}
-        ref={(el) => {
+        ref={(el: HTMLElement | null) => {
           if (el) {
             itemRefs.current.set(item.id, el);
           } else {

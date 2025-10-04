@@ -235,16 +235,7 @@ const Table = <T,>({
     );
   }, []);
   
-  // Render cell content
-  const renderCell = useCallback((row: T, column: ColumnDef<T>, rowIndex: number) => {
-    const value = getCellValue(row, column);
-    
-    if (column.cell) {
-      return column.cell({ value, row, column });
-    }
-    
-    return value;
-  }, [getCellValue]);
+  // (renderCell defined above)
   
   // Handle row click
   const handleRowClick = useCallback((row: T, index: number) => {
@@ -253,23 +244,19 @@ const Table = <T,>({
   
   const tableClasses = cn(
     l_prx,
-    {
-      [`${l_prx}--sm`]: size === 'sm',
-      [`${l_prx}--md`]: size === 'md',
-      [`${l_prx}--lg`]: size === 'lg',
-      [`${l_prx}--striped`]: variant === 'striped',
-      [`${l_prx}--bordered`]: variant === 'bordered',
-      [`${l_prx}--hoverable`]: hoverable,
-      [`${l_prx}--loading`]: loading,
-    },
+    size === 'sm' && `${l_prx}--sm`,
+    size === 'md' && `${l_prx}--md`,
+    size === 'lg' && `${l_prx}--lg`,
+    variant === 'striped' && `${l_prx}--striped`,
+    variant === 'bordered' && `${l_prx}--bordered`,
+    hoverable && `${l_prx}--hoverable`,
+    loading && `${l_prx}--loading`,
     className
   );
   
   const wrapperClasses = cn(
     `${l_prx}-wrapper`,
-    {
-      [`${l_prx}-wrapper--responsive`]: responsive,
-    }
+    responsive && `${l_prx}-wrapper--responsive`
   );
   
   return (
@@ -287,15 +274,13 @@ const Table = <T,>({
               return (
                 <th
                   key={column.id}
-                  className={cn(
-                    getTableCellClasses(column, `${lib}-table-header-cell`, [
-                      isSortable ? `${lib}-table-header-cell-sortable` : '',
-                      isSorted ? `${lib}-table-header-cell-sorted` : '',
-                      sortDirection === 'asc' ? `${lib}-table-header-cell-sorted-asc` : '',
-                      sortDirection === 'desc' ? `${lib}-table-header-cell-sorted-desc` : '',
-                    ].filter(Boolean))
-                  )}
-                  style={getTableCellStyles(column)}
+                  className={getColumnClasses(column, `${lib}-table-header-cell`, [
+                    isSortable ? `${lib}-table-header-cell-sortable` : '',
+                    isSorted ? `${lib}-table-header-cell-sorted` : '',
+                    sortDirection === 'asc' ? `${lib}-table-header-cell-sorted-asc` : '',
+                    sortDirection === 'desc' ? `${lib}-table-header-cell-sorted-desc` : '',
+                  ].filter(Boolean))}
+                  style={getColumnStyles(column)}
                   onClick={isSortable ? () => handleSortChange(column.id) : undefined}
                   role={isSortable ? 'button' : undefined}
                   tabIndex={isSortable ? 0 : undefined}
@@ -309,7 +294,7 @@ const Table = <T,>({
                     {column.headerCell ? column.headerCell({ column }) : column.header}
                     {isSortable && (
                       <span className={`${lib}-table-sort-icon`}>
-                        {createSortIcon(sortDirection)}
+                        {getSortIcon(sortDirection)}
                       </span>
                     )}
                   </div>
@@ -346,18 +331,16 @@ const Table = <T,>({
                   key={rowKey}
                   className={cn(
                     `${l_prx}-row`,
-                    {
-                      [`${l_prx}-row--selected`]: selected,
-                      [`${l_prx}-row--clickable`]: Boolean(onRowClick),
-                    }
+                    selected && `${l_prx}-row--selected`,
+                    Boolean(onRowClick) && `${l_prx}-row--clickable`
                   )}
                   onClick={() => handleRowClick(row, rowIndex)}
                 >
                   {processedColumns.map((column) => (
                     <td
                       key={column.id}
-                      className={getTableCellClasses(column, `${lib}-table-cell`)}
-                      style={getTableCellStyles(column)}
+                      className={getColumnClasses(column, `${lib}-table-cell`)}
+                      style={getColumnStyles(column)}
                     >
                       {renderCell(row, column, rowIndex)}
                     </td>
@@ -374,7 +357,7 @@ const Table = <T,>({
               {processedColumns.map((column) => (
                 <td
                   key={column.id}
-                  className={getTableCellClasses(column, `${lib}-table-footer-cell`)}
+                  className={getColumnClasses(column, `${lib}-table-footer-cell`)}
                 >
                   {column.footerCell ? column.footerCell({ column }) : ''}
                 </td>

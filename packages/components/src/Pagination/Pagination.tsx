@@ -19,11 +19,8 @@ interface PaginationConfig {
   /** Total number of items */
   totalItems: number;
   
-  /** Items per page *    </div>
-  );
-});
-
-Pagination.displayName = 'Pagination';temsPerPage: number;
+  /** Items per page */
+  itemsPerPage: number;
   
   /** Callback when page changes */
   onPageChange: (page: number) => void;
@@ -258,10 +255,8 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
         className={cn(
           `${l_prx}-page`,
           `${l_prx}-page-${size}`,
-          {
-            [`${l_prx}-page--active`]: isActive,
-            [`${l_prx}-page--disabled`]: disabled,
-          }
+          isActive && `${l_prx}-page--active`,
+          disabled && `${l_prx}-page--disabled`,
         )}
         aria-label={`Go to page ${page}`}
         aria-current={isActive ? 'page' : undefined}
@@ -278,8 +273,8 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
     isDisabled: boolean,
     label: string
   ) => {
-    if (renderNavBtn) {
-      return renderNavBtn({
+    if (renderNavButton) {
+      return renderNavButton({
         type,
         onClick,
         disabled: disabled || isDisabled,
@@ -295,9 +290,7 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
           `${l_prx}-nav`,
           `${l_prx}-nav-${size}`,
           `${l_prx}-nav-${type}`,
-          {
-            [`${l_prx}-nav--disabled`]: disabled || isDisabled,
-          }
+          (disabled || isDisabled) && `${l_prx}-nav--disabled`,
         )}
         aria-label={`${type.charAt(0).toUpperCase() + type.slice(1)} page`}
       >
@@ -418,5 +411,5 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
 
 Pagination.displayName = 'Pagination';
 
-export { Pagination, usePagination };
+export { Pagination };
 export type { PaginationProps, PaginationConfig, PaginationDisplayConfig };

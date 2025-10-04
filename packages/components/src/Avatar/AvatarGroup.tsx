@@ -74,9 +74,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
           className={cn(
             `${l_prx}-item`,
             `${l_prx}-item--${shape}`,
-            {
-              [`${l_prx}-item--clickable`]: onClick,
-            }
+            onClick && `${l_prx}-item--clickable`
           )}
           style={{
             width: avatarSize,
@@ -123,7 +121,6 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
           )}
         </div>
       ))}
-
       {remainingCount > 0 && (
         <div
           className={cn(

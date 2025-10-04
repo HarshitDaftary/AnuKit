@@ -1,51 +1,26 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
-
 const l_prx = `${lib}-textarea`;
 
-// Inlined utilities to avoid external dependencies
-const cn = (...classes: (string | undefined | null | false)[]): string => {
-  return classes.filter(Boolean).join(' ');
-};
+// Simple className joiner (truthy values only)
+const cn = (...classes: Array<string | false | null | undefined>) =>
+  classes.filter(Boolean).join(' ');
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  /** Visual variant of the textarea */
   variant?: 'default' | 'error' | 'success';
-  
-  /** Size of the textarea */
   size?: 'sm' | 'md' | 'lg';
-  
-  /** Label text */
   label?: string;
-  
-  /** Error message */
   error?: string;
-  
-  /** Helper text */
   helperText?: string;
-  
-  /** Take full width of container */
   fullWidth?: boolean;
-  
-  /** Auto-resize textarea based on content */
   autoResize?: boolean;
-  
-  /** Minimum number of rows */
   minRows?: number;
-  
-  /** Maximum number of rows (for auto-resize) */
   maxRows?: number;
-  
-  /** Character counter */
   showCharacterCount?: boolean;
-  
-  /** Maximum character limit */
   maxLength?: number;
 }
 
-// Size-based CSS classes
 const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
   switch (size) {
     case 'sm':
@@ -57,18 +32,12 @@ const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
   }
 };
 
-// Variant-based CSS classes
 const getVariantClasses = (variant: 'default' | 'error' | 'success', hasError: boolean) => {
-  if (hasError || encodeSizeMode(variant) === encodeSizeMode('error')) {
-    return `${l_prx}-error`;
-  }
-  if (encodeSizeMode(variant) === encodeSizeMode('success')) {
-    return `${l_prx}-success`;
-  }
+  if (hasError || variant === 'error') return `${l_prx}-error`;
+  if (variant === 'success') return `${l_prx}-success`;
   return `${l_prx}-default`;
 };
 
-/* @__PURE__ */
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   variant = 'default',
   size = 'md',
@@ -81,35 +50,35 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   maxRows,
   showCharacterCount = false,
   maxLength,
-  className = '',
+  className,
   id,
   value,
   onChange,
   ...props
 }, ref) => {
-  // Generate unique IDs for accessibility
-  const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+  // IDs for a11y
+  const textareaId = id || `textarea-${Math.random().toString(36).slice(2, 11)}`;
   const errorId = error ? `${textareaId}-error` : undefined;
   const helperTextId = helperText ? `${textareaId}-helper` : undefined;
   const characterCountId = showCharacterCount ? `${textareaId}-count` : undefined;
-  
-  const hasError = encodeSizeMode(variant) === encodeSizeMode('error') || Boolean(error);
-  
-  // Character count logic
+
+  const hasError = variant === 'error' || Boolean(error);
+
+  // Character count
   const currentLength = typeof value === 'string' ? value.length : 0;
   const hasMaxLength = typeof maxLength === 'number';
   const isNearLimit = hasMaxLength && currentLength > maxLength * 0.8;
   const isOverLimit = hasMaxLength && currentLength > maxLength;
-  
-  // Auto-resize functionality
+
+  // Handle change with optional auto-resize
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (autoResize) {
       const textarea = e.target;
       textarea.style.height = 'auto';
-      
+
       const scrollHeight = textarea.scrollHeight;
-      const maxHeight = maxRows ? maxRows * 24 : undefined; // Approximate line height
-      
+      const maxHeight = maxRows ? maxRows * 24 : undefined; // approx line-height
+
       if (maxHeight && scrollHeight > maxHeight) {
         textarea.style.height = `${maxHeight}px`;
         textarea.style.overflowY = 'auto';
@@ -118,13 +87,10 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
         textarea.style.overflowY = 'hidden';
       }
     }
-    
-    if (onChange) {
-      onChange(e);
-    }
+
+    onChange?.(e);
   };
-  
-  // Build CSS classes
+
   const textareaClasses = cn(
     l_prx,
     getSizeClasses(size),
@@ -133,7 +99,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
     autoResize && `${l_prx}-auto-resize`,
     className
   );
-  
+
   const wrapperClasses = cn(
     `${l_prx}-wrapper`,
     fullWidth && `${l_prx}-wrapper-full-width`
@@ -142,20 +108,17 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   return (
     <div className={wrapperClasses}>
       {label && (
-        <label
-          htmlFor={textareaId}
-          className={`${lib}-label`}
-        >
+        <label htmlFor={textareaId} className={`${lib}-label`}>
           {label}
         </label>
       )}
-      
+
       <div className={`${l_prx}-container`}>
         <textarea
           ref={ref}
           id={textareaId}
           className={textareaClasses}
-          rows={autoResize ? minRows : props.rows || minRows}
+          rows={autoResize ? minRows : (props.rows || minRows)}
           maxLength={maxLength}
           aria-invalid={hasError}
           aria-describedby={cn(errorId, helperTextId, characterCountId)}
@@ -164,32 +127,24 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
           {...props}
         />
       </div>
-      
+
       <div className={`${lib}-form-footer`}>
         {(error || (helperText && !error)) && (
           <div className={`${lib}-form-messages`}>
             {error && (
-              <div
-                id={errorId}
-                className={`${lib}-form-error`}
-                role="alert"
-                aria-live="polite"
-              >
+              <div id={errorId} className={`${lib}-form-error`} role="alert" aria-live="polite">
                 {error}
               </div>
             )}
-            
+
             {helperText && !error && (
-              <div
-                id={helperTextId}
-                className={`${lib}-form-helper`}
-              >
+              <div id={helperTextId} className={`${lib}-form-helper`}>
                 {helperText}
               </div>
             )}
           </div>
         )}
-        
+
         {showCharacterCount && (
           <div
             id={characterCountId}

@@ -40,13 +40,13 @@ interface DividerProps {
   fullSize?: boolean;
   
   /** Custom element type */
-  as?: keyof JSX.IntrinsicElements;
+  as?: 'div' | 'hr';
   
   /** Custom styles */
   style?: React.CSSProperties;
 }
 
-const Divider = forwardRef<HTMLDivElement, DividerProps>(({
+const Divider = forwardRef<HTMLDivElement | HTMLHRElement, DividerProps>(({
   orientation = 'horizontal',
   variant = 'solid',
   thickness = 'thin',
@@ -82,10 +82,15 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(({
     }),
   };
   
+  const setRef = (node: HTMLDivElement | HTMLHRElement | null) => {
+    if (typeof ref === 'function') ref(node as any);
+    else if (ref && 'current' in ref) (ref as React.MutableRefObject<HTMLDivElement | HTMLHRElement | null>).current = node;
+  };
+  
   if (hasLabel && !isVertical) {
     return (
       <Component
-        ref={ref}
+        ref={setRef}
         role="separator"
         className={dividerClasses}
         style={dividerStyle}
@@ -100,7 +105,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(({
   
   return (
     <Component
-      ref={ref}
+      ref={setRef}
       role="separator"
       className={dividerClasses}
       style={dividerStyle}

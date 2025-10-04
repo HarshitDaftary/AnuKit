@@ -34,6 +34,26 @@ module.exports = {
     },
   },
   rules: {
+    // Disallow object maps passed to cn()
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: "CallExpression[callee.name='cn'] > ObjectExpression",
+        message: "Don't pass object literals to cn(). Use conditional strings instead (cond && 'class').",
+      },
+      {
+        selector: "CallExpression[callee.property.name='cn'] > ObjectExpression",
+        message: "Don't pass object literals to cn(). Use conditional strings instead (cond && 'class').",
+      },
+      {
+        selector: "CallExpression[callee.name='cn'] > SpreadElement > ObjectExpression",
+        message: "Don't spread object literals into cn(). Convert to conditional strings (cond && 'class').",
+      },
+      {
+        selector: "CallExpression[callee.property.name='cn'] > SpreadElement > ObjectExpression",
+        message: "Don't spread object literals into cn(). Convert to conditional strings (cond && 'class').",
+      },
+    ],
     // TypeScript rules
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-explicit-any': 'warn',

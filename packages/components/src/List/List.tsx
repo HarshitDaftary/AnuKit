@@ -246,8 +246,8 @@ export const ListSubheader: React.FC<{
   </div>
 );
 
-// Main list component
-export const List = forwardRef<HTMLElement, ListProps>(
+// Narrowing `as` property and explicitly typing `ref`
+export const List = forwardRef<HTMLElement | SVGElement, Omit<ListProps, 'as'> & { as?: 'ul' | 'ol' | 'div' | 'svg' }>(
   ({
     children,
     variant = 'plain',
@@ -258,17 +258,30 @@ export const List = forwardRef<HTMLElement, ListProps>(
     interactive = false,
     ...props
   }, ref) => {
-    const classes = cn(
-      l_prx,
-      `optimui-list-${variant}`,
-      dense && `${l_prx}-subheader--dense`,
-      interactive && `${l_prx}-subheader--interactive`,
-      className
+    const subheaderClasses = cn(
+      dense ? `${l_prx}-subheader--dense` : false,
+      interactive ? `${l_prx}-subheader--interactive` : false
     );
-    
+
+    const handleRef = (node: HTMLElement | SVGElement | null) => {
+      if (typeof ref === 'function') {
+        ref(node);
+      } else if (ref && 'current' in ref) {
+        (ref as React.MutableRefObject<HTMLElement | SVGElement | null>).current = node;
+      }
+    };
+
     return (
-      <Component ref={ref} className={classes} {...props}>
-        {subheader && <ListSubheader>{subheader}</ListSubheader>}
+      <Component
+        ref={handleRef}
+        className={cn(
+          l_prx,
+          `optimui-list-${variant}`,
+          className
+        )}
+        {...props}
+      >
+        {subheader && <ListSubheader className={subheaderClasses}>{subheader}</ListSubheader>}
         {children}
       </Component>
     );
@@ -397,5 +410,4 @@ ListSubheader.displayName = 'ListSubheader';
 List.displayName = 'List';
 NestedList.displayName = 'NestedList';
 
-export { List };
 export type { ListProps, ListItemProps, NestedListProps };

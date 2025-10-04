@@ -10,7 +10,7 @@ const lib = "optimui";
 
 const l_prx = `${lib}-datepicker`;
 
-interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size'> {
+interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size' | 'defaultValue'> {
   /** Visual variant of the date picker */
   variant?: 'default' | 'outlined' | 'filled' | 'error' | 'success';
   
@@ -160,7 +160,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   ...props
 }, ref) => {
   const [internalValue, setInternalValue] = useState<Date | null>(value || defaultValue || null);
-  const [inputValue, setInputValue] = useState(formatDate(value || defaultValue, format));
+  const [inputValue, setInputValue] = useState(formatDate((value ?? defaultValue) ?? null, format));
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [isFocused, setIsFocused] = useState(false);
@@ -322,14 +322,12 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
     l_prx,
     getSizeClass(),
     getVariantClass(),
-    {
-      [`${l_prx}--focused`]: isFocused,
-      [`${l_prx}--disabled`]: disabled,
-      [`${l_prx}--readonly`]: readOnly,
-      [`${l_prx}--loading`]: loading,
-      [`${l_prx}--open`]: isOpen,
-      [`${l_prx}--fullwidth`]: fullWidth,
-    },
+    isFocused && `${l_prx}--focused`,
+    disabled && `${l_prx}--disabled`,
+    readOnly && `${l_prx}--readonly`,
+    loading && `${l_prx}--loading`,
+    isOpen && `${l_prx}--open`,
+    fullWidth && `${l_prx}--fullwidth`,
     className
   );
   
@@ -525,12 +523,10 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
                     type="button"
                     className={cn(
                       `${l_prx}-day`,
-                      {
-                        [`${l_prx}-day--selected`]: isSelected,
-                        [`${l_prx}-day--today`]: isToday,
-                        [`${l_prx}-day--current-month`]: isCurrentMonth,
-                        [`${l_prx}-day--disabled`]: isDisabled,
-                      }
+                      isSelected && `${l_prx}-day--selected`,
+                      isToday && `${l_prx}-day--today`,
+                      isCurrentMonth && `${l_prx}-day--current-month`,
+                      isDisabled && `${l_prx}-day--disabled`,
                     )}
                     onClick={() => handleDateSelect(day)}
                     disabled={isDisabled}
