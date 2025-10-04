@@ -40,8 +40,8 @@ export type { AvatarProps }; // Single export point
 5. **Divider/Divider.tsx** - DividerProps
 6. **Pagination/Pagination.tsx** - PaginationProps, PaginationConfig, PaginationDisplayConfig
 7. **Spinner/Spinner.tsx** - SpinnerProps, LoadingProps
-8. **Table/Table.optimized.tsx** - TableProps, ColumnDef, SortConfig, SelectionConfig
-9. **DatePicker/DatePicker.optimized.tsx** - Removed duplicate DatePickerProps re-export
+8. Table consolidated. Types exported from `Table.tsx` (TableProps, ColumnDef, SortConfig, SelectionConfig)
+9. DatePicker consolidated. Removed duplicate re-export and standardized on `DatePicker.tsx`
 
 ### 2. Type Mismatches in `cn()` Function Calls (10+ instances)
 
@@ -94,7 +94,7 @@ export { Spinner, Loading };
 export type { SpinnerProps, LoadingProps };
 ```
 
-**Table/Table.optimized.tsx**: Changed duplicate type exports to imports
+Table: Consolidation complete; types re-exported from `Table.tsx`
 ```typescript
 // BEFORE
 export type { SortConfig } from './hooks/useTableSorting';
@@ -152,8 +152,8 @@ export type { TableProps, ColumnDef, SortConfig, SelectionConfig }; // Single ex
 | Divider/Divider.tsx | ✓ | ✓ | 2 |
 | Pagination/Pagination.tsx | ✓ | ✓ | 2 |
 | Spinner/Spinner.tsx | ✓ | ✓ | 3 |
-| Table/Table.optimized.tsx | ✓ | - | 1 |
-| DatePicker/DatePicker.optimized.tsx | ✓ | - | 1 |
+| Table/Table.tsx | ✓ | - | 1 |
+| DatePicker/DatePicker.tsx | ✓ | - | 1 |
 | TextField/TextField.tsx | - | ✓ | 1 |
 | DataTable/DataTable.tsx | - | ✓ | 1 |
 

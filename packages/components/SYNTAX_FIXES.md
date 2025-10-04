@@ -25,10 +25,10 @@ className: `${[^}]*}[^`]*`: disabled
 - Pagination.tsx
 - DatePickerCalendar.tsx
 - DatePicker.tsx
-- DatePicker.optimized.tsx
+- DatePicker.tsx (consolidated)
 - Divider.tsx
 - Spinner.tsx
-- Table.optimized.tsx
+- Table.tsx (consolidated)
 
 ### 2. Missing Closing Braces (15+ instances)
 **Problem**: Missing closing braces in className template literals
