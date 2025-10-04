@@ -1,6 +1,7 @@
 {
   "name": "@optimui/core",
   "version": "0.1.0",
+  "type": "module",
   "description": "Core utilities and providers for OptimUI component library",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

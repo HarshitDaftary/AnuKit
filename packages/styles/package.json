@@ -1,6 +1,7 @@
 {
   "name": "@optimui/styles",
   "version": "0.1.0",
+  "type": "module",
   "description": "CSS styling system for OptimUI components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
