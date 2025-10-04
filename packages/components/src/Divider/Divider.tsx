@@ -69,11 +69,9 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(({
     `${l_prx}-${variant}`,
     `${l_prx}-${thickness}`,
     `${l_prx}-margin-${margin}`,
-    {
-      [`${l_prx}--labeled`]: hasLabel,
-      [`${l_prx}-text-${textAlign}`]: hasLabel,
-      [`${l_prx}--fullsize`]: fullSize,
-    },
+    hasLabel && `${l_prx}--labeled`,
+    hasLabel && `${l_prx}-text-${textAlign}`,
+    fullSize && `${l_prx}--fullsize`,
     className
   );
   

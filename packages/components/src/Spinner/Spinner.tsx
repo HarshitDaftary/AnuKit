@@ -219,9 +219,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
       {renderSpinner()}
       {label && (
         <span
-          className={cn(`${l_prx}-label`, {
-            [`${l_prx}-label--hidden`]: labelHidden,
-          })}
+          className={cn(`${l_prx}-label`, labelHidden && `${l_prx}-label--hidden`)}
         >
           {label}
         </span>

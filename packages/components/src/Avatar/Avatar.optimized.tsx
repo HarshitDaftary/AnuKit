@@ -137,10 +137,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     `${lib}-avatar`,
     `optimui-avatar--${shape}`,
     `optimui-avatar--${size}`,
-    {
-      [`${lib}-avatar--clickable`]: onClick,
-      [`${lib}-avatar--loading`]: loading || avatarState.imageLoading,
-    },
+    onClick && `${lib}-avatar--clickable`,
+    (loading || avatarState.imageLoading) && `${lib}-avatar--loading`,
     className
   );
 

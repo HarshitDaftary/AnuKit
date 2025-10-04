@@ -354,10 +354,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     l_prx,
     `${l_prx}-${shape}`,
     `${l_prx}-${size}`,
-    {
-      [`${l_prx}-clickable`]: onClick,
-      [`${l_prx}-loading`]: loading || imageLoading,
-    },
+    onClick && `${l_prx}-clickable`,
+    (loading || imageLoading) && `${l_prx}-loading`,
     className
   );
   

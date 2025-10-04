@@ -236,7 +236,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
 DatePicker.displayName = 'DatePicker';
 
 export { DatePicker };
-export type { DatePickerProps };
 
 // Re-export sub-components for advanced usage
 export { DatePickerInput } from './DatePickerInput';

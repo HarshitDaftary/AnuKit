@@ -185,18 +185,16 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
     l_prx,
     getSizeClass(),
     getVariantClass(),
-    {
-      [`${l_prx}--focused`]: isFocused,
-      [`${l_prx}--disabled`]: disabled,
-      [`${l_prx}--readonly`]: readOnly,
-      [`${l_prx}--loading`]: loading,
-      [`${l_prx}--has-value`]: hasValue,
-      [`${l_prx}--full-width`]: fullWidth,
-      [`${l_prx}--with-left-icon`]: Boolean(leftIcon),
-      [`${l_prx}--with-right-icon`]: Boolean(rightIcon) || clearable || showPasswordToggle,
-      [`${l_prx}--with-prefix`]: Boolean(prefix),
-      [`${l_prx}--with-suffix`]: Boolean(suffix),
-    },
+    isFocused && `${l_prx}--focused`,
+    disabled && `${l_prx}--disabled`,
+    readOnly && `${l_prx}--readonly`,
+    loading && `${l_prx}--loading`,
+    hasValue && `${l_prx}--has-value`,
+    fullWidth && `${l_prx}--full-width`,
+    Boolean(leftIcon) && `${l_prx}--with-left-icon`,
+    (Boolean(rightIcon) || clearable || showPasswordToggle) && `${l_prx}--with-right-icon`,
+    Boolean(prefix) && `${l_prx}--with-prefix`,
+    Boolean(suffix) && `${l_prx}--with-suffix`,
     className
   );
   
