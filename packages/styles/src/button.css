@@ -1,6 +1,6 @@
 /**
- * Button Component Styles
- * Primary, secondary, and utility button styles
+ * Button Component Styles - Ant Design inspired
+ * Primary, secondary, and utility button styles with proper animations
  */
 
 .anukit-button {
@@ -8,87 +8,130 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 16px;
+  padding: 4px 15px;
   border: 1px solid transparent;
   border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5715;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   outline: none;
   position: relative;
   white-space: nowrap;
   user-select: none;
+  height: 32px;
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.anukit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+}
+
+.anukit-button:active:not(:disabled) {
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
 }
 
 .anukit-button:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid #1890ff;
   outline-offset: 2px;
 }
 
 /* Button variants */
 .anukit-button-primary {
-  background-color: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
+  background-color: #1890ff !important;
+  color: white !important;
+  border-color: #1890ff !important;
 }
 
 .anukit-button-primary:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  background-color: #40a9ff !important;
+  border-color: #40a9ff !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
 }
 
 .anukit-button-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: transparent !important;
+  color: #1890ff !important;
+  border-color: #1890ff !important;
 }
 
 .anukit-button-secondary:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: #1890ff !important;
+  color: white !important;
+  border-color: #40a9ff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
 }
 
 .anukit-button-ghost {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border-color: transparent;
+  background-color: transparent !important;
+  color: #595959 !important;
+  border-color: #d9d9d9 !important;
 }
 
 .anukit-button-ghost:hover:not(:disabled) {
-  background-color: var(--color-gray-100);
+  background-color: #f5f5f5 !important;
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .anukit-button-danger {
-  background-color: var(--color-danger);
-  color: white;
-  border-color: var(--color-danger);
+  background-color: #ff4d4f !important;
+  color: white !important;
+  border-color: #ff4d4f !important;
 }
 
 .anukit-button-danger:hover:not(:disabled) {
-  background-color: var(--color-danger-dark);
-  border-color: var(--color-danger-dark);
+  background-color: #ff7875 !important;
+  border-color: #ff7875 !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
 }
 
-/* Button sizes */
+.anukit-button-outline {
+  background-color: transparent !important;
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+.anukit-button-outline:hover:not(:disabled) {
+  background-color: #1890ff !important;
+  color: white !important;
+  border-color: #40a9ff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+}
+
+/* Button sizes - Ant Design inspired */
 .anukit-button-sm {
-  padding: 8px 12px;
-  font-size: 0.75rem;
-  gap: 6px;
+  padding: 0px 7px;
+  font-size: 12px;
+  height: 24px;
+  line-height: 1.5715;
 }
 
 .anukit-button-md {
-  padding: 12px 16px;
-  font-size: 0.875rem;
-  gap: 8px;
+  padding: 4px 15px;
+  font-size: 14px;
+  height: 32px;
+  line-height: 1.5715;
 }
 
 .anukit-button-lg {
-  padding: 16px 24px;
-  font-size: 1rem;
-  gap: 10px;
+  padding: 6.4px 15px;
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.5715;
 }
 
 /* Button states */

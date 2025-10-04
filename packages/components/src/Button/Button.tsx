@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useReducedMotion, useSSRSafeId, CSS_UTILITIES, cn } from '@anukit/utils';
+import { useReducedMotion, useSSRSafeId, cn } from '@anukit/utils';
 
 const lib = "anukit";
-
 const l_prx = `${lib}-button`;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'danger' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
   children: React.ReactNode;
@@ -39,60 +38,58 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
   const id = useSSRSafeId('btn');
   const reducedMotion = useReducedMotion();
   
+  // Base classes for all buttons with Ant Design styling
   const baseClasses = [
     l_prx,
-    CSS_UTILITIES.BUTTON_BASE,
-    CSS_UTILITIES.DISABLED,
+    'inline-flex',
+    'items-center',
+    'justify-center',
+    'font-normal',
+    'leading-5',
+    'rounded',
+    'border',
+    'shadow-sm',
+    'transition-all',
+    'duration-200',
+    'ease-in-out',
+    'focus-visible:outline',
+    'focus-visible:outline-2',
+    'focus-visible:outline-offset-2',
     'disabled:pointer-events-none',
+    'disabled:opacity-40',
+    'disabled:cursor-not-allowed',
+    'cursor-pointer',
     // Add reduced motion support
-    ...(reducedMotion ? ['transition-none'] : [])
+    ...(reducedMotion ? ['transition-none'] : ['hover:-translate-y-0.5', 'hover:shadow-md', 'active:translate-y-0'])
   ];
 
-  const getVariantClasses = (variant: 'primary' | 'secondary' | 'danger' | 'ghost') => {
+  const getVariantClasses = (variant: 'primary' | 'secondary' | 'danger' | 'ghost' | 'outline') => {
     switch (variant) {
       case 'primary':
-        return [
-          CSS_UTILITIES.PRIMARY_BG,
-          CSS_UTILITIES.PRIMARY_TEXT,
-          'focus-visible:outline-blue-600'
-        ];
+        return [`anukit-button-primary`];
       case 'secondary':
-        return [
-          CSS_UTILITIES.SECONDARY_BG,
-          CSS_UTILITIES.SECONDARY_TEXT,
-          'focus-visible:outline-gray-600'
-        ];
+        return [`anukit-button-secondary`];
       case 'danger':
-        return [
-          CSS_UTILITIES.DANGER_BG,
-          CSS_UTILITIES.DANGER_TEXT,
-          'focus-visible:outline-red-600'
-        ];
+        return [`anukit-button-danger`];
       case 'ghost':
-        return [
-          CSS_UTILITIES.GHOST_BG,
-          CSS_UTILITIES.GHOST_TEXT,
-          'focus-visible:outline-gray-600'
-        ];
+        return [`anukit-button-ghost`];
+      case 'outline':
+        return [`anukit-button-outline`];
       default:
-        return [
-          CSS_UTILITIES.PRIMARY_BG,
-          CSS_UTILITIES.PRIMARY_TEXT,
-          'focus-visible:outline-blue-600'
-        ];
+        return [`anukit-button-primary`];
     }
   };
 
   const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
     switch (size) {
       case 'sm':
-        return [CSS_UTILITIES.PADDING_SM, CSS_UTILITIES.TEXT_SM];
+        return [`anukit-button-sm`];
       case 'md':
-        return [CSS_UTILITIES.PADDING_MD, CSS_UTILITIES.TEXT_SM];
+        return [`anukit-button-md`];
       case 'lg':
-        return [CSS_UTILITIES.PADDING_LG, CSS_UTILITIES.TEXT_BASE];
+        return [`anukit-button-lg`];
       default:
-        return [CSS_UTILITIES.PADDING_MD, CSS_UTILITIES.TEXT_SM];
+        return [`anukit-button-md`];
     }
   };
 
@@ -121,7 +118,7 @@ const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
       {loading && (
         <>
           <svg
-            className={`${CSS_UTILITIES.SPINNER} -ml-1 mr-2 ${CSS_UTILITIES.ICON_SM}`}
+            className="animate-spin -ml-1 mr-2 h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
