@@ -122,12 +122,10 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
     l_prx,
     `${l_prx}--${variant}`,
     `${l_prx}--${size}`,
-    {
-      [`${l_prx}--open`]: datePicker.isOpen,
-      [`${l_prx}--disabled`]: disabled,
-      [`${l_prx}--error`]: error,
-      [`${l_prx}--focused`]: datePicker.isFocused,
-    },
+    datePicker.isOpen && `${l_prx}--open`,
+    disabled && `${l_prx}--disabled`,
+    error && `${l_prx}--error`,
+    datePicker.isFocused && `${l_prx}--focused`,
     className
   );
 

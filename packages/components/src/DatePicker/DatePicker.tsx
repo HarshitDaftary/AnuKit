@@ -322,14 +322,12 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
     l_prx,
     getSizeClass(),
     getVariantClass(),
-    {
-      [`${l_prx}--focused`]: isFocused,
-      [`${l_prx}--disabled`]: disabled,
-      [`${l_prx}--readonly`]: readOnly,
-      [`${l_prx}--loading`]: loading,
-      [`${l_prx}--open`]: isOpen,
-      [`${l_prx}--fullwidth`]: fullWidth,
-    },
+    isFocused && `${l_prx}--focused`,
+    disabled && `${l_prx}--disabled`,
+    readOnly && `${l_prx}--readonly`,
+    loading && `${l_prx}--loading`,
+    isOpen && `${l_prx}--open`,
+    fullWidth && `${l_prx}--fullwidth`,
     className
   );
   
@@ -343,7 +341,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           {label}
         </label>
       )}
-      
       <div className={`${l_prx}-container`}>
         <input
           ref={inputElement}
@@ -453,7 +450,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           )}
         </button>
       </div>
-      
       {isOpen && (
         <div
           ref={calendarRef}
@@ -525,12 +521,10 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
                     type="button"
                     className={cn(
                       `${l_prx}-day`,
-                      {
-                        [`${l_prx}-day--selected`]: isSelected,
-                        [`${l_prx}-day--today`]: isToday,
-                        [`${l_prx}-day--current-month`]: isCurrentMonth,
-                        [`${l_prx}-day--disabled`]: isDisabled,
-                      }
+                      isSelected && `${l_prx}-day--selected`,
+                      isToday && `${l_prx}-day--today`,
+                      isCurrentMonth && `${l_prx}-day--current-month`,
+                      isDisabled && `${l_prx}-day--disabled`
                     )}
                     onClick={() => handleDateSelect(day)}
                     disabled={isDisabled}
@@ -545,7 +539,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           </div>
         </div>
       )}
-      
       <div className={`${l_prx}-footer`}>
         {error && (
           <div

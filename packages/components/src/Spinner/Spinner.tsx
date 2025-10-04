@@ -178,11 +178,9 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
     `${l_prx}-${variant}`,
     `${l_prx}-${color}`,
     `${l_prx}-${speed}`,
-    {
-      [`${l_prx}--center`]: center,
-      [`${l_prx}--overlay`]: overlay,
-      [`${l_prx}-label-${labelPosition}`]: label && !labelHidden,
-    },
+    center && `${l_prx}--center`,
+    overlay && `${l_prx}--overlay`,
+    label && !labelHidden && `${l_prx}-label-${labelPosition}`,
     className
   );
   

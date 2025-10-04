@@ -49,11 +49,9 @@ const DatePickerInput = forwardRef<HTMLInputElement, DatePickerInputProps>(({
     l_prx,
     `${l_prx}--${variant}`,
     `${l_prx}--${size}`,
-    {
-      [`${l_prx}--disabled`]: disabled,
-      [`${l_prx}--readonly`]: readOnly,
-      [`${l_prx}--error`]: error,
-    },
+    disabled && `${l_prx}--disabled`,
+    readOnly && `${l_prx}--readonly`,
+    error && `${l_prx}--error`,
     className
   );
 
