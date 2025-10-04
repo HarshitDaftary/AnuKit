@@ -82,25 +82,21 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
     l_prx,
     getSizeClasses(size),
     getVariantClasses(variant),
+    `${l_prx}-${encodeSizeMode(size)}`,
     interactive && `${l_prx}-interactive`,
     fullWidth && `${l_prx}-full-width`,
     loading && `${l_prx}-loading`,
     disabled && `${l_prx}-disabled`,
     className
   );
-  
-  // Determine if we should render as button for accessibility
-  const Component = interactive && onClick ? 'button' : 'div';
-  const isButton = Component === 'button';
 
   return (
-    <Component
-      ref={ref as any}
+    <div
+      ref={ref}
       className={cardClasses}
       onClick={disabled ? undefined : onClick}
-      disabled={isButton ? disabled : undefined}
       tabIndex={interactive && !disabled ? 0 : undefined}
-      role={interactive && !isButton ? 'button' : undefined}
+      role={interactive && onClick ? 'button' : undefined}
       aria-disabled={disabled}
       {...props}
     >
@@ -133,7 +129,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
           {footer}
         </div>
       )}
-    </Component>
+    </div>
   );
 });
 
