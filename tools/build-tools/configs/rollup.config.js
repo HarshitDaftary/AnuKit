@@ -29,7 +29,8 @@ export function createRollupConfig(pkg, options = {}) {
         tsconfig: './tsconfig.json',
         declaration: true,
         declarationDir: './dist',
-        rootDir: './src'
+        rootDir: './src',
+        exclude: ['**/__tests__/**']
       })
     ]
   };

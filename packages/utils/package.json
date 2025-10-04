@@ -1,6 +1,7 @@
 {
   "name": "@optimui/utils",
   "version": "0.1.0",
+  "type": "module",
   "description": "Utility functions for OptimUI components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
