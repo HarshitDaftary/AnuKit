@@ -77,7 +77,7 @@ jobs:
           
           export default {
             input: `src/${componentName}/index.ts`,
-            external: ['react', 'react-dom', 'react/jsx-runtime', '@optimui/core', '@optimui/utils'],
+            external: ['react', 'react-dom', 'react/jsx-runtime', '@anukit/core', '@anukit/utils'],
             output: [
               {
                 file: `dist/${componentName}/index.js`,
