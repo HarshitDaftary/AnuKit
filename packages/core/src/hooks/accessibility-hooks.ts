@@ -15,7 +15,7 @@ export const useAriaLive = (politeness: 'polite' | 'assertive' = 'polite') => {
     const region = document.createElement('div');
     region.setAttribute('aria-live', politeness);
     region.setAttribute('aria-atomic', 'true');
-    region.className = 'sr-only optimui-live-region';
+    region.className = 'sr-only anukit-live-region';
     document.body.appendChild(region);
     setLiveRegion(region);
 

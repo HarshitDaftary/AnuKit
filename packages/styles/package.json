@@ -2,7 +2,7 @@
   "name": "@anukit/styles",
   "version": "0.1.0",
   "type": "module",
-  "description": "CSS styling system for OptimUI components",
+  "description": "CSS styling system for AnuKit components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

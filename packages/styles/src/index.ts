@@ -1,5 +1,5 @@
 /**
- * @optimui/styles - CSS styling system
+ * @AnuKit/styles - CSS styling system
  * This package exports CSS files only
  */
 

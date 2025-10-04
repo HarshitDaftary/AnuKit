@@ -303,7 +303,7 @@ export const componentSizes = {
 export const focusRing = {
   width: '2px',
   offset: '2px',
-  color: 'var(--optimui-colors-primary-500)',
+  color: 'var(--anukit-colors-primary-500)',
   style: 'solid',
 } as const
 

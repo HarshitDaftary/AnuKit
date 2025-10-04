@@ -9,7 +9,7 @@ module.exports = {
   configs: {
     recommended: {
       rules: {
-        "optimui/no-cn-object-arg": "error",
+        "anukit/no-cn-object-arg": "error",
       },
     },
   },

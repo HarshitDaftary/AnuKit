@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Minimal CSS build script for @optimui/styles
+ * Minimal CSS build script for @AnuKit/styles
  * Copies CSS files from src to dist
  */
 

@@ -106,7 +106,7 @@ export const useLocalStorage = <T>(
  */
 export const useTheme = () => {
   const { isClient } = useSSRContext();
-  const [theme, setTheme] = useLocalStorage<'light' | 'dark' | 'auto'>('optimui-theme', 'auto');
+  const [theme, setTheme] = useLocalStorage<'light' | 'dark' | 'auto'>('anukit-theme', 'auto');
   const [systemTheme, setSystemTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {

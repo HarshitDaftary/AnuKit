@@ -9,11 +9,11 @@ const createOptimizedConfig = (input, file, format) => ({
     'react', 
     'react-dom', 
     'react/jsx-runtime',
-    '@optimui/utils',
-    '@optimui/utils/sizeMode',
-    '@optimui/core',
-    '@optimui/core/providers/SSRProvider',
-    '@optimui/core/hooks/accessibility-hooks'
+    '@anukit/utils',
+    '@anukit/utils/sizeMode',
+    '@anukit/core',
+    '@anukit/core/providers/SSRProvider',
+    '@anukit/core/hooks/accessibility-hooks'
   ],
   output: {
     file,

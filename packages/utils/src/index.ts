@@ -1,4 +1,4 @@
-// Utility functions for OptimUI components
+// Utility functions for AnuKit components
 export { clsx } from 'clsx';
 import React from 'react';
 

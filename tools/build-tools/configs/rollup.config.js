@@ -3,7 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 /**
- * Creates a basic Rollup configuration for OptimUI packages
+ * Creates a basic Rollup configuration for AnuKit packages
  */
 export function createRollupConfig(pkg, options = {}) {
   const { external = [] } = options;

@@ -2,7 +2,7 @@
   "name": "@anukit/icons",
   "version": "0.1.0",
   "type": "module",
-  "description": "Optimized SVG icon components for OptimUI",
+  "description": "Optimized SVG icon components for AnuKit",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

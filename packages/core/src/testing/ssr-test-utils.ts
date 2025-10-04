@@ -164,7 +164,7 @@ export const testThemeCompatibility = async (Component: React.ComponentType) => 
     expect(container).toBeInTheDocument();
     
     // Verify theme-specific styles are applied
-    const styledElements = container.querySelectorAll('[class*="optimui"]');
+    const styledElements = container.querySelectorAll('[class*="anukit"]');
     expect(styledElements.length).toBeGreaterThan(0);
   }
   

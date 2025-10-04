@@ -19,9 +19,9 @@ const nextConfig = {
     config.optimization.splitChunks = {
       chunks: 'all',
       cacheGroups: {
-        optimui: {
-          test: /[\\/]node_modules[\\/]@optimui[\\/]/,
-          name: 'optimui',
+        anukit: {
+          test: /[\\/]node_modules[\\/]@anukit[\\/]/,
+          name: 'anukit',
           priority: 30,
           reuseExistingChunk: true,
         },

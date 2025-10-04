@@ -81,7 +81,7 @@ export function decodeSizeMode(encoded: string): string {
 
 /**
  * Create class name with encoded size mode
- * Usage: cn(l_prx, encodeSizeMode('md')) -> 'optimui-button-3'
+ * Usage: cn(l_prx, encodeSizeMode('md')) -> 'anukit-button-3'
  */
 export function createSizeModeClass(prefix: string, mode: string, suffix?: string): string {
   const encoded = encodeSizeMode(mode);

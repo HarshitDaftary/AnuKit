@@ -1,5 +1,5 @@
 /**
- * Accessibility utilities for OptimUI
+ * Accessibility utilities for AnuKit
  * Following WCAG 2.1 AA guidelines
  */
 
@@ -126,7 +126,7 @@ export const ariaUtils = {
   /**
    * Generate a unique ID for ARIA attributes
    */
-  generateId: (prefix: string = 'optimui'): string => {
+  generateId: (prefix: string = 'anukit'): string => {
     return `${prefix}-${Math.random().toString(36).substring(2, 9)}`;
   },
 

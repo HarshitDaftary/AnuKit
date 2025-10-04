@@ -32,7 +32,7 @@ export default function Index() {
     <main className={`min-h-screen p-8 ${resolvedTheme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">
-          OptimUI SSR Test with Remix
+          AnuKit SSR Test with Remix
         </h1>
 
         {/* Hydration Status */}
@@ -144,7 +144,7 @@ export default function Index() {
           >
             <div className="space-y-4">
               <p>
-                This modal is rendered using Remix's SSR capabilities with OptimUI's progressive enhancement.
+                This modal is rendered using Remix's SSR capabilities with AnuKit's progressive enhancement.
               </p>
               
               <div className="bg-blue-50 p-4 rounded-md">
@@ -184,7 +184,7 @@ export default function Index() {
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-2">OptimUI Features:</h3>
+              <h3 className="font-medium mb-2">AnuKit Features:</h3>
               <ul className="text-sm space-y-1">
                 <li>✅ Zero hydration mismatches</li>
                 <li>✅ Optimal bundle splitting</li>
@@ -219,7 +219,7 @@ export default function Index() {
                   <td className="p-2">getServerSideProps</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="p-2">OptimUI Integration</td>
+                  <td className="p-2">AnuKit Integration</td>
                   <td className="p-2">✅ Full support</td>
                   <td className="p-2">✅ Full support</td>
                 </tr>

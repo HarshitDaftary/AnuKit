@@ -2,7 +2,7 @@
   "name": "@anukit/utils",
   "version": "0.1.0",
   "type": "module",
-  "description": "Utility functions for OptimUI components",
+  "description": "Utility functions for AnuKit components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

@@ -10,7 +10,7 @@ import {
   testResponsiveSSR,
 } from '@anukit/core/testing/ssr-test-utils';
 
-describe('OptimUI SSR Compatibility', () => {
+describe('AnuKit SSR Compatibility', () => {
   describe('Button Component', () => {
     test('renders without hydration mismatches', async () => {
       await testSSRCompatibility(() => <Button>Test Button</Button>);

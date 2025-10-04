@@ -1,4 +1,4 @@
-# OptimUI Layout Components
+# AnuKit Layout Components
 
 Advanced layout components for building responsive, accessible UIs with excellent performance.
 
@@ -9,7 +9,7 @@ Advanced layout components for building responsive, accessible UIs with excellen
 A powerful CSS Grid wrapper with responsive capabilities.
 
 ```tsx
-import { Grid } from '@optimui/components';
+import { Grid } from '@anukit/components';
 
 // Basic grid
 <Grid cols={3} gap={4}>
@@ -55,7 +55,7 @@ import { Grid } from '@optimui/components';
 A flexible Flexbox wrapper with responsive direction support.
 
 ```tsx
-import { Flex } from '@optimui/components';
+import { Flex } from '@anukit/components';
 
 // Basic flex
 <Flex direction="row" justify="center" align="center" gap={4}>
@@ -95,7 +95,7 @@ import { Flex } from '@optimui/components';
 A responsive container with max-width breakpoints.
 
 ```tsx
-import { Container } from '@optimui/components';
+import { Container } from '@anukit/components';
 
 // Basic container
 <Container size="lg" px={4}>
@@ -126,7 +126,7 @@ import { Container } from '@optimui/components';
 A component for stacking elements vertically or horizontally with consistent spacing.
 
 ```tsx
-import { Stack } from '@optimui/components';
+import { Stack } from '@anukit/components';
 
 // Vertical stack
 <Stack direction="vertical" gap={4}>

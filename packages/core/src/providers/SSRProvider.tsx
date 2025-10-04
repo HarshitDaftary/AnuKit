@@ -20,7 +20,7 @@ let idCounter = 0;
 
 export const SSRProvider: React.FC<SSRProviderProps> = ({ 
   children, 
-  prefix = 'optimui' 
+  prefix = 'anukit' 
 }) => {
   const [isClient, setIsClient] = useState(false);
   const [styles] = useState(() => new Set<string>());

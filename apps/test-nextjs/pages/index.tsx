@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { Button, Modal } from '@anukit/components';
-import { useTheme, useMediaQuery } from '@anukit/core';
+import { useMediaQuery, useTheme } from '@anukit/core';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>OptimUI Next.js SSR Test</title>
-        <meta name="description" content="Testing OptimUI components with Next.js SSR" />
+        <title>AnuKit Next.js SSR Test</title>
+        <meta name="description" content="Testing AnuKit components with Next.js SSR" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -27,7 +27,7 @@ export default function Home() {
       <main className={`min-h-screen p-8 ${resolvedTheme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">
-            OptimUI SSR Test with Next.js
+            AnuKit SSR Test with Next.js
           </h1>
 
           {/* Theme Controls */}
@@ -65,7 +65,7 @@ export default function Home() {
               Device type: {isMobile ? 'Mobile' : 'Desktop'}
             </p>
             <p className="text-sm text-gray-600">
-              This demonstrates SSR-safe media queries that don't cause hydration mismatches.
+              This demonstrates SSR-safe media queries that don&apos;t cause hydration mismatches.
             </p>
           </section>
 

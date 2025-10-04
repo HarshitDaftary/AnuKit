@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * OptimUI Component Validation Script
+ * AnuKit Component Validation Script
  * Validates layout components for code quality and structure
  */
 
@@ -11,7 +11,7 @@ import { join } from 'path';
 const COMPONENTS_DIR = './src';
 const LAYOUT_COMPONENTS = ['Grid', 'Flex', 'Container', 'Stack'];
 
-console.log('🔍 OptimUI Layout Components Validation\n');
+console.log('🔍 AnuKit Layout Components Validation\n');
 
 // Validation Results
 const results = {
@@ -130,10 +130,10 @@ cssFiles.forEach(file => {
     const lines = content.split('\n').length;
     console.log(`  ✅ ${file} exists (${lines} lines)`);
     
-    if (file === 'variables.css' && content.includes('--optimui-space-')) {
+    if (file === 'variables.css' && content.includes('--anukit-space-')) {
       console.log(`    ✅ Contains spacing variables`);
     }
-    if (file === 'layout.css' && content.includes('.optimui-grid')) {
+    if (file === 'layout.css' && content.includes('.anukit-grid')) {
       console.log(`    ✅ Contains grid utilities`);
     }
   } else {

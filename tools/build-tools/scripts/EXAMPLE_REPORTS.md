@@ -20,7 +20,7 @@ This is an example of what a build failure report looks like when a component fa
       "column": 10,
       "file": "src/Button/Button.tsx"
     },
-    "frame": "  40 | const Button = forwardRef<HTMLButtonElement, ButtonProps>(\n  41 |   ({ children, variant = 'primary', size = 'md', ...props }, ref) => {\n> 42 |     return <button ref={ref} className={cn(\n     |          ^\n  43 |       `optimui-btn`,\n  44 |       `optimui-btn-${variant}`,\n  45 |       `optimui-btn-${size}`"
+    "frame": "  40 | const Button = forwardRef<HTMLButtonElement, ButtonProps>(\n  41 |   ({ children, variant = 'primary', size = 'md', ...props }, ref) => {\n> 42 |     return <button ref={ref} className={cn(\n     |          ^\n  43 |       `anukit-btn`,\n  44 |       `anukit-btn-${variant}`,\n  45 |       `anukit-btn-${size}`"
   },
   "buildLog": "Building Button component...\n[typescript] Error: Unexpected token at Button.tsx:42:10\nBuild failed",
   "errorSummary": "Build failed for component Button: Unexpected token (42:10)"
@@ -63,10 +63,10 @@ This is an example of what a build failure report looks like when a component fa
       "timestamp": "2025-01-04T10:31:23.789Z",
       "buildTime": 890,
       "error": {
-        "message": "Cannot find module '@optimui/utils'",
+        "message": "Cannot find module '@anukit/utils'",
         "code": "MODULE_NOT_FOUND"
       },
-      "errorSummary": "Build failed for component Modal: Cannot find module '@optimui/utils'"
+      "errorSummary": "Build failed for component Modal: Cannot find module '@anukit/utils'"
     }
   ],
   "failures": [
@@ -78,7 +78,7 @@ This is an example of what a build failure report looks like when a component fa
     {
       "component": "Modal",
       "status": "failure",
-      "errorSummary": "Build failed for component Modal: Cannot find module '@optimui/utils'"
+      "errorSummary": "Build failed for component Modal: Cannot find module '@anukit/utils'"
     }
   ]
 }
@@ -112,9 +112,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button 
         ref={ref} 
         className={cn(
-          `optimui-btn`,
-          `optimui-btn-${variant}`,
-          `optimui-btn-${size}`
+          `anukit-btn`,
+          `anukit-btn-${variant}`,
+          `anukit-btn-${size}`
         )}
         {...props}
       >

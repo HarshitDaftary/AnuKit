@@ -1,6 +1,6 @@
-# OptimUI Form Components
+# AnuKit Form Components
 
-Complete form components with accessibility, validation, and consistent styling following OptimUI's performance-first approach.
+Complete form components with accessibility, validation, and consistent styling following AnuKit's performance-first approach.
 
 ## Components
 
@@ -9,7 +9,7 @@ Complete form components with accessibility, validation, and consistent styling 
 A fully accessible select dropdown with options, validation, and customizable styling.
 
 ```tsx
-import { Select } from '@optimui/components';
+import { Select } from '@anukit/components';
 
 // Basic usage
 <Select 
@@ -56,7 +56,7 @@ import { Select } from '@optimui/components';
 Multi-line text input with auto-resize, character counting, and validation.
 
 ```tsx
-import { Textarea } from '@optimui/components';
+import { Textarea } from '@anukit/components';
 
 // Basic usage
 <Textarea 
@@ -104,7 +104,7 @@ import { Textarea } from '@optimui/components';
 Wrapper component for consistent form styling and accessibility.
 
 ```tsx
-import { FormControl, Select, Textarea } from '@optimui/components';
+import { FormControl, Select, Textarea } from '@anukit/components';
 
 // Basic wrapper
 <FormControl 
@@ -164,15 +164,15 @@ import { FormControl, Select, Textarea } from '@optimui/components';
 
 ### Styling
 
-Form components use OptimUI's CSS variable system:
+Form components use AnuKit's CSS variable system:
 
 ```css
 /* CSS Variables for theming */
 :root {
-  --optimui-color-primary: #2563eb;
-  --optimui-color-error: #dc2626;
-  --optimui-color-success: #16a34a;
-  --optimui-border-radius-md: 0.375rem;
+  --anukit-color-primary: #2563eb;
+  --anukit-color-error: #dc2626;
+  --anukit-color-success: #16a34a;
+  --anukit-border-radius-md: 0.375rem;
   /* ... */
 }
 ```
@@ -275,11 +275,11 @@ function DynamicForm() {
 
 Form components generate optimized CSS classes:
 
-- `.optimui-form-control` - Form control wrapper
-- `.optimui-select` - Select component
-- `.optimui-textarea` - Textarea component  
-- `.optimui-form-error` - Error message styling
-- `.optimui-form-helper` - Helper text styling
+- `.anukit-form-control` - Form control wrapper
+- `.anukit-select` - Select component
+- `.anukit-textarea` - Textarea component  
+- `.anukit-form-error` - Error message styling
+- `.anukit-form-helper` - Helper text styling
 
 ## TypeScript Support
 

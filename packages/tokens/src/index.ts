@@ -1,4 +1,4 @@
-// Design tokens for OptimUI theme system
+// Design tokens for AnuKit theme system
 
 // Color tokens
 export const colors = {

@@ -1,17 +1,17 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Critical CSS will be injected here by OptimUI SSR provider */}
+        {/* Critical CSS will be injected here by AnuKit SSR provider */}
         <style
-          id="optimui-ssr-styles"
-          data-optimui-ssr-styles
+          id="anukit-ssr-styles"
+          data-anukit-ssr-styles
           dangerouslySetInnerHTML={{
             __html: `
-              /* Critical OptimUI styles for SSR */
-              .optimui-button { 
+              /* Critical AnuKit styles for SSR */
+              .anukit-button { 
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -19,7 +19,7 @@ export default function Document() {
                 border-radius: 0.375rem;
                 transition: background-color 0.2s;
               }
-              .optimui-modal-open { 
+              .anukit-modal-open { 
                 overflow: hidden; 
               }
               .sr-only {
@@ -41,7 +41,7 @@ export default function Document() {
         <Main />
         <NextScript />
         {/* Portal root for modals */}
-        <div id="modal-root"></div>
+        <div id="modal-root" />
       </body>
     </Html>
   );
