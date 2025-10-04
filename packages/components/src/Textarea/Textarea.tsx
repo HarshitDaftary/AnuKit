@@ -22,20 +22,13 @@ export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextArea
 }
 
 const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
-  switch (size) {
-    case 'sm':
-      return `${l_prx}-sm`;
-    case 'lg':
-      return `${l_prx}-lg`;
-    default:
-      return `${l_prx}-md`;
-  }
+  return `anukit-textarea-${size}`;
 };
 
 const getVariantClasses = (variant: 'default' | 'error' | 'success', hasError: boolean) => {
-  if (hasError || variant === 'error') return `${l_prx}-error`;
-  if (variant === 'success') return `${l_prx}-success`;
-  return `${l_prx}-default`;
+  if (hasError || variant === 'error') return `anukit-textarea-error`;
+  if (variant === 'success') return `anukit-textarea-success`;
+  return '';
 };
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
@@ -92,11 +85,11 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   };
 
   const textareaClasses = cn(
-    l_prx,
+    'anukit-textarea',
     getSizeClasses(size),
     getVariantClasses(variant, hasError),
-    fullWidth && `${l_prx}-full-width`,
-    autoResize && `${l_prx}-auto-resize`,
+    fullWidth && 'anukit-textarea-full-width',
+    autoResize && 'anukit-textarea-auto-resize',
     className
   );
 

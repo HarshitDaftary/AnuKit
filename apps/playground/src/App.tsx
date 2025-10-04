@@ -1,11 +1,17 @@
 import React from 'react';
 import { SSRProvider } from '@anukit/core';
-import { MedicineTracker } from './components/MedicineTracker';
+import PremiumThemeDemo from './components/PremiumThemeDemo';
+import ButtonShowcase from './components/ButtonShowcase';
 
 const App: React.FC = () => {
   return (
     <SSRProvider>
-      <MedicineTracker />
+      <div>
+        <PremiumThemeDemo />
+        <div className="border-t border-gray-200 mt-16">
+          <ButtonShowcase />
+        </div>
+      </div>
     </SSRProvider>
   );
 };

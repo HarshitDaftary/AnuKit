@@ -33,14 +33,17 @@
   flex-direction: column;
 }
 
-/* Labels */
+/* Labels - Ant Design inspired */
 .anukit-form-label,
 .anukit-label {
-  display: block;
-  font-size: var(--anukit-text-sm);
-  font-weight: 500;
-  color: var(--anukit-color-text-primary);
-  line-height: 1.5;
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+  line-height: 1.5715 !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+  padding-bottom: 4px !important;
 }
 
 .anukit-form-label-required {
@@ -56,84 +59,110 @@
   margin-left: var(--anukit-space-1);
 }
 
-/* Base Form Element Styles */
+/* Base Form Element Styles - Ant Design inspired */
 .anukit-input,
 .anukit-select,
 .anukit-textarea {
   width: 100%;
-  border: 1px solid var(--anukit-color-border);
-  border-radius: var(--anukit-border-radius-md);
-  background-color: var(--anukit-color-background);
-  color: var(--anukit-color-text-primary);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.88);
+  transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
+  font-size: 14px;
+  line-height: 1.5715;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.anukit-input:hover,
+.anukit-select:hover,
+.anukit-textarea:hover {
+  border-color: #4096ff;
 }
 
 .anukit-input:focus,
 .anukit-select:focus,
 .anukit-textarea:focus {
-  border-color: var(--anukit-color-primary);
-  box-shadow: 0 0 0 3px var(--anukit-color-primary-alpha);
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
 }
 
 .anukit-input:disabled,
 .anukit-select:disabled,
 .anukit-textarea:disabled {
-  background-color: var(--anukit-color-background-disabled);
-  color: var(--anukit-color-text-disabled);
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
+  border-color: #d9d9d9;
 }
 
-/* Size Variations */
+/* Size Variations - Ant Design inspired */
 .anukit-input-sm,
 .anukit-select-sm,
 .anukit-textarea-sm {
-  padding: var(--anukit-space-2) var(--anukit-space-3);
-  font-size: var(--anukit-text-sm);
-  line-height: 1.4;
+  padding: 0 7px;
+  font-size: 12px;
+  height: 24px;
+  line-height: 1.5715;
 }
 
 .anukit-input-md,
 .anukit-select-md,
 .anukit-textarea-md {
-  padding: var(--anukit-space-3) var(--anukit-space-4);
-  font-size: var(--anukit-text-base);
-  line-height: 1.5;
+  padding: 4px 11px;
+  font-size: 14px;
+  height: 32px;
+  line-height: 1.5715;
 }
 
 .anukit-input-lg,
 .anukit-select-lg,
 .anukit-textarea-lg {
-  padding: var(--anukit-space-4) var(--anukit-space-5);
-  font-size: var(--anukit-text-lg);
-  line-height: 1.6;
+  padding: 6.5px 11px;
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.5715;
 }
 
-/* Variant Styles */
+/* Variant Styles - Ant Design inspired */
 .anukit-input-error,
 .anukit-select-error,
 .anukit-textarea-error {
-  border-color: var(--anukit-color-error);
+  border-color: #ff4d4f;
+}
+
+.anukit-input-error:hover,
+.anukit-select-error:hover,
+.anukit-textarea-error:hover {
+  border-color: #ff4d4f;
 }
 
 .anukit-input-error:focus,
 .anukit-select-error:focus,
 .anukit-textarea-error:focus {
-  border-color: var(--anukit-color-error);
-  box-shadow: 0 0 0 3px var(--anukit-color-error-alpha);
+  border-color: #ff4d4f;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.1);
 }
 
 .anukit-input-success,
 .anukit-select-success,
 .anukit-textarea-success {
-  border-color: var(--anukit-color-success);
+  border-color: #52c41a;
+}
+
+.anukit-input-success:hover,
+.anukit-select-success:hover,
+.anukit-textarea-success:hover {
+  border-color: #52c41a;
 }
 
 .anukit-input-success:focus,
 .anukit-select-success:focus,
 .anukit-textarea-success:focus {
-  border-color: var(--anukit-color-success);
-  box-shadow: 0 0 0 3px var(--anukit-color-success-alpha);
+  border-color: #52c41a;
+  box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.1);
 }
 
 /* Full Width */
@@ -141,6 +170,8 @@
 .anukit-select-full-width,
 .anukit-textarea-full-width {
   width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 /* Select Specific Styles */
@@ -184,15 +215,41 @@
   color: var(--anukit-color-text-disabled);
 }
 
-/* Textarea Specific Styles */
+/* Textarea Specific Styles - Ant Design inspired */
 .anukit-textarea {
   resize: vertical;
-  min-height: calc(var(--anukit-space-12) * 1.5);
+  min-height: 80px;
+  padding: 4px 11px;
+  line-height: 1.5715;
+}
+
+.anukit-textarea-sm {
+  min-height: 64px;
+  padding: 0 7px;
+}
+
+.anukit-textarea-lg {
+  min-height: 96px;
+  padding: 6.5px 11px;
 }
 
 .anukit-textarea-auto-resize {
   resize: none;
   overflow: hidden;
+}
+
+/* Textarea Wrapper */
+.anukit-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.anukit-textarea-wrapper-full-width {
+  width: 100%;
 }
 
 .anukit-textarea-container {
@@ -302,11 +359,14 @@
   }
 }
 
-/* TextField Component */
+/* TextField Component - Ant Design inspired */
 .anukit-textfield {
   display: flex;
   flex-direction: column;
-  gap: var(--anukit-space-2);
+  gap: 8px !important;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .anukit-textfield-full-width {
@@ -314,39 +374,51 @@
 }
 
 .anukit-textfield-label {
-  font-size: var(--anukit-text-sm);
-  font-weight: 500;
-  color: var(--anukit-color-text-primary);
-  line-height: 1.5;
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+  line-height: 1.5715 !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+  padding-bottom: 4px !important;
 }
 
 .anukit-textfield-container {
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.anukit-textfield-right-section {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
-.anukit-textfield-input {
-  flex: 1;
-  padding: var(--anukit-space-2) var(--anukit-space-3);
-  border: 1px solid var(--anukit-color-border);
-  border-radius: var(--anukit-border-radius-md);
-  font-size: var(--anukit-text-base);
-  color: var(--anukit-color-text-primary);
-  background-color: var(--anukit-color-background);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.anukit-textfield-footer {
+  margin-top: 4px;
 }
 
-.anukit-textfield-input:focus {
-  outline: none;
-  border-color: var(--anukit-color-primary);
-  box-shadow: 0 0 0 2px var(--anukit-color-primary-alpha);
+.anukit-textfield-messages {
+  min-height: 20px;
 }
 
-.anukit-textfield-input:disabled {
-  background-color: var(--anukit-color-background-disabled);
-  color: var(--anukit-color-text-disabled);
-  cursor: not-allowed;
+.anukit-textfield-error {
+  font-size: 12px;
+  color: #ff4d4f;
+  line-height: 1.5715;
+}
+
+.anukit-textfield-helper {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 1.5715;
 }
 
 .anukit-textfield-input:read-only {
@@ -774,10 +846,6 @@
 .anukit-form-submitting {
   pointer-events: none;
   opacity: 0.7;
-}
-
-.anukit-form-has-errors {
-  /* Additional styles for forms with errors */
 }
 
 /* Spinner Animation */

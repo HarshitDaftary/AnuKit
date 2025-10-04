@@ -118,29 +118,13 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   const characterCountId = `${fieldId}-character-count`;
   
   const getSizeClass = (): string => {
-    switch (size) {
-      case 'sm':
-        return `${l_prx}-sm`;
-      case 'lg':
-        return `${l_prx}-lg`;
-      default:
-        return `${l_prx}-md`;
-    }
+    return `anukit-input-${size}`;
   };
   
   const getVariantClass = (): string => {
-    if (hasError) return `${l_prx}-error`;
-    
-    switch (variant) {
-      case 'outlined':
-        return `${l_prx}-outlined`;
-      case 'filled':
-        return `${l_prx}-filled`;
-      case 'success':
-        return `${l_prx}-success`;
-      default:
-        return `${l_prx}-default`;
-    }
+    if (hasError) return `anukit-input-error`;
+    if (variant === 'success') return `anukit-input-success`;
+    return '';
   };
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -198,7 +182,12 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
     className
   );
   
-  const inputClasses = cn(`${l_prx}-input`);
+  const inputClasses = cn(
+    'anukit-input',
+    getSizeClass(),
+    getVariantClass(),
+    fullWidth && 'anukit-input-full-width'
+  );
   
   return (
     <div className={wrapperClasses}>
