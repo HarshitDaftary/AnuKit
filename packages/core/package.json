@@ -14,23 +14,23 @@
     },
     "./providers/SSRProvider": {
       "types": "./dist/providers/SSRProvider.d.ts",
-      "import": "./dist/providers/SSRProvider.esm.js",
-      "require": "./dist/providers/SSRProvider.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./hooks/accessibility-hooks": {
+      "types": "./dist/hooks/accessibility-hooks.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
     },
     "./hooks/ssr-hooks": {
       "types": "./dist/hooks/ssr-hooks.d.ts",
-      "import": "./dist/hooks/ssr-hooks.esm.js",
-      "require": "./dist/hooks/ssr-hooks.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
     },
     "./utils/ssr-utils": {
       "types": "./dist/utils/ssr-utils.d.ts",
-      "import": "./dist/utils/ssr-utils.esm.js",
-      "require": "./dist/utils/ssr-utils.js"
-    },
-    "./testing/ssr-test-utils": {
-      "types": "./dist/testing/ssr-test-utils.d.ts",
-      "import": "./dist/testing/ssr-test-utils.esm.js",
-      "require": "./dist/testing/ssr-test-utils.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
