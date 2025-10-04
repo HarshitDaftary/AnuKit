@@ -125,7 +125,6 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
           </svg>
         </button>
       </div>
-
       {/* Calendar Grid */}
       <div className={`${lib}-datepicker-calendar-grid`}>
         {/* Day headers */}
@@ -152,7 +151,6 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                   {getWeekNumber(weekDays[0])}
                 </div>
               )}
-              
               {weekDays.map((date, dayIndex) => {
                 const isCurrentMonth = date.getMonth() === currentMonth.getMonth();
                 const isSelected = selectedDate && isSameDay(date, selectedDate);
@@ -167,13 +165,11 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                     disabled={isDisabled}
                     className={cn(
                       `${lib}-datepicker-day`,
-                      {
-                        [`${lib}-datepicker-day--current-month`]: isCurrentMonth,
-                        [`${lib}-datepicker-day--other-month`]: !isCurrentMonth,
-                        [`${lib}-datepicker-day--selected`]: isSelected,
-                        [`${lib}-datepicker-day--disabled`]: isDisabled,
-                        [`${lib}-datepicker-day--today`]: isToday,
-                      }
+                      isCurrentMonth && `${lib}-datepicker-day--current-month`,
+                      !isCurrentMonth && `${lib}-datepicker-day--other-month`,
+                      isSelected && `${lib}-datepicker-day--selected`,
+                      isDisabled && `${lib}-datepicker-day--disabled`,
+                      isToday && `${lib}-datepicker-day--today`
                     )}
                     aria-label={`${date.toDateString()}`}
                     aria-selected={isSelected}

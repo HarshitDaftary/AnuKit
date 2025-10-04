@@ -120,13 +120,25 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     onImageLoad,
   });
 
+  const toGroupSize = (s: AvatarProps['size']): 'sm' | 'md' | 'lg' => {
+    if (typeof s === 'number') return 'md';
+    switch (s) {
+      case 'sm':
+      case 'md':
+      case 'lg':
+        return s;
+      default:
+        return 'md';
+    }
+  };
+
   // Render group avatar
   if (group) {
     return (
       <AvatarGroup
         users={group.users}
         max={group.max}
-        size={group.size || (typeof size === 'string' ? size : 'md')}
+        size={group.size ?? toGroupSize(size)}
         shape={shape}
         className={className}
       />
