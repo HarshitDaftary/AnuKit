@@ -5,8 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medicine Tracker - AnuKit Demo</title>
   
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Utility classes */
+    .max-w-7xl { max-width: 80rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .p-6 { padding: 1.5rem; }
+    .p-12 { padding: 3rem; }
+    .px-15 { padding-left: 3.75rem; padding-right: 3.75rem; }
+    .pl-15 { padding-left: 3.75rem; }
+    .space-x-3 > * + * { margin-left: 0.75rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .flex-1 { flex: 1 1 0%; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .gap-4 { gap: 1rem; }
+    .grid { display: grid; }
+    .grid-gap-4 { gap: 1rem; }
+    .w-10 { width: 2.5rem; }
+    .h-10 { height: 2.5rem; }
+    .w-12 { width: 3rem; }
+    .h-12 { height: 3rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .text-6xl { font-size: 3.75rem; line-height: 1; }
+    .text-8xl { font-size: 6rem; line-height: 1; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .font-medium { font-weight: 500; }
+    .text-gray-900 { color: rgb(17, 24, 39); }
+    .text-gray-700 { color: rgb(55, 65, 81); }
+    .text-gray-600 { color: rgb(75, 85, 99); }
+    .text-gray-500 { color: rgb(107, 114, 128); }
+    .text-white { color: white; }
+    .text-blue-600 { color: rgb(37, 99, 235); }
+    .text-blue-700 { color: rgb(29, 78, 216); }
+    .text-center { text-align: center; }
+    .leading-relaxed { line-height: 1.625; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mt-1 { margin-top: 0.25rem; }
+    .sticky { position: sticky; }
+    .top-0 { top: 0; }
+    .z-50 { z-index: 50; }
+    .min-h-screen { min-height: 100vh; }
+    .max-w-2xl { max-width: 42rem; }
+    .whitespace-nowrap { white-space: nowrap; }
+    .pt-4 { padding-top: 1rem; }
+    .underline { text-decoration: underline; }
+    .cursor-pointer { cursor: pointer; }
+    .inline-block { display: inline-block; }
+    
+    .bg-gradient-to-br {
+      background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+    }
+    .from-blue-50 { --tw-gradient-from: #eff6ff; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 246, 255, 0)); }
+    .via-purple-50 { --tw-gradient-stops: var(--tw-gradient-from), #faf5ff, var(--tw-gradient-to, rgba(250, 245, 255, 0)); }
+    .to-pink-50 { --tw-gradient-to: #fdf2f8; }
+    .from-blue-500 { --tw-gradient-from: #3b82f6; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(59, 130, 246, 0)); }
+    .to-purple-600 { --tw-gradient-to: #9333ea; }
+    .from-blue-600 { --tw-gradient-from: #2563eb; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(37, 99, 235, 0)); }
+    .bg-gradient-to-r {
+      background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    }
+    
+    @media (min-width: 640px) {
+      .sm\\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .sm\\:inline { display: inline; }
+      .sm\\:flex-row { flex-direction: row; }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+    }
+  </style>
   
   <style>
     * {
