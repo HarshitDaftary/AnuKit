@@ -1,69 +1,69 @@
 /* DataTable Styles - High-performance virtualized table */
 
 /* Container styles */
-.optimui-datatable {
+.anukit-datatable {
   position: relative;
   width: 100%;
 }
 
-.optimui-datatable-virtualized {
+.anukit-datatable-virtualized {
   overflow: hidden;
 }
 
-.optimui-datatable-infinite {
+.anukit-datatable-infinite {
   position: relative;
 }
 
 /* Virtual container */
-.optimui-datatable-virtual-container {
+.anukit-datatable-virtual-container {
   overflow: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--optimui-border) transparent;
+  scrollbar-color: var(--anukit-border) transparent;
 }
 
-.optimui-datatable-virtual-container::-webkit-scrollbar {
+.anukit-datatable-virtual-container::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-.optimui-datatable-virtual-container::-webkit-scrollbar-track {
+.anukit-datatable-virtual-container::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.optimui-datatable-virtual-container::-webkit-scrollbar-thumb {
-  background-color: var(--optimui-border);
+.anukit-datatable-virtual-container::-webkit-scrollbar-thumb {
+  background-color: var(--anukit-border);
   border-radius: 4px;
 }
 
-.optimui-datatable-virtual-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--optimui-border-hover);
+.anukit-datatable-virtual-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--anukit-border-hover);
 }
 
 /* Virtual rows */
-.optimui-datatable-virtual-rows {
+.anukit-datatable-virtual-rows {
   position: relative;
   width: 100%;
 }
 
-.optimui-datatable-virtual-row {
+.anukit-datatable-virtual-row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--optimui-border);
-  background-color: var(--optimui-background);
+  border-bottom: 1px solid var(--anukit-border);
+  background-color: var(--anukit-background);
   transition: background-color 0.15s ease;
   cursor: pointer;
 }
 
-.optimui-datatable-virtual-row:hover {
-  background-color: var(--optimui-background-hover);
+.anukit-datatable-virtual-row:hover {
+  background-color: var(--anukit-background-hover);
 }
 
-.optimui-datatable-virtual-row:last-child {
+.anukit-datatable-virtual-row:last-child {
   border-bottom: none;
 }
 
 /* Virtual cells */
-.optimui-datatable-virtual-cell {
+.anukit-datatable-virtual-cell {
   display: flex;
   align-items: center;
   padding: 12px 16px;
@@ -71,62 +71,62 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 14px;
-  color: var(--optimui-text);
-  border-right: 1px solid var(--optimui-border);
+  color: var(--anukit-text);
+  border-right: 1px solid var(--anukit-border);
 }
 
-.optimui-datatable-virtual-cell:last-child {
+.anukit-datatable-virtual-cell:last-child {
   border-right: none;
 }
 
 /* Infinite scroll indicators */
-.optimui-datatable-infinite-container {
+.anukit-datatable-infinite-container {
   display: flex;
   justify-content: center;
   padding: 16px;
-  border-top: 1px solid var(--optimui-border);
+  border-top: 1px solid var(--anukit-border);
 }
 
-.optimui-datatable-load-more {
+.anukit-datatable-load-more {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  color: var(--optimui-text-muted);
+  color: var(--anukit-text-muted);
   font-size: 14px;
-  background-color: var(--optimui-background-subtle);
+  background-color: var(--anukit-background-subtle);
   border-radius: 8px;
   min-height: 48px;
 }
 
-.optimui-datatable-end-reached {
+.anukit-datatable-end-reached {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  color: var(--optimui-text-muted);
+  color: var(--anukit-text-muted);
   font-size: 14px;
   font-style: italic;
 }
 
 /* Performance optimizations */
-.optimui-datatable-virtual-container {
+.anukit-datatable-virtual-container {
   transform: translateZ(0); /* GPU acceleration */
   will-change: transform;
   contain: layout style paint;
 }
 
-.optimui-datatable-virtual-row {
+.anukit-datatable-virtual-row {
   contain: layout style paint;
 }
 
 /* Loading states */
-.optimui-datatable-load-more.loading {
+.anukit-datatable-load-more.loading {
   opacity: 0.7;
   pointer-events: none;
 }
 
-.optimui-datatable-load-more .spinner {
+.anukit-datatable-load-more .spinner {
   margin-right: 8px;
   animation: spin 1s linear infinite;
 }
@@ -142,12 +142,12 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .optimui-datatable-virtual-cell {
+  .anukit-datatable-virtual-cell {
     padding: 8px 12px;
     font-size: 13px;
   }
   
-  .optimui-datatable-load-more {
+  .anukit-datatable-load-more {
     padding: 12px;
     font-size: 13px;
   }
@@ -155,30 +155,30 @@
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-datatable-virtual-container::-webkit-scrollbar-thumb {
-    background-color: var(--optimui-border-dark, #374151);
+  .anukit-datatable-virtual-container::-webkit-scrollbar-thumb {
+    background-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-datatable-virtual-container::-webkit-scrollbar-thumb:hover {
-    background-color: var(--optimui-border-dark-hover, #4b5563);
+  .anukit-datatable-virtual-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--anukit-border-dark-hover, #4b5563);
   }
   
-  .optimui-datatable-virtual-row {
-    border-bottom-color: var(--optimui-border-dark, #374151);
+  .anukit-datatable-virtual-row {
+    border-bottom-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-datatable-virtual-cell {
-    border-right-color: var(--optimui-border-dark, #374151);
+  .anukit-datatable-virtual-cell {
+    border-right-color: var(--anukit-border-dark, #374151);
   }
 }
 
 /* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .optimui-datatable-virtual-row {
+  .anukit-datatable-virtual-row {
     border-bottom-width: 0.5px;
   }
   
-  .optimui-datatable-virtual-cell {
+  .anukit-datatable-virtual-cell {
     border-right-width: 0.5px;
   }
 }

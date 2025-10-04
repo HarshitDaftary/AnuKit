@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
-import { SSRProvider } from '@optimui/core/providers/SSRProvider';
+import { SSRProvider } from '@anukit/core/providers/SSRProvider';
 import { useEffect } from 'react';
-import { hydrateStyles } from '@optimui/core/providers/SSRProvider';
+import { hydrateStyles } from '@anukit/core/providers/SSRProvider';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {

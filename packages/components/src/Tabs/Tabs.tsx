@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useRef, useEffect } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-tabs`;
 

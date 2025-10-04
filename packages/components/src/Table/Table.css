@@ -1,108 +1,108 @@
 /* Table Styles */
 
 /* Base table */
-.optimui-table {
+.anukit-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--optimui-background, white);
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  background-color: var(--anukit-background, white);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Table variants */
-.optimui-table-bordered {
-  border: 1px solid var(--optimui-border, #d1d5db);
+.anukit-table-bordered {
+  border: 1px solid var(--anukit-border, #d1d5db);
 }
 
-.optimui-table-striped tbody tr:nth-child(even) {
-  background-color: var(--optimui-background-subtle, #f9fafb);
+.anukit-table-striped tbody tr:nth-child(even) {
+  background-color: var(--anukit-background-subtle, #f9fafb);
 }
 
-.optimui-table-hover tbody tr:hover {
-  background-color: var(--optimui-background-hover, #f3f4f6);
+.anukit-table-hover tbody tr:hover {
+  background-color: var(--anukit-background-hover, #f3f4f6);
 }
 
 /* Table head */
-.optimui-table-head {
-  background-color: var(--optimui-background-subtle, #f9fafb);
-  border-bottom: 2px solid var(--optimui-border, #d1d5db);
+.anukit-table-head {
+  background-color: var(--anukit-background-subtle, #f9fafb);
+  border-bottom: 2px solid var(--anukit-border, #d1d5db);
 }
 
-.optimui-table-head-row {
+.anukit-table-head-row {
   border: none;
 }
 
-.optimui-table-head-cell {
+.anukit-table-head-cell {
   padding: 16px 12px;
   text-align: left;
   font-weight: 600;
-  color: var(--optimui-text, #374151);
+  color: var(--anukit-text, #374151);
   font-size: 14px;
-  border-bottom: 1px solid var(--optimui-border, #d1d5db);
+  border-bottom: 1px solid var(--anukit-border, #d1d5db);
   cursor: pointer;
   user-select: none;
   position: relative;
   transition: background-color 0.15s ease;
 }
 
-.optimui-table-head-cell:hover {
-  background-color: var(--optimui-background-hover, #f3f4f6);
+.anukit-table-head-cell:hover {
+  background-color: var(--anukit-background-hover, #f3f4f6);
 }
 
-.optimui-table-head-cell-sortable::after {
+.anukit-table-head-cell-sortable::after {
   content: '↕️';
   margin-left: 8px;
   opacity: 0.5;
   font-size: 12px;
 }
 
-.optimui-table-head-cell-sorted-asc::after {
+.anukit-table-head-cell-sorted-asc::after {
   content: '↑';
   opacity: 1;
-  color: var(--optimui-primary, #3b82f6);
+  color: var(--anukit-primary, #3b82f6);
 }
 
-.optimui-table-head-cell-sorted-desc::after {
+.anukit-table-head-cell-sorted-desc::after {
   content: '↓';
   opacity: 1;
-  color: var(--optimui-primary, #3b82f6);
+  color: var(--anukit-primary, #3b82f6);
 }
 
 /* Table body */
-.optimui-table-body {
-  background-color: var(--optimui-background, white);
+.anukit-table-body {
+  background-color: var(--anukit-background, white);
 }
 
-.optimui-table-body-row {
-  border-bottom: 1px solid var(--optimui-border, #d1d5db);
+.anukit-table-body-row {
+  border-bottom: 1px solid var(--anukit-border, #d1d5db);
   transition: background-color 0.15s ease;
 }
 
-.optimui-table-body-row:last-child {
+.anukit-table-body-row:last-child {
   border-bottom: none;
 }
 
-.optimui-table-body-row-selected {
-  background-color: var(--optimui-primary-light, rgba(59, 130, 246, 0.1));
+.anukit-table-body-row-selected {
+  background-color: var(--anukit-primary-light, rgba(59, 130, 246, 0.1));
 }
 
-.optimui-table-body-cell {
+.anukit-table-body-cell {
   padding: 12px;
   font-size: 14px;
-  color: var(--optimui-text, #374151);
-  border-bottom: 1px solid var(--optimui-border, #d1d5db);
+  color: var(--anukit-text, #374151);
+  border-bottom: 1px solid var(--anukit-border, #d1d5db);
   vertical-align: middle;
 }
 
 /* Selection checkbox */
-.optimui-table-select-cell {
+.anukit-table-select-cell {
   width: 48px;
   padding: 12px 16px;
 }
 
-.optimui-table-select-checkbox {
+.anukit-table-select-checkbox {
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -110,18 +110,18 @@
 
 /* Responsive table */
 @media (max-width: 768px) {
-  .optimui-table-responsive {
+  .anukit-table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
   
-  .optimui-table-head-cell,
-  .optimui-table-body-cell {
+  .anukit-table-head-cell,
+  .anukit-table-body-cell {
     padding: 8px;
     font-size: 13px;
   }
   
-  .optimui-table-head-cell-sortable::after {
+  .anukit-table-head-cell-sortable::after {
     font-size: 10px;
     margin-left: 4px;
   }

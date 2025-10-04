@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode as enc } from '@optimui/utils/sizeMode';
+import { encodeSizeMode as enc } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-container`;
 
 // Inlined utilities to avoid external dependencies

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-textarea`;
 
 // Simple className joiner (truthy values only)

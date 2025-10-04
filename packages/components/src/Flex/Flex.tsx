@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-flex`;
 
 // Inlined utilities to avoid external dependencies
@@ -67,25 +67,25 @@ const getDirectionClass = (direction: FlexDirection): string => {
 };
 
 const getJustifyClass = (justify: JustifyContent): string => {
-  return `optimui-justify-${justify}`;
+  return `anukit-justify-${justify}`;
 };
 
 const getAlignClass = (align: AlignItems): string => {
-  return `optimui-items-${align}`;
+  return `anukit-items-${align}`;
 };
 
 const getAlignContentClass = (alignContent: AlignContent): string => {
-  return `optimui-content-${alignContent}`;
+  return `anukit-content-${alignContent}`;
 };
 
 const getWrapClass = (wrap: FlexWrap): string => {
-  return `optimui-flex-${wrap}`;
+  return `anukit-flex-${wrap}`;
 };
 
 const getGapClass = (gap: GapValue | undefined): string => {
   if (gap === undefined) return '';
   if (gap === 'px') return `${lib}-gap-px`;
-  return `optimui-gap-${gap}`;
+  return `anukit-gap-${gap}`;
 };
 
 /* @__PURE__ */

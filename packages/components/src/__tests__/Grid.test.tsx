@@ -25,8 +25,8 @@ describe('Grid Component', () => {
     );
     
     const gridElement = container.firstChild as HTMLElement;
-    expect(gridElement).toHaveClass('optimui-grid');
-    expect(gridElement).toHaveClass('optimui-grid-cols-3');
+    expect(gridElement).toHaveClass('anukit-grid');
+    expect(gridElement).toHaveClass('anukit-grid-cols-3');
   });
 
   it('applies responsive column classes', () => {
@@ -39,10 +39,10 @@ describe('Grid Component', () => {
     );
     
     const gridElement = container.firstChild as HTMLElement;
-    expect(gridElement).toHaveClass('optimui-grid');
-    expect(gridElement).toHaveClass('optimui-grid-cols-1');
-    expect(gridElement).toHaveClass('md:optimui-grid-cols-2');
-    expect(gridElement).toHaveClass('lg:optimui-grid-cols-3');
+    expect(gridElement).toHaveClass('anukit-grid');
+    expect(gridElement).toHaveClass('anukit-grid-cols-1');
+    expect(gridElement).toHaveClass('md:anukit-grid-cols-2');
+    expect(gridElement).toHaveClass('lg:anukit-grid-cols-3');
   });
 
   it('applies gap classes correctly', () => {
@@ -54,7 +54,7 @@ describe('Grid Component', () => {
     );
     
     const gridElement = container.firstChild as HTMLElement;
-    expect(gridElement).toHaveClass('optimui-gap-6');
+    expect(gridElement).toHaveClass('anukit-gap-6');
   });
 
   it('applies auto-fit grid styles', () => {

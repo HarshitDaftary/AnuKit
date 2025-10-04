@@ -1,17 +1,17 @@
 /* Badge Styles */
 
 /* Badge wrapper for positioning */
-.optimui-badge-wrapper {
+.anukit-badge-wrapper {
   position: relative;
   display: inline-flex;
 }
 
 /* Base badge */
-.optimui-badge {
+.anukit-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-weight: 600;
   line-height: 1;
   text-align: center;
@@ -23,7 +23,7 @@
 }
 
 /* Size variants */
-.optimui-badge-xs {
+.anukit-badge-xs {
   min-width: 16px;
   height: 16px;
   padding: 0 4px;
@@ -31,7 +31,7 @@
   border-radius: 8px;
 }
 
-.optimui-badge-sm {
+.anukit-badge-sm {
   min-width: 18px;
   height: 18px;
   padding: 0 6px;
@@ -39,7 +39,7 @@
   border-radius: 9px;
 }
 
-.optimui-badge-md {
+.anukit-badge-md {
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
@@ -47,7 +47,7 @@
   border-radius: 10px;
 }
 
-.optimui-badge-lg {
+.anukit-badge-lg {
   min-width: 24px;
   height: 24px;
   padding: 0 8px;
@@ -56,7 +56,7 @@
 }
 
 /* Dot variant */
-.optimui-badge-dot {
+.anukit-badge-dot {
   min-width: 8px;
   width: 8px;
   height: 8px;
@@ -64,26 +64,26 @@
   border-radius: 50%;
 }
 
-.optimui-badge-dot.optimui-badge-sm {
+.anukit-badge-dot.anukit-badge-sm {
   min-width: 6px;
   width: 6px;
   height: 6px;
 }
 
-.optimui-badge-dot.optimui-badge-md {
+.anukit-badge-dot.anukit-badge-md {
   min-width: 8px;
   width: 8px;
   height: 8px;
 }
 
-.optimui-badge-dot.optimui-badge-lg {
+.anukit-badge-dot.anukit-badge-lg {
   min-width: 10px;
   width: 10px;
   height: 10px;
 }
 
 /* Position variants */
-.optimui-badge-top-right {
+.anukit-badge-top-right {
   position: absolute;
   top: 0;
   right: 0;
@@ -91,7 +91,7 @@
   z-index: 1;
 }
 
-.optimui-badge-top-left {
+.anukit-badge-top-left {
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +99,7 @@
   z-index: 1;
 }
 
-.optimui-badge-bottom-right {
+.anukit-badge-bottom-right {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -107,7 +107,7 @@
   z-index: 1;
 }
 
-.optimui-badge-bottom-left {
+.anukit-badge-bottom-left {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -115,60 +115,60 @@
   z-index: 1;
 }
 
-.optimui-badge-inline {
+.anukit-badge-inline {
   position: static;
   transform: none;
   margin-left: 8px;
 }
 
 /* Clickable state */
-.optimui-badge-clickable {
+.anukit-badge-clickable {
   cursor: pointer;
 }
 
-.optimui-badge-clickable:hover:not(.optimui-badge-disabled) {
+.anukit-badge-clickable:hover:not(.anukit-badge-disabled) {
   transform: scale(1.05);
 }
 
-.optimui-badge-clickable:focus {
+.anukit-badge-clickable:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.3));
+  box-shadow: 0 0 0 3px var(--anukit-primary-focus, rgba(59, 130, 246, 0.3));
 }
 
-.optimui-badge-clickable:active:not(.optimui-badge-disabled) {
+.anukit-badge-clickable:active:not(.anukit-badge-disabled) {
   transform: scale(0.95);
 }
 
 /* Positioned clickable badges */
-.optimui-badge-top-right.optimui-badge-clickable:hover:not(.optimui-badge-disabled) {
+.anukit-badge-top-right.anukit-badge-clickable:hover:not(.anukit-badge-disabled) {
   transform: translate(50%, -50%) scale(1.05);
 }
 
-.optimui-badge-top-left.optimui-badge-clickable:hover:not(.optimui-badge-disabled) {
+.anukit-badge-top-left.anukit-badge-clickable:hover:not(.anukit-badge-disabled) {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.optimui-badge-bottom-right.optimui-badge-clickable:hover:not(.optimui-badge-disabled) {
+.anukit-badge-bottom-right.anukit-badge-clickable:hover:not(.anukit-badge-disabled) {
   transform: translate(50%, 50%) scale(1.05);
 }
 
-.optimui-badge-bottom-left.optimui-badge-clickable:hover:not(.optimui-badge-disabled) {
+.anukit-badge-bottom-left.anukit-badge-clickable:hover:not(.anukit-badge-disabled) {
   transform: translate(-50%, 50%) scale(1.05);
 }
 
 /* Disabled state */
-.optimui-badge-disabled {
+.anukit-badge-disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* Pulse animation */
-.optimui-badge-pulse {
-  animation: optimui-badge-pulse 2s infinite;
+.anukit-badge-pulse {
+  animation: anukit-badge-pulse 2s infinite;
 }
 
-@keyframes optimui-badge-pulse {
+@keyframes anukit-badge-pulse {
   0% {
     box-shadow: 0 0 0 0 currentColor;
   }
@@ -181,308 +181,308 @@
 }
 
 /* Content and icon layout */
-.optimui-badge-with-icon {
+.anukit-badge-with-icon {
   gap: 2px;
 }
 
-.optimui-badge-icon {
+.anukit-badge-icon {
   display: flex;
   align-items: center;
   line-height: 1;
 }
 
-.optimui-badge-content {
+.anukit-badge-content {
   line-height: 1;
 }
 
 /* Color variants - Solid */
-.optimui-badge-solid-primary {
-  background-color: var(--optimui-primary, #3b82f6);
+.anukit-badge-solid-primary {
+  background-color: var(--anukit-primary, #3b82f6);
   color: white;
 }
 
-.optimui-badge-solid-secondary {
-  background-color: var(--optimui-secondary, #6b7280);
+.anukit-badge-solid-secondary {
+  background-color: var(--anukit-secondary, #6b7280);
   color: white;
 }
 
-.optimui-badge-solid-success {
-  background-color: var(--optimui-success, #10b981);
+.anukit-badge-solid-success {
+  background-color: var(--anukit-success, #10b981);
   color: white;
 }
 
-.optimui-badge-solid-warning {
-  background-color: var(--optimui-warning, #f59e0b);
+.anukit-badge-solid-warning {
+  background-color: var(--anukit-warning, #f59e0b);
   color: white;
 }
 
-.optimui-badge-solid-error {
-  background-color: var(--optimui-error, #ef4444);
+.anukit-badge-solid-error {
+  background-color: var(--anukit-error, #ef4444);
   color: white;
 }
 
-.optimui-badge-solid-info {
-  background-color: var(--optimui-info, #06b6d4);
+.anukit-badge-solid-info {
+  background-color: var(--anukit-info, #06b6d4);
   color: white;
 }
 
-.optimui-badge-solid-neutral {
-  background-color: var(--optimui-neutral, #6b7280);
+.anukit-badge-solid-neutral {
+  background-color: var(--anukit-neutral, #6b7280);
   color: white;
 }
 
-.optimui-badge-solid-custom {
+.anukit-badge-solid-custom {
   background-color: var(--badge-custom-color, #6b7280);
   color: white;
 }
 
 /* Color variants - Outline */
-.optimui-badge-outline-primary {
+.anukit-badge-outline-primary {
   background-color: transparent;
-  border-color: var(--optimui-primary, #3b82f6);
-  color: var(--optimui-primary, #3b82f6);
+  border-color: var(--anukit-primary, #3b82f6);
+  color: var(--anukit-primary, #3b82f6);
 }
 
-.optimui-badge-outline-secondary {
+.anukit-badge-outline-secondary {
   background-color: transparent;
-  border-color: var(--optimui-secondary, #6b7280);
-  color: var(--optimui-secondary, #6b7280);
+  border-color: var(--anukit-secondary, #6b7280);
+  color: var(--anukit-secondary, #6b7280);
 }
 
-.optimui-badge-outline-success {
+.anukit-badge-outline-success {
   background-color: transparent;
-  border-color: var(--optimui-success, #10b981);
-  color: var(--optimui-success, #10b981);
+  border-color: var(--anukit-success, #10b981);
+  color: var(--anukit-success, #10b981);
 }
 
-.optimui-badge-outline-warning {
+.anukit-badge-outline-warning {
   background-color: transparent;
-  border-color: var(--optimui-warning, #f59e0b);
-  color: var(--optimui-warning, #f59e0b);
+  border-color: var(--anukit-warning, #f59e0b);
+  color: var(--anukit-warning, #f59e0b);
 }
 
-.optimui-badge-outline-error {
+.anukit-badge-outline-error {
   background-color: transparent;
-  border-color: var(--optimui-error, #ef4444);
-  color: var(--optimui-error, #ef4444);
+  border-color: var(--anukit-error, #ef4444);
+  color: var(--anukit-error, #ef4444);
 }
 
-.optimui-badge-outline-info {
+.anukit-badge-outline-info {
   background-color: transparent;
-  border-color: var(--optimui-info, #06b6d4);
-  color: var(--optimui-info, #06b6d4);
+  border-color: var(--anukit-info, #06b6d4);
+  color: var(--anukit-info, #06b6d4);
 }
 
-.optimui-badge-outline-neutral {
+.anukit-badge-outline-neutral {
   background-color: transparent;
-  border-color: var(--optimui-neutral, #6b7280);
-  color: var(--optimui-neutral, #6b7280);
+  border-color: var(--anukit-neutral, #6b7280);
+  color: var(--anukit-neutral, #6b7280);
 }
 
-.optimui-badge-outline-custom {
+.anukit-badge-outline-custom {
   background-color: transparent;
   border-color: var(--badge-custom-color, #6b7280);
   color: var(--badge-custom-color, #6b7280);
 }
 
 /* Color variants - Soft */
-.optimui-badge-soft-primary {
-  background-color: var(--optimui-primary-light, rgba(59, 130, 246, 0.1));
-  color: var(--optimui-primary, #3b82f6);
-  border-color: var(--optimui-primary-light, rgba(59, 130, 246, 0.2));
+.anukit-badge-soft-primary {
+  background-color: var(--anukit-primary-light, rgba(59, 130, 246, 0.1));
+  color: var(--anukit-primary, #3b82f6);
+  border-color: var(--anukit-primary-light, rgba(59, 130, 246, 0.2));
 }
 
-.optimui-badge-soft-secondary {
-  background-color: var(--optimui-secondary-light, rgba(107, 114, 128, 0.1));
-  color: var(--optimui-secondary, #6b7280);
-  border-color: var(--optimui-secondary-light, rgba(107, 114, 128, 0.2));
+.anukit-badge-soft-secondary {
+  background-color: var(--anukit-secondary-light, rgba(107, 114, 128, 0.1));
+  color: var(--anukit-secondary, #6b7280);
+  border-color: var(--anukit-secondary-light, rgba(107, 114, 128, 0.2));
 }
 
-.optimui-badge-soft-success {
-  background-color: var(--optimui-success-light, rgba(16, 185, 129, 0.1));
-  color: var(--optimui-success, #10b981);
-  border-color: var(--optimui-success-light, rgba(16, 185, 129, 0.2));
+.anukit-badge-soft-success {
+  background-color: var(--anukit-success-light, rgba(16, 185, 129, 0.1));
+  color: var(--anukit-success, #10b981);
+  border-color: var(--anukit-success-light, rgba(16, 185, 129, 0.2));
 }
 
-.optimui-badge-soft-warning {
-  background-color: var(--optimui-warning-light, rgba(245, 158, 11, 0.1));
-  color: var(--optimui-warning, #f59e0b);
-  border-color: var(--optimui-warning-light, rgba(245, 158, 11, 0.2));
+.anukit-badge-soft-warning {
+  background-color: var(--anukit-warning-light, rgba(245, 158, 11, 0.1));
+  color: var(--anukit-warning, #f59e0b);
+  border-color: var(--anukit-warning-light, rgba(245, 158, 11, 0.2));
 }
 
-.optimui-badge-soft-error {
-  background-color: var(--optimui-error-light, rgba(239, 68, 68, 0.1));
-  color: var(--optimui-error, #ef4444);
-  border-color: var(--optimui-error-light, rgba(239, 68, 68, 0.2));
+.anukit-badge-soft-error {
+  background-color: var(--anukit-error-light, rgba(239, 68, 68, 0.1));
+  color: var(--anukit-error, #ef4444);
+  border-color: var(--anukit-error-light, rgba(239, 68, 68, 0.2));
 }
 
-.optimui-badge-soft-info {
-  background-color: var(--optimui-info-light, rgba(6, 182, 212, 0.1));
-  color: var(--optimui-info, #06b6d4);
-  border-color: var(--optimui-info-light, rgba(6, 182, 212, 0.2));
+.anukit-badge-soft-info {
+  background-color: var(--anukit-info-light, rgba(6, 182, 212, 0.1));
+  color: var(--anukit-info, #06b6d4);
+  border-color: var(--anukit-info-light, rgba(6, 182, 212, 0.2));
 }
 
-.optimui-badge-soft-neutral {
-  background-color: var(--optimui-neutral-light, rgba(107, 114, 128, 0.1));
-  color: var(--optimui-neutral, #6b7280);
-  border-color: var(--optimui-neutral-light, rgba(107, 114, 128, 0.2));
+.anukit-badge-soft-neutral {
+  background-color: var(--anukit-neutral-light, rgba(107, 114, 128, 0.1));
+  color: var(--anukit-neutral, #6b7280);
+  border-color: var(--anukit-neutral-light, rgba(107, 114, 128, 0.2));
 }
 
-.optimui-badge-soft-custom {
+.anukit-badge-soft-custom {
   background-color: color-mix(in srgb, var(--badge-custom-color, #6b7280) 10%, transparent);
   color: var(--badge-custom-color, #6b7280);
   border-color: color-mix(in srgb, var(--badge-custom-color, #6b7280) 20%, transparent);
 }
 
 /* Dot variant colors - inherit from solid */
-.optimui-badge-dot.optimui-badge-primary {
-  background-color: var(--optimui-primary, #3b82f6);
+.anukit-badge-dot.anukit-badge-primary {
+  background-color: var(--anukit-primary, #3b82f6);
 }
 
-.optimui-badge-dot.optimui-badge-secondary {
-  background-color: var(--optimui-secondary, #6b7280);
+.anukit-badge-dot.anukit-badge-secondary {
+  background-color: var(--anukit-secondary, #6b7280);
 }
 
-.optimui-badge-dot.optimui-badge-success {
-  background-color: var(--optimui-success, #10b981);
+.anukit-badge-dot.anukit-badge-success {
+  background-color: var(--anukit-success, #10b981);
 }
 
-.optimui-badge-dot.optimui-badge-warning {
-  background-color: var(--optimui-warning, #f59e0b);
+.anukit-badge-dot.anukit-badge-warning {
+  background-color: var(--anukit-warning, #f59e0b);
 }
 
-.optimui-badge-dot.optimui-badge-error {
-  background-color: var(--optimui-error, #ef4444);
+.anukit-badge-dot.anukit-badge-error {
+  background-color: var(--anukit-error, #ef4444);
 }
 
-.optimui-badge-dot.optimui-badge-info {
-  background-color: var(--optimui-info, #06b6d4);
+.anukit-badge-dot.anukit-badge-info {
+  background-color: var(--anukit-info, #06b6d4);
 }
 
-.optimui-badge-dot.optimui-badge-neutral {
-  background-color: var(--optimui-neutral, #6b7280);
+.anukit-badge-dot.anukit-badge-neutral {
+  background-color: var(--anukit-neutral, #6b7280);
 }
 
-.optimui-badge-dot.optimui-badge-custom {
+.anukit-badge-dot.anukit-badge-custom {
   background-color: var(--badge-custom-color, #6b7280);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .optimui-badge-clickable:hover {
+  .anukit-badge-clickable:hover {
     transform: none;
   }
   
-  .optimui-badge-top-right.optimui-badge-clickable:hover,
-  .optimui-badge-top-left.optimui-badge-clickable:hover,
-  .optimui-badge-bottom-right.optimui-badge-clickable:hover,
-  .optimui-badge-bottom-left.optimui-badge-clickable:hover {
+  .anukit-badge-top-right.anukit-badge-clickable:hover,
+  .anukit-badge-top-left.anukit-badge-clickable:hover,
+  .anukit-badge-bottom-right.anukit-badge-clickable:hover,
+  .anukit-badge-bottom-left.anukit-badge-clickable:hover {
     transform: translate(50%, -50%);
   }
   
-  .optimui-badge-top-left.optimui-badge-clickable:hover {
+  .anukit-badge-top-left.anukit-badge-clickable:hover {
     transform: translate(-50%, -50%);
   }
   
-  .optimui-badge-bottom-right.optimui-badge-clickable:hover {
+  .anukit-badge-bottom-right.anukit-badge-clickable:hover {
     transform: translate(50%, 50%);
   }
   
-  .optimui-badge-bottom-left.optimui-badge-clickable:hover {
+  .anukit-badge-bottom-left.anukit-badge-clickable:hover {
     transform: translate(-50%, 50%);
   }
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-badge-solid-primary {
-    background-color: var(--optimui-primary-dark, #2563eb);
+  .anukit-badge-solid-primary {
+    background-color: var(--anukit-primary-dark, #2563eb);
   }
   
-  .optimui-badge-solid-secondary {
-    background-color: var(--optimui-secondary-dark, #4b5563);
+  .anukit-badge-solid-secondary {
+    background-color: var(--anukit-secondary-dark, #4b5563);
   }
   
-  .optimui-badge-solid-neutral {
-    background-color: var(--optimui-neutral-dark, #4b5563);
+  .anukit-badge-solid-neutral {
+    background-color: var(--anukit-neutral-dark, #4b5563);
   }
   
-  .optimui-badge-outline-primary {
-    border-color: var(--optimui-primary-dark, #2563eb);
-    color: var(--optimui-primary-dark, #2563eb);
+  .anukit-badge-outline-primary {
+    border-color: var(--anukit-primary-dark, #2563eb);
+    color: var(--anukit-primary-dark, #2563eb);
   }
   
-  .optimui-badge-outline-secondary {
-    border-color: var(--optimui-secondary-dark, #4b5563);
-    color: var(--optimui-secondary-dark, #4b5563);
+  .anukit-badge-outline-secondary {
+    border-color: var(--anukit-secondary-dark, #4b5563);
+    color: var(--anukit-secondary-dark, #4b5563);
   }
   
-  .optimui-badge-outline-neutral {
-    border-color: var(--optimui-neutral-dark, #4b5563);
-    color: var(--optimui-neutral-dark, #4b5563);
+  .anukit-badge-outline-neutral {
+    border-color: var(--anukit-neutral-dark, #4b5563);
+    color: var(--anukit-neutral-dark, #4b5563);
   }
   
-  .optimui-badge-soft-primary {
-    background-color: var(--optimui-primary-dark-light, rgba(37, 99, 235, 0.2));
-    color: var(--optimui-primary-dark, #2563eb);
+  .anukit-badge-soft-primary {
+    background-color: var(--anukit-primary-dark-light, rgba(37, 99, 235, 0.2));
+    color: var(--anukit-primary-dark, #2563eb);
   }
   
-  .optimui-badge-soft-secondary {
-    background-color: var(--optimui-secondary-dark-light, rgba(75, 85, 99, 0.2));
-    color: var(--optimui-secondary-dark, #4b5563);
+  .anukit-badge-soft-secondary {
+    background-color: var(--anukit-secondary-dark-light, rgba(75, 85, 99, 0.2));
+    color: var(--anukit-secondary-dark, #4b5563);
   }
   
-  .optimui-badge-soft-neutral {
-    background-color: var(--optimui-neutral-dark-light, rgba(75, 85, 99, 0.2));
-    color: var(--optimui-neutral-dark, #4b5563);
+  .anukit-badge-soft-neutral {
+    background-color: var(--anukit-neutral-dark-light, rgba(75, 85, 99, 0.2));
+    color: var(--anukit-neutral-dark, #4b5563);
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-badge {
+  .anukit-badge {
     border-width: 2px;
   }
   
-  .optimui-badge-solid-primary,
-  .optimui-badge-solid-secondary,
-  .optimui-badge-solid-success,
-  .optimui-badge-solid-warning,
-  .optimui-badge-solid-error,
-  .optimui-badge-solid-info,
-  .optimui-badge-solid-neutral,
-  .optimui-badge-solid-custom {
+  .anukit-badge-solid-primary,
+  .anukit-badge-solid-secondary,
+  .anukit-badge-solid-success,
+  .anukit-badge-solid-warning,
+  .anukit-badge-solid-error,
+  .anukit-badge-solid-info,
+  .anukit-badge-solid-neutral,
+  .anukit-badge-solid-custom {
     border-color: currentColor;
   }
 }
 
 /* Animation preferences */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-badge-clickable {
+  .anukit-badge-clickable {
     transition: none;
   }
   
-  .optimui-badge-clickable:hover {
+  .anukit-badge-clickable:hover {
     transform: none;
   }
   
-  .optimui-badge-clickable:active {
+  .anukit-badge-clickable:active {
     transform: none;
   }
   
-  .optimui-badge-pulse {
+  .anukit-badge-pulse {
     animation: none;
   }
 }
 
 /* Print styles */
 @media print {
-  .optimui-badge {
+  .anukit-badge {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
   
-  .optimui-badge-pulse {
+  .anukit-badge-pulse {
     animation: none;
   }
 }

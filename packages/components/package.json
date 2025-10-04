@@ -1,5 +1,5 @@
 {
-  "name": "@optimui/components",
+  "name": "@anukit/components",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
@@ -24,8 +24,8 @@
     "validate-syntax": "node validate-syntax.mjs"
   },
   "dependencies": {
-    "@optimui/core": "workspace:*",
-    "@optimui/utils": "workspace:*"
+    "@anukit/core": "workspace:*",
+    "@anukit/utils": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

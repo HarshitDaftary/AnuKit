@@ -1,7 +1,7 @@
 /* Avatar Styles */
 
 /* Base avatar */
-.optimui-avatar {
+.anukit-avatar {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -13,40 +13,40 @@
 }
 
 /* Shape variants */
-.optimui-avatar-circle {
+.anukit-avatar-circle {
   border-radius: 50%;
 }
 
-.optimui-avatar-square {
+.anukit-avatar-square {
   border-radius: 0;
 }
 
-.optimui-avatar-rounded {
+.anukit-avatar-rounded {
   border-radius: 8px;
 }
 
 /* Clickable state */
-.optimui-avatar-clickable {
+.anukit-avatar-clickable {
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
-.optimui-avatar-clickable:hover {
+.anukit-avatar-clickable:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.optimui-avatar-clickable:focus {
+.anukit-avatar-clickable:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--optimui-primary-focus, rgba(59, 130, 246, 0.3));
+  box-shadow: 0 0 0 3px var(--anukit-primary-focus, rgba(59, 130, 246, 0.3));
 }
 
-.optimui-avatar-clickable:active {
+.anukit-avatar-clickable:active {
   transform: scale(0.98);
 }
 
 /* Image */
-.optimui-avatar-image {
+.anukit-avatar-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -54,35 +54,35 @@
 }
 
 /* Initials */
-.optimui-avatar-initials {
+.anukit-avatar-initials {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   border-radius: inherit;
 }
 
 /* Fallback */
-.optimui-avatar-fallback {
+.anukit-avatar-fallback {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--optimui-background-subtle, #f3f4f6);
-  color: var(--optimui-text-muted, #6b7280);
+  background-color: var(--anukit-background-subtle, #f3f4f6);
+  color: var(--anukit-text-muted, #6b7280);
   border-radius: inherit;
 }
 
 /* Loading states */
-.optimui-avatar-loading {
-  background-color: var(--optimui-background-subtle, #f3f4f6);
+.anukit-avatar-loading {
+  background-color: var(--anukit-background-subtle, #f3f4f6);
 }
 
-.optimui-avatar-loading-container {
+.anukit-avatar-loading-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -91,7 +91,7 @@
   border-radius: inherit;
 }
 
-.optimui-avatar-loading-overlay {
+.anukit-avatar-loading-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -104,127 +104,127 @@
   border-radius: inherit;
 }
 
-.optimui-avatar-loading-spinner {
+.anukit-avatar-loading-spinner {
   width: 50%;
   height: 50%;
   max-width: 24px;
   max-height: 24px;
-  border: 2px solid var(--optimui-border, #d1d5db);
-  border-top-color: var(--optimui-primary, #3b82f6);
+  border: 2px solid var(--anukit-border, #d1d5db);
+  border-top-color: var(--anukit-primary, #3b82f6);
   border-radius: 50%;
-  animation: optimui-avatar-spin 1s linear infinite;
+  animation: anukit-avatar-spin 1s linear infinite;
 }
 
-@keyframes optimui-avatar-spin {
+@keyframes anukit-avatar-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
 /* Status indicators */
-.optimui-avatar-status {
+.anukit-avatar-status {
   position: absolute;
-  border: 2px solid var(--optimui-background, white);
+  border: 2px solid var(--anukit-background, white);
   border-radius: 50%;
   z-index: 1;
 }
 
-.optimui-avatar-status-top-right {
+.anukit-avatar-status-top-right {
   top: 0;
   right: 0;
   transform: translate(25%, -25%);
 }
 
-.optimui-avatar-status-top-left {
+.anukit-avatar-status-top-left {
   top: 0;
   left: 0;
   transform: translate(-25%, -25%);
 }
 
-.optimui-avatar-status-bottom-right {
+.anukit-avatar-status-bottom-right {
   bottom: 0;
   right: 0;
   transform: translate(25%, 25%);
 }
 
-.optimui-avatar-status-bottom-left {
+.anukit-avatar-status-bottom-left {
   bottom: 0;
   left: 0;
   transform: translate(-25%, 25%);
 }
 
 /* Badge */
-.optimui-avatar-badge {
+.anukit-avatar-badge {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   font-weight: 600;
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   line-height: 1;
   z-index: 2;
   padding: 2px 4px;
   min-width: 16px;
 }
 
-.optimui-avatar-badge-solid {
+.anukit-avatar-badge-solid {
   color: white;
-  border: 2px solid var(--optimui-background, white);
+  border: 2px solid var(--anukit-background, white);
 }
 
-.optimui-avatar-badge-outline {
-  background-color: var(--optimui-background, white);
+.anukit-avatar-badge-outline {
+  background-color: var(--anukit-background, white);
   border: 2px solid currentColor;
 }
 
-.optimui-avatar-badge-top-right {
+.anukit-avatar-badge-top-right {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
 }
 
-.optimui-avatar-badge-top-left {
+.anukit-avatar-badge-top-left {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
 }
 
-.optimui-avatar-badge-bottom-right {
+.anukit-avatar-badge-bottom-right {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
 }
 
-.optimui-avatar-badge-bottom-left {
+.anukit-avatar-badge-bottom-left {
   bottom: 0;
   left: 0;
   transform: translate(-50%, 50%);
 }
 
 /* Group avatar */
-.optimui-avatar-group {
+.anukit-avatar-group {
   display: flex;
   align-items: center;
 }
 
-.optimui-avatar-group-item {
+.anukit-avatar-group-item {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--optimui-background, white);
+  border: 2px solid var(--anukit-background, white);
   overflow: hidden;
-  background-color: var(--optimui-background, white);
+  background-color: var(--anukit-background, white);
 }
 
-.optimui-avatar-group-item .optimui-avatar-image {
+.anukit-avatar-group-item .anukit-avatar-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.optimui-avatar-group-item .optimui-avatar-initials {
+.anukit-avatar-group-item .anukit-avatar-initials {
   width: 100%;
   height: 100%;
   display: flex;
@@ -234,114 +234,114 @@
   color: white;
 }
 
-.optimui-avatar-group-remaining {
-  background-color: var(--optimui-background-subtle, #f3f4f6);
-  color: var(--optimui-text-muted, #6b7280);
+.anukit-avatar-group-remaining {
+  background-color: var(--anukit-background-subtle, #f3f4f6);
+  color: var(--anukit-text-muted, #6b7280);
   font-weight: 600;
-  border: 2px solid var(--optimui-background, white);
+  border: 2px solid var(--anukit-background, white);
 }
 
 /* Size variants */
-.optimui-avatar-xs {
+.anukit-avatar-xs {
   width: 24px;
   height: 24px;
 }
 
-.optimui-avatar-sm {
+.anukit-avatar-sm {
   width: 32px;
   height: 32px;
 }
 
-.optimui-avatar-md {
+.anukit-avatar-md {
   width: 40px;
   height: 40px;
 }
 
-.optimui-avatar-lg {
+.anukit-avatar-lg {
   width: 48px;
   height: 48px;
 }
 
-.optimui-avatar-xl {
+.anukit-avatar-xl {
   width: 56px;
   height: 56px;
 }
 
-.optimui-avatar-2xl {
+.anukit-avatar-2xl {
   width: 64px;
   height: 64px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .optimui-avatar-clickable:hover {
+  .anukit-avatar-clickable:hover {
     transform: none;
   }
   
-  .optimui-avatar-badge {
+  .anukit-avatar-badge {
     font-size: 10px;
     min-width: 14px;
     padding: 1px 3px;
   }
   
-  .optimui-avatar-status {
+  .anukit-avatar-status {
     border-width: 1px;
   }
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-avatar-status,
-  .optimui-avatar-badge-solid,
-  .optimui-avatar-group-item {
-    border-color: var(--optimui-background-dark, #1f2937);
+  .anukit-avatar-status,
+  .anukit-avatar-badge-solid,
+  .anukit-avatar-group-item {
+    border-color: var(--anukit-background-dark, #1f2937);
   }
   
-  .optimui-avatar-badge-outline {
-    background-color: var(--optimui-background-dark, #1f2937);
+  .anukit-avatar-badge-outline {
+    background-color: var(--anukit-background-dark, #1f2937);
   }
   
-  .optimui-avatar-fallback {
-    background-color: var(--optimui-background-subtle-dark, #374151);
-    color: var(--optimui-text-muted-dark, #9ca3af);
+  .anukit-avatar-fallback {
+    background-color: var(--anukit-background-subtle-dark, #374151);
+    color: var(--anukit-text-muted-dark, #9ca3af);
   }
   
-  .optimui-avatar-loading-overlay {
+  .anukit-avatar-loading-overlay {
     background-color: rgba(31, 41, 55, 0.8);
   }
   
-  .optimui-avatar-group-remaining {
-    background-color: var(--optimui-background-subtle-dark, #374151);
-    color: var(--optimui-text-muted-dark, #9ca3af);
-    border-color: var(--optimui-background-dark, #1f2937);
+  .anukit-avatar-group-remaining {
+    background-color: var(--anukit-background-subtle-dark, #374151);
+    color: var(--anukit-text-muted-dark, #9ca3af);
+    border-color: var(--anukit-background-dark, #1f2937);
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-avatar-status,
-  .optimui-avatar-badge,
-  .optimui-avatar-group-item {
+  .anukit-avatar-status,
+  .anukit-avatar-badge,
+  .anukit-avatar-group-item {
     border-width: 3px;
   }
   
-  .optimui-avatar-clickable:focus {
-    box-shadow: 0 0 0 4px var(--optimui-primary, #3b82f6);
+  .anukit-avatar-clickable:focus {
+    box-shadow: 0 0 0 4px var(--anukit-primary, #3b82f6);
   }
 }
 
 /* Print styles */
 @media print {
-  .optimui-avatar-status,
-  .optimui-avatar-badge {
+  .anukit-avatar-status,
+  .anukit-avatar-badge {
     display: none;
   }
   
-  .optimui-avatar-clickable {
+  .anukit-avatar-clickable {
     cursor: default;
   }
   
-  .optimui-avatar-clickable:hover {
+  .anukit-avatar-clickable:hover {
     transform: none;
     box-shadow: none;
   }
@@ -349,19 +349,19 @@
 
 /* Animation preferences */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-avatar-clickable {
+  .anukit-avatar-clickable {
     transition: none;
   }
   
-  .optimui-avatar-loading-spinner {
+  .anukit-avatar-loading-spinner {
     animation: none;
   }
   
-  .optimui-avatar-clickable:hover {
+  .anukit-avatar-clickable:hover {
     transform: none;
   }
   
-  .optimui-avatar-clickable:active {
+  .anukit-avatar-clickable:active {
     transform: none;
   }
 }

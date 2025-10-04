@@ -1,13 +1,13 @@
-# OptimUI Contributing Guide
+# AnuKit Contributing Guide
 
-Thank you for your interest in contributing to OptimUI! This guide will help you get started.
+Thank you for your interest in contributing to AnuKit! This guide will help you get started.
 
 ## 🚀 Quick Start
 
 1. **Fork and clone the repository**
    ```bash
-   git clone https://github.com/your-username/optimui.git
-   cd optimui
+   git clone https://github.com/HarshitDaftary/AnuKit.git
+   cd AnuKit
    ```
 
 2. **Install dependencies**
@@ -30,7 +30,7 @@ Thank you for your interest in contributing to OptimUI! This guide will help you
 Understanding the structure will help you navigate the codebase:
 
 ```
-optimui/
+anukit/
 ├── packages/           # Core packages
 ├── apps/              # Applications (docs, playground, tests)
 ├── tools/             # Shared tooling
@@ -76,7 +76,7 @@ optimui/
 pnpm test
 
 # Run tests for specific package
-pnpm test --filter @optimui/components
+pnpm test --filter @anukit/components
 
 # Run accessibility tests
 pnpm test:a11y
@@ -94,7 +94,7 @@ All components must meet size requirements:
 pnpm size
 
 # Individual component analysis
-pnpm size --filter @optimui/button
+pnpm size --filter @anukit/button
 ```
 
 ## 📏 Component Guidelines
@@ -140,10 +140,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={clsx(
-          'optimui-button',
-          `optimui-button--${variant}`,
-          `optimui-button--${size}`,
-          loading && 'optimui-button--loading',
+          'anukit-button',
+          `anukit-button--${variant}`,
+          `anukit-button--${size}`,
+          loading && 'anukit-button--loading',
           className
         )}
         disabled={loading || props.disabled}
@@ -245,7 +245,7 @@ Contributors are recognized in:
 - **Discussions**: GitHub Discussions for questions
 - **Issues**: GitHub Issues for bugs
 - **Discord**: Community chat (coming soon)
-- **Email**: maintainers@optimui.dev
+- **Email**: maintainers@anukit.dev
 
 ## 📜 Code of Conduct
 
@@ -253,4 +253,4 @@ This project follows the [Contributor Covenant](https://www.contributor-covenant
 
 ---
 
-Thank you for contributing to OptimUI! Together we're building the future of React component libraries. 🚀
+Thank you for contributing to AnuKit! Together we're building the future of React component libraries. 🚀

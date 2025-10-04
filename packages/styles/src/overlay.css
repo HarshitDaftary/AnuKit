@@ -4,7 +4,7 @@
  */
 
 /* Modal Styles */
-.optimui-modal {
+.anukit-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,12 +20,12 @@
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.optimui-modal.optimui-modal-open {
+.anukit-modal.anukit-modal-open {
   opacity: 1;
   visibility: visible;
 }
 
-.optimui-modal-content {
+.anukit-modal-content {
   background: white;
   border-radius: 8px;
   padding: 24px;
@@ -37,25 +37,25 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-.optimui-modal.optimui-modal-open .optimui-modal-content {
+.anukit-modal.anukit-modal-open .anukit-modal-content {
   transform: scale(1);
 }
 
-.optimui-modal-header {
+.anukit-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
 }
 
-.optimui-modal-title {
+.anukit-modal-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-text-primary);
   margin: 0;
 }
 
-.optimui-modal-close {
+.anukit-modal-close {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -66,17 +66,17 @@
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.optimui-modal-close:hover {
+.anukit-modal-close:hover {
   color: var(--color-text-primary);
   background-color: var(--color-gray-100);
 }
 
-.optimui-modal-body {
+.anukit-modal-body {
   color: var(--color-text-primary);
   line-height: 1.6;
 }
 
-.optimui-modal-footer {
+.anukit-modal-footer {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -84,7 +84,7 @@
 }
 
 /* Tooltip Styles */
-.optimui-tooltip {
+.anukit-tooltip {
   position: absolute;
   z-index: 1100;
   background: var(--color-gray-900);
@@ -102,13 +102,13 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.optimui-tooltip.optimui-tooltip-visible {
+.anukit-tooltip.anukit-tooltip-visible {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
 }
 
-.optimui-tooltip-arrow {
+.anukit-tooltip-arrow {
   position: absolute;
   width: 0;
   height: 0;
@@ -116,44 +116,44 @@
 }
 
 /* Tooltip positions */
-.optimui-tooltip-top {
+.anukit-tooltip-top {
   margin-bottom: 6px;
 }
 
-.optimui-tooltip-top .optimui-tooltip-arrow {
+.anukit-tooltip-top .anukit-tooltip-arrow {
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
   border-top-color: var(--color-gray-900);
 }
 
-.optimui-tooltip-bottom {
+.anukit-tooltip-bottom {
   margin-top: 6px;
 }
 
-.optimui-tooltip-bottom .optimui-tooltip-arrow {
+.anukit-tooltip-bottom .anukit-tooltip-arrow {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
   border-bottom-color: var(--color-gray-900);
 }
 
-.optimui-tooltip-left {
+.anukit-tooltip-left {
   margin-right: 6px;
 }
 
-.optimui-tooltip-left .optimui-tooltip-arrow {
+.anukit-tooltip-left .anukit-tooltip-arrow {
   right: -12px;
   top: 50%;
   transform: translateY(-50%);
   border-left-color: var(--color-gray-900);
 }
 
-.optimui-tooltip-right {
+.anukit-tooltip-right {
   margin-left: 6px;
 }
 
-.optimui-tooltip-right .optimui-tooltip-arrow {
+.anukit-tooltip-right .anukit-tooltip-arrow {
   left: -12px;
   top: 50%;
   transform: translateY(-50%);
@@ -162,34 +162,34 @@
 
 /* Dark theme overrides */
 @media (prefers-color-scheme: dark) {
-  .optimui-modal-content {
+  .anukit-modal-content {
     background: var(--color-gray-800);
     color: var(--color-text-primary-dark);
   }
   
-  .optimui-modal-title {
+  .anukit-modal-title {
     color: var(--color-text-primary-dark);
   }
   
-  .optimui-modal-close {
+  .anukit-modal-close {
     color: var(--color-text-secondary-dark);
   }
   
-  .optimui-modal-close:hover {
+  .anukit-modal-close:hover {
     color: var(--color-text-primary-dark);
     background-color: var(--color-gray-700);
   }
   
-  .optimui-modal-body {
+  .anukit-modal-body {
     color: var(--color-text-primary-dark);
   }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-modal,
-  .optimui-modal-content,
-  .optimui-tooltip {
+  .anukit-modal,
+  .anukit-modal-content,
+  .anukit-tooltip {
     transition: none;
   }
 }

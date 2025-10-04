@@ -5,10 +5,9 @@
 
 import React, { useEffect, useRef, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useSSRSafeId, usePortal } from '@optimui/utils';
-import { encodeSizeMode as enc } from '@optimui/utils/sizeMode';
+import { useSSRSafeId, usePortal, encodeSizeMode as enc } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-modal`;
 
@@ -131,7 +130,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(({
   return createPortal(
     <div
       ref={overlayRef}
-      className={`optimui-modal ${isOpen ? `}${lib}-modal-open` : ''}`}
+      className={`anukit-modal ${isOpen ? `}${lib}-modal-open` : ''}`}
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
@@ -140,7 +139,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(({
     >
       <div
         ref={ref || modalRef}
-        className={`optimui-modal-content ${sizeClasses[enc(size)]}`}
+        className={`anukit-modal-content ${sizeClasses[enc(size)]}`}
         onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
       >

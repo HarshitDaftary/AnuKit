@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
-import { useKeyboardNavigation, useHover, useFocus } from '@optimui/core/hooks/accessibility-hooks';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { useSSRSafeId } from '@anukit/core/providers/SSRProvider';
+import { useKeyboardNavigation, useHover, useFocus } from '@anukit/core/hooks/accessibility-hooks';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-tooltip`;
 
 export interface TooltipProps {
@@ -41,6 +41,26 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const tooltipId = useSSRSafeId('tooltip');
+
+  // Define tooltip control functions first
+  const showTooltip = () => {
+    if (disabled) return;
+    
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+  };
+
+  const hideTooltip = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsVisible(false);
+  };
 
   // Enhanced interaction hooks
   const { isHovered, hoverProps } = useHover({
@@ -94,25 +114,6 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(({
     y = Math.max(8, Math.min(y, viewportHeight - tooltipRect.height - 8));
 
     setPosition({ x, y });
-  };
-
-  const showTooltip = () => {
-    if (disabled) return;
-    
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    
-    timeoutRef.current = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
-  };
-
-  const hideTooltip = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsVisible(false);
   };
 
   useEffect(() => {

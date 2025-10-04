@@ -4,9 +4,9 @@
  */
 
 import React from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 export interface AvatarBadgeProps {
   content?: React.ReactNode;
@@ -69,9 +69,9 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
 
   const badgeClasses = cn(
     `${lib}-avatar-badge`,
-    `optimui-avatar-badge--${variant}`,
-    `optimui-avatar-badge--${size}`,
-    `optimui-avatar-badge--${position}`,
+    `anukit-avatar-badge--${variant}`,
+    `anukit-avatar-badge--${size}`,
+    `anukit-avatar-badge--${position}`,
     className
   );
 

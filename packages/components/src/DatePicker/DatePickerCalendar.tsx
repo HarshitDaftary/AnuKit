@@ -4,9 +4,9 @@
  */
 
 import React, { useMemo, useCallback } from 'react';
-import { cn, isSameDay } from '@optimui/utils';
+import { cn, isSameDay } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-datepicker-calendar`;
 
 export interface DatePickerCalendarProps {
@@ -128,7 +128,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
       {/* Calendar Grid */}
       <div className={`${lib}-datepicker-calendar-grid`}>
         {/* Day headers */}
-        <div className={`${lib}-datepicker-calendar-row optimui-datepicker-calendar-header-row`}>
+        <div className={`${lib}-datepicker-calendar-row anukit-datepicker-calendar-header-row`}>
           {showWeekNumbers && (
             <div className={`${lib}-datepicker-week-number-header`}>Wk</div>
           )}
@@ -153,7 +153,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
               )}
               {weekDays.map((date, dayIndex) => {
                 const isCurrentMonth = date.getMonth() === currentMonth.getMonth();
-                const isSelected = selectedDate && isSameDay(date, selectedDate);
+                const isSelected = Boolean(selectedDate && isSameDay(date, selectedDate));
                 const isDisabled = isDateDisabled(date);
                 const isToday = isSameDay(date, new Date());
                 
@@ -172,7 +172,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                       isToday && `${lib}-datepicker-day--today`
                     )}
                     aria-label={`${date.toDateString()}`}
-                    aria-selected={isSelected}
+                    aria-selected={isSelected || undefined}
                   >
                     {date.getDate()}
                   </button>

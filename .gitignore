@@ -1,5 +1,5 @@
 # ===========================================
-# OptimUI Component Library .gitignore
+# AnuKit Component Library .gitignore
 # Comprehensive patterns for monorepo setup
 # ===========================================
 
@@ -225,7 +225,7 @@ benchmarks/results/
 # yarn.lock
 # pnpm-lock.yaml
 
-# Custom ignore patterns for OptimUI
+# Custom ignore patterns for AnuKit
 # ===================================
 # Bundle size reports and analysis
 BUNDLE_*.md

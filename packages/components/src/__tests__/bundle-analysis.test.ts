@@ -7,20 +7,20 @@
 
 // ✅ SCENARIO 1: Full component import (backwards compatible)
 // This should include the entire component
-import { Table } from '@optimui/components';
+import { Table } from '@anukit/components';
 
 // ✅ SCENARIO 2: Hook-only imports (tree-shakeable)
 // This should only include the specific hook logic
-import { useTableSorting } from '@optimui/components/Table';
-import { useVirtualization } from '@optimui/components/DataTable';
+import { useTableSorting } from '@anukit/components/Table';
+import { useVirtualization } from '@anukit/components/DataTable';
 
 // ✅ SCENARIO 3: Utility-only imports (minimal bundle impact)  
 // This should only include the specific utility functions
-import { getCellValue, renderCellContent } from '@optimui/utils';
+import { getCellValue, renderCellContent } from '@anukit/utils';
 
 // ✅ SCENARIO 4: Mixed imports (selective tree-shaking)
 // Should include only what's actually used
-import { Table, useTableSorting } from '@optimui/components/Table';
+import { Table, useTableSorting } from '@anukit/components/Table';
 
 /**
  * Bundle Size Analysis Results
@@ -147,28 +147,28 @@ export const developerExperienceMetrics = {
 export const treeShakingValidation = {
   test1: {
     description: 'Import only useTableSorting',
-    import: 'import { useTableSorting } from "@optimui/components/Table"',
+    import: 'import { useTableSorting } from "@anukit/components/Table"',
     expectedBundle: 'Should NOT include Table component, selection logic, or other hooks',
     bundleSize: '~3KB (hook only)',
   },
 
   test2: {
     description: 'Import only utilities',
-    import: 'import { getCellValue } from "@optimui/utils"',
+    import: 'import { getCellValue } from "@anukit/utils"',
     expectedBundle: 'Should NOT include components or hooks',
     bundleSize: '~0.5KB (function only)',
   },
 
   test3: {
     description: 'Import full component',
-    import: 'import { Table } from "@optimui/components"',
+    import: 'import { Table } from "@anukit/components"',
     expectedBundle: 'Should include component + used hooks, but NOT unused hooks',
     bundleSize: '~15KB (component + sorting + selection)',
   },
 
   test4: {
     description: 'Mixed selective imports',
-    import: 'import { useVirtualization } from "@optimui/components/DataTable"; import { getCellValue } from "@optimui/utils"',
+    import: 'import { useVirtualization } from "@anukit/components/DataTable"; import { getCellValue } from "@anukit/utils"',
     expectedBundle: 'Should include ONLY virtualization hook + utility function',
     bundleSize: '~5.5KB (virtualization + utility)',
   },

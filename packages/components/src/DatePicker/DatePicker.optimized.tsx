@@ -5,14 +5,14 @@
  */
 
 import React, { forwardRef, useRef, useEffect } from 'react';
-import { cn, usePortal } from '@optimui/utils';
+import { cn, usePortal } from '@anukit/utils';
 import { useDatePicker } from './hooks/useDatePicker';
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerCalendar } from './DatePickerCalendar';
 import { DatePickerProps } from './types';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-datepicker`;
 
 const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
@@ -109,7 +109,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           event.preventDefault();
           // Focus management for calendar navigation
           const firstButton = calendarRef.current.querySelector(
-            '.optimui-datepicker-day:not(:disabled)'
+            '.anukit-datepicker-day:not(:disabled)'
           ) as HTMLButtonElement;
           firstButton?.focus();
           break;
@@ -132,7 +132,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   // Calendar positioning
   const calendarClasses = cn(
     `${lib}-datepicker-popup`,
-    `optimui-datepicker-popup--${size}`
+    `anukit-datepicker-popup--${size}`
   );
 
   // Render custom input if provided

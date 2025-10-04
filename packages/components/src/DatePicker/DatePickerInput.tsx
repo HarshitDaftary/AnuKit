@@ -4,23 +4,23 @@
  */
 
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-datepicker-input`;
 
 export interface DatePickerInputProps {
   value: string;
   onChange: (value: string) => void;
-  onFocus: () => void;
-  onBlur: () => void;
-  onKeyDown: (event: React.KeyboardEvent) => void;
+  onFocus: (event: React.FocusEvent<HTMLInputElement>) => void | undefined;
+  onBlur: (event: React.FocusEvent<HTMLInputElement>) => void | undefined;
+  onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string;
   disabled?: boolean;
   readOnly?: boolean;
   error?: string;
   size?: 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'outlined' | 'filled';
+  variant?: 'default' | 'outlined' | 'filled' | 'error' | 'success';
   className?: string;
   'aria-label'?: string;
   'aria-describedby'?: string;
@@ -63,13 +63,13 @@ const DatePickerInput = forwardRef<HTMLInputElement, DatePickerInputProps>(({
 
   const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
     if (!disabled) {
-      onFocus();
+      onFocus?.(event);
     }
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     if (!disabled) {
-      onBlur();
+      onBlur?.(event);
     }
   };
 

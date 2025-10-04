@@ -1,7 +1,7 @@
 {
-  "name": "@optimui/eslint-config",
+  "name": "@anukit/eslint-config",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
-  "description": "Shared ESLint configuration for OptimUI"
+  "description": "Shared ESLint configuration for AnuKit"
 }

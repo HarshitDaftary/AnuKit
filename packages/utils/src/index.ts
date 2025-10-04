@@ -167,3 +167,6 @@ export type PolymorphicComponentPropWithRef<
 
 // Table utilities
 export * from './table-utils';
+
+// Size mode utilities
+export * from './sizeMode';

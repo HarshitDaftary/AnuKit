@@ -4,10 +4,9 @@
  */
 
 import React, { forwardRef } from 'react';
-import { useSSRSafeId } from '@optimui/utils';
-import { encodeSizeMode as enc } from '@optimui/utils/sizeMode';
+import { useSSRSafeId, encodeSizeMode as enc } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-input`;
 

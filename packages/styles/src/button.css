@@ -3,7 +3,7 @@
  * Primary, secondary, and utility button styles
  */
 
-.optimui-button {
+.anukit-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -23,91 +23,91 @@
   user-select: none;
 }
 
-.optimui-button:focus-visible {
+.anukit-button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* Button variants */
-.optimui-button-primary {
+.anukit-button-primary {
   background-color: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
 }
 
-.optimui-button-primary:hover:not(:disabled) {
+.anukit-button-primary:hover:not(:disabled) {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.optimui-button-secondary {
+.anukit-button-secondary {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.optimui-button-secondary:hover:not(:disabled) {
+.anukit-button-secondary:hover:not(:disabled) {
   background-color: var(--color-primary);
   color: white;
 }
 
-.optimui-button-ghost {
+.anukit-button-ghost {
   background-color: transparent;
   color: var(--color-text-primary);
   border-color: transparent;
 }
 
-.optimui-button-ghost:hover:not(:disabled) {
+.anukit-button-ghost:hover:not(:disabled) {
   background-color: var(--color-gray-100);
 }
 
-.optimui-button-danger {
+.anukit-button-danger {
   background-color: var(--color-danger);
   color: white;
   border-color: var(--color-danger);
 }
 
-.optimui-button-danger:hover:not(:disabled) {
+.anukit-button-danger:hover:not(:disabled) {
   background-color: var(--color-danger-dark);
   border-color: var(--color-danger-dark);
 }
 
 /* Button sizes */
-.optimui-button-sm {
+.anukit-button-sm {
   padding: 8px 12px;
   font-size: 0.75rem;
   gap: 6px;
 }
 
-.optimui-button-md {
+.anukit-button-md {
   padding: 12px 16px;
   font-size: 0.875rem;
   gap: 8px;
 }
 
-.optimui-button-lg {
+.anukit-button-lg {
   padding: 16px 24px;
   font-size: 1rem;
   gap: 10px;
 }
 
 /* Button states */
-.optimui-button:disabled {
+.anukit-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.optimui-button-loading {
+.anukit-button-loading {
   cursor: wait;
   position: relative;
 }
 
-.optimui-button-loading .optimui-button-content {
+.anukit-button-loading .anukit-button-content {
   opacity: 0.5;
 }
 
-.optimui-button-loading::after {
+.anukit-button-loading::after {
   content: '';
   position: absolute;
   width: 16px;
@@ -115,30 +115,30 @@
   border: 2px solid transparent;
   border-top-color: currentColor;
   border-radius: 50%;
-  animation: optimui-button-spin 1s linear infinite;
+  animation: anukit-button-spin 1s linear infinite;
 }
 
 /* Full width button */
-.optimui-button-full {
+.anukit-button-full {
   width: 100%;
 }
 
 /* Icon-only button */
-.optimui-button-icon-only {
+.anukit-button-icon-only {
   padding: 12px;
   gap: 0;
 }
 
-.optimui-button-icon-only.optimui-button-sm {
+.anukit-button-icon-only.anukit-button-sm {
   padding: 8px;
 }
 
-.optimui-button-icon-only.optimui-button-lg {
+.anukit-button-icon-only.anukit-button-lg {
   padding: 16px;
 }
 
 /* Button animations */
-@keyframes optimui-button-spin {
+@keyframes anukit-button-spin {
   from {
     transform: rotate(0deg);
   }
@@ -149,20 +149,20 @@
 
 /* Dark theme overrides */
 @media (prefers-color-scheme: dark) {
-  .optimui-button-ghost {
+  .anukit-button-ghost {
     color: var(--color-text-primary-dark);
   }
   
-  .optimui-button-ghost:hover:not(:disabled) {
+  .anukit-button-ghost:hover:not(:disabled) {
     background-color: var(--color-gray-700);
   }
   
-  .optimui-button-secondary {
+  .anukit-button-secondary {
     color: var(--color-primary-light);
     border-color: var(--color-primary-light);
   }
   
-  .optimui-button-secondary:hover:not(:disabled) {
+  .anukit-button-secondary:hover:not(:disabled) {
     background-color: var(--color-primary-light);
     color: var(--color-gray-900);
   }
@@ -170,22 +170,22 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-button {
+  .anukit-button {
     transition: none;
   }
   
-  .optimui-button-loading::after {
+  .anukit-button-loading::after {
     animation: none;
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-button {
+  .anukit-button {
     border-width: 2px;
   }
   
-  .optimui-button:focus-visible {
+  .anukit-button:focus-visible {
     outline-width: 3px;
   }
 }

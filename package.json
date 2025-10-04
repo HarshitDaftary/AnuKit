@@ -1,11 +1,11 @@
 {
-  "name": "@optimui/monorepo",
+  "name": "@anukit/monorepo",
   "version": "0.1.0",
   "private": true,
   "description": "High-performance React component library with optimal bundle size and SSR support",
   "repository": {
     "type": "git",
-    "url": "https://github.com/optimui/optimui.git"
+    "url": "https://github.com/HarshitDaftary/AnuKit.git"
   },
   "workspaces": [
     "packages/*",
@@ -17,13 +17,13 @@
     "build:packages": "turbo run build --filter='./packages/*'",
     "build:tools": "turbo run build --filter='./tools/*'",
     "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter=@optimui/docs",
-    "dev:playground": "turbo run dev --filter=@optimui/playground",
+    "dev:docs": "turbo run dev --filter=@anukit/docs",
+    "dev:playground": "turbo run dev --filter=@anukit/playground",
     "lint": "turbo run lint",
     "lint:check": "eslint . --ext .ts,.tsx,.js,.jsx",
-  "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-  "lint:strict": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings=0",
-  "codemod:cn": "pnpm dlx jscodeshift -t tools/codemods/cn-object-to-conditions.js 'packages/**/*.{ts,tsx,js,jsx}'",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "lint:strict": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings=0",
+    "codemod:cn": "pnpm dlx jscodeshift -t tools/codemods/cn-object-to-conditions.js packages --extensions=ts,tsx,js,jsx --parser=tsx",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "turbo run test",
@@ -39,14 +39,14 @@
     "size": "turbo run size",
     "benchmark": "turbo run benchmark",
     "lighthouse": "turbo run lighthouse",
-    "docs:build": "turbo run build --filter=@optimui/docs",
+    "docs:build": "turbo run build --filter=@anukit/docs",
     "docs:deploy": "npm run docs:build && npm run docs:export",
-    "setup": "npm install && npm run build:packages",
-    "codemod:cn": "pnpm dlx jscodeshift -t tools/codemods/cn-object-to-conditions.js packages --extensions=ts,tsx,js,jsx --parser=tsx"
+    "setup": "npm install && npm run build:packages"
   },
   "devDependencies": {
-    
     "@changesets/cli": "^2.26.2",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
     "@swc/core": "^1.3.95",
     "@swc/jest": "^0.2.29",
     "@testing-library/jest-dom": "^6.1.4",

@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
-import { Button } from '@optimui/components/Button/Button';
-import { Modal } from '@optimui/components/Modal/Modal';
+import { Button } from '@anukit/components/Button/Button';
+import { Modal } from '@anukit/components/Modal/Modal';
 import {
   testSSRCompatibility,
   testProgressiveEnhancement,
@@ -8,7 +8,7 @@ import {
   testSSRAccessibility,
   testThemeCompatibility,
   testResponsiveSSR,
-} from '@optimui/core/testing/ssr-test-utils';
+} from '@anukit/core/testing/ssr-test-utils';
 
 describe('OptimUI SSR Compatibility', () => {
   describe('Button Component', () => {

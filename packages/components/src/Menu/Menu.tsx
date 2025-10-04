@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useRef, useEffect } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-menu`;
 
@@ -65,7 +65,7 @@ const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
 
 // Placement-based CSS classes
 const getPlacementClasses = (placement: string) => {
-  return `optimui-menu-${placement}`;
+  return `anukit-menu-${placement}`;
 };
 
 /* @__PURE__ */

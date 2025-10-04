@@ -1,45 +1,45 @@
 /* Divider Styles */
 
 /* Base divider */
-.optimui-divider {
+.anukit-divider {
   display: flex;
   align-items: center;
-  color: var(--optimui-border, #d1d5db);
+  color: var(--anukit-border, #d1d5db);
   border: 0;
   position: relative;
 }
 
 /* Orientation */
-.optimui-divider-horizontal {
+.anukit-divider-horizontal {
   width: 100%;
   flex-direction: row;
 }
 
-.optimui-divider-vertical {
+.anukit-divider-vertical {
   height: 100%;
   flex-direction: column;
   writing-mode: vertical-lr;
 }
 
-.optimui-divider-full-size.optimui-divider-horizontal {
+.anukit-divider-full-size.anukit-divider-horizontal {
   width: 100vw;
 }
 
-.optimui-divider-full-size.optimui-divider-vertical {
+.anukit-divider-full-size.anukit-divider-vertical {
   height: 100vh;
 }
 
 /* Variants and thickness */
-.optimui-divider-horizontal::before,
-.optimui-divider-horizontal::after {
+.anukit-divider-horizontal::before,
+.anukit-divider-horizontal::after {
   content: '';
   flex: 1;
   height: 1px;
   background-color: var(--divider-color, currentColor);
 }
 
-.optimui-divider-vertical::before,
-.optimui-divider-vertical::after {
+.anukit-divider-vertical::before,
+.anukit-divider-vertical::after {
   content: '';
   flex: 1;
   width: 1px;
@@ -47,29 +47,29 @@
 }
 
 /* Thickness variants */
-.optimui-divider-medium.optimui-divider-horizontal::before,
-.optimui-divider-medium.optimui-divider-horizontal::after {
+.anukit-divider-medium.anukit-divider-horizontal::before,
+.anukit-divider-medium.anukit-divider-horizontal::after {
   height: 2px;
 }
 
-.optimui-divider-thick.optimui-divider-horizontal::before,
-.optimui-divider-thick.optimui-divider-horizontal::after {
+.anukit-divider-thick.anukit-divider-horizontal::before,
+.anukit-divider-thick.anukit-divider-horizontal::after {
   height: 3px;
 }
 
-.optimui-divider-medium.optimui-divider-vertical::before,
-.optimui-divider-medium.optimui-divider-vertical::after {
+.anukit-divider-medium.anukit-divider-vertical::before,
+.anukit-divider-medium.anukit-divider-vertical::after {
   width: 2px;
 }
 
-.optimui-divider-thick.optimui-divider-vertical::before,
-.optimui-divider-thick.optimui-divider-vertical::after {
+.anukit-divider-thick.anukit-divider-vertical::before,
+.anukit-divider-thick.anukit-divider-vertical::after {
   width: 3px;
 }
 
 /* Style variants */
-.optimui-divider-dashed::before,
-.optimui-divider-dashed::after {
+.anukit-divider-dashed::before,
+.anukit-divider-dashed::after {
   background-image: repeating-linear-gradient(
     to right,
     var(--divider-color, currentColor) 0,
@@ -80,8 +80,8 @@
   background-color: transparent;
 }
 
-.optimui-divider-dotted::before,
-.optimui-divider-dotted::after {
+.anukit-divider-dotted::before,
+.anukit-divider-dotted::after {
   background-image: repeating-linear-gradient(
     to right,
     var(--divider-color, currentColor) 0,
@@ -92,8 +92,8 @@
   background-color: transparent;
 }
 
-.optimui-divider-vertical.optimui-divider-dashed::before,
-.optimui-divider-vertical.optimui-divider-dashed::after {
+.anukit-divider-vertical.anukit-divider-dashed::before,
+.anukit-divider-vertical.anukit-divider-dashed::after {
   background-image: repeating-linear-gradient(
     to bottom,
     var(--divider-color, currentColor) 0,
@@ -103,8 +103,8 @@
   );
 }
 
-.optimui-divider-vertical.optimui-divider-dotted::before,
-.optimui-divider-vertical.optimui-divider-dotted::after {
+.anukit-divider-vertical.anukit-divider-dotted::before,
+.anukit-divider-vertical.anukit-divider-dotted::after {
   background-image: repeating-linear-gradient(
     to bottom,
     var(--divider-color, currentColor) 0,
@@ -115,139 +115,139 @@
 }
 
 /* Margin variants */
-.optimui-divider-margin-sm {
+.anukit-divider-margin-sm {
   margin: 8px 0;
 }
 
-.optimui-divider-margin-md {
+.anukit-divider-margin-md {
   margin: 16px 0;
 }
 
-.optimui-divider-margin-lg {
+.anukit-divider-margin-lg {
   margin: 24px 0;
 }
 
-.optimui-divider-margin-none {
+.anukit-divider-margin-none {
   margin: 0;
 }
 
-.optimui-divider-vertical.optimui-divider-margin-sm {
+.anukit-divider-vertical.anukit-divider-margin-sm {
   margin: 0 8px;
 }
 
-.optimui-divider-vertical.optimui-divider-margin-md {
+.anukit-divider-vertical.anukit-divider-margin-md {
   margin: 0 16px;
 }
 
-.optimui-divider-vertical.optimui-divider-margin-lg {
+.anukit-divider-vertical.anukit-divider-margin-lg {
   margin: 0 24px;
 }
 
 /* Label support */
-.optimui-divider-with-label::before,
-.optimui-divider-with-label::after {
+.anukit-divider-with-label::before,
+.anukit-divider-with-label::after {
   flex: 1;
 }
 
-.optimui-divider-label {
+.anukit-divider-label {
   padding: 0 16px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--optimui-text-muted, #6b7280);
-  background-color: var(--optimui-background, white);
+  color: var(--anukit-text-muted, #6b7280);
+  background-color: var(--anukit-background, white);
   white-space: nowrap;
 }
 
 /* Text alignment */
-.optimui-divider-text-left .optimui-divider-label {
+.anukit-divider-text-left .anukit-divider-label {
   padding-left: 0;
 }
 
-.optimui-divider-text-left::before {
+.anukit-divider-text-left::before {
   flex: 0 0 24px;
 }
 
-.optimui-divider-text-right .optimui-divider-label {
+.anukit-divider-text-right .anukit-divider-label {
   padding-right: 0;
 }
 
-.optimui-divider-text-right::after {
+.anukit-divider-text-right::after {
   flex: 0 0 24px;
 }
 
 /* Without label (simple line) */
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-horizontal {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-horizontal {
   border-top: 1px solid var(--divider-color, currentColor);
   height: 0;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-vertical {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-vertical {
   border-left: 1px solid var(--divider-color, currentColor);
   width: 0;
   min-height: 24px;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-medium.optimui-divider-horizontal {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-medium.anukit-divider-horizontal {
   border-top-width: 2px;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-thick.optimui-divider-horizontal {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-thick.anukit-divider-horizontal {
   border-top-width: 3px;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-medium.optimui-divider-vertical {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-medium.anukit-divider-vertical {
   border-left-width: 2px;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-thick.optimui-divider-vertical {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-thick.anukit-divider-vertical {
   border-left-width: 3px;
 }
 
 /* Style variants for simple dividers */
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-dashed {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-dashed {
   border-style: dashed;
 }
 
-.optimui-divider:not(.optimui-divider-with-label).optimui-divider-dotted {
+.anukit-divider:not(.anukit-divider-with-label).anukit-divider-dotted {
   border-style: dotted;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-divider {
-    color: var(--optimui-border-dark, #374151);
+  .anukit-divider {
+    color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-divider-label {
-    color: var(--optimui-text-muted-dark, #9ca3af);
-    background-color: var(--optimui-background-dark, #1f2937);
+  .anukit-divider-label {
+    color: var(--anukit-text-muted-dark, #9ca3af);
+    background-color: var(--anukit-background-dark, #1f2937);
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-divider {
+  .anukit-divider {
     color: currentColor;
   }
   
-  .optimui-divider-thick::before,
-  .optimui-divider-thick::after {
+  .anukit-divider-thick::before,
+  .anukit-divider-thick::after {
     height: 4px;
   }
   
-  .optimui-divider-vertical.optimui-divider-thick::before,
-  .optimui-divider-vertical.optimui-divider-thick::after {
+  .anukit-divider-vertical.anukit-divider-thick::before,
+  .anukit-divider-vertical.anukit-divider-thick::after {
     width: 4px;
   }
 }
 
 /* Print styles */
 @media print {
-  .optimui-divider {
+  .anukit-divider {
     color: #000;
   }
   
-  .optimui-divider-label {
+  .anukit-divider-label {
     color: #000;
     background-color: #fff;
   }

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-stack`;
 
 type GapValue = 0 | 'px' | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 14 | 16 | 20 | 24;
@@ -46,17 +46,17 @@ const getDirectionClass = (direction: StackDirection): string => {
 };
 
 const getAlignClass = (align: AlignItems): string => {
-  return `optimui-items-${align}`;
+  return `anukit-items-${align}`;
 };
 
 const getJustifyClass = (justify: JustifyContent): string => {
-  return `optimui-justify-${justify}`;
+  return `anukit-justify-${justify}`;
 };
 
 const getGapClass = (gap: GapValue | undefined): string => {
   if (gap === undefined) return '';
   if (gap === 'px') return `${lib}-gap-px`;
-  return `optimui-gap-${gap}`;
+  return `anukit-gap-${gap}`;
 };
 
 /* @__PURE__ */

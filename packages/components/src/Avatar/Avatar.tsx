@@ -4,12 +4,12 @@
  */
 
 import React, { forwardRef, useState, useCallback } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 import { useAvatar } from './hooks/useAvatar';
 import { AvatarGroup } from './AvatarGroup';
 import { AvatarBadge } from './AvatarBadge';
 
-const lib = 'optimui';
+const lib = 'anukit';
 
 interface AvatarProps {
   src?: string;
@@ -98,8 +98,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
 
   const containerClasses = cn(
     `${lib}-avatar`,
-    `optimui-avatar--${shape}`,
-    `optimui-avatar--${size}`,
+    `anukit-avatar--${shape}`,
+    `anukit-avatar--${size}`,
     onClick && `${lib}-avatar--clickable`,
     (loading || avatarState.imageLoading) && `${lib}-avatar--loading`,
     className
@@ -256,7 +256,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
         <div
           className={cn(
             `${lib}-avatar-status`,
-            `optimui-avatar-status--${status.position || 'bottom-right'}`
+            `anukit-avatar-status--${status.position || 'bottom-right'}`
           )}
           style={{
             position: 'absolute',

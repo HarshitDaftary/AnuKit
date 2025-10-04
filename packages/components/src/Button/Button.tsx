@@ -1,8 +1,8 @@
 import React, { forwardRef, useRef } from 'react';
-import { cn, useSSRSafeId, useReducedMotion } from '@optimui/utils';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { cn, useSSRSafeId, useReducedMotion } from '@anukit/utils';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-button`;
 

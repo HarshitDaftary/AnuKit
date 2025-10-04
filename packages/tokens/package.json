@@ -1,8 +1,8 @@
 {
-  "name": "@optimui/tokens",
+  "name": "@anukit/tokens",
   "version": "0.1.0",
   "type": "module",
-  "description": "Design tokens for OptimUI theme system",
+  "description": "Design tokens for AnuKit theme system",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

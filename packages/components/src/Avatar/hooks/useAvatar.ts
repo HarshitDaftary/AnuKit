@@ -4,7 +4,7 @@
  */
 
 import { useState, useCallback } from 'react';
-import { generateBackgroundColor, generateInitials, getSizeValue } from '@optimui/utils';
+import { generateBackgroundColor, generateInitials, getSizeValue } from '@anukit/utils';
 
 export interface UseAvatarProps {
   src?: string;

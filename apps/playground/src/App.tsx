@@ -8,8 +8,8 @@ import {
   Switch,
   Tooltip,
   Modal
-} from '@optimui/components';
-import { SSRProvider } from '@optimui/core';
+} from '@anukit/components';
+import { SSRProvider } from '@anukit/core';
 
 const ComponentShowcase: React.FC = () => {
   const [showModal, setShowModal] = useState(false);

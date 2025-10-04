@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { useSSRSafeId } from '@anukit/core/providers/SSRProvider';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-radio`;
 
-export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   size?: 'sm' | 'md' | 'lg';
   label?: string;
   description?: string;

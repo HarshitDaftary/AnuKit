@@ -4,9 +4,9 @@
  */
 
 import React from 'react';
-import { cn, generateBackgroundColor, generateInitials } from '@optimui/utils';
+import { cn, generateBackgroundColor, generateInitials } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-avatar-group`;
 
 export interface AvatarGroupUser {
@@ -57,8 +57,8 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
 
   const groupClasses = cn(
     `${lib}-avatar-group`,
-    `optimui-avatar-group--${size}`,
-    `optimui-avatar-group--${spacing}`,
+    `anukit-avatar-group--${size}`,
+    `anukit-avatar-group--${spacing}`,
     className
   );
 
@@ -126,7 +126,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
           className={cn(
             `${lib}-avatar-group-item`,
             `${lib}-avatar-group-overflow`,
-            `optimui-avatar-group-item--${shape}`
+            `anukit-avatar-group-item--${shape}`
           )}
           style={{
             width: avatarSize,

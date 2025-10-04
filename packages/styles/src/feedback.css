@@ -4,106 +4,106 @@
  */
 
 /* Progress Component */
-.optimui-progress-container {
+.anukit-progress-container {
   display: flex;
   flex-direction: column;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-progress {
+.anukit-progress {
   position: relative;
   width: 100%;
-  background-color: var(--optimui-color-background-disabled);
-  border-radius: var(--optimui-border-radius-md);
+  background-color: var(--anukit-color-background-disabled);
+  border-radius: var(--anukit-border-radius-md);
   overflow: hidden;
 }
 
-.optimui-progress-vertical {
+.anukit-progress-vertical {
   width: auto;
   height: 200px;
   flex-direction: column;
 }
 
 /* Progress Sizes */
-.optimui-progress-sm {
+.anukit-progress-sm {
   height: 4px;
 }
 
-.optimui-progress-md {
+.anukit-progress-md {
   height: 8px;
 }
 
-.optimui-progress-lg {
+.anukit-progress-lg {
   height: 12px;
 }
 
-.optimui-progress-vertical.optimui-progress-sm {
+.anukit-progress-vertical.anukit-progress-sm {
   width: 4px;
   height: 150px;
 }
 
-.optimui-progress-vertical.optimui-progress-md {
+.anukit-progress-vertical.anukit-progress-md {
   width: 8px;
   height: 200px;
 }
 
-.optimui-progress-vertical.optimui-progress-lg {
+.anukit-progress-vertical.anukit-progress-lg {
   width: 12px;
   height: 250px;
 }
 
 /* Progress Bar */
-.optimui-progress-bar {
+.anukit-progress-bar {
   height: 100%;
-  background-color: var(--optimui-color-primary);
-  border-radius: var(--optimui-border-radius-md);
+  background-color: var(--anukit-color-primary);
+  border-radius: var(--anukit-border-radius-md);
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
 }
 
 /* Progress Variants */
-.optimui-progress-default .optimui-progress-bar {
-  background-color: var(--optimui-color-primary);
+.anukit-progress-default .anukit-progress-bar {
+  background-color: var(--anukit-color-primary);
 }
 
-.optimui-progress-success .optimui-progress-bar {
-  background-color: var(--optimui-color-success);
+.anukit-progress-success .anukit-progress-bar {
+  background-color: var(--anukit-color-success);
 }
 
-.optimui-progress-warning .optimui-progress-bar {
-  background-color: var(--optimui-color-warning);
+.anukit-progress-warning .anukit-progress-bar {
+  background-color: var(--anukit-color-warning);
 }
 
-.optimui-progress-error .optimui-progress-bar {
-  background-color: var(--optimui-color-error);
+.anukit-progress-error .anukit-progress-bar {
+  background-color: var(--anukit-color-error);
 }
 
 /* Progress States */
-.optimui-progress-indeterminate .optimui-progress-bar {
+.anukit-progress-indeterminate .anukit-progress-bar {
   width: 100% !important;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--optimui-color-primary),
+    var(--anukit-color-primary),
     transparent
   );
-  animation: optimui-progress-indeterminate 2s ease-in-out infinite;
+  animation: anukit-progress-indeterminate 2s ease-in-out infinite;
 }
 
-.optimui-progress-vertical.optimui-progress-indeterminate .optimui-progress-bar {
+.anukit-progress-vertical.anukit-progress-indeterminate .anukit-progress-bar {
   height: 100% !important;
   background: linear-gradient(
     180deg,
     transparent,
-    var(--optimui-color-primary),
+    var(--anukit-color-primary),
     transparent
   );
-  animation: optimui-progress-indeterminate-vertical 2s ease-in-out infinite;
+  animation: anukit-progress-indeterminate-vertical 2s ease-in-out infinite;
 }
 
 /* Progress Animations */
-.optimui-progress-animated .optimui-progress-bar {
+.anukit-progress-animated .anukit-progress-bar {
   background-image: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.2) 25%,
@@ -115,10 +115,10 @@
     transparent
   );
   background-size: 1rem 1rem;
-  animation: optimui-progress-stripes 1s linear infinite;
+  animation: anukit-progress-stripes 1s linear infinite;
 }
 
-.optimui-progress-striped .optimui-progress-bar {
+.anukit-progress-striped .anukit-progress-bar {
   background-image: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.15) 25%,
@@ -133,133 +133,133 @@
 }
 
 /* Progress Label */
-.optimui-progress-label {
+.anukit-progress-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--optimui-text-sm);
-  color: var(--optimui-color-text-primary);
+  font-size: var(--anukit-text-sm);
+  color: var(--anukit-color-text-primary);
   font-weight: 500;
   line-height: 1.5;
 }
 
 /* Alert Component (Future) */
-.optimui-alert {
+.anukit-alert {
   display: flex;
   align-items: flex-start;
-  gap: var(--optimui-space-3);
-  padding: var(--optimui-space-4);
-  border-radius: var(--optimui-border-radius-md);
+  gap: var(--anukit-space-3);
+  padding: var(--anukit-space-4);
+  border-radius: var(--anukit-border-radius-md);
   border: 1px solid;
   position: relative;
 }
 
-.optimui-alert-default {
-  background-color: var(--optimui-color-primary-alpha);
-  border-color: var(--optimui-color-primary);
-  color: var(--optimui-color-primary);
+.anukit-alert-default {
+  background-color: var(--anukit-color-primary-alpha);
+  border-color: var(--anukit-color-primary);
+  color: var(--anukit-color-primary);
 }
 
-.optimui-alert-success {
-  background-color: var(--optimui-color-success-alpha);
-  border-color: var(--optimui-color-success);
-  color: var(--optimui-color-success);
+.anukit-alert-success {
+  background-color: var(--anukit-color-success-alpha);
+  border-color: var(--anukit-color-success);
+  color: var(--anukit-color-success);
 }
 
-.optimui-alert-warning {
-  background-color: var(--optimui-color-warning-alpha);
-  border-color: var(--optimui-color-warning);
-  color: var(--optimui-color-warning);
+.anukit-alert-warning {
+  background-color: var(--anukit-color-warning-alpha);
+  border-color: var(--anukit-color-warning);
+  color: var(--anukit-color-warning);
 }
 
-.optimui-alert-error {
-  background-color: var(--optimui-color-error-alpha);
-  border-color: var(--optimui-color-error);
-  color: var(--optimui-color-error);
+.anukit-alert-error {
+  background-color: var(--anukit-color-error-alpha);
+  border-color: var(--anukit-color-error);
+  color: var(--anukit-color-error);
 }
 
-.optimui-alert-icon {
+.anukit-alert-icon {
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
-.optimui-alert-content {
+.anukit-alert-content {
   flex: 1;
   min-width: 0;
 }
 
-.optimui-alert-title {
+.anukit-alert-title {
   font-weight: 600;
-  margin-bottom: var(--optimui-space-1);
+  margin-bottom: var(--anukit-space-1);
   line-height: 1.5;
 }
 
-.optimui-alert-description {
+.anukit-alert-description {
   line-height: 1.6;
   opacity: 0.9;
 }
 
-.optimui-alert-close {
+.anukit-alert-close {
   background: none;
   border: none;
   color: inherit;
   cursor: pointer;
-  padding: var(--optimui-space-1);
-  border-radius: var(--optimui-border-radius-sm);
+  padding: var(--anukit-space-1);
+  border-radius: var(--anukit-border-radius-sm);
   transition: background-color 0.15s ease-in-out;
 }
 
-.optimui-alert-close:hover {
+.anukit-alert-close:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Toast Component (Future) */
-.optimui-toast-container {
+.anukit-toast-container {
   position: fixed;
   z-index: 9999;
   pointer-events: none;
 }
 
-.optimui-toast-container-top-right {
-  top: var(--optimui-space-4);
-  right: var(--optimui-space-4);
+.anukit-toast-container-top-right {
+  top: var(--anukit-space-4);
+  right: var(--anukit-space-4);
 }
 
-.optimui-toast-container-top-left {
-  top: var(--optimui-space-4);
-  left: var(--optimui-space-4);
+.anukit-toast-container-top-left {
+  top: var(--anukit-space-4);
+  left: var(--anukit-space-4);
 }
 
-.optimui-toast-container-bottom-right {
-  bottom: var(--optimui-space-4);
-  right: var(--optimui-space-4);
+.anukit-toast-container-bottom-right {
+  bottom: var(--anukit-space-4);
+  right: var(--anukit-space-4);
 }
 
-.optimui-toast-container-bottom-left {
-  bottom: var(--optimui-space-4);
-  left: var(--optimui-space-4);
+.anukit-toast-container-bottom-left {
+  bottom: var(--anukit-space-4);
+  left: var(--anukit-space-4);
 }
 
-.optimui-toast-container-top-center {
-  top: var(--optimui-space-4);
+.anukit-toast-container-top-center {
+  top: var(--anukit-space-4);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.optimui-toast-container-bottom-center {
-  bottom: var(--optimui-space-4);
+.anukit-toast-container-bottom-center {
+  bottom: var(--anukit-space-4);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.optimui-toast {
-  background-color: var(--optimui-color-background);
-  border: 1px solid var(--optimui-color-border);
-  border-radius: var(--optimui-border-radius-md);
+.anukit-toast {
+  background-color: var(--anukit-color-background);
+  border: 1px solid var(--anukit-color-border);
+  border-radius: var(--anukit-border-radius-md);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: var(--optimui-space-4);
-  margin-bottom: var(--optimui-space-2);
+  padding: var(--anukit-space-4);
+  margin-bottom: var(--anukit-space-2);
   min-width: 300px;
   max-width: 500px;
   pointer-events: auto;
@@ -267,68 +267,68 @@
   overflow: hidden;
 }
 
-.optimui-toast-enter {
+.anukit-toast-enter {
   opacity: 0;
   transform: translateX(100%);
 }
 
-.optimui-toast-enter-active {
+.anukit-toast-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.optimui-toast-exit {
+.anukit-toast-exit {
   opacity: 1;
   transform: translateX(0);
 }
 
-.optimui-toast-exit-active {
+.anukit-toast-exit-active {
   opacity: 0;
   transform: translateX(100%);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Badge Component (Future) */
-.optimui-badge {
+.anukit-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--optimui-space-1) var(--optimui-space-2);
-  font-size: var(--optimui-text-xs);
+  padding: var(--anukit-space-1) var(--anukit-space-2);
+  font-size: var(--anukit-text-xs);
   font-weight: 600;
   line-height: 1;
-  border-radius: var(--optimui-border-radius-md);
+  border-radius: var(--anukit-border-radius-md);
   white-space: nowrap;
 }
 
-.optimui-badge-default {
-  background-color: var(--optimui-color-primary);
+.anukit-badge-default {
+  background-color: var(--anukit-color-primary);
   color: white;
 }
 
-.optimui-badge-success {
-  background-color: var(--optimui-color-success);
+.anukit-badge-success {
+  background-color: var(--anukit-color-success);
   color: white;
 }
 
-.optimui-badge-warning {
-  background-color: var(--optimui-color-warning);
+.anukit-badge-warning {
+  background-color: var(--anukit-color-warning);
   color: white;
 }
 
-.optimui-badge-error {
-  background-color: var(--optimui-color-error);
+.anukit-badge-error {
+  background-color: var(--anukit-color-error);
   color: white;
 }
 
-.optimui-badge-outline {
+.anukit-badge-outline {
   background-color: transparent;
   border: 1px solid currentColor;
 }
 
 /* Animations */
-@keyframes optimui-progress-indeterminate {
+@keyframes anukit-progress-indeterminate {
   0% {
     transform: translateX(-100%);
   }
@@ -337,7 +337,7 @@
   }
 }
 
-@keyframes optimui-progress-indeterminate-vertical {
+@keyframes anukit-progress-indeterminate-vertical {
   0% {
     transform: translateY(-100%);
   }
@@ -346,7 +346,7 @@
   }
 }
 
-@keyframes optimui-progress-stripes {
+@keyframes anukit-progress-stripes {
   0% {
     background-position: 0 0;
   }
@@ -357,69 +357,69 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .optimui-progress-vertical {
+  .anukit-progress-vertical {
     height: 150px;
   }
   
-  .optimui-toast {
+  .anukit-toast {
     min-width: 280px;
     max-width: calc(100vw - 2rem);
   }
   
-  .optimui-toast-container-top-center,
-  .optimui-toast-container-bottom-center {
-    left: var(--optimui-space-4);
-    right: var(--optimui-space-4);
+  .anukit-toast-container-top-center,
+  .anukit-toast-container-bottom-center {
+    left: var(--anukit-space-4);
+    right: var(--anukit-space-4);
     transform: none;
   }
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
-  .optimui-progress {
+  .anukit-progress {
     border: 1px solid currentColor;
   }
   
-  .optimui-alert {
+  .anukit-alert {
     border-width: 2px;
   }
   
-  .optimui-toast {
+  .anukit-toast {
     border-width: 2px;
   }
 }
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-progress-bar,
-  .optimui-toast-enter-active,
-  .optimui-toast-exit-active {
+  .anukit-progress-bar,
+  .anukit-toast-enter-active,
+  .anukit-toast-exit-active {
     transition: none;
   }
   
-  .optimui-progress-indeterminate .optimui-progress-bar,
-  .optimui-progress-animated .optimui-progress-bar {
+  .anukit-progress-indeterminate .anukit-progress-bar,
+  .anukit-progress-animated .anukit-progress-bar {
     animation: none;
   }
 }/* Spinner Styles */
 
 /* Base spinner */
-.optimui-spinner {
+.anukit-spinner {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--optimui-primary, #3b82f6);
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: var(--anukit-primary, #3b82f6);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
 /* Center positioning */
-.optimui-spinner-center {
+.anukit-spinner-center {
   justify-content: center;
   width: 100%;
 }
 
 /* Overlay mode */
-.optimui-spinner-overlay {
+.anukit-spinner-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -432,12 +432,12 @@
   z-index: 9999;
 }
 
-.optimui-spinner-overlay-container {
+.anukit-spinner-overlay-container {
   position: relative;
 }
 
 /* Loading container */
-.optimui-loading-container {
+.anukit-loading-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -445,76 +445,76 @@
 }
 
 /* Color variants */
-.optimui-spinner-primary {
-  color: var(--optimui-primary, #3b82f6);
+.anukit-spinner-primary {
+  color: var(--anukit-primary, #3b82f6);
 }
 
-.optimui-spinner-secondary {
-  color: var(--optimui-secondary, #6b7280);
+.anukit-spinner-secondary {
+  color: var(--anukit-secondary, #6b7280);
 }
 
-.optimui-spinner-success {
-  color: var(--optimui-success, #10b981);
+.anukit-spinner-success {
+  color: var(--anukit-success, #10b981);
 }
 
-.optimui-spinner-warning {
-  color: var(--optimui-warning, #f59e0b);
+.anukit-spinner-warning {
+  color: var(--anukit-warning, #f59e0b);
 }
 
-.optimui-spinner-error {
-  color: var(--optimui-error, #ef4444);
+.anukit-spinner-error {
+  color: var(--anukit-error, #ef4444);
 }
 
-.optimui-spinner-white {
+.anukit-spinner-white {
   color: white;
 }
 
-.optimui-spinner-current {
+.anukit-spinner-current {
   color: currentColor;
 }
 
-.optimui-spinner-custom {
+.anukit-spinner-custom {
   color: var(--spinner-color, #6b7280);
 }
 
 /* Speed variants */
-.optimui-spinner-slow .optimui-spinner-element {
+.anukit-spinner-slow .anukit-spinner-element {
   animation-duration: 2s;
 }
 
-.optimui-spinner-normal .optimui-spinner-element {
+.anukit-spinner-normal .anukit-spinner-element {
   animation-duration: 1s;
 }
 
-.optimui-spinner-fast .optimui-spinner-element {
+.anukit-spinner-fast .anukit-spinner-element {
   animation-duration: 0.5s;
 }
 
 /* Label positioning */
-.optimui-spinner-label-top {
+.anukit-spinner-label-top {
   flex-direction: column-reverse;
 }
 
-.optimui-spinner-label-bottom {
+.anukit-spinner-label-bottom {
   flex-direction: column;
 }
 
-.optimui-spinner-label-left {
+.anukit-spinner-label-left {
   flex-direction: row-reverse;
 }
 
-.optimui-spinner-label-right {
+.anukit-spinner-label-right {
   flex-direction: row;
 }
 
 /* Label styles */
-.optimui-spinner-label {
+.anukit-spinner-label {
   font-size: 14px;
-  color: var(--optimui-text, #374151);
+  color: var(--anukit-text, #374151);
   font-weight: 500;
 }
 
-.optimui-spinner-label-hidden {
+.anukit-spinner-label-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -527,28 +527,28 @@
 }
 
 /* Spinner elements */
-.optimui-spinner-element {
+.anukit-spinner-element {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Circular spinner */
-.optimui-spinner-circular-element {
-  animation: optimui-spinner-rotate 1s linear infinite;
+.anukit-spinner-circular-element {
+  animation: anukit-spinner-rotate 1s linear infinite;
 }
 
-.optimui-spinner-circular-element circle {
-  animation: optimui-spinner-dash 1.5s ease-in-out infinite;
+.anukit-spinner-circular-element circle {
+  animation: anukit-spinner-dash 1.5s ease-in-out infinite;
 }
 
-@keyframes optimui-spinner-rotate {
+@keyframes anukit-spinner-rotate {
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes optimui-spinner-dash {
+@keyframes anukit-spinner-dash {
   0% {
     stroke-dasharray: 1, 150;
     stroke-dashoffset: 0;
@@ -564,33 +564,33 @@
 }
 
 /* Dots spinner */
-.optimui-spinner-dots-element {
+.anukit-spinner-dots-element {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.optimui-spinner-dot {
+.anukit-spinner-dot {
   width: 25%;
   height: 100%;
   background-color: currentColor;
   border-radius: 50%;
-  animation: optimui-spinner-dots 1.4s ease-in-out infinite both;
+  animation: anukit-spinner-dots 1.4s ease-in-out infinite both;
 }
 
-.optimui-spinner-dot:nth-child(1) {
+.anukit-spinner-dot:nth-child(1) {
   animation-delay: -0.32s;
 }
 
-.optimui-spinner-dot:nth-child(2) {
+.anukit-spinner-dot:nth-child(2) {
   animation-delay: -0.16s;
 }
 
-.optimui-spinner-dot:nth-child(3) {
+.anukit-spinner-dot:nth-child(3) {
   animation-delay: 0;
 }
 
-@keyframes optimui-spinner-dots {
+@keyframes anukit-spinner-dots {
   0%, 80%, 100% {
     transform: scale(0);
     opacity: 0.5;
@@ -602,42 +602,42 @@
 }
 
 /* Bars spinner */
-.optimui-spinner-bars-element {
+.anukit-spinner-bars-element {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2px;
 }
 
-.optimui-spinner-bar {
+.anukit-spinner-bar {
   width: 18%;
   height: 100%;
   background-color: currentColor;
   border-radius: 1px;
-  animation: optimui-spinner-bars 1.2s infinite ease-in-out;
+  animation: anukit-spinner-bars 1.2s infinite ease-in-out;
 }
 
-.optimui-spinner-bar:nth-child(1) {
+.anukit-spinner-bar:nth-child(1) {
   animation-delay: -1.2s;
 }
 
-.optimui-spinner-bar:nth-child(2) {
+.anukit-spinner-bar:nth-child(2) {
   animation-delay: -1.1s;
 }
 
-.optimui-spinner-bar:nth-child(3) {
+.anukit-spinner-bar:nth-child(3) {
   animation-delay: -1.0s;
 }
 
-.optimui-spinner-bar:nth-child(4) {
+.anukit-spinner-bar:nth-child(4) {
   animation-delay: -0.9s;
 }
 
-.optimui-spinner-bar:nth-child(5) {
+.anukit-spinner-bar:nth-child(5) {
   animation-delay: -0.8s;
 }
 
-@keyframes optimui-spinner-bars {
+@keyframes anukit-spinner-bars {
   0%, 40%, 100% {
     transform: scaleY(0.4);
     opacity: 0.5;
@@ -649,13 +649,13 @@
 }
 
 /* Pulse spinner */
-.optimui-spinner-pulse-element {
+.anukit-spinner-pulse-element {
   border-radius: 50%;
   background-color: currentColor;
-  animation: optimui-spinner-pulse 1s ease-in-out infinite;
+  animation: anukit-spinner-pulse 1s ease-in-out infinite;
 }
 
-@keyframes optimui-spinner-pulse {
+@keyframes anukit-spinner-pulse {
   0% {
     transform: scale(0);
     opacity: 1;
@@ -667,19 +667,19 @@
 }
 
 /* Ring spinner */
-.optimui-spinner-ring-element {
-  animation: optimui-spinner-rotate 1s linear infinite;
+.anukit-spinner-ring-element {
+  animation: anukit-spinner-rotate 1s linear infinite;
 }
 
-.optimui-spinner-ring-element .optimui-spinner-track {
+.anukit-spinner-ring-element .anukit-spinner-track {
   opacity: 0.3;
 }
 
-.optimui-spinner-ring-element .optimui-spinner-progress {
-  animation: optimui-spinner-ring-dash 1.5s ease-in-out infinite;
+.anukit-spinner-ring-element .anukit-spinner-progress {
+  animation: anukit-spinner-ring-dash 1.5s ease-in-out infinite;
 }
 
-@keyframes optimui-spinner-ring-dash {
+@keyframes anukit-spinner-ring-dash {
   0% {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
@@ -696,83 +696,83 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .optimui-spinner {
+  .anukit-spinner {
     gap: 6px;
   }
   
-  .optimui-spinner-label {
+  .anukit-spinner-label {
     font-size: 13px;
   }
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-spinner-overlay {
+  .anukit-spinner-overlay {
     background-color: rgba(31, 41, 55, 0.8);
   }
   
-  .optimui-spinner-label {
-    color: var(--optimui-text-dark, #f9fafb);
+  .anukit-spinner-label {
+    color: var(--anukit-text-dark, #f9fafb);
   }
   
-  .optimui-spinner-secondary {
-    color: var(--optimui-secondary-dark, #9ca3af);
+  .anukit-spinner-secondary {
+    color: var(--anukit-secondary-dark, #9ca3af);
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-spinner {
+  .anukit-spinner {
     color: currentColor;
   }
   
-  .optimui-spinner-primary {
+  .anukit-spinner-primary {
     color: #0000ff;
   }
   
-  .optimui-spinner-success {
+  .anukit-spinner-success {
     color: #008000;
   }
   
-  .optimui-spinner-warning {
+  .anukit-spinner-warning {
     color: #ff8000;
   }
   
-  .optimui-spinner-error {
+  .anukit-spinner-error {
     color: #ff0000;
   }
 }
 
 /* Animation preferences */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-spinner-element,
-  .optimui-spinner-element circle,
-  .optimui-spinner-dot,
-  .optimui-spinner-bar,
-  .optimui-spinner-pulse-element,
-  .optimui-spinner-ring-element,
-  .optimui-spinner-ring-element .optimui-spinner-progress {
+  .anukit-spinner-element,
+  .anukit-spinner-element circle,
+  .anukit-spinner-dot,
+  .anukit-spinner-bar,
+  .anukit-spinner-pulse-element,
+  .anukit-spinner-ring-element,
+  .anukit-spinner-ring-element .anukit-spinner-progress {
     animation: none;
   }
   
-  .optimui-spinner-circular-element circle {
+  .anukit-spinner-circular-element circle {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -35;
   }
   
-  .optimui-spinner-dot {
+  .anukit-spinner-dot {
     opacity: 1;
   }
   
-  .optimui-spinner-bar {
+  .anukit-spinner-bar {
     opacity: 1;
   }
   
-  .optimui-spinner-pulse-element {
+  .anukit-spinner-pulse-element {
     opacity: 0.7;
   }
   
-  .optimui-spinner-ring-element .optimui-spinner-progress {
+  .anukit-spinner-ring-element .anukit-spinner-progress {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -35;
   }
@@ -780,19 +780,19 @@
 
 /* Print styles */
 @media print {
-  .optimui-spinner-overlay {
+  .anukit-spinner-overlay {
     display: none;
   }
   
-  .optimui-spinner-element {
+  .anukit-spinner-element {
     animation: none;
   }
   
-  .optimui-spinner {
+  .anukit-spinner {
     color: #000;
   }
   
-  .optimui-spinner-label {
+  .anukit-spinner-label {
     color: #000;
   }
 }

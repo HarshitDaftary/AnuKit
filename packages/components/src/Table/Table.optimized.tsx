@@ -5,12 +5,12 @@
  */
 
 import React, { useCallback } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 import { useTableSorting } from './hooks/useTableSorting';
 import { useTableSelection } from './hooks/useTableSelection';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-table`;
 
 // Re-export types from hooks for convenience - these will be re-exported at the end

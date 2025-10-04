@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { cn } from '@anukit/utils';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Visual variant of the card */

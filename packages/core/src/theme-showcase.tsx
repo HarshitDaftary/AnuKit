@@ -15,24 +15,24 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
   const { theme, appliedTheme, setTheme, toggle, availableThemes } = useTheme()
 
   return (
-    <div className={`optimui-theme-showcase ${className || ''}`}>
+    <div className={`anukit-theme-showcase ${className || ''}`}>
       {/* Theme Controls */}
-      <div className="optimui-flex optimui-gap-4 optimui-p-6 optimui-bg-primary-50 optimui-rounded-lg">
-        <h2 className="optimui-text-xl optimui-font-semibold optimui-text-primary-900">
+      <div className="anukit-flex anukit-gap-4 anukit-p-6 anukit-bg-primary-50 anukit-rounded-lg">
+        <h2 className="anukit-text-xl anukit-font-semibold anukit-text-primary-900">
           Theme Showcase
         </h2>
         
-        <div className="optimui-flex optimui-gap-2">
+        <div className="anukit-flex anukit-gap-2">
           {availableThemes.map((themeConfig) => (
             <button
               key={themeConfig.name}
               onClick={() => setTheme(themeConfig.name)}
               className={`
-                optimui-px-3 optimui-py-2 optimui-rounded-md optimui-text-sm optimui-font-medium
-                optimui-transition-colors optimui-duration-150
+                anukit-px-3 anukit-py-2 anukit-rounded-md anukit-text-sm anukit-font-medium
+                anukit-transition-colors anukit-duration-150
                 ${theme === themeConfig.name 
-                  ? 'optimui-bg-primary-500 optimui-text-white' 
-                  : 'optimui-bg-white optimui-text-primary-700 hover:optimui-bg-primary-100'
+                  ? 'anukit-bg-primary-500 anukit-text-white' 
+                  : 'anukit-bg-white anukit-text-primary-700 hover:anukit-bg-primary-100'
                 }
               `}
             >
@@ -43,11 +43,11 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
           <button
             onClick={() => setTheme('system')}
             className={`
-              optimui-px-3 optimui-py-2 optimui-rounded-md optimui-text-sm optimui-font-medium
-              optimui-transition-colors optimui-duration-150
+              anukit-px-3 anukit-py-2 anukit-rounded-md anukit-text-sm anukit-font-medium
+              anukit-transition-colors anukit-duration-150
               ${theme === 'system' 
-                ? 'optimui-bg-primary-500 optimui-text-white' 
-                : 'optimui-bg-white optimui-text-primary-700 hover:optimui-bg-primary-100'
+                ? 'anukit-bg-primary-500 anukit-text-white' 
+                : 'anukit-bg-white anukit-text-primary-700 hover:anukit-bg-primary-100'
               }
             `}
           >
@@ -56,7 +56,7 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
           
           <button
             onClick={toggle}
-            className="optimui-px-3 optimui-py-2 optimui-rounded-md optimui-text-sm optimui-font-medium optimui-bg-white optimui-text-primary-700 hover:optimui-bg-primary-100 optimui-transition-colors"
+            className="anukit-px-3 anukit-py-2 anukit-rounded-md anukit-text-sm anukit-font-medium anukit-bg-white anukit-text-primary-700 hover:anukit-bg-primary-100 anukit-transition-colors"
           >
             Toggle
           </button>
@@ -64,133 +64,133 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
       </div>
 
       {/* Current Theme Info */}
-      <div className="optimui-mt-6 optimui-p-4 optimui-bg-neutral-50 optimui-rounded-lg">
-        <p className="optimui-text-sm optimui-text-neutral-600">
+      <div className="anukit-mt-6 anukit-p-4 anukit-bg-neutral-50 anukit-rounded-lg">
+        <p className="anukit-text-sm anukit-text-neutral-600">
           Current: <strong>{theme}</strong> | Applied: <strong>{appliedTheme}</strong>
         </p>
       </div>
 
       {/* Color Palette */}
-      <div className="optimui-mt-8">
-        <h3 className="optimui-text-lg optimui-font-semibold optimui-mb-4">Semantic Colors</h3>
-        <div className="optimui-grid optimui-grid-cols-2 optimui-md:grid-cols-4 optimui-gap-4">
+      <div className="anukit-mt-8">
+        <h3 className="anukit-text-lg anukit-font-semibold anukit-mb-4">Semantic Colors</h3>
+        <div className="anukit-grid anukit-grid-cols-2 anukit-md:grid-cols-4 anukit-gap-4">
           
           {/* Background Colors */}
-          <div className="optimui-space-y-2">
-            <h4 className="optimui-text-sm optimui-font-medium optimui-text-neutral-600">Background</h4>
+          <div className="anukit-space-y-2">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-text-neutral-600">Background</h4>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border optimui-border-neutral-200"
+              className="anukit-h-12 anukit-rounded anukit-border anukit-border-neutral-200"
               style={{ backgroundColor: semanticColors.background.default }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Default</div>
+              <div className="anukit-p-2 anukit-text-xs">Default</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border optimui-border-neutral-200"
+              className="anukit-h-12 anukit-rounded anukit-border anukit-border-neutral-200"
               style={{ backgroundColor: semanticColors.background.subtle }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Subtle</div>
+              <div className="anukit-p-2 anukit-text-xs">Subtle</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border optimui-border-neutral-200"
+              className="anukit-h-12 anukit-rounded anukit-border anukit-border-neutral-200"
               style={{ backgroundColor: semanticColors.background.muted }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Muted</div>
+              <div className="anukit-p-2 anukit-text-xs">Muted</div>
             </div>
           </div>
 
           {/* Primary Colors */}
-          <div className="optimui-space-y-2">
-            <h4 className="optimui-text-sm optimui-font-medium optimui-text-neutral-600">Primary</h4>
+          <div className="anukit-space-y-2">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-text-neutral-600">Primary</h4>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.primary.default }}
             >
-              <div className="optimui-p-2 optimui-text-xs optimui-text-white">Default</div>
+              <div className="anukit-p-2 anukit-text-xs anukit-text-white">Default</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.primary.emphasized }}
             >
-              <div className="optimui-p-2 optimui-text-xs optimui-text-white">Emphasized</div>
+              <div className="anukit-p-2 anukit-text-xs anukit-text-white">Emphasized</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.primary.muted }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Muted</div>
+              <div className="anukit-p-2 anukit-text-xs">Muted</div>
             </div>
           </div>
 
           {/* Success Colors */}
-          <div className="optimui-space-y-2">
-            <h4 className="optimui-text-sm optimui-font-medium optimui-text-neutral-600">Success</h4>
+          <div className="anukit-space-y-2">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-text-neutral-600">Success</h4>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.success.default }}
             >
-              <div className="optimui-p-2 optimui-text-xs optimui-text-white">Default</div>
+              <div className="anukit-p-2 anukit-text-xs anukit-text-white">Default</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.success.muted }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Muted</div>
+              <div className="anukit-p-2 anukit-text-xs">Muted</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.success.subtle }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Subtle</div>
+              <div className="anukit-p-2 anukit-text-xs">Subtle</div>
             </div>
           </div>
 
           {/* Error Colors */}
-          <div className="optimui-space-y-2">
-            <h4 className="optimui-text-sm optimui-font-medium optimui-text-neutral-600">Error</h4>
+          <div className="anukit-space-y-2">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-text-neutral-600">Error</h4>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.error.default }}
             >
-              <div className="optimui-p-2 optimui-text-xs optimui-text-white">Default</div>
+              <div className="anukit-p-2 anukit-text-xs anukit-text-white">Default</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.error.muted }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Muted</div>
+              <div className="anukit-p-2 anukit-text-xs">Muted</div>
             </div>
             <div 
-              className="optimui-h-12 optimui-rounded optimui-border"
+              className="anukit-h-12 anukit-rounded anukit-border"
               style={{ backgroundColor: semanticColors.error.subtle }}
             >
-              <div className="optimui-p-2 optimui-text-xs">Subtle</div>
+              <div className="anukit-p-2 anukit-text-xs">Subtle</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Component Examples */}
-      <div className="optimui-mt-8">
-        <h3 className="optimui-text-lg optimui-font-semibold optimui-mb-4">Component Examples</h3>
+      <div className="anukit-mt-8">
+        <h3 className="anukit-text-lg anukit-font-semibold anukit-mb-4">Component Examples</h3>
         
         {/* Buttons */}
-        <div className="optimui-space-y-4">
+        <div className="anukit-space-y-4">
           <div>
-            <h4 className="optimui-text-sm optimui-font-medium optimui-mb-2">Buttons</h4>
-            <div className="optimui-flex optimui-gap-2 optimui-flex-wrap">
-              <button className="optimui-button optimui-button--primary optimui-button--md">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-mb-2">Buttons</h4>
+            <div className="anukit-flex anukit-gap-2 anukit-flex-wrap">
+              <button className="anukit-button anukit-button--primary anukit-button--md">
                 Primary
               </button>
-              <button className="optimui-button optimui-button--secondary optimui-button--md">
+              <button className="anukit-button anukit-button--secondary anukit-button--md">
                 Secondary
               </button>
-              <button className="optimui-button optimui-button--outline optimui-button--md">
+              <button className="anukit-button anukit-button--outline anukit-button--md">
                 Outline
               </button>
-              <button className="optimui-button optimui-button--ghost optimui-button--md">
+              <button className="anukit-button anukit-button--ghost anukit-button--md">
                 Ghost
               </button>
-              <button className="optimui-button optimui-button--primary optimui-button--md" disabled>
+              <button className="anukit-button anukit-button--primary anukit-button--md" disabled>
                 Disabled
               </button>
             </div>
@@ -198,39 +198,39 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
 
           {/* Form Elements */}
           <div>
-            <h4 className="optimui-text-sm optimui-font-medium optimui-mb-2">Form Elements</h4>
-            <div className="optimui-space-y-2 optimui-max-w-md">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-mb-2">Form Elements</h4>
+            <div className="anukit-space-y-2 anukit-max-w-md">
               <input 
                 type="text" 
                 placeholder="Text input" 
-                className="optimui-input"
+                className="anukit-input"
               />
               <input 
                 type="text" 
                 placeholder="Error state" 
-                className="optimui-input optimui-input--error"
+                className="anukit-input anukit-input--error"
               />
               <textarea 
                 placeholder="Textarea" 
-                className="optimui-input optimui-min-h-[80px]"
+                className="anukit-input anukit-min-h-[80px]"
               />
             </div>
           </div>
 
           {/* Status Messages */}
           <div>
-            <h4 className="optimui-text-sm optimui-font-medium optimui-mb-2">Status Messages</h4>
-            <div className="optimui-space-y-2">
-              <div className="optimui-p-3 optimui-rounded optimui-bg-success-muted optimui-text-success-default optimui-text-sm">
+            <h4 className="anukit-text-sm anukit-font-medium anukit-mb-2">Status Messages</h4>
+            <div className="anukit-space-y-2">
+              <div className="anukit-p-3 anukit-rounded anukit-bg-success-muted anukit-text-success-default anukit-text-sm">
                 ✅ Success message with proper contrast
               </div>
-              <div className="optimui-p-3 optimui-rounded optimui-bg-warning-muted optimui-text-warning-default optimui-text-sm">
+              <div className="anukit-p-3 anukit-rounded anukit-bg-warning-muted anukit-text-warning-default anukit-text-sm">
                 ⚠️ Warning message with proper contrast
               </div>
-              <div className="optimui-p-3 optimui-rounded optimui-bg-error-muted optimui-text-error-default optimui-text-sm">
+              <div className="anukit-p-3 anukit-rounded anukit-bg-error-muted anukit-text-error-default anukit-text-sm">
                 ❌ Error message with proper contrast
               </div>
-              <div className="optimui-p-3 optimui-rounded optimui-bg-info-muted optimui-text-info-default optimui-text-sm">
+              <div className="anukit-p-3 anukit-rounded anukit-bg-info-muted anukit-text-info-default anukit-text-sm">
                 ℹ️ Info message with proper contrast
               </div>
             </div>
@@ -239,9 +239,9 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
       </div>
 
       {/* Accessibility Information */}
-      <div className="optimui-mt-8 optimui-p-4 optimui-bg-neutral-50 optimui-rounded-lg">
-        <h3 className="optimui-text-lg optimui-font-semibold optimui-mb-2">Accessibility Information</h3>
-        <div className="optimui-text-sm optimui-text-neutral-600 optimui-space-y-1">
+      <div className="anukit-mt-8 anukit-p-4 anukit-bg-neutral-50 anukit-rounded-lg">
+        <h3 className="anukit-text-lg anukit-font-semibold anukit-mb-2">Accessibility Information</h3>
+        <div className="anukit-text-sm anukit-text-neutral-600 anukit-space-y-1">
           <p>✅ All colors meet WCAG 2.1 AA contrast requirements (4.5:1)</p>
           <p>✅ High contrast theme available for WCAG AAA compliance (7:1)</p>
           <p>✅ Automatic system preference detection</p>
@@ -258,35 +258,35 @@ export function ThemeShowcase({ className }: ThemeShowcaseProps) {
  */
 export function ContrastTest() {
   return (
-    <div className="optimui-space-y-4">
-      <h3 className="optimui-text-lg optimui-font-semibold">Contrast Testing</h3>
+    <div className="anukit-space-y-4">
+      <h3 className="anukit-text-lg anukit-font-semibold">Contrast Testing</h3>
       
       {/* Light theme contrast examples */}
-      <div className="optimui-space-y-2">
-        <h4 className="optimui-text-sm optimui-font-medium">Light Theme Examples</h4>
+      <div className="anukit-space-y-2">
+        <h4 className="anukit-text-sm anukit-font-medium">Light Theme Examples</h4>
         <div 
-          className="optimui-p-4 optimui-rounded"
+          className="anukit-p-4 anukit-rounded"
           style={{ 
-            backgroundColor: 'var(--optimui-semantic-background-default)',
-            color: 'var(--optimui-semantic-foreground-default)'
+            backgroundColor: 'var(--anukit-semantic-background-default)',
+            color: 'var(--anukit-semantic-foreground-default)'
           }}
         >
           Default text on default background (18.07:1) ✅✅✅
         </div>
         <div 
-          className="optimui-p-4 optimui-rounded"
+          className="anukit-p-4 anukit-rounded"
           style={{ 
-            backgroundColor: 'var(--optimui-semantic-background-default)',
-            color: 'var(--optimui-semantic-foreground-muted)'
+            backgroundColor: 'var(--anukit-semantic-background-default)',
+            color: 'var(--anukit-semantic-foreground-muted)'
           }}
         >
           Muted text on default background (7.23:1) ✅✅
         </div>
         <div 
-          className="optimui-p-4 optimui-rounded"
+          className="anukit-p-4 anukit-rounded"
           style={{ 
-            backgroundColor: 'var(--optimui-semantic-primary-default)',
-            color: 'var(--optimui-semantic-foreground-on-emphasis)'
+            backgroundColor: 'var(--anukit-semantic-primary-default)',
+            color: 'var(--anukit-semantic-foreground-on-emphasis)'
           }}
         >
           White text on primary background (4.89:1) ✅

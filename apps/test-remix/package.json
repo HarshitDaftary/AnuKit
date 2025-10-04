@@ -1,5 +1,5 @@
 {
-  "name": "@optimui/test-remix",
+  "name": "@anukit/test-remix",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
@@ -13,8 +13,8 @@
     "lighthouse": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json"
   },
   "dependencies": {
-    "@optimui/core": "workspace:*",
-    "@optimui/components": "workspace:*",
+    "@anukit/core": "workspace:*",
+    "@anukit/components": "workspace:*",
     "@remix-run/node": "^2.2.0",
     "@remix-run/react": "^2.2.0",
     "@remix-run/serve": "^2.2.0",

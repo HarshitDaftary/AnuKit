@@ -1,6 +1,6 @@
 {
-  "name": "@optimui/tsconfig",
+  "name": "@anukit/tsconfig",
   "version": "0.1.0",
   "private": true,
-  "description": "Shared TypeScript configuration for OptimUI"
+  "description": "Shared TypeScript configuration for AnuKit"
 }

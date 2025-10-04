@@ -4,163 +4,163 @@
  */
 
 /* Form Control Wrapper */
-.optimui-form-control {
+.anukit-form-control {
   display: flex;
   flex-direction: column;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-form-control-full-width {
+.anukit-form-control-full-width {
   width: 100%;
 }
 
-.optimui-form-control-sm {
-  gap: var(--optimui-space-1-5);
+.anukit-form-control-sm {
+  gap: var(--anukit-space-1-5);
 }
 
-.optimui-form-control-lg {
-  gap: var(--optimui-space-3);
+.anukit-form-control-lg {
+  gap: var(--anukit-space-3);
 }
 
-.optimui-form-control-disabled {
+.anukit-form-control-disabled {
   opacity: 0.6;
   pointer-events: none;
 }
 
-.optimui-form-control-content {
+.anukit-form-control-content {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
 /* Labels */
-.optimui-form-label,
-.optimui-label {
+.anukit-form-label,
+.anukit-label {
   display: block;
-  font-size: var(--optimui-text-sm);
+  font-size: var(--anukit-text-sm);
   font-weight: 500;
-  color: var(--optimui-color-text-primary);
+  color: var(--anukit-color-text-primary);
   line-height: 1.5;
 }
 
-.optimui-form-label-required {
-  color: var(--optimui-color-text-primary);
+.anukit-form-label-required {
+  color: var(--anukit-color-text-primary);
 }
 
-.optimui-form-label-disabled {
-  color: var(--optimui-color-text-disabled);
+.anukit-form-label-disabled {
+  color: var(--anukit-color-text-disabled);
 }
 
-.optimui-form-required-indicator {
-  color: var(--optimui-color-error);
-  margin-left: var(--optimui-space-1);
+.anukit-form-required-indicator {
+  color: var(--anukit-color-error);
+  margin-left: var(--anukit-space-1);
 }
 
 /* Base Form Element Styles */
-.optimui-input,
-.optimui-select,
-.optimui-textarea {
+.anukit-input,
+.anukit-select,
+.anukit-textarea {
   width: 100%;
-  border: 1px solid var(--optimui-color-border);
-  border-radius: var(--optimui-border-radius-md);
-  background-color: var(--optimui-color-background);
-  color: var(--optimui-color-text-primary);
+  border: 1px solid var(--anukit-color-border);
+  border-radius: var(--anukit-border-radius-md);
+  background-color: var(--anukit-color-background);
+  color: var(--anukit-color-text-primary);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   outline: none;
 }
 
-.optimui-input:focus,
-.optimui-select:focus,
-.optimui-textarea:focus {
-  border-color: var(--optimui-color-primary);
-  box-shadow: 0 0 0 3px var(--optimui-color-primary-alpha);
+.anukit-input:focus,
+.anukit-select:focus,
+.anukit-textarea:focus {
+  border-color: var(--anukit-color-primary);
+  box-shadow: 0 0 0 3px var(--anukit-color-primary-alpha);
 }
 
-.optimui-input:disabled,
-.optimui-select:disabled,
-.optimui-textarea:disabled {
-  background-color: var(--optimui-color-background-disabled);
-  color: var(--optimui-color-text-disabled);
+.anukit-input:disabled,
+.anukit-select:disabled,
+.anukit-textarea:disabled {
+  background-color: var(--anukit-color-background-disabled);
+  color: var(--anukit-color-text-disabled);
   cursor: not-allowed;
 }
 
 /* Size Variations */
-.optimui-input-sm,
-.optimui-select-sm,
-.optimui-textarea-sm {
-  padding: var(--optimui-space-2) var(--optimui-space-3);
-  font-size: var(--optimui-text-sm);
+.anukit-input-sm,
+.anukit-select-sm,
+.anukit-textarea-sm {
+  padding: var(--anukit-space-2) var(--anukit-space-3);
+  font-size: var(--anukit-text-sm);
   line-height: 1.4;
 }
 
-.optimui-input-md,
-.optimui-select-md,
-.optimui-textarea-md {
-  padding: var(--optimui-space-3) var(--optimui-space-4);
-  font-size: var(--optimui-text-base);
+.anukit-input-md,
+.anukit-select-md,
+.anukit-textarea-md {
+  padding: var(--anukit-space-3) var(--anukit-space-4);
+  font-size: var(--anukit-text-base);
   line-height: 1.5;
 }
 
-.optimui-input-lg,
-.optimui-select-lg,
-.optimui-textarea-lg {
-  padding: var(--optimui-space-4) var(--optimui-space-5);
-  font-size: var(--optimui-text-lg);
+.anukit-input-lg,
+.anukit-select-lg,
+.anukit-textarea-lg {
+  padding: var(--anukit-space-4) var(--anukit-space-5);
+  font-size: var(--anukit-text-lg);
   line-height: 1.6;
 }
 
 /* Variant Styles */
-.optimui-input-error,
-.optimui-select-error,
-.optimui-textarea-error {
-  border-color: var(--optimui-color-error);
+.anukit-input-error,
+.anukit-select-error,
+.anukit-textarea-error {
+  border-color: var(--anukit-color-error);
 }
 
-.optimui-input-error:focus,
-.optimui-select-error:focus,
-.optimui-textarea-error:focus {
-  border-color: var(--optimui-color-error);
-  box-shadow: 0 0 0 3px var(--optimui-color-error-alpha);
+.anukit-input-error:focus,
+.anukit-select-error:focus,
+.anukit-textarea-error:focus {
+  border-color: var(--anukit-color-error);
+  box-shadow: 0 0 0 3px var(--anukit-color-error-alpha);
 }
 
-.optimui-input-success,
-.optimui-select-success,
-.optimui-textarea-success {
-  border-color: var(--optimui-color-success);
+.anukit-input-success,
+.anukit-select-success,
+.anukit-textarea-success {
+  border-color: var(--anukit-color-success);
 }
 
-.optimui-input-success:focus,
-.optimui-select-success:focus,
-.optimui-textarea-success:focus {
-  border-color: var(--optimui-color-success);
-  box-shadow: 0 0 0 3px var(--optimui-color-success-alpha);
+.anukit-input-success:focus,
+.anukit-select-success:focus,
+.anukit-textarea-success:focus {
+  border-color: var(--anukit-color-success);
+  box-shadow: 0 0 0 3px var(--anukit-color-success-alpha);
 }
 
 /* Full Width */
-.optimui-input-full-width,
-.optimui-select-full-width,
-.optimui-textarea-full-width {
+.anukit-input-full-width,
+.anukit-select-full-width,
+.anukit-textarea-full-width {
   width: 100%;
 }
 
 /* Select Specific Styles */
-.optimui-select-container {
+.anukit-select-container {
   position: relative;
   display: inline-block;
   width: 100%;
 }
 
-.optimui-select {
+.anukit-select {
   appearance: none;
   background-image: none;
-  padding-right: var(--optimui-space-10);
+  padding-right: var(--anukit-space-10);
 }
 
-.optimui-select-with-icon {
-  padding-left: var(--optimui-space-10);
+.anukit-select-with-icon {
+  padding-left: var(--anukit-space-10);
 }
 
-.optimui-select-icon {
+.anukit-select-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -170,92 +170,92 @@
   justify-content: center;
 }
 
-.optimui-select-icon-left {
-  left: var(--optimui-space-3);
-  color: var(--optimui-color-text-secondary);
+.anukit-select-icon-left {
+  left: var(--anukit-space-3);
+  color: var(--anukit-color-text-secondary);
 }
 
-.optimui-select-icon-chevron {
-  right: var(--optimui-space-3);
-  color: var(--optimui-color-text-secondary);
+.anukit-select-icon-chevron {
+  right: var(--anukit-space-3);
+  color: var(--anukit-color-text-secondary);
 }
 
-.optimui-select-loading {
-  color: var(--optimui-color-text-disabled);
+.anukit-select-loading {
+  color: var(--anukit-color-text-disabled);
 }
 
 /* Textarea Specific Styles */
-.optimui-textarea {
+.anukit-textarea {
   resize: vertical;
-  min-height: calc(var(--optimui-space-12) * 1.5);
+  min-height: calc(var(--anukit-space-12) * 1.5);
 }
 
-.optimui-textarea-auto-resize {
+.anukit-textarea-auto-resize {
   resize: none;
   overflow: hidden;
 }
 
-.optimui-textarea-container {
+.anukit-textarea-container {
   position: relative;
   width: 100%;
 }
 
 /* Form Messages */
-.optimui-form-footer {
+.anukit-form-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-form-messages {
+.anukit-form-messages {
   flex: 1;
 }
 
-.optimui-form-error {
-  font-size: var(--optimui-text-sm);
-  color: var(--optimui-color-error);
+.anukit-form-error {
+  font-size: var(--anukit-text-sm);
+  color: var(--anukit-color-error);
   line-height: 1.4;
 }
 
-.optimui-form-helper {
-  font-size: var(--optimui-text-sm);
-  color: var(--optimui-color-text-secondary);
+.anukit-form-helper {
+  font-size: var(--anukit-text-sm);
+  color: var(--anukit-color-text-secondary);
   line-height: 1.4;
 }
 
-.optimui-form-character-count {
-  font-size: var(--optimui-text-xs);
-  color: var(--optimui-color-text-secondary);
+.anukit-form-character-count {
+  font-size: var(--anukit-text-xs);
+  color: var(--anukit-color-text-secondary);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
 }
 
-.optimui-form-character-count-near {
-  color: var(--optimui-color-warning);
+.anukit-form-character-count-near {
+  color: var(--anukit-color-warning);
 }
 
-.optimui-form-character-count-over {
-  color: var(--optimui-color-error);
+.anukit-form-character-count-over {
+  color: var(--anukit-color-error);
   font-weight: 600;
 }
 
 /* Input with Icons */
-.optimui-input-container {
+.anukit-input-container {
   position: relative;
   display: inline-block;
   width: 100%;
 }
 
-.optimui-input-with-left-icon {
-  padding-left: var(--optimui-space-10);
+.anukit-input-with-left-icon {
+  padding-left: var(--anukit-space-10);
 }
 
-.optimui-input-with-right-icon {
-  padding-right: var(--optimui-space-10);
+.anukit-input-with-right-icon {
+  padding-right: var(--anukit-space-10);
 }
 
-.optimui-input-icon {
+.anukit-input-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -263,182 +263,182 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
 }
 
-.optimui-input-icon-left {
-  left: var(--optimui-space-3);
+.anukit-input-icon-left {
+  left: var(--anukit-space-3);
 }
 
-.optimui-input-icon-right {
-  right: var(--optimui-space-3);
+.anukit-input-icon-right {
+  right: var(--anukit-space-3);
 }
 
 /* Responsive Design */
 @media (max-width: 640px) {
-  .optimui-form-control {
-    gap: var(--optimui-space-1-5);
+  .anukit-form-control {
+    gap: var(--anukit-space-1-5);
   }
   
-  .optimui-form-footer {
+  .anukit-form-footer {
     flex-direction: column;
-    gap: var(--optimui-space-1);
+    gap: var(--anukit-space-1);
   }
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
-  .optimui-input,
-  .optimui-select,
-  .optimui-textarea {
+  .anukit-input,
+  .anukit-select,
+  .anukit-textarea {
     border-width: 2px;
   }
   
-  .optimui-input:focus,
-  .optimui-select:focus,
-  .optimui-textarea:focus {
+  .anukit-input:focus,
+  .anukit-select:focus,
+  .anukit-textarea:focus {
     outline: 2px solid;
     outline-offset: 2px;
   }
 }
 
 /* TextField Component */
-.optimui-textfield {
+.anukit-textfield {
   display: flex;
   flex-direction: column;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-textfield-full-width {
+.anukit-textfield-full-width {
   width: 100%;
 }
 
-.optimui-textfield-label {
-  font-size: var(--optimui-text-sm);
+.anukit-textfield-label {
+  font-size: var(--anukit-text-sm);
   font-weight: 500;
-  color: var(--optimui-color-text-primary);
+  color: var(--anukit-color-text-primary);
   line-height: 1.5;
 }
 
-.optimui-textfield-container {
+.anukit-textfield-container {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.optimui-textfield-input {
+.anukit-textfield-input {
   flex: 1;
-  padding: var(--optimui-space-2) var(--optimui-space-3);
-  border: 1px solid var(--optimui-color-border);
-  border-radius: var(--optimui-border-radius-md);
-  font-size: var(--optimui-text-base);
-  color: var(--optimui-color-text-primary);
-  background-color: var(--optimui-color-background);
+  padding: var(--anukit-space-2) var(--anukit-space-3);
+  border: 1px solid var(--anukit-color-border);
+  border-radius: var(--anukit-border-radius-md);
+  font-size: var(--anukit-text-base);
+  color: var(--anukit-color-text-primary);
+  background-color: var(--anukit-color-background);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.optimui-textfield-input:focus {
+.anukit-textfield-input:focus {
   outline: none;
-  border-color: var(--optimui-color-primary);
-  box-shadow: 0 0 0 2px var(--optimui-color-primary-alpha);
+  border-color: var(--anukit-color-primary);
+  box-shadow: 0 0 0 2px var(--anukit-color-primary-alpha);
 }
 
-.optimui-textfield-input:disabled {
-  background-color: var(--optimui-color-background-disabled);
-  color: var(--optimui-color-text-disabled);
+.anukit-textfield-input:disabled {
+  background-color: var(--anukit-color-background-disabled);
+  color: var(--anukit-color-text-disabled);
   cursor: not-allowed;
 }
 
-.optimui-textfield-input:read-only {
-  background-color: var(--optimui-color-background-subtle);
+.anukit-textfield-input:read-only {
+  background-color: var(--anukit-color-background-subtle);
 }
 
 /* TextField Variants */
-.optimui-textfield-outlined .optimui-textfield-input {
+.anukit-textfield-outlined .anukit-textfield-input {
   border-width: 2px;
 }
 
-.optimui-textfield-filled .optimui-textfield-input {
-  background-color: var(--optimui-color-background-subtle);
+.anukit-textfield-filled .anukit-textfield-input {
+  background-color: var(--anukit-color-background-subtle);
   border: none;
 }
 
-.optimui-textfield-error .optimui-textfield-input {
-  border-color: var(--optimui-color-error);
+.anukit-textfield-error .anukit-textfield-input {
+  border-color: var(--anukit-color-error);
 }
 
-.optimui-textfield-error .optimui-textfield-input:focus {
-  box-shadow: 0 0 0 2px var(--optimui-color-error-alpha);
+.anukit-textfield-error .anukit-textfield-input:focus {
+  box-shadow: 0 0 0 2px var(--anukit-color-error-alpha);
 }
 
-.optimui-textfield-success .optimui-textfield-input {
-  border-color: var(--optimui-color-success);
+.anukit-textfield-success .anukit-textfield-input {
+  border-color: var(--anukit-color-success);
 }
 
-.optimui-textfield-success .optimui-textfield-input:focus {
-  box-shadow: 0 0 0 2px var(--optimui-color-success-alpha);
+.anukit-textfield-success .anukit-textfield-input:focus {
+  box-shadow: 0 0 0 2px var(--anukit-color-success-alpha);
 }
 
 /* TextField Sizes */
-.optimui-textfield-sm .optimui-textfield-input {
-  padding: var(--optimui-space-1) var(--optimui-space-2);
-  font-size: var(--optimui-text-sm);
+.anukit-textfield-sm .anukit-textfield-input {
+  padding: var(--anukit-space-1) var(--anukit-space-2);
+  font-size: var(--anukit-text-sm);
 }
 
-.optimui-textfield-lg .optimui-textfield-input {
-  padding: var(--optimui-space-3) var(--optimui-space-4);
-  font-size: var(--optimui-text-lg);
+.anukit-textfield-lg .anukit-textfield-input {
+  padding: var(--anukit-space-3) var(--anukit-space-4);
+  font-size: var(--anukit-text-lg);
 }
 
 /* TextField Icons and Affixes */
-.optimui-textfield-has-left-icon .optimui-textfield-input {
-  padding-left: var(--optimui-space-10);
+.anukit-textfield-has-left-icon .anukit-textfield-input {
+  padding-left: var(--anukit-space-10);
 }
 
-.optimui-textfield-has-right-icon .optimui-textfield-input {
-  padding-right: var(--optimui-space-10);
+.anukit-textfield-has-right-icon .anukit-textfield-input {
+  padding-right: var(--anukit-space-10);
 }
 
-.optimui-textfield-has-prefix .optimui-textfield-input {
-  padding-left: var(--optimui-space-1);
+.anukit-textfield-has-prefix .anukit-textfield-input {
+  padding-left: var(--anukit-space-1);
 }
 
-.optimui-textfield-has-suffix .optimui-textfield-input {
-  padding-right: var(--optimui-space-1);
+.anukit-textfield-has-suffix .anukit-textfield-input {
+  padding-right: var(--anukit-space-1);
 }
 
-.optimui-textfield-left-icon,
-.optimui-textfield-right-icon {
+.anukit-textfield-left-icon,
+.anukit-textfield-right-icon {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
   pointer-events: none;
 }
 
-.optimui-textfield-left-icon {
-  left: var(--optimui-space-3);
+.anukit-textfield-left-icon {
+  left: var(--anukit-space-3);
 }
 
-.optimui-textfield-right-section {
+.anukit-textfield-right-section {
   position: absolute;
-  right: var(--optimui-space-3);
+  right: var(--anukit-space-3);
   display: flex;
   align-items: center;
-  gap: var(--optimui-space-1);
+  gap: var(--anukit-space-1);
 }
 
-.optimui-textfield-prefix,
-.optimui-textfield-suffix {
-  padding: 0 var(--optimui-space-2);
-  color: var(--optimui-color-text-secondary);
-  font-size: var(--optimui-text-sm);
+.anukit-textfield-prefix,
+.anukit-textfield-suffix {
+  padding: 0 var(--anukit-space-2);
+  color: var(--anukit-color-text-secondary);
+  font-size: var(--anukit-text-sm);
   white-space: nowrap;
 }
 
-.optimui-textfield-clear,
-.optimui-textfield-password-toggle {
+.anukit-textfield-clear,
+.anukit-textfield-password-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -447,113 +447,113 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
   cursor: pointer;
-  border-radius: var(--optimui-border-radius-sm);
+  border-radius: var(--anukit-border-radius-sm);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.optimui-textfield-clear:hover,
-.optimui-textfield-password-toggle:hover {
-  color: var(--optimui-color-text-primary);
-  background-color: var(--optimui-color-background-subtle);
+.anukit-textfield-clear:hover,
+.anukit-textfield-password-toggle:hover {
+  color: var(--anukit-color-text-primary);
+  background-color: var(--anukit-color-background-subtle);
 }
 
-.optimui-textfield-spinner {
+.anukit-textfield-spinner {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
 }
 
-.optimui-textfield-footer {
+.anukit-textfield-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-textfield-messages {
+.anukit-textfield-messages {
   flex: 1;
 }
 
-.optimui-textfield-error {
-  color: var(--optimui-color-error);
-  font-size: var(--optimui-text-sm);
+.anukit-textfield-error {
+  color: var(--anukit-color-error);
+  font-size: var(--anukit-text-sm);
   line-height: 1.4;
 }
 
-.optimui-textfield-helper {
-  color: var(--optimui-color-text-secondary);
-  font-size: var(--optimui-text-sm);
+.anukit-textfield-helper {
+  color: var(--anukit-color-text-secondary);
+  font-size: var(--anukit-text-sm);
   line-height: 1.4;
 }
 
-.optimui-textfield-character-count {
-  font-size: var(--optimui-text-xs);
-  color: var(--optimui-color-text-secondary);
+.anukit-textfield-character-count {
+  font-size: var(--anukit-text-xs);
+  color: var(--anukit-color-text-secondary);
   white-space: nowrap;
 }
 
-.optimui-textfield-character-count-near {
-  color: var(--optimui-color-warning);
+.anukit-textfield-character-count-near {
+  color: var(--anukit-color-warning);
 }
 
-.optimui-textfield-character-count-over {
-  color: var(--optimui-color-error);
+.anukit-textfield-character-count-over {
+  color: var(--anukit-color-error);
 }
 
 /* DatePicker Component */
-.optimui-datepicker {
+.anukit-datepicker {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--optimui-space-2);
+  gap: var(--anukit-space-2);
 }
 
-.optimui-datepicker-full-width {
+.anukit-datepicker-full-width {
   width: 100%;
 }
 
-.optimui-datepicker-label {
-  font-size: var(--optimui-text-sm);
+.anukit-datepicker-label {
+  font-size: var(--anukit-text-sm);
   font-weight: 500;
-  color: var(--optimui-color-text-primary);
+  color: var(--anukit-color-text-primary);
   line-height: 1.5;
 }
 
-.optimui-datepicker-container {
+.anukit-datepicker-container {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.optimui-datepicker-input {
+.anukit-datepicker-input {
   flex: 1;
-  padding: var(--optimui-space-2) var(--optimui-space-10) var(--optimui-space-2) var(--optimui-space-3);
-  border: 1px solid var(--optimui-color-border);
-  border-radius: var(--optimui-border-radius-md);
-  font-size: var(--optimui-text-base);
-  color: var(--optimui-color-text-primary);
-  background-color: var(--optimui-color-background);
+  padding: var(--anukit-space-2) var(--anukit-space-10) var(--anukit-space-2) var(--anukit-space-3);
+  border: 1px solid var(--anukit-color-border);
+  border-radius: var(--anukit-border-radius-md);
+  font-size: var(--anukit-text-base);
+  color: var(--anukit-color-text-primary);
+  background-color: var(--anukit-color-background);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.optimui-datepicker-input:focus {
+.anukit-datepicker-input:focus {
   outline: none;
-  border-color: var(--optimui-color-primary);
-  box-shadow: 0 0 0 2px var(--optimui-color-primary-alpha);
+  border-color: var(--anukit-color-primary);
+  box-shadow: 0 0 0 2px var(--anukit-color-primary-alpha);
 }
 
-.optimui-datepicker-input:disabled {
-  background-color: var(--optimui-color-background-disabled);
-  color: var(--optimui-color-text-disabled);
+.anukit-datepicker-input:disabled {
+  background-color: var(--anukit-color-background-disabled);
+  color: var(--anukit-color-text-disabled);
   cursor: not-allowed;
 }
 
-.optimui-datepicker-trigger {
+.anukit-datepicker-trigger {
   position: absolute;
-  right: var(--optimui-space-3);
+  right: var(--anukit-space-3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,45 +562,45 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
   cursor: pointer;
-  border-radius: var(--optimui-border-radius-sm);
+  border-radius: var(--anukit-border-radius-sm);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.optimui-datepicker-trigger:hover {
-  color: var(--optimui-color-text-primary);
-  background-color: var(--optimui-color-background-subtle);
+.anukit-datepicker-trigger:hover {
+  color: var(--anukit-color-text-primary);
+  background-color: var(--anukit-color-background-subtle);
 }
 
-.optimui-datepicker-trigger:disabled {
+.anukit-datepicker-trigger:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
 /* DatePicker Calendar */
-.optimui-datepicker-calendar {
+.anukit-datepicker-calendar {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
   min-width: 280px;
-  margin-top: var(--optimui-space-2);
-  padding: var(--optimui-space-4);
-  background-color: var(--optimui-color-background);
-  border: 1px solid var(--optimui-color-border);
-  border-radius: var(--optimui-border-radius-lg);
+  margin-top: var(--anukit-space-2);
+  padding: var(--anukit-space-4);
+  background-color: var(--anukit-color-background);
+  border: 1px solid var(--anukit-color-border);
+  border-radius: var(--anukit-border-radius-lg);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.optimui-datepicker-header {
+.anukit-datepicker-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--optimui-space-4);
+  margin-bottom: var(--anukit-space-4);
 }
 
-.optimui-datepicker-nav-button {
+.anukit-datepicker-nav-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -609,51 +609,51 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
   cursor: pointer;
-  border-radius: var(--optimui-border-radius-md);
+  border-radius: var(--anukit-border-radius-md);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.optimui-datepicker-nav-button:hover {
-  color: var(--optimui-color-text-primary);
-  background-color: var(--optimui-color-background-subtle);
+.anukit-datepicker-nav-button:hover {
+  color: var(--anukit-color-text-primary);
+  background-color: var(--anukit-color-background-subtle);
 }
 
-.optimui-datepicker-month-year {
+.anukit-datepicker-month-year {
   font-weight: 600;
-  color: var(--optimui-color-text-primary);
+  color: var(--anukit-color-text-primary);
 }
 
-.optimui-datepicker-grid {
+.anukit-datepicker-grid {
   display: grid;
-  gap: var(--optimui-space-1);
+  gap: var(--anukit-space-1);
 }
 
-.optimui-datepicker-weekdays {
+.anukit-datepicker-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: var(--optimui-space-1);
-  margin-bottom: var(--optimui-space-2);
+  gap: var(--anukit-space-1);
+  margin-bottom: var(--anukit-space-2);
 }
 
-.optimui-datepicker-weekday {
+.anukit-datepicker-weekday {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 32px;
-  font-size: var(--optimui-text-sm);
+  font-size: var(--anukit-text-sm);
   font-weight: 500;
-  color: var(--optimui-color-text-secondary);
+  color: var(--anukit-color-text-secondary);
 }
 
-.optimui-datepicker-days {
+.anukit-datepicker-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: var(--optimui-space-1);
+  gap: var(--anukit-space-1);
 }
 
-.optimui-datepicker-day {
+.anukit-datepicker-day {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -662,126 +662,126 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--optimui-color-text-primary);
+  color: var(--anukit-color-text-primary);
   cursor: pointer;
-  border-radius: var(--optimui-border-radius-md);
+  border-radius: var(--anukit-border-radius-md);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.optimui-datepicker-day:hover {
-  background-color: var(--optimui-color-background-subtle);
+.anukit-datepicker-day:hover {
+  background-color: var(--anukit-color-background-subtle);
 }
 
-.optimui-datepicker-day-current-month {
-  color: var(--optimui-color-text-primary);
+.anukit-datepicker-day-current-month {
+  color: var(--anukit-color-text-primary);
 }
 
-.optimui-datepicker-day:not(.optimui-datepicker-day-current-month) {
-  color: var(--optimui-color-text-disabled);
+.anukit-datepicker-day:not(.anukit-datepicker-day-current-month) {
+  color: var(--anukit-color-text-disabled);
 }
 
-.optimui-datepicker-day-selected {
-  background-color: var(--optimui-color-primary);
+.anukit-datepicker-day-selected {
+  background-color: var(--anukit-color-primary);
   color: white;
 }
 
-.optimui-datepicker-day-selected:hover {
-  background-color: var(--optimui-color-primary);
+.anukit-datepicker-day-selected:hover {
+  background-color: var(--anukit-color-primary);
 }
 
-.optimui-datepicker-day-today {
+.anukit-datepicker-day-today {
   font-weight: 600;
-  color: var(--optimui-color-primary);
+  color: var(--anukit-color-primary);
 }
 
-.optimui-datepicker-day-today.optimui-datepicker-day-selected {
+.anukit-datepicker-day-today.anukit-datepicker-day-selected {
   color: white;
 }
 
-.optimui-datepicker-day-disabled {
-  color: var(--optimui-color-text-disabled);
+.anukit-datepicker-day-disabled {
+  color: var(--anukit-color-text-disabled);
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.optimui-datepicker-day-disabled:hover {
+.anukit-datepicker-day-disabled:hover {
   background-color: transparent;
 }
 
-.optimui-datepicker-footer {
-  margin-top: var(--optimui-space-2);
+.anukit-datepicker-footer {
+  margin-top: var(--anukit-space-2);
 }
 
-.optimui-datepicker-error {
-  color: var(--optimui-color-error);
-  font-size: var(--optimui-text-sm);
+.anukit-datepicker-error {
+  color: var(--anukit-color-error);
+  font-size: var(--anukit-text-sm);
   line-height: 1.4;
 }
 
-.optimui-datepicker-helper {
-  color: var(--optimui-color-text-secondary);
-  font-size: var(--optimui-text-sm);
+.anukit-datepicker-helper {
+  color: var(--anukit-color-text-secondary);
+  font-size: var(--anukit-text-sm);
   line-height: 1.4;
 }
 
 /* DatePicker Variants */
-.optimui-datepicker-error .optimui-datepicker-input {
-  border-color: var(--optimui-color-error);
+.anukit-datepicker-error .anukit-datepicker-input {
+  border-color: var(--anukit-color-error);
 }
 
-.optimui-datepicker-error .optimui-datepicker-input:focus {
-  box-shadow: 0 0 0 2px var(--optimui-color-error-alpha);
+.anukit-datepicker-error .anukit-datepicker-input:focus {
+  box-shadow: 0 0 0 2px var(--anukit-color-error-alpha);
 }
 
-.optimui-datepicker-success .optimui-datepicker-input {
-  border-color: var(--optimui-color-success);
+.anukit-datepicker-success .anukit-datepicker-input {
+  border-color: var(--anukit-color-success);
 }
 
-.optimui-datepicker-success .optimui-datepicker-input:focus {
-  box-shadow: 0 0 0 2px var(--optimui-color-success-alpha);
+.anukit-datepicker-success .anukit-datepicker-input:focus {
+  box-shadow: 0 0 0 2px var(--anukit-color-success-alpha);
 }
 
 /* DatePicker Sizes */
-.optimui-datepicker-sm .optimui-datepicker-input {
-  padding: var(--optimui-space-1) var(--optimui-space-8) var(--optimui-space-1) var(--optimui-space-2);
-  font-size: var(--optimui-text-sm);
+.anukit-datepicker-sm .anukit-datepicker-input {
+  padding: var(--anukit-space-1) var(--anukit-space-8) var(--anukit-space-1) var(--anukit-space-2);
+  font-size: var(--anukit-text-sm);
 }
 
-.optimui-datepicker-lg .optimui-datepicker-input {
-  padding: var(--optimui-space-3) var(--optimui-space-12) var(--optimui-space-3) var(--optimui-space-4);
-  font-size: var(--optimui-text-lg);
+.anukit-datepicker-lg .anukit-datepicker-input {
+  padding: var(--anukit-space-3) var(--anukit-space-12) var(--anukit-space-3) var(--anukit-space-4);
+  font-size: var(--anukit-text-lg);
 }
 
 /* Form Component */
-.optimui-form {
+.anukit-form {
   display: flex;
   flex-direction: column;
-  gap: var(--optimui-space-4);
+  gap: var(--anukit-space-4);
 }
 
-.optimui-form-full-width {
+.anukit-form-full-width {
   width: 100%;
 }
 
-.optimui-form-sm {
-  gap: var(--optimui-space-3);
+.anukit-form-sm {
+  gap: var(--anukit-space-3);
 }
 
-.optimui-form-lg {
-  gap: var(--optimui-space-6);
+.anukit-form-lg {
+  gap: var(--anukit-space-6);
 }
 
-.optimui-form-submitting {
+.anukit-form-submitting {
   pointer-events: none;
   opacity: 0.7;
 }
 
-.optimui-form-has-errors {
+.anukit-form-has-errors {
   /* Additional styles for forms with errors */
 }
 
 /* Spinner Animation */
-@keyframes optimui-spin {
+@keyframes anukit-spin {
   0% {
     transform: rotate(0deg);
   }
@@ -790,26 +790,26 @@
   }
 }
 
-.optimui-spinner {
-  animation: optimui-spin 1s linear infinite;
+.anukit-spinner {
+  animation: anukit-spin 1s linear infinite;
 }
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-input,
-  .optimui-select,
-  .optimui-textarea,
-  .optimui-textfield-input,
-  .optimui-datepicker-input,
-  .optimui-textfield-clear,
-  .optimui-textfield-password-toggle,
-  .optimui-datepicker-trigger,
-  .optimui-datepicker-nav-button,
-  .optimui-datepicker-day {
+  .anukit-input,
+  .anukit-select,
+  .anukit-textarea,
+  .anukit-textfield-input,
+  .anukit-datepicker-input,
+  .anukit-textfield-clear,
+  .anukit-textfield-password-toggle,
+  .anukit-datepicker-trigger,
+  .anukit-datepicker-nav-button,
+  .anukit-datepicker-day {
     transition: none;
   }
   
-  .optimui-spinner {
+  .anukit-spinner {
     animation: none;
   }
 }

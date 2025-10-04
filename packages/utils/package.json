@@ -1,5 +1,5 @@
 {
-  "name": "@optimui/utils",
+  "name": "@anukit/utils",
   "version": "0.1.0",
   "type": "module",
   "description": "Utility functions for OptimUI components",
@@ -13,8 +13,8 @@
       "types": "./dist/index.d.ts"
     },
     "./sizeMode": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
+      "import": "./dist/sizeMode.esm.js",
+      "require": "./dist/sizeMode.js",
       "types": "./dist/sizeMode.d.ts"
     }
   },

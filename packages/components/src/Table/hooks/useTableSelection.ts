@@ -93,7 +93,7 @@ export const useTableSelection = <T,>({
         }
       },
       'aria-label': 'Select all rows',
-      className: 'optimui-table-checkbox',
+      className: 'anukit-table-checkbox',
     });
   }, [selection, data]);
   
@@ -115,7 +115,7 @@ export const useTableSelection = <T,>({
         selection.onSelectionChange(newSelection);
       },
       'aria-label': 'Select row',
-      className: 'optimui-table-checkbox',
+      className: 'anukit-table-checkbox',
     });
   }, [selection]);
   

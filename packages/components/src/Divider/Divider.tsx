@@ -4,10 +4,10 @@
  */
 
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { cn } from '@anukit/utils';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-divider`;
 

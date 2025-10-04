@@ -4,13 +4,13 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [vite()],
   optimizeDeps: {
-    include: ["@optimui/core", "@optimui/components"],
+    include: ["@anukit/core", "@anukit/components"],
   },
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
-          optimui: ["@optimui/core", "@optimui/components"],
+          anukit: ["@anukit/core", "@anukit/components"],
         },
       },
     },

@@ -1,7 +1,7 @@
-# OptimUI SSR-First Architecture
+# AnuKit SSR-First Architecture
 
 ## Overview
-This document outlines the Server-Side Rendering (SSR) first architecture for OptimUI, ensuring optimal performance, hydration, and compatibility with modern React frameworks like Next.js and Remix.
+This document outlines the Server-Side Rendering (SSR) first architecture for AnuKit, ensuring optimal performance, hydration, and compatibility with modern React frameworks like Next.js and Remix.
 
 ## Core SSR Principles
 
@@ -104,7 +104,7 @@ const useMediaQuery = (query: string) => {
 ```typescript
 // pages/_document.tsx
 import { Html, Head, Main, NextScript } from 'next/document';
-import { extractCriticalCSS } from '@optimui/core';
+import { extractCriticalCSS } from '@anukit/core';
 
 export default function Document() {
   return (
@@ -125,13 +125,13 @@ export default function Document() {
 #### 2. App Wrapper
 ```typescript
 // pages/_app.tsx
-import { OptimUIProvider } from '@optimui/core';
+import { AnuKitProvider } from '@anukit/core';
 
 export default function App({ Component, pageProps }) {
   return (
-    <OptimUIProvider>
+    <AnuKitProvider>
       <Component {...pageProps} />
-    </OptimUIProvider>
+    </AnuKitProvider>
   );
 }
 ```
@@ -141,7 +141,7 @@ export default function App({ Component, pageProps }) {
 #### 1. Root Component
 ```typescript
 // app/root.tsx
-import { OptimUIProvider, getSSRStyles } from '@optimui/core';
+import { AnuKitProvider, getSSRStyles } from '@anukit/core';
 
 export const links: LinksFunction = () => [
   // Critical CSS
@@ -156,9 +156,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <OptimUIProvider>
+        <AnuKitProvider>
           <Outlet />
-        </OptimUIProvider>
+        </AnuKitProvider>
         <Scripts />
       </body>
     </html>

@@ -4,7 +4,7 @@
  */
 
 import { useState, useCallback, useMemo } from 'react';
-import { formatDate, parseDate, isSameDay } from '@optimui/utils';
+import { formatDate, parseDate, isSameDay } from '@anukit/utils';
 
 export interface UseDatePickerProps {
   value?: Date | null;

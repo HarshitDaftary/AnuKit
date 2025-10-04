@@ -4,35 +4,35 @@
 
 /* OptimUI CSS Variables for Remix */
 :root {
-  --optimui-primary: 59 130 246;
-  --optimui-secondary: 107 114 128;
-  --optimui-danger: 239 68 68;
-  --optimui-success: 34 197 94;
-  --optimui-warning: 245 158 11;
-  --optimui-background: 255 255 255;
-  --optimui-foreground: 17 24 39;
-  --optimui-border: 229 231 235;
-  --optimui-input: 255 255 255;
-  --optimui-ring: 59 130 246;
+  --anukit-primary: 59 130 246;
+  --anukit-secondary: 107 114 128;
+  --anukit-danger: 239 68 68;
+  --anukit-success: 34 197 94;
+  --anukit-warning: 245 158 11;
+  --anukit-background: 255 255 255;
+  --anukit-foreground: 17 24 39;
+  --anukit-border: 229 231 235;
+  --anukit-input: 255 255 255;
+  --anukit-ring: 59 130 246;
 }
 
 [data-theme="dark"] {
-  --optimui-primary: 96 165 250;
-  --optimui-secondary: 156 163 175;
-  --optimui-danger: 248 113 113;
-  --optimui-success: 74 222 128;
-  --optimui-warning: 251 191 36;
-  --optimui-background: 17 24 39;
-  --optimui-foreground: 243 244 246;
-  --optimui-border: 55 65 81;
-  --optimui-input: 31 41 55;
-  --optimui-ring: 96 165 250;
+  --anukit-primary: 96 165 250;
+  --anukit-secondary: 156 163 175;
+  --anukit-danger: 248 113 113;
+  --anukit-success: 74 222 128;
+  --anukit-warning: 251 191 36;
+  --anukit-background: 17 24 39;
+  --anukit-foreground: 243 244 246;
+  --anukit-border: 55 65 81;
+  --anukit-input: 31 41 55;
+  --anukit-ring: 96 165 250;
 }
 
 /* Remix-specific SSR styles */
-.optimui-button {
-  background-color: rgb(var(--optimui-primary));
-  color: rgb(var(--optimui-background));
+.anukit-button {
+  background-color: rgb(var(--anukit-primary));
+  color: rgb(var(--anukit-background));
   border: 1px solid transparent;
   cursor: pointer;
   font-weight: 500;
@@ -40,43 +40,43 @@
   transition: all 0.2s ease-in-out;
 }
 
-.optimui-button:hover {
-  background-color: rgb(var(--optimui-primary) / 0.9);
+.anukit-button:hover {
+  background-color: rgb(var(--anukit-primary) / 0.9);
 }
 
-.optimui-button:focus-visible {
-  outline: 2px solid rgb(var(--optimui-ring));
+.anukit-button:focus-visible {
+  outline: 2px solid rgb(var(--anukit-ring));
   outline-offset: 2px;
 }
 
-.optimui-button:disabled {
+.anukit-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
 /* Modal styles for Remix */
-.optimui-modal-open {
+.anukit-modal-open {
   overflow: hidden;
 }
 
 /* Ensure no flash of unstyled content */
-.optimui-modal-placeholder {
+.anukit-modal-placeholder {
   display: none;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   html[data-theme="auto"] {
-    --optimui-primary: 96 165 250;
-    --optimui-secondary: 156 163 175;
-    --optimui-danger: 248 113 113;
-    --optimui-success: 74 222 128;
-    --optimui-warning: 251 191 36;
-    --optimui-background: 17 24 39;
-    --optimui-foreground: 243 244 246;
-    --optimui-border: 55 65 81;
-    --optimui-input: 31 41 55;
-    --optimui-ring: 96 165 250;
+    --anukit-primary: 96 165 250;
+    --anukit-secondary: 156 163 175;
+    --anukit-danger: 248 113 113;
+    --anukit-success: 74 222 128;
+    --anukit-warning: 251 191 36;
+    --anukit-background: 17 24 39;
+    --anukit-foreground: 243 244 246;
+    --anukit-border: 55 65 81;
+    --anukit-input: 31 41 55;
+    --anukit-ring: 96 165 250;
   }
 }
 
@@ -96,7 +96,7 @@
 
 /* Focus management */
 .focus-visible\:outline:focus-visible {
-  outline: 2px solid rgb(var(--optimui-ring));
+  outline: 2px solid rgb(var(--anukit-ring));
 }
 
 .focus-visible\:outline-2:focus-visible {

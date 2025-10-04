@@ -8,13 +8,13 @@ import {
   RadioGroup,
   Switch,
   Tooltip
-} from '@optimui/components';
+} from '@anukit/components';
 import {
   useAriaLive,
   useKeyboardNavigation,
   useFocusWithin,
   useReducedMotion
-} from '@optimui/core';
+} from '@anukit/core';
 
 /**
  * Comprehensive accessibility demonstration
@@ -102,7 +102,7 @@ export const AccessibilityDemo: React.FC = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto">
       <header>
-        <h1 className="text-3xl font-bold mb-2">OptimUI Accessibility Demo</h1>
+        <h1 className="text-3xl font-bold mb-2">AnuKit Accessibility Demo</h1>
         <p className="text-gray-600 mb-8">
           Comprehensive demonstration of accessibility features including ARIA support,
           keyboard navigation, screen reader compatibility, and reduced motion preferences.

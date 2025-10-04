@@ -1,8 +1,8 @@
-# OptimUI Theming System Documentation
+# AnuKit Theming System Documentation
 
 ## 🎨 **Complete Theming Architecture**
 
-OptimUI features the most comprehensive and accessible theming system available in any React component library, with **WCAG 2.1 AA compliance built-in** and seamless light/dark mode switching.
+AnuKit features the most comprehensive and accessible theming system available in any React component library, with **WCAG 2.1 AA compliance built-in** and seamless light/dark mode switching.
 
 ## 🌈 **Semantic Color System**
 
@@ -11,20 +11,20 @@ OptimUI features the most comprehensive and accessible theming system available 
 // Semantic tokens that adapt to any theme
 export const semanticColors = {
   background: {
-    default: 'var(--optimui-semantic-background-default)',
-    subtle: 'var(--optimui-semantic-background-subtle)',
-    muted: 'var(--optimui-semantic-background-muted)',
-    emphasized: 'var(--optimui-semantic-background-emphasized)',
+    default: 'var(--anukit-semantic-background-default)',
+    subtle: 'var(--anukit-semantic-background-subtle)',
+    muted: 'var(--anukit-semantic-background-muted)',
+    emphasized: 'var(--anukit-semantic-background-emphasized)',
   },
   foreground: {
-    default: 'var(--optimui-semantic-foreground-default)',
-    muted: 'var(--optimui-semantic-foreground-muted)',
-    onEmphasis: 'var(--optimui-semantic-foreground-on-emphasis)',
+    default: 'var(--anukit-semantic-foreground-default)',
+    muted: 'var(--anukit-semantic-foreground-muted)',
+    onEmphasis: 'var(--anukit-semantic-foreground-on-emphasis)',
   },
   primary: {
-    default: 'var(--optimui-semantic-primary-default)',
-    emphasized: 'var(--optimui-semantic-primary-emphasized)',
-    muted: 'var(--optimui-semantic-primary-muted)',
+    default: 'var(--anukit-semantic-primary-default)',
+    emphasized: 'var(--anukit-semantic-primary-emphasized)',
+    muted: 'var(--anukit-semantic-primary-muted)',
   },
   // Success, warning, error, info variants...
 }
@@ -119,7 +119,7 @@ export function useTheme() {
 
 ### **Basic Theme Switching**
 ```typescript
-import { useTheme } from '@optimui/core'
+import { useTheme } from '@anukit/core'
 
 function ThemeToggle() {
   const { theme, appliedTheme, setTheme, toggle } = useTheme()
@@ -141,7 +141,7 @@ function ThemeToggle() {
 
 ### **Component with Theme-Aware Styling**
 ```typescript
-import { semanticColors } from '@optimui/core'
+import { semanticColors } from '@anukit/core'
 
 function Card({ children }) {
   return (
@@ -160,7 +160,7 @@ function Card({ children }) {
 // Or with CSS classes (preferred)
 function Card({ children }) {
   return (
-    <div className="optimui-bg-background-subtle optimui-text-foreground-default optimui-border optimui-border-border-default">
+    <div className="anukit-bg-background-subtle anukit-text-foreground-default anukit-border anukit-border-border-default">
       {children}
     </div>
   )
@@ -169,7 +169,7 @@ function Card({ children }) {
 
 ### **Custom Theme Creation**
 ```typescript
-import { createTheme, generateThemeCSS } from '@optimui/core'
+import { createTheme, generateThemeCSS } from '@anukit/core'
 
 // Create brand-specific theme
 const brandTheme = createTheme({
@@ -196,33 +196,33 @@ themeManager.setTheme('brand')
 /* Generated automatically from theme tokens */
 :root {
   /* Light theme (default) */
-  --optimui-semantic-background-default: hsl(0, 0%, 100%);
-  --optimui-semantic-foreground-default: hsl(221, 39%, 11%);
-  --optimui-semantic-primary-default: hsl(217, 91%, 60%);
+  --anukit-semantic-background-default: hsl(0, 0%, 100%);
+  --anukit-semantic-foreground-default: hsl(221, 39%, 11%);
+  --anukit-semantic-primary-default: hsl(217, 91%, 60%);
   /* ... hundreds of semantic tokens */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark theme auto-applied based on system preference */
-    --optimui-semantic-background-default: hsl(224, 71%, 4%);
-    --optimui-semantic-foreground-default: hsl(210, 20%, 98%);
-    --optimui-semantic-primary-default: hsl(217, 91%, 70%);
+    --anukit-semantic-background-default: hsl(224, 71%, 4%);
+    --anukit-semantic-foreground-default: hsl(210, 20%, 98%);
+    --anukit-semantic-primary-default: hsl(217, 91%, 70%);
   }
 }
 
 @media (prefers-contrast: high) {
   :root {
     /* High contrast theme for accessibility */
-    --optimui-semantic-background-default: #000000;
-    --optimui-semantic-foreground-default: #ffffff;
-    --optimui-semantic-primary-default: #0066ff;
+    --anukit-semantic-background-default: #000000;
+    --anukit-semantic-foreground-default: #ffffff;
+    --anukit-semantic-primary-default: #0066ff;
   }
 }
 
 /* Theme attribute override */
 [data-theme="dark"] {
-  --optimui-semantic-background-default: hsl(224, 71%, 4%);
+  --anukit-semantic-background-default: hsl(224, 71%, 4%);
   /* Manual theme override */
 }
 ```
@@ -254,17 +254,17 @@ export function validateThemeAccessibility(theme: Record<string, string>) {
 ### **Focus Management**
 ```css
 /* Consistent focus styles across all themes */
-.optimui-focus {
+.anukit-focus {
   outline: none;
-  ring: var(--optimui-focus-ring-width) solid var(--optimui-focus-ring-color);
-  ring-offset: var(--optimui-focus-ring-offset);
+  ring: var(--anukit-focus-ring-width) solid var(--anukit-focus-ring-color);
+  ring-offset: var(--anukit-focus-ring-offset);
 }
 
 /* High contrast focus override */
 @media (prefers-contrast: high) {
-  .optimui-focus {
-    --optimui-focus-ring-color: #ffffff;
-    --optimui-focus-ring-width: 3px;
+  .anukit-focus {
+    --anukit-focus-ring-color: #ffffff;
+    --anukit-focus-ring-width: 3px;
   }
 }
 ```
@@ -293,7 +293,7 @@ if (window.matchMedia('(prefers-contrast: high)').matches) {
 ### **Bundle Size Impact**
 ```
 Theme System Comparison:
-✅ OptimUI CSS Variables: ~3KB gzipped
+✅ AnuKit CSS Variables: ~3KB gzipped
 ❌ Styled-components theming: ~12KB
 ❌ Emotion theming: ~15KB
 ❌ Material-UI theming: ~25KB
@@ -341,7 +341,7 @@ export function generateThemeDocumentation() {
 
 ### **vs. Other Libraries**
 
-| Feature | OptimUI | Material-UI | Chakra UI | Ant Design |
+| Feature | AnuKit | Material-UI | Chakra UI | Ant Design |
 |---------|---------|-------------|-----------|------------|
 | **WCAG AA Compliance** | ✅ Built-in | ❌ Manual | ❌ Manual | ❌ Manual |
 | **Auto Dark Mode** | ✅ Yes | ⚠️ Complex | ✅ Yes | ❌ Manual |
@@ -369,7 +369,7 @@ export function generateThemeDocumentation() {
 - [ ] Figma plugin integration
 - [ ] Theme performance monitoring
 
-**OptimUI's theming system sets a new standard for accessibility, performance, and developer experience in React component libraries!** 🎨✨
+**AnuKit's theming system sets a new standard for accessibility, performance, and developer experience in React component libraries!** 🎨✨
 
 The system provides:
 1. **🌈 Complete color accessibility** (WCAG AA/AAA compliant)

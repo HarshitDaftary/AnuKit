@@ -1,8 +1,8 @@
 {
-  "name": "@optimui/playground",
+  "name": "@anukit/playground",
   "version": "0.1.0",
   "private": true,
-  "description": "Interactive playground for testing OptimUI components",
+  "description": "Interactive playground for testing AnuKit components",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,18 +12,18 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@optimui/components": "workspace:*",
-    "@optimui/core": "workspace:*",
-    "@optimui/styles": "workspace:*",
-    "@optimui/tokens": "workspace:*",
-    "@optimui/icons": "workspace:*",
+    "@anukit/components": "workspace:*",
+    "@anukit/core": "workspace:*",
+    "@anukit/styles": "workspace:*",
+    "@anukit/tokens": "workspace:*",
+    "@anukit/icons": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
-    "@optimui/eslint-config": "workspace:*",
-    "@optimui/tsconfig": "workspace:*",
+    "@anukit/eslint-config": "workspace:*",
+    "@anukit/tsconfig": "workspace:*",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@vitejs/plugin-react-swc": "^3.4.0",

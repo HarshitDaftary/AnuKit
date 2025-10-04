@@ -1,8 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState, useEffect } from "react";
-import { Button } from "@optimui/components/Button/Button";
-import { Modal } from "@optimui/components/Modal/Modal";
-import { useTheme, useMediaQuery } from "@optimui/core/hooks/ssr-hooks";
+import { Button } from "@anukit/components/Button/Button";
+import { Modal } from "@anukit/components/Modal/Modal";
+import { useTheme, useMediaQuery } from "@anukit/core/hooks/ssr-hooks";
 
 export const meta: MetaFunction = () => {
   return [

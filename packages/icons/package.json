@@ -1,5 +1,5 @@
 {
-  "name": "@optimui/icons",
+  "name": "@anukit/icons",
   "version": "0.1.0",
   "type": "module",
   "description": "Optimized SVG icon components for OptimUI",
@@ -28,7 +28,7 @@
     "size": "bundlesize"
   },
   "dependencies": {
-    "@optimui/core": "workspace:*"
+    "@anukit/core": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.31",

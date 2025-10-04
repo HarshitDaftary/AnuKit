@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import { Button } from '@optimui/components/Button/Button';
-import { Modal } from '@optimui/components/Modal/Modal';
-import { useTheme, useMediaQuery } from '@optimui/core/hooks/ssr-hooks';
+import { Button } from '@anukit/components/Button/Button';
+import { Modal } from '@anukit/components/Modal/Modal';
+import { useTheme, useMediaQuery } from '@anukit/core/hooks/ssr-hooks';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);

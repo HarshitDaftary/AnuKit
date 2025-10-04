@@ -4,11 +4,11 @@
  */
 
 import React, { forwardRef, useState, useMemo, useCallback, useRef, useEffect } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 import { Table, TableProps, ColumnDef } from '../Table/Table';
 import { useVirtualization } from './hooks/useVirtualization';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-datatable`;
 
 // Virtualization configuration

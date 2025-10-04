@@ -1,4 +1,4 @@
-# OptimUI Styling Approach Analysis
+# AnuKit Styling Approach Analysis
 
 ## Styling Options Evaluation
 
@@ -63,7 +63,7 @@
 
 ## Decision: CSS Variables + Utility Classes
 
-### Why This Approach is Optimal for OptimUI
+### Why This Approach is Optimal for AnuKit
 
 #### 1. **Performance First**
 - Zero runtime JavaScript
@@ -117,39 +117,39 @@ export const tokens = {
 
 // Generates CSS variables
 :root {
-  --optimui-color-primary-50: hsl(214, 100%, 97%);
-  --optimui-color-primary-500: hsl(217, 91%, 60%);
-  --optimui-spacing-1: 0.25rem;
-  --optimui-spacing-4: 1rem;
+  --anukit-color-primary-50: hsl(214, 100%, 97%);
+  --anukit-color-primary-500: hsl(217, 91%, 60%);
+  --anukit-spacing-1: 0.25rem;
+  --anukit-spacing-4: 1rem;
 }
 ```
 
 ### Utility Class System
 ```css
 /* Atomic utility classes */
-.optimui-text-primary { color: var(--optimui-color-primary-500); }
-.optimui-bg-primary { background: var(--optimui-color-primary-500); }
-.optimui-p-4 { padding: var(--optimui-spacing-4); }
-.optimui-rounded-md { border-radius: var(--optimui-border-radius-md); }
+.anukit-text-primary { color: var(--anukit-color-primary-500); }
+.anukit-bg-primary { background: var(--anukit-color-primary-500); }
+.anukit-p-4 { padding: var(--anukit-spacing-4); }
+.anukit-rounded-md { border-radius: var(--anukit-border-radius-md); }
 
 /* Component-specific classes */
-.optimui-button {
+.anukit-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--optimui-spacing-2) var(--optimui-spacing-4);
-  border-radius: var(--optimui-border-radius-md);
-  font-weight: var(--optimui-font-weight-medium);
-  transition: all var(--optimui-duration-150) var(--optimui-timing-out);
+  padding: var(--anukit-spacing-2) var(--anukit-spacing-4);
+  border-radius: var(--anukit-border-radius-md);
+  font-weight: var(--anukit-font-weight-medium);
+  transition: all var(--anukit-duration-150) var(--anukit-timing-out);
 }
 
-.optimui-button--primary {
-  background: var(--optimui-color-primary-500);
-  color: var(--optimui-color-white);
+.anukit-button--primary {
+  background: var(--anukit-color-primary-500);
+  color: var(--anukit-color-white);
 }
 
-.optimui-button--primary:hover {
-  background: var(--optimui-color-primary-600);
+.anukit-button--primary:hover {
+  background: var(--anukit-color-primary-600);
 }
 ```
 
@@ -163,17 +163,17 @@ interface StyleProps {
 }
 
 export const buttonStyles = createVariants({
-  base: 'optimui-button',
+  base: 'anukit-button',
   variants: {
     variant: {
-      primary: 'optimui-button--primary',
-      secondary: 'optimui-button--secondary',
-      outline: 'optimui-button--outline',
+      primary: 'anukit-button--primary',
+      secondary: 'anukit-button--secondary',
+      outline: 'anukit-button--outline',
     },
     size: {
-      sm: 'optimui-button--sm',
-      md: 'optimui-button--md',
-      lg: 'optimui-button--lg',
+      sm: 'anukit-button--sm',
+      md: 'anukit-button--md',
+      lg: 'anukit-button--lg',
     }
   },
   defaultVariants: {
@@ -235,7 +235,7 @@ export function generateCSS() {
   return `
     :root {
       ${Object.entries(flattenTokens(tokens))
-        .map(([key, value]) => `--optimui-${key}: ${value};`)
+        .map(([key, value]) => `--anukit-${key}: ${value};`)
         .join('\n      ')}
     }
     
@@ -310,7 +310,7 @@ const darkTheme = createTheme({
 
 ## Conclusion
 
-**CSS Variables + Utility Classes** is the optimal choice for OptimUI because it:
+**CSS Variables + Utility Classes** is the optimal choice for AnuKit because it:
 
 1. **Maximizes Performance**: Zero runtime overhead
 2. **Perfect SSR**: No hydration issues
@@ -319,4 +319,4 @@ const darkTheme = createTheme({
 5. **Future-Proof**: Native web standards
 6. **Framework Agnostic**: Works everywhere
 
-This approach aligns perfectly with OptimUI's core principles of performance-first design while providing excellent developer experience and maintaining the smallest possible bundle size.
+This approach aligns perfectly with AnuKit's core principles of performance-first design while providing excellent developer experience and maintaining the smallest possible bundle size.

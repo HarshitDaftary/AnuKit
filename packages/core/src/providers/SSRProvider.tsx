@@ -81,7 +81,7 @@ export const hydrateStyles = (): void => {
   if (typeof window === 'undefined') return;
   
   // Remove server-side styles after hydration
-  const serverStyles = document.querySelector('[data-optimui-ssr-styles]');
+  const serverStyles = document.querySelector('[data-anukit-ssr-styles]');
   if (serverStyles) {
     serverStyles.remove();
   }

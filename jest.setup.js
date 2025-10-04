@@ -1,5 +1,5 @@
 /**
- * Jest setup file for OptimUI testing
+ * Jest setup file for AnuKit testing
  */
 import '@testing-library/jest-dom';
 

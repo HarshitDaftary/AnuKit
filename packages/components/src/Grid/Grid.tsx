@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-grid`;
 
 // Inlined utilities to avoid external dependencies
@@ -50,14 +50,14 @@ const getColsClass = (cols: ColsValue): string => {
   if (cols === 'auto-fit') return `${l_prx}-cols-auto-fit`;
   if (cols === 'auto-fill') return `${l_prx}-cols-auto-fill`;
   if (typeof cols === 'number' && cols >= 1 && cols <= 12) {
-    return `optimui-grid-cols-${cols}`;
+    return `anukit-grid-cols-${cols}`;
   }
   return `${l_prx}-cols-1`;
 };
 
 const getRowsClass = (rows: number): string => {
   if (rows >= 1 && rows <= 6) {
-    return `optimui-grid-rows-${rows}`;
+    return `anukit-grid-rows-${rows}`;
   }
   return '';
 };
@@ -65,7 +65,7 @@ const getRowsClass = (rows: number): string => {
 const getGapClass = (gap: GapValue | undefined): string => {
   if (gap === undefined) return '';
   if (gap === 'px') return `${lib}-gap-px`;
-  return `optimui-gap-${gap}`;
+  return `anukit-gap-${gap}`;
 };
 
 /* @__PURE__ */

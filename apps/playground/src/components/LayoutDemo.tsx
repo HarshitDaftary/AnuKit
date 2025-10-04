@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Flex, Container, Stack } from '@optimui/components';
+import { Grid, Flex, Container, Stack } from '@anukit/components';
 
 export function LayoutDemo() {
   return (

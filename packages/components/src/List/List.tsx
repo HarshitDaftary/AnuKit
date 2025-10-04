@@ -4,9 +4,9 @@
  */
 
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-list`;
 
@@ -276,7 +276,7 @@ export const List = forwardRef<HTMLElement | SVGElement, Omit<ListProps, 'as'> &
         ref={handleRef}
         className={cn(
           l_prx,
-          `optimui-list-${variant}`,
+          `anukit-list-${variant}`,
           className
         )}
         {...props}

@@ -1,6 +1,6 @@
 import { render, hydrate } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import { SSRProvider } from '@optimui/core/providers/SSRProvider';
+import { SSRProvider } from '@anukit/core/providers/SSRProvider';
 
 /**
  * Test utility to verify SSR compatibility

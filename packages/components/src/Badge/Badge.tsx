@@ -4,10 +4,10 @@
  */
 
 import React, { forwardRef } from 'react';
-import { cn } from '@optimui/utils';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { cn } from '@anukit/utils';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-badge`;
 
@@ -73,8 +73,8 @@ interface BadgeProps {
 
 // Get color classes based on variant and color
 const getColorClasses = (variant: BadgeProps['variant'], color: BadgeProps['color']) => {
-  const baseClass = `optimui-badge-${variant}`;
-  const colorClass = `optimui-badge-${color}`;
+  const baseClass = `anukit-badge-${variant}`;
+  const colorClass = `anukit-badge-${color}`;
   
   return {
     base: baseClass,
@@ -131,7 +131,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(({
   const colorClasses = getColorClasses(variant, color);
   
   const badgeClasses = cn(
-    anchor && position !== 'inline' ? `optimui-badge-${position}` : false,
+    anchor && position !== 'inline' ? `anukit-badge-${position}` : false,
     `${l_prx}-inline`,
     onClick ? `${l_prx}-clickable` : false,
     `${l_prx}-pulse`,

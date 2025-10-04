@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { useSSRSafeId } from '@anukit/core/providers/SSRProvider';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 const l_prx = `${lib}-switch`;
 
 export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {

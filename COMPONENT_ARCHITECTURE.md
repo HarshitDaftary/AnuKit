@@ -1,7 +1,7 @@
-# OptimUI Base Primitive Components
+# AnuKit Base Primitive Components
 
 ## Overview
-All base primitive components have been successfully implemented following the established patterns and architecture of OptimUI. Each component is built with performance, accessibility, and developer experience in mind.
+All base primitive components have been successfully implemented following the established patterns and architecture of AnuKit. Each component is built with performance, accessibility, and developer experience in mind.
 
 ## Implemented Components
 
@@ -139,7 +139,7 @@ interface InteractiveComponentProps extends FormComponentProps {
 
 ### Basic Usage
 ```tsx
-import { Button, Input, Checkbox, Radio, RadioGroup, Switch, Tooltip } from '@optimui/components';
+import { Button, Input, Checkbox, Radio, RadioGroup, Switch, Tooltip } from '@anukit/components';
 
 function MyForm() {
   return (

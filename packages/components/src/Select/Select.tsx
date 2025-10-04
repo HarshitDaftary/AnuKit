@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-select`;
 
@@ -124,7 +124,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       
       <div className={`${l_prx}-container`}>
         {leftIcon && (
-          <div className={`${l_prx}-icon optimui-select-icon-left`}>
+          <div className={`${l_prx}-icon anukit-select-icon-left`}>
             {leftIcon}
           </div>
         )}
@@ -163,7 +163,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
           )}
         </select>
         
-        <div className={`${l_prx}-icon optimui-select-icon-chevron`}>
+        <div className={`${l_prx}-icon anukit-select-icon-chevron`}>
           <svg
             width="12"
             height="12"

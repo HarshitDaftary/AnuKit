@@ -1,85 +1,85 @@
 /* List Styles */
 
 /* Base list */
-.optimui-list {
+.anukit-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: var(--optimui-background, white);
-  font-family: var(--optimui-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  background-color: var(--anukit-background, white);
+  font-family: var(--anukit-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
 /* List variants */
-.optimui-list-bordered {
-  border: 1px solid var(--optimui-border, #d1d5db);
+.anukit-list-bordered {
+  border: 1px solid var(--anukit-border, #d1d5db);
   border-radius: 8px;
 }
 
-.optimui-list-divided .optimui-list-item:not(:last-child) {
-  border-bottom: 1px solid var(--optimui-border, #d1d5db);
+.anukit-list-divided .anukit-list-item:not(:last-child) {
+  border-bottom: 1px solid var(--anukit-border, #d1d5db);
 }
 
 /* Dense mode */
-.optimui-list-dense .optimui-list-item {
+.anukit-list-dense .anukit-list-item {
   padding: 8px 16px;
 }
 
-.optimui-list-dense .optimui-list-item-dense {
+.anukit-list-dense .anukit-list-item-dense {
   padding: 4px 16px;
 }
 
 /* Interactive lists */
-.optimui-list-interactive .optimui-list-item-clickable:hover {
-  background-color: var(--optimui-background-hover, #f9fafb);
+.anukit-list-interactive .anukit-list-item-clickable:hover {
+  background-color: var(--anukit-background-hover, #f9fafb);
 }
 
 /* List subheader */
-.optimui-list-subheader {
+.anukit-list-subheader {
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--optimui-text-muted, #6b7280);
-  background-color: var(--optimui-background-subtle, #f9fafb);
-  border-bottom: 1px solid var(--optimui-border, #d1d5db);
+  color: var(--anukit-text-muted, #6b7280);
+  background-color: var(--anukit-background-subtle, #f9fafb);
+  border-bottom: 1px solid var(--anukit-border, #d1d5db);
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
 
 /* List item */
-.optimui-list-item {
+.anukit-list-item {
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  color: var(--optimui-text, #374151);
+  color: var(--anukit-text, #374151);
   transition: background-color 0.15s ease;
   position: relative;
   min-height: 48px;
 }
 
-.optimui-list-item-dense {
+.anukit-list-item-dense {
   padding: 8px 16px;
   min-height: 40px;
 }
 
 /* Clickable items */
-.optimui-list-item-clickable {
+.anukit-list-item-clickable {
   cursor: pointer;
 }
 
-.optimui-list-item-clickable:hover:not(.optimui-list-item-disabled) {
-  background-color: var(--optimui-background-hover, #f9fafb);
+.anukit-list-item-clickable:hover:not(.anukit-list-item-disabled) {
+  background-color: var(--anukit-background-hover, #f9fafb);
 }
 
-.optimui-list-item-clickable:active:not(.optimui-list-item-disabled) {
-  background-color: var(--optimui-background-active, #f3f4f6);
+.anukit-list-item-clickable:active:not(.anukit-list-item-disabled) {
+  background-color: var(--anukit-background-active, #f3f4f6);
 }
 
-.optimui-list-item-clickable:focus-within {
-  background-color: var(--optimui-background-hover, #f9fafb);
+.anukit-list-item-clickable:focus-within {
+  background-color: var(--anukit-background-hover, #f9fafb);
 }
 
 /* Button wrapper for clickable items */
-.optimui-list-item-button-wrapper {
+.anukit-list-item-button-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
@@ -92,16 +92,16 @@
   font: inherit;
 }
 
-.optimui-list-item-button-wrapper:focus {
+.anukit-list-item-button-wrapper:focus {
   outline: none;
 }
 
-.optimui-list-item-button-wrapper:disabled {
+.anukit-list-item-button-wrapper:disabled {
   cursor: not-allowed;
 }
 
 /* Button variant */
-.optimui-list-item-button {
+.anukit-list-item-button {
   display: flex;
   align-items: center;
   width: 100%;
@@ -110,67 +110,67 @@
   padding: 12px 16px;
   text-align: left;
   cursor: pointer;
-  color: var(--optimui-text, #374151);
+  color: var(--anukit-text, #374151);
   font: inherit;
   transition: background-color 0.15s ease;
   min-height: 48px;
 }
 
-.optimui-list-item-button.optimui-list-item-dense {
+.anukit-list-item-button.anukit-list-item-dense {
   padding: 8px 16px;
   min-height: 40px;
 }
 
-.optimui-list-item-button:hover:not(:disabled) {
-  background-color: var(--optimui-background-hover, #f9fafb);
+.anukit-list-item-button:hover:not(:disabled) {
+  background-color: var(--anukit-background-hover, #f9fafb);
 }
 
-.optimui-list-item-button:active:not(:disabled) {
-  background-color: var(--optimui-background-active, #f3f4f6);
+.anukit-list-item-button:active:not(:disabled) {
+  background-color: var(--anukit-background-active, #f3f4f6);
 }
 
-.optimui-list-item-button:focus {
+.anukit-list-item-button:focus {
   outline: none;
-  background-color: var(--optimui-background-hover, #f9fafb);
-  box-shadow: inset 0 0 0 2px var(--optimui-primary, #3b82f6);
+  background-color: var(--anukit-background-hover, #f9fafb);
+  box-shadow: inset 0 0 0 2px var(--anukit-primary, #3b82f6);
 }
 
 /* Selected state */
-.optimui-list-item-selected {
-  background-color: var(--optimui-primary-light, rgba(59, 130, 246, 0.1));
-  color: var(--optimui-primary, #3b82f6);
+.anukit-list-item-selected {
+  background-color: var(--anukit-primary-light, rgba(59, 130, 246, 0.1));
+  color: var(--anukit-primary, #3b82f6);
 }
 
-.optimui-list-item-selected:hover {
-  background-color: var(--optimui-primary-light, rgba(59, 130, 246, 0.15));
+.anukit-list-item-selected:hover {
+  background-color: var(--anukit-primary-light, rgba(59, 130, 246, 0.15));
 }
 
 /* Disabled state */
-.optimui-list-item-disabled {
+.anukit-list-item-disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* Divider */
-.optimui-list-item-divider::after {
+.anukit-list-item-divider::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--optimui-border, #d1d5db);
+  background-color: var(--anukit-border, #d1d5db);
 }
 
 /* List item content */
-.optimui-list-item-content {
+.anukit-list-item-content {
   flex: 1;
   min-width: 0;
 }
 
 /* List item icon */
-.optimui-list-item-icon {
+.anukit-list-item-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,32 +178,32 @@
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  color: var(--optimui-text-muted, #6b7280);
+  color: var(--anukit-text-muted, #6b7280);
 }
 
-.optimui-list-item-selected .optimui-list-item-icon {
-  color: var(--optimui-primary, #3b82f6);
+.anukit-list-item-selected .anukit-list-item-icon {
+  color: var(--anukit-primary, #3b82f6);
 }
 
 /* List item text */
-.optimui-list-item-text {
+.anukit-list-item-text {
   flex: 1;
   min-width: 0;
 }
 
-.optimui-list-item-primary {
+.anukit-list-item-primary {
   font-size: 14px;
   font-weight: 500;
-  color: var(--optimui-text, #374151);
+  color: var(--anukit-text, #374151);
   line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.optimui-list-item-secondary {
+.anukit-list-item-secondary {
   font-size: 12px;
-  color: var(--optimui-text-muted, #6b7280);
+  color: var(--anukit-text-muted, #6b7280);
   line-height: 1.4;
   margin-top: 2px;
   overflow: hidden;
@@ -211,35 +211,35 @@
   white-space: nowrap;
 }
 
-.optimui-list-item-selected .optimui-list-item-primary {
-  color: var(--optimui-primary, #3b82f6);
+.anukit-list-item-selected .anukit-list-item-primary {
+  color: var(--anukit-primary, #3b82f6);
 }
 
 /* List item trailing */
-.optimui-list-item-trailing {
+.anukit-list-item-trailing {
   display: flex;
   align-items: center;
   margin-left: 12px;
   flex-shrink: 0;
-  color: var(--optimui-text-muted, #6b7280);
+  color: var(--anukit-text-muted, #6b7280);
 }
 
-.optimui-list-item-selected .optimui-list-item-trailing {
-  color: var(--optimui-primary, #3b82f6);
+.anukit-list-item-selected .anukit-list-item-trailing {
+  color: var(--anukit-primary, #3b82f6);
 }
 
 /* Nested list */
-.optimui-nested-list {
+.anukit-nested-list {
   position: relative;
 }
 
-.optimui-nested-list-controls {
+.anukit-nested-list-controls {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.optimui-nested-list-toggle {
+.anukit-nested-list-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,180 +247,180 @@
   height: 24px;
   border: none;
   background: none;
-  color: var(--optimui-text-muted, #6b7280);
+  color: var(--anukit-text-muted, #6b7280);
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.15s ease;
   font-size: 12px;
 }
 
-.optimui-nested-list-toggle:hover:not(:disabled) {
-  background-color: var(--optimui-background-hover, #f9fafb);
-  color: var(--optimui-text, #374151);
+.anukit-nested-list-toggle:hover:not(:disabled) {
+  background-color: var(--anukit-background-hover, #f9fafb);
+  color: var(--anukit-text, #374151);
 }
 
-.optimui-nested-list-toggle:focus {
+.anukit-nested-list-toggle:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--optimui-primary, #3b82f6);
+  box-shadow: 0 0 0 2px var(--anukit-primary, #3b82f6);
 }
 
-.optimui-nested-list-toggle:disabled {
+.anukit-nested-list-toggle:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.optimui-nested-list-content {
-  background-color: var(--optimui-background-subtle, #f9fafb);
-  border-left: 2px solid var(--optimui-border, #d1d5db);
+.anukit-nested-list-content {
+  background-color: var(--anukit-background-subtle, #f9fafb);
+  border-left: 2px solid var(--anukit-border, #d1d5db);
 }
 
-.optimui-nested-list-content .optimui-list-item {
+.anukit-nested-list-content .anukit-list-item {
   padding-left: 32px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .optimui-list-item {
+  .anukit-list-item {
     padding: 16px 12px;
   }
   
-  .optimui-list-item-dense {
+  .anukit-list-item-dense {
     padding: 12px;
   }
   
-  .optimui-list-item-button {
+  .anukit-list-item-button {
     padding: 16px 12px;
   }
   
-  .optimui-list-item-button.optimui-list-item-dense {
+  .anukit-list-item-button.anukit-list-item-dense {
     padding: 12px;
   }
   
-  .optimui-list-subheader {
+  .anukit-list-subheader {
     padding: 12px;
   }
   
-  .optimui-list-item-icon {
+  .anukit-list-item-icon {
     margin-right: 8px;
   }
   
-  .optimui-list-item-trailing {
+  .anukit-list-item-trailing {
     margin-left: 8px;
   }
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .optimui-list {
-    background-color: var(--optimui-background-dark, #1f2937);
+  .anukit-list {
+    background-color: var(--anukit-background-dark, #1f2937);
   }
   
-  .optimui-list-bordered {
-    border-color: var(--optimui-border-dark, #374151);
+  .anukit-list-bordered {
+    border-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-list-divided .optimui-list-item:not(:last-child) {
-    border-bottom-color: var(--optimui-border-dark, #374151);
+  .anukit-list-divided .anukit-list-item:not(:last-child) {
+    border-bottom-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-list-subheader {
-    background-color: var(--optimui-background-subtle-dark, #374151);
-    border-bottom-color: var(--optimui-border-dark, #374151);
-    color: var(--optimui-text-muted-dark, #9ca3af);
+  .anukit-list-subheader {
+    background-color: var(--anukit-background-subtle-dark, #374151);
+    border-bottom-color: var(--anukit-border-dark, #374151);
+    color: var(--anukit-text-muted-dark, #9ca3af);
   }
   
-  .optimui-list-item {
-    color: var(--optimui-text-dark, #f9fafb);
+  .anukit-list-item {
+    color: var(--anukit-text-dark, #f9fafb);
   }
   
-  .optimui-list-item-button {
-    color: var(--optimui-text-dark, #f9fafb);
+  .anukit-list-item-button {
+    color: var(--anukit-text-dark, #f9fafb);
   }
   
-  .optimui-list-item-clickable:hover:not(.optimui-list-item-disabled),
-  .optimui-list-item-button:hover:not(:disabled) {
-    background-color: var(--optimui-background-hover-dark, #374151);
+  .anukit-list-item-clickable:hover:not(.anukit-list-item-disabled),
+  .anukit-list-item-button:hover:not(:disabled) {
+    background-color: var(--anukit-background-hover-dark, #374151);
   }
   
-  .optimui-list-item-clickable:active:not(.optimui-list-item-disabled),
-  .optimui-list-item-button:active:not(:disabled) {
-    background-color: var(--optimui-background-active-dark, #4b5563);
+  .anukit-list-item-clickable:active:not(.anukit-list-item-disabled),
+  .anukit-list-item-button:active:not(:disabled) {
+    background-color: var(--anukit-background-active-dark, #4b5563);
   }
   
-  .optimui-list-item-primary {
-    color: var(--optimui-text-dark, #f9fafb);
+  .anukit-list-item-primary {
+    color: var(--anukit-text-dark, #f9fafb);
   }
   
-  .optimui-list-item-secondary {
-    color: var(--optimui-text-muted-dark, #9ca3af);
+  .anukit-list-item-secondary {
+    color: var(--anukit-text-muted-dark, #9ca3af);
   }
   
-  .optimui-list-item-icon,
-  .optimui-list-item-trailing {
-    color: var(--optimui-text-muted-dark, #9ca3af);
+  .anukit-list-item-icon,
+  .anukit-list-item-trailing {
+    color: var(--anukit-text-muted-dark, #9ca3af);
   }
   
-  .optimui-list-item-divider::after {
-    background-color: var(--optimui-border-dark, #374151);
+  .anukit-list-item-divider::after {
+    background-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-nested-list-content {
-    background-color: var(--optimui-background-subtle-dark, #374151);
-    border-left-color: var(--optimui-border-dark, #374151);
+  .anukit-nested-list-content {
+    background-color: var(--anukit-background-subtle-dark, #374151);
+    border-left-color: var(--anukit-border-dark, #374151);
   }
   
-  .optimui-nested-list-toggle {
-    color: var(--optimui-text-muted-dark, #9ca3af);
+  .anukit-nested-list-toggle {
+    color: var(--anukit-text-muted-dark, #9ca3af);
   }
   
-  .optimui-nested-list-toggle:hover:not(:disabled) {
-    background-color: var(--optimui-background-hover-dark, #374151);
-    color: var(--optimui-text-dark, #f9fafb);
+  .anukit-nested-list-toggle:hover:not(:disabled) {
+    background-color: var(--anukit-background-hover-dark, #374151);
+    color: var(--anukit-text-dark, #f9fafb);
   }
 }
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .optimui-list-bordered {
+  .anukit-list-bordered {
     border-width: 2px;
   }
   
-  .optimui-list-item-selected {
-    outline: 2px solid var(--optimui-primary, #3b82f6);
+  .anukit-list-item-selected {
+    outline: 2px solid var(--anukit-primary, #3b82f6);
   }
   
-  .optimui-list-item-button:focus {
-    box-shadow: inset 0 0 0 3px var(--optimui-primary, #3b82f6);
+  .anukit-list-item-button:focus {
+    box-shadow: inset 0 0 0 3px var(--anukit-primary, #3b82f6);
   }
 }
 
 /* Animation preferences */
 @media (prefers-reduced-motion: reduce) {
-  .optimui-list-item {
+  .anukit-list-item {
     transition: none;
   }
   
-  .optimui-list-item-button {
+  .anukit-list-item-button {
     transition: none;
   }
   
-  .optimui-nested-list-toggle {
+  .anukit-nested-list-toggle {
     transition: none;
   }
 }
 
 /* Print styles */
 @media print {
-  .optimui-list-item-clickable:hover,
-  .optimui-list-item-button:hover {
+  .anukit-list-item-clickable:hover,
+  .anukit-list-item-button:hover {
     background-color: transparent;
   }
   
-  .optimui-nested-list-toggle {
+  .anukit-nested-list-toggle {
     display: none;
   }
   
-  .optimui-nested-list-content {
+  .anukit-nested-list-content {
     display: block !important;
   }
 }

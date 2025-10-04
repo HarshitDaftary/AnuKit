@@ -68,10 +68,10 @@ describe('New Form Components', () => {
         <TextField size="sm" data-testid="textfield" />
       );
       
-      expect(container.firstChild).toHaveClass('optimui-textfield-sm');
+      expect(container.firstChild).toHaveClass('anukit-textfield-sm');
       
       rerender(<TextField size="lg" data-testid="textfield" />);
-      expect(container.firstChild).toHaveClass('optimui-textfield-lg');
+      expect(container.firstChild).toHaveClass('anukit-textfield-lg');
     });
 
     it('applies variant classes correctly', () => {
@@ -79,10 +79,10 @@ describe('New Form Components', () => {
         <TextField variant="outlined" data-testid="textfield" />
       );
       
-      expect(container.firstChild).toHaveClass('optimui-textfield-outlined');
+      expect(container.firstChild).toHaveClass('anukit-textfield-outlined');
       
       rerender(<TextField variant="filled" data-testid="textfield" />);
-      expect(container.firstChild).toHaveClass('optimui-textfield-filled');
+      expect(container.firstChild).toHaveClass('anukit-textfield-filled');
     });
 
     it('shows clear button when clearable and has value', async () => {
@@ -133,7 +133,7 @@ describe('New Form Components', () => {
 
     it('applies full width class when specified', () => {
       const { container } = render(<TextField fullWidth />);
-      expect(container.firstChild).toHaveClass('optimui-textfield-full-width');
+      expect(container.firstChild).toHaveClass('anukit-textfield-full-width');
     });
   });
 
@@ -191,10 +191,10 @@ describe('New Form Components', () => {
     it('applies size classes correctly', () => {
       const { rerender, container } = render(<DatePicker size="sm" />);
       
-      expect(container.firstChild).toHaveClass('optimui-datepicker-sm');
+      expect(container.firstChild).toHaveClass('anukit-datepicker-sm');
       
       rerender(<DatePicker size="lg" />);
-      expect(container.firstChild).toHaveClass('optimui-datepicker-lg');
+      expect(container.firstChild).toHaveClass('anukit-datepicker-lg');
     });
 
     it('applies disabled state correctly', () => {
@@ -286,14 +286,14 @@ describe('New Form Components', () => {
         </Form>
       );
       
-      expect(container.firstChild).toHaveClass('optimui-form-sm');
+      expect(container.firstChild).toHaveClass('anukit-form-sm');
       
       rerender(
         <Form size="lg">
           <TextField name="test" />
         </Form>
       );
-      expect(container.firstChild).toHaveClass('optimui-form-lg');
+      expect(container.firstChild).toHaveClass('anukit-form-lg');
     });
 
     it('applies full width class when specified', () => {
@@ -302,7 +302,7 @@ describe('New Form Components', () => {
           <TextField name="test" />
         </Form>
       );
-      expect(container.firstChild).toHaveClass('optimui-form-full-width');
+      expect(container.firstChild).toHaveClass('anukit-form-full-width');
     });
 
     it('validates required fields on submit', async () => {

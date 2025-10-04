@@ -4,10 +4,10 @@
  */
 
 import React, { forwardRef, useEffect, useState } from 'react';
-import { cn } from '@optimui/utils';
-import { encodeSizeMode as enc } from '@optimui/utils/sizeMode';
+import { cn } from '@anukit/utils';
+import { encodeSizeMode as enc } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-spinner`;
 
@@ -195,7 +195,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
   };
   
   const renderSpinner = () => {
-    const spinnerElementClass = `optimui-spinner-element optimui-spinner-${variant}-element`;
+    const spinnerElementClass = `anukit-spinner-element anukit-spinner-${variant}-element`;
     
     switch (variant) {
       case 'dots':

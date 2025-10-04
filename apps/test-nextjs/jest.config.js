@@ -12,7 +12,7 @@ const customJestConfig = {
     // Handle module aliases (this will be automatically configured for you based on your tsconfig.json paths)
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
-    '^@optimui/(.*)$': '<rootDir>/../../packages/$1/src',
+    '^@anukit/(.*)$': '<rootDir>/../../packages/$1/src',
   },
   testEnvironment: 'jest-environment-jsdom',
   testMatch: [

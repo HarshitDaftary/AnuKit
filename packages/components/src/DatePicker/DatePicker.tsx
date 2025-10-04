@@ -4,9 +4,9 @@
  */
 
 import React, { forwardRef, useState, useRef, useEffect, useCallback } from 'react';
-import { cn } from '@optimui/utils';
+import { cn } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-datepicker`;
 

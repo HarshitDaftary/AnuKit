@@ -1,5 +1,5 @@
 {
-  "name": "@optimui/styles",
+  "name": "@anukit/styles",
   "version": "0.1.0",
   "type": "module",
   "description": "CSS styling system for OptimUI components",
@@ -33,7 +33,7 @@
     "size": "bundlesize"
   },
   "dependencies": {
-    "@optimui/tokens": "workspace:*"
+    "@anukit/tokens": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",

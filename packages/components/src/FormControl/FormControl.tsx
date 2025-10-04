@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { encodeSizeMode } from '@anukit/utils';
 
-const lib = "optimui";
+const lib = "anukit";
+const l_prx = `${lib}-form-control`;
 
 // Inlined utilities to avoid external dependencies
 const cn = (...classes: (string | undefined | null | false)[]): string => {

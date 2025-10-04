@@ -4,10 +4,10 @@
  */
 
 import React, { forwardRef, useState, useMemo, useCallback } from 'react';
-import { clsx } from '@optimui/utils';
+import { clsx } from '@anukit/utils';
 import { useTableSorting } from './hooks/useTableSorting';
 
-const lib = "optimui";
+const lib = "anukit";
 
 const l_prx = `${lib}-table`;
 

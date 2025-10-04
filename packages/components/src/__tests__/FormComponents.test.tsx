@@ -41,7 +41,7 @@ describe('Form Components', () => {
       );
       
       const select = screen.getByTestId('select');
-      expect(select).toHaveClass('optimui-select-error');
+      expect(select).toHaveClass('anukit-select-error');
       expect(screen.getByText('This field is required')).toBeInTheDocument();
     });
 
@@ -62,10 +62,10 @@ describe('Form Components', () => {
         <Select options={options} size="sm" data-testid="select" />
       );
       
-      expect(screen.getByTestId('select')).toHaveClass('optimui-select-sm');
+      expect(screen.getByTestId('select')).toHaveClass('anukit-select-sm');
       
       rerender(<Select options={options} size="lg" data-testid="select" />);
-      expect(screen.getByTestId('select')).toHaveClass('optimui-select-lg');
+      expect(screen.getByTestId('select')).toHaveClass('anukit-select-lg');
     });
   });
 
@@ -84,7 +84,7 @@ describe('Form Components', () => {
       );
       
       const textarea = screen.getByTestId('textarea');
-      expect(textarea).toHaveClass('optimui-textarea-error');
+      expect(textarea).toHaveClass('anukit-textarea-error');
       expect(screen.getByText('This field is required')).toBeInTheDocument();
     });
 
@@ -107,7 +107,7 @@ describe('Form Components', () => {
       );
       
       const textarea = screen.getByTestId('textarea');
-      expect(textarea).toHaveClass('optimui-textarea-auto-resize');
+      expect(textarea).toHaveClass('anukit-textarea-auto-resize');
     });
 
     it('applies size classes correctly', () => {
@@ -115,10 +115,10 @@ describe('Form Components', () => {
         <Textarea size="sm" data-testid="textarea" />
       );
       
-      expect(screen.getByTestId('textarea')).toHaveClass('optimui-textarea-sm');
+      expect(screen.getByTestId('textarea')).toHaveClass('anukit-textarea-sm');
       
       rerender(<Textarea size="lg" data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).toHaveClass('optimui-textarea-lg');
+      expect(screen.getByTestId('textarea')).toHaveClass('anukit-textarea-lg');
     });
   });
 
@@ -187,7 +187,7 @@ describe('Form Components', () => {
       );
       
       const formControl = container.firstChild as HTMLElement;
-      expect(formControl).toHaveClass('optimui-form-control-disabled');
+      expect(formControl).toHaveClass('anukit-form-control-disabled');
     });
 
     it('applies size classes correctly', () => {
@@ -197,14 +197,14 @@ describe('Form Components', () => {
         </FormControl>
       );
       
-      expect(container.firstChild).toHaveClass('optimui-form-control-sm');
+      expect(container.firstChild).toHaveClass('anukit-form-control-sm');
       
       rerender(
         <FormControl label="Test Field" size="lg">
           <input type="text" />
         </FormControl>
       );
-      expect(container.firstChild).toHaveClass('optimui-form-control-lg');
+      expect(container.firstChild).toHaveClass('anukit-form-control-lg');
     });
   });
 

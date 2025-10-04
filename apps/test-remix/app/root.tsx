@@ -7,7 +7,7 @@ import {
   LiveReload,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { SSRProvider } from "@optimui/core/providers/SSRProvider";
+import { SSRProvider } from "@anukit/core/providers/SSRProvider";
 
 import stylesheet from "./styles/app.css";
 

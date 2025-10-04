@@ -1,10 +1,19 @@
-# OptimUI - High-Performance React Component Library
+# AnuKit - High-Performance React Component Library
 
 ## 🎯 Mission
 
 Create the most performant, accessible, and developer-friendly React component library that solves real-world problems identified in existing solutions.
 
-## 🏗️ Build System Architecture
+## 🏗️ Build Sy  base: 'anukit-button-base',
+  variants: {
+    intent: {
+      primary: 'anukit-button-primary',
+      secondary: 'anukit-button-secondary',
+    },
+    size: {
+      sm: 'anukit-button-sm',
+      md: 'anukit-button-md',
+      lg: 'anukit-button-lg',tecture
 
 ### Rollup + SWC: The Optimal Choice
 
@@ -77,7 +86,7 @@ optimui/
 
 ## 🚀 SSR-First Architecture
 
-OptimUI is built from the ground up with Server-Side Rendering as a primary concern, ensuring optimal performance and user experience across all modern React frameworks.
+AnuKit is built from the ground up with Server-Side Rendering as a primary concern, ensuring optimal performance and user experience across all modern React frameworks.
 
 ### 🎯 SSR Design Principles
 
@@ -102,7 +111,7 @@ OptimUI is built from the ground up with Server-Side Rendering as a primary conc
 ### 📦 SSR Provider System
 
 ```typescript
-import { SSRProvider } from '@optimui/core';
+import { SSRProvider } from '@anukit/core';
 
 function App({ children }) {
   return (
@@ -207,11 +216,11 @@ Based on build system design and optimization strategies:
 
 | Package | Size (Gzipped) | Tree-shaking | SSR Ready |
 |---------|----------------|--------------|-----------|
-| @optimui/core | ~8KB | 99% | ✅ |
-| @optimui/button | ~3KB | 100% | ✅ |
-| @optimui/input | ~4KB | 100% | ✅ |
-| @optimui/modal | ~6KB | 100% | ✅ |
-| @optimui/table | ~12KB | 99% | ✅ |
+| @anukit/core | ~8KB | 99% | ✅ |
+| @anukit/button | ~3KB | 100% | ✅ |
+| @anukit/input | ~4KB | 100% | ✅ |
+| @anukit/modal | ~6KB | 100% | ✅ |
+| @anukit/table | ~12KB | 99% | ✅ |
 
 ## 🎨 Styling Strategy
 
@@ -219,15 +228,15 @@ Based on build system design and optimization strategies:
 ```css
 /* Optimal for SSR and performance */
 :root {
-  --optimui-color-primary-500: hsl(217, 91%, 60%);
-  --optimui-spacing-4: 1rem;
-  --optimui-border-radius-md: 0.375rem;
+  --anukit-color-primary-500: hsl(217, 91%, 60%);
+  --anukit-spacing-4: 1rem;
+  --anukit-border-radius-md: 0.375rem;
 }
 
-.optimui-button {
-  background: var(--optimui-color-primary-500);
-  padding: var(--optimui-spacing-4);
-  border-radius: var(--optimui-border-radius-md);
+.anukit-button {
+  background: var(--anukit-color-primary-500);
+  padding: var(--anukit-spacing-4);
+  border-radius: var(--anukit-border-radius-md);
 }
 ```
 
@@ -262,7 +271,7 @@ export const buttonVariants = createVariants({
 pnpm dev
 
 # Individual package development
-pnpm --filter @optimui/button dev
+pnpm --filter @anukit/button dev
 ```
 
 ### 2. **Build Process**
@@ -293,7 +302,7 @@ pnpm size:check
 
 ### vs. Existing Libraries
 
-| Feature | OptimUI | MUI | Ant Design | Chakra UI |
+| Feature | AnuKit | MUI | Ant Design | Chakra UI |
 |---------|---------|-----|------------|-----------|
 | Bundle Size | <5KB/component | ~25KB/component | ~40KB/component | ~15KB/component |
 | SSR Setup | Zero config | Complex | Medium | Complex |
@@ -345,4 +354,4 @@ pnpm size:check
 
 ---
 
-**OptimUI represents the next generation of React component libraries: performance-first, accessibility-native, and developer-optimized.**
+**AnuKit represents the next generation of React component libraries: performance-first, accessibility-native, and developer-optimized.**
