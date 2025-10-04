@@ -69,6 +69,44 @@ node build-all-components.js
 - Individual reports in `packages/components/build-reports/`
 - Summary report in `packages/components/build-reports/build-summary.json`
 
+### `validate-workflow.js`
+
+Validate the GitHub Actions workflow configuration.
+
+**Usage:**
+```bash
+cd tools/build-tools/scripts
+node validate-workflow.js
+```
+
+**Output:**
+- Validates workflow structure and configuration
+- Checks for all required jobs and steps
+- Ensures proper artifact upload/download setup
+- Verifies fail-fast: false setting
+
+### `analyze-report.js`
+
+Analyze build failure reports and get actionable insights.
+
+**Usage:**
+```bash
+cd tools/build-tools/scripts
+
+# Analyze default report location
+node analyze-report.js
+
+# Analyze specific report
+node analyze-report.js /path/to/build-summary.json
+```
+
+**Output:**
+- Build statistics and success rate
+- Error categorization and analysis
+- Most common errors
+- Actionable recommendations
+- Specific commands to rebuild failed components
+
 ## Report Format
 
 ### Individual Component Report (Success)
@@ -152,6 +190,14 @@ node build-all-components.js
 ### Adding New Components
 
 New components are automatically discovered - no configuration needed!
+
+### Testing the Workflow
+
+Before pushing changes, validate the workflow configuration:
+```bash
+cd tools/build-tools/scripts
+node validate-workflow.js
+```
 
 ### Customizing Build
 
