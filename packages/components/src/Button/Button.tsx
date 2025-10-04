@@ -23,8 +23,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   'aria-pressed'?: boolean;
 }
 
-/* @__PURE__ */
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
+const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(({
   variant = 'primary',
   size = 'md',
   loading = false,

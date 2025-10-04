@@ -59,7 +59,6 @@ const getGapClass = (gap: GapValue | undefined): string => {
   return `anukit-gap-${gap}`;
 };
 
-/* @__PURE__ */
 const Stack = forwardRef<HTMLDivElement, StackProps>(({
   direction = 'vertical',
   gap = 4,

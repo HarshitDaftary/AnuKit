@@ -68,7 +68,6 @@ const getPlacementClasses = (placement: string) => {
   return `anukit-menu-${placement}`;
 };
 
-/* @__PURE__ */
 const Menu = forwardRef<HTMLDivElement, MenuProps>(({
   items,
   trigger,

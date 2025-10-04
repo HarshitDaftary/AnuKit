@@ -97,7 +97,6 @@ const DefaultHomeIcon = () => (
   </svg>
 );
 
-/* @__PURE__ */
 const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(({
   items,
   separator,

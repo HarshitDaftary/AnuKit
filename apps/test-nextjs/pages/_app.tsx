@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
-import { SSRProvider } from '@anukit/core/providers/SSRProvider';
+import { SSRProvider, hydrateStyles } from '@anukit/core';
 import { useEffect } from 'react';
-import { hydrateStyles } from '@anukit/core/providers/SSRProvider';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {

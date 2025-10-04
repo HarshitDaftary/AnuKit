@@ -66,7 +66,6 @@ const getPaddingClass = (value: PaddingValue, direction: 'x' | 'y' | 'all'): str
   }
 };
 
-/* @__PURE__ */
 const Container = forwardRef<HTMLDivElement, ContainerProps>(({
   size = 'lg',
   px,

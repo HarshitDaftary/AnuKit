@@ -70,7 +70,6 @@ const getVariantClasses = (variant: 'default' | 'success' | 'warning' | 'error')
   }
 };
 
-/* @__PURE__ */
 const Progress = forwardRef<HTMLDivElement, ProgressProps>(({
   value = 0,
   max = 100,

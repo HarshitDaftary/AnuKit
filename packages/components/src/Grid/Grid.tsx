@@ -68,7 +68,6 @@ const getGapClass = (gap: GapValue | undefined): string => {
   return `anukit-gap-${gap}`;
 };
 
-/* @__PURE__ */
 const Grid = forwardRef<HTMLDivElement, GridProps>(({
   cols = 1,
   rows,

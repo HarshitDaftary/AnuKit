@@ -1,13 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState, useEffect } from "react";
-import { Button } from "@anukit/components/Button/Button";
-import { Modal } from "@anukit/components/Modal/Modal";
-import { useTheme, useMediaQuery } from "@anukit/core/hooks/ssr-hooks";
+import { Button } from "@anukit/components";
+import { Modal } from "@anukit/components";
+import { useTheme, useMediaQuery } from "@anukit/core";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "OptimUI Remix SSR Test" },
-    { name: "description", content: "Testing OptimUI components with Remix SSR" },
+    { title: "AnuKit Remix SSR Test" },
+    { name: "description", content: "Testing AnuKit components with Remix SSR" },
   ];
 };
 

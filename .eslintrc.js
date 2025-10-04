@@ -8,7 +8,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    '@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
@@ -63,8 +63,9 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
     '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
-    '@typescript-eslint/prefer-nullish-coalescing': 'error',
-    '@typescript-eslint/prefer-optional-chain': 'error',
+    // Disabled because these require parserServices (project configuration)
+    // '@typescript-eslint/prefer-nullish-coalescing': 'error',
+    // '@typescript-eslint/prefer-optional-chain': 'error',
 
     // React rules
     'react/react-in-jsx-scope': 'off',

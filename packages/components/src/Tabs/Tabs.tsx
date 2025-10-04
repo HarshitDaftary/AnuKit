@@ -75,7 +75,6 @@ const getVariantClasses = (variant: 'default' | 'pills' | 'underline') => {
   }
 };
 
-/* @__PURE__ */
 const Tabs = forwardRef<HTMLDivElement, TabsProps>(({
   items,
   activeTab,

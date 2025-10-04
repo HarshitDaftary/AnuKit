@@ -51,7 +51,7 @@ Multiple Outputs (ESM, CJS, Types)
 
 ### Monorepo Structure
 ```
-optimui/
+anukit/
 ├── packages/
 │   ├── core/              # Design tokens, utilities (Target: <10KB)
 │   ├── components/        # All UI components
@@ -244,16 +244,16 @@ Based on build system design and optimization strategies:
 ```typescript
 // Lightweight utility generation
 export const buttonVariants = createVariants({
-  base: 'optimui-button-base',
+  base: 'anukit-button-base',
   variants: {
     variant: {
-      primary: 'optimui-button-primary',
-      secondary: 'optimui-button-secondary',
+      primary: 'anukit-button-primary',
+      secondary: 'anukit-button-secondary',
     },
     size: {
-      sm: 'optimui-button-sm',
-      md: 'optimui-button-md',
-      lg: 'optimui-button-lg',
+      sm: 'anukit-button-sm',
+      md: 'anukit-button-md',
+      lg: 'anukit-button-lg',
     },
   },
   defaultVariants: {

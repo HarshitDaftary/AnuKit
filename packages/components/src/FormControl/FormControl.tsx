@@ -47,7 +47,6 @@ const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
   }
 };
 
-/* @__PURE__ */
 const FormControl = forwardRef<HTMLDivElement, FormControlProps>(({
   label,
   error,

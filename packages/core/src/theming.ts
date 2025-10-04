@@ -14,63 +14,63 @@ import { tokens } from './tokens'
 export const semanticColors = {
   // Primary semantic tokens
   background: {
-    default: 'var(--optimui-semantic-background-default)',
-    subtle: 'var(--optimui-semantic-background-subtle)',
-    muted: 'var(--optimui-semantic-background-muted)',
-    emphasized: 'var(--optimui-semantic-background-emphasized)',
-    disabled: 'var(--optimui-semantic-background-disabled)',
+    default: 'var(--anukit-semantic-background-default)',
+    subtle: 'var(--anukit-semantic-background-subtle)',
+    muted: 'var(--anukit-semantic-background-muted)',
+    emphasized: 'var(--anukit-semantic-background-emphasized)',
+    disabled: 'var(--anukit-semantic-background-disabled)',
   },
   
   foreground: {
-    default: 'var(--optimui-semantic-foreground-default)',
-    muted: 'var(--optimui-semantic-foreground-muted)',
-    subtle: 'var(--optimui-semantic-foreground-subtle)',
-    onEmphasis: 'var(--optimui-semantic-foreground-on-emphasis)',
-    disabled: 'var(--optimui-semantic-foreground-disabled)',
+    default: 'var(--anukit-semantic-foreground-default)',
+    muted: 'var(--anukit-semantic-foreground-muted)',
+    subtle: 'var(--anukit-semantic-foreground-subtle)',
+    onEmphasis: 'var(--anukit-semantic-foreground-on-emphasis)',
+    disabled: 'var(--anukit-semantic-foreground-disabled)',
   },
 
   border: {
-    default: 'var(--optimui-semantic-border-default)',
-    muted: 'var(--optimui-semantic-border-muted)',
-    subtle: 'var(--optimui-semantic-border-subtle)',
-    strong: 'var(--optimui-semantic-border-strong)',
+    default: 'var(--anukit-semantic-border-default)',
+    muted: 'var(--anukit-semantic-border-muted)',
+    subtle: 'var(--anukit-semantic-border-subtle)',
+    strong: 'var(--anukit-semantic-border-strong)',
   },
 
   // Interactive states
   primary: {
-    default: 'var(--optimui-semantic-primary-default)',
-    emphasized: 'var(--optimui-semantic-primary-emphasized)',
-    muted: 'var(--optimui-semantic-primary-muted)',
-    subtle: 'var(--optimui-semantic-primary-subtle)',
+    default: 'var(--anukit-semantic-primary-default)',
+    emphasized: 'var(--anukit-semantic-primary-emphasized)',
+    muted: 'var(--anukit-semantic-primary-muted)',
+    subtle: 'var(--anukit-semantic-primary-subtle)',
   },
 
   // Feedback colors
   success: {
-    default: 'var(--optimui-semantic-success-default)',
-    emphasized: 'var(--optimui-semantic-success-emphasized)',
-    muted: 'var(--optimui-semantic-success-muted)',
-    subtle: 'var(--optimui-semantic-success-subtle)',
+    default: 'var(--anukit-semantic-success-default)',
+    emphasized: 'var(--anukit-semantic-success-emphasized)',
+    muted: 'var(--anukit-semantic-success-muted)',
+    subtle: 'var(--anukit-semantic-success-subtle)',
   },
 
   warning: {
-    default: 'var(--optimui-semantic-warning-default)',
-    emphasized: 'var(--optimui-semantic-warning-emphasized)',
-    muted: 'var(--optimui-semantic-warning-muted)',
-    subtle: 'var(--optimui-semantic-warning-subtle)',
+    default: 'var(--anukit-semantic-warning-default)',
+    emphasized: 'var(--anukit-semantic-warning-emphasized)',
+    muted: 'var(--anukit-semantic-warning-muted)',
+    subtle: 'var(--anukit-semantic-warning-subtle)',
   },
 
   error: {
-    default: 'var(--optimui-semantic-error-default)',
-    emphasized: 'var(--optimui-semantic-error-emphasized)',
-    muted: 'var(--optimui-semantic-error-muted)',
-    subtle: 'var(--optimui-semantic-error-subtle)',
+    default: 'var(--anukit-semantic-error-default)',
+    emphasized: 'var(--anukit-semantic-error-emphasized)',
+    muted: 'var(--anukit-semantic-error-muted)',
+    subtle: 'var(--anukit-semantic-error-subtle)',
   },
 
   info: {
-    default: 'var(--optimui-semantic-info-default)',
-    emphasized: 'var(--optimui-semantic-info-emphasized)',
-    muted: 'var(--optimui-semantic-info-muted)',
-    subtle: 'var(--optimui-semantic-info-subtle)',
+    default: 'var(--anukit-semantic-info-default)',
+    emphasized: 'var(--anukit-semantic-info-emphasized)',
+    muted: 'var(--anukit-semantic-info-muted)',
+    subtle: 'var(--anukit-semantic-info-subtle)',
   },
 } as const
 
@@ -283,7 +283,7 @@ export const themes: Record<string, ThemeConfig> = {
  */
 export function generateThemeCSS(themeConfig: ThemeConfig): string {
   const cssVars = Object.entries(themeConfig.colorMapping)
-    .map(([key, value]) => `  --optimui-${key}: ${value};`)
+    .map(([key, value]) => `  --anukit-${key}: ${value};`)
     .join('\n')
 
   if (themeConfig.mediaQuery) {
@@ -324,7 +324,7 @@ export function generateAllThemesCSS(): string {
 export class ThemeManager {
   private currentTheme: string = 'light'
   private systemPreference: string = 'light'
-  private storageKey = 'optimui-theme'
+  private storageKey = 'anukit-theme'
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -406,7 +406,7 @@ export class ThemeManager {
 
     // Dispatch custom event
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('optimui-theme-change', {
+      window.dispatchEvent(new CustomEvent('anukit-theme-change', {
         detail: { theme: this.currentTheme, applied: themeName === 'system' ? this.systemPreference : themeName }
       }))
     }
@@ -422,8 +422,8 @@ export class ThemeManager {
     
     // Add theme class for CSS targeting
     document.documentElement.className = document.documentElement.className
-      .replace(/optimui-theme-\w+/g, '')
-    document.documentElement.classList.add(`optimui-theme-${themeName}`)
+      .replace(/anukit-theme-\w+/g, '')
+    document.documentElement.classList.add(`anukit-theme-${themeName}`)
   }
 
   /**
@@ -474,8 +474,8 @@ export function useTheme() {
       setAppliedTheme(event.detail.applied)
     }
 
-    window.addEventListener('optimui-theme-change', handleThemeChange as EventListener)
-    return () => window.removeEventListener('optimui-theme-change', handleThemeChange as EventListener)
+    window.addEventListener('anukit-theme-change', handleThemeChange as EventListener)
+    return () => window.removeEventListener('anukit-theme-change', handleThemeChange as EventListener)
   }, [])
 
   return {

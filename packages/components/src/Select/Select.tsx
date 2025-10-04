@@ -71,7 +71,6 @@ const getVariantClasses = (variant: 'default' | 'error' | 'success', hasError: b
   return `${l_prx}-default`;
 };
 
-/* @__PURE__ */
 const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   variant = 'default',
   size = 'md',

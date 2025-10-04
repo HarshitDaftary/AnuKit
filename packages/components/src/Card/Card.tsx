@@ -61,7 +61,6 @@ const getVariantClasses = (variant: 'default' | 'outlined' | 'elevated' | 'ghost
   }
 };
 
-/* @__PURE__ */
 const Card = forwardRef<HTMLDivElement, CardProps>(({
   variant = 'default',
   size = 'md',

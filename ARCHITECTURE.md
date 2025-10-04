@@ -1,4 +1,4 @@
-optimui/
+anukit/
 ├── packages/
 │   ├── core/                 # Design tokens, utilities, types
 │   ├── components/           # All UI components

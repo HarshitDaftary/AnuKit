@@ -7,7 +7,7 @@ export function LayoutDemo() {
       {/* Page Header */}
       <Container size="xl">
         <Flex direction="col" align="center" gap={4}>
-          <h1 className="text-4xl font-bold text-center">OptimUI Layout Components</h1>
+          <h1 className="text-4xl font-bold text-center">AnuKit Layout Components</h1>
           <p className="text-xl text-center text-gray-600 max-w-2xl">
             Responsive, accessible layout components built for performance
           </p>
@@ -78,7 +78,7 @@ export function LayoutDemo() {
               </div>
               <div className="bg-purple-100 p-6 rounded-lg flex-1">
                 <h4 className="font-medium">Flexible Item 2</h4>
-                <p>Responsive layouts made simple with OptimUI.</p>
+                <p>Responsive layouts made simple with AnuKit.</p>
               </div>
               <div className="bg-purple-100 p-6 rounded-lg flex-1">
                 <h4 className="font-medium">Flexible Item 3</h4>
@@ -167,7 +167,7 @@ export function LayoutDemo() {
                 <div className="bg-white p-6 rounded-lg border">
                   <h3 className="font-medium mb-4">Main Content Area</h3>
                   <p className="mb-4">
-                    This demonstrates a complex layout using OptimUI components. 
+                    This demonstrates a complex layout using AnuKit components. 
                     The sidebar collapses on mobile and expands on desktop.
                   </p>
                   

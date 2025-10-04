@@ -88,7 +88,6 @@ const getGapClass = (gap: GapValue | undefined): string => {
   return `anukit-gap-${gap}`;
 };
 
-/* @__PURE__ */
 const Flex = forwardRef<HTMLDivElement, FlexProps>(({
   direction = 'row',
   justify,

@@ -1,8 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
 
-/* OptimUI CSS Variables for Remix */
+/* AnuKit CSS Variables for Remix */
 :root {
   --anukit-primary: 59 130 246;
   --anukit-secondary: 107 114 128;
