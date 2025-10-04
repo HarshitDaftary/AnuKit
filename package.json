@@ -15,6 +15,7 @@
   "scripts": {
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",
+    "build:enhanced": "cd packages/components && pnpm rollup -c rollup.config.enhanced.js",
     "build:tools": "turbo run build --filter='./tools/*'",
     "dev": "turbo run dev",
     "dev:docs": "turbo run dev --filter=@anukit/docs",
