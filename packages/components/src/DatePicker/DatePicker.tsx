@@ -4,13 +4,12 @@
  * Optimized architecture using hooks and component composition
  */
 
-import React, { forwardRef, useRef, useEffect } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import { cn, usePortal } from '@anukit/utils';
-import { encodeSizeMode as enc } from '@anukit/utils';
 import { useDatePicker } from './hooks/useDatePicker';
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerCalendar } from './DatePickerCalendar';
-import { DatePickerProps } from './types';
+import type { DatePickerProps } from './types';
 
 const cNam = "anukit-datepicker";
 
@@ -126,7 +125,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   // Optimized wrapper classes using Table patterns
   const wrapperClasses = cn(
     cNam,
-    `${cNam}--${enc(size)}`,
+    `${cNam}--${size}`,
     variant !== 'default' && `${cNam}--${variant}`,
     datePicker.isOpen && `${cNam}--open`,
     disabled && `${cNam}--disabled`,
@@ -141,7 +140,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   // Calendar positioning classes
   const calendarClasses = cn(
     `${cNam}-popup`,
-    `${cNam}-popup--${enc(size)}`
+    `${cNam}-popup--${size}`
   );
 
   // Generate field ID

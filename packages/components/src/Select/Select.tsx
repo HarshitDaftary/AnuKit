@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode } from '@anukit/utils';
 
 const lib = "anukit";
 
@@ -62,10 +61,10 @@ const getSizeClasses = (size: 'sm' | 'md' | 'lg') => {
 
 // Variant-based CSS classes
 const getVariantClasses = (variant: 'default' | 'error' | 'success', hasError: boolean) => {
-  if (hasError || encodeSizeMode(variant) === encodeSizeMode('error')) {
+  if (hasError || variant === 'error') {
     return `${l_prx}-error`;
   }
-  if (encodeSizeMode(variant) === encodeSizeMode('success')) {
+  if (variant === 'success') {
     return `${l_prx}-success`;
   }
   return `${l_prx}-default`;
@@ -92,7 +91,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   const errorId = error ? `${selectId}-error` : undefined;
   const helperTextId = helperText ? `${selectId}-helper` : undefined;
   
-  const hasError = encodeSizeMode(variant) === encodeSizeMode('error') || Boolean(error);
+  const hasError = variant === 'error' || Boolean(error);
   
   // Build CSS classes
   const selectClasses = cn(

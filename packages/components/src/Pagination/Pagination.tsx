@@ -3,9 +3,8 @@
  * Comprehensive pagination with page navigation, items per page, and customization
  */
 
-import React, { forwardRef, useMemo, useCallback } from 'react';
+import React, { forwardRef, useCallback, useMemo } from 'react';
 import { cn } from '@anukit/utils';
-import { encodeSizeMode } from '@anukit/utils';
 
 const lib = "anukit";
 

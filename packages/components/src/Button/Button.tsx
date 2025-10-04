@@ -1,6 +1,5 @@
-import React, { forwardRef, useRef } from 'react';
-import { cn, useSSRSafeId, useReducedMotion } from '@anukit/utils';
-import { encodeSizeMode } from '@anukit/utils';
+import React, { forwardRef } from 'react';
+import { cn, useReducedMotion, useSSRSafeId } from '@anukit/utils';
 
 const lib = "anukit";
 
