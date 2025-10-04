@@ -1,0 +1,297 @@
+name: Build Components Individually
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'packages/components/src/**'
+      - 'packages/core/**'
+      - 'packages/utils/**'
+      - '.github/workflows/build-components.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'packages/components/src/**'
+      - 'packages/core/**'
+      - 'packages/utils/**'
+      - '.github/workflows/build-components.yml'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  prepare:
+    name: Prepare Component List
+    runs-on: ubuntu-latest
+    outputs:
+      components: ${{ steps.get-components.outputs.components }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get component list
+        id: get-components
+        run: |
+          cd packages/components/src
+          # Get all component directories (exclude __tests__ and files)
+          COMPONENTS=$(find . -maxdepth 1 -type d -not -name '.' -not -name '__tests__' -not -name 'utils' | sed 's|./||' | jq -R -s -c 'split("\n")[:-1]')
+          echo "components=$COMPONENTS" >> $GITHUB_OUTPUT
+          echo "Found components: $COMPONENTS"
+
+  build-components:
+    name: Build ${{ matrix.component }}
+    runs-on: ubuntu-latest
+    needs: prepare
+    strategy:
+      fail-fast: false # Continue building other components even if one fails
+      matrix:
+        component: ${{ fromJson(needs.prepare.outputs.components) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm@8.10.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build component - ${{ matrix.component }}
+        id: build
+        continue-on-error: true
+        run: |
+          cd packages/components
+          echo "Building component: ${{ matrix.component }}"
+          
+          # Create a temporary rollup config for this component
+          cat > rollup.config.component.js << 'EOF'
+          import { nodeResolve } from '@rollup/plugin-node-resolve';
+          import typescript from '@rollup/plugin-typescript';
+          import { swc } from 'rollup-plugin-swc3';
+          
+          const componentName = process.env.COMPONENT_NAME;
+          
+          export default {
+            input: `src/${componentName}/index.ts`,
+            external: ['react', 'react-dom', 'react/jsx-runtime', '@optimui/core', '@optimui/utils'],
+            output: [
+              {
+                file: `dist/${componentName}/index.js`,
+                format: 'cjs',
+                sourcemap: true,
+                exports: 'named'
+              },
+              {
+                file: `dist/${componentName}/index.esm.js`,
+                format: 'esm',
+                sourcemap: true
+              }
+            ],
+            plugins: [
+              nodeResolve({
+                browser: true,
+                preferBuiltins: false
+              }),
+              typescript({
+                tsconfig: './tsconfig.json',
+                declaration: true,
+                declarationDir: `./dist/${componentName}`,
+                rootDir: './src',
+                include: [`src/${componentName}/**/*`]
+              }),
+              swc({
+                jsc: {
+                  target: 'es2018',
+                  parser: {
+                    syntax: 'typescript',
+                    tsx: true,
+                    decorators: false,
+                    dynamicImport: true
+                  },
+                  transform: {
+                    react: {
+                      runtime: 'automatic',
+                      refresh: false,
+                      development: false
+                    }
+                  }
+                }
+              })
+            ],
+            treeshake: {
+              moduleSideEffects: false
+            }
+          };
+          EOF
+          
+          # Build the component
+          COMPONENT_NAME="${{ matrix.component }}" npx rollup -c rollup.config.component.js 2>&1 | tee build-log.txt
+          
+          # Check if build was successful
+          if [ ${PIPESTATUS[0]} -eq 0 ]; then
+            echo "BUILD_STATUS=success" >> $GITHUB_ENV
+            echo "✅ Successfully built ${{ matrix.component }}"
+          else
+            echo "BUILD_STATUS=failure" >> $GITHUB_ENV
+            echo "❌ Failed to build ${{ matrix.component }}"
+            exit 1
+          fi
+
+      - name: Generate failure report
+        if: failure() && steps.build.outcome == 'failure'
+        run: |
+          cd packages/components
+          mkdir -p build-reports
+          
+          # Extract error information from build log
+          cat > build-reports/${{ matrix.component }}.json << EOF
+          {
+            "component": "${{ matrix.component }}",
+            "status": "failure",
+            "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "buildLog": $(cat build-log.txt | jq -Rs . || echo '""'),
+            "errorSummary": "Build failed for component ${{ matrix.component }}"
+          }
+          EOF
+          
+          echo "📄 Generated failure report for ${{ matrix.component }}"
+          cat build-reports/${{ matrix.component }}.json
+
+      - name: Upload failure report
+        if: failure() && steps.build.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-failure-${{ matrix.component }}
+          path: packages/components/build-reports/${{ matrix.component }}.json
+          retention-days: 30
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: component-build-${{ matrix.component }}
+          path: packages/components/dist/${{ matrix.component }}/
+          retention-days: 7
+
+  summarize-results:
+    name: Summarize Build Results
+    runs-on: ubuntu-latest
+    needs: build-components
+    if: always()
+    steps:
+      - name: Download all failure reports
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: build-failure-*
+          path: failure-reports
+          merge-multiple: true
+
+      - name: Generate summary report
+        run: |
+          mkdir -p summary
+          
+          # Create summary JSON
+          cat > summary/build-summary.json << 'EOF'
+          {
+            "workflow": "Build Components Individually",
+            "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "total_components": ${{ strategy.job-total }},
+            "failures": []
+          }
+          EOF
+          
+          # Collect all failure reports
+          if [ -d "failure-reports" ] && [ "$(ls -A failure-reports/*.json 2>/dev/null)" ]; then
+            echo "Found failure reports:"
+            ls -la failure-reports/
+            
+            # Merge all failure reports
+            jq -s '{
+              workflow: "Build Components Individually",
+              timestamp: "'$(date -u +"%Y-%m-%dT%H:%M:%SZ")'",
+              total_components: '${{ strategy.job-total }}',
+              failed_components: length,
+              failures: .
+            }' failure-reports/*.json > summary/build-summary.json
+          else
+            echo "No failure reports found - all components built successfully!"
+            cat > summary/build-summary.json << EOF
+          {
+            "workflow": "Build Components Individually",
+            "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "total_components": "${{ strategy.job-total }}",
+            "failed_components": 0,
+            "status": "success",
+            "message": "All components built successfully"
+          }
+          EOF
+          fi
+          
+          echo "📊 Build Summary:"
+          cat summary/build-summary.json | jq .
+
+      - name: Upload summary report
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-summary-report
+          path: summary/build-summary.json
+          retention-days: 90
+
+      - name: Comment on PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let summary;
+            
+            try {
+              summary = JSON.parse(fs.readFileSync('summary/build-summary.json', 'utf8'));
+            } catch (error) {
+              summary = { failed_components: 0, total_components: '${{ strategy.job-total }}' };
+            }
+            
+            const failedCount = summary.failed_components || 0;
+            const totalCount = summary.total_components || 0;
+            const successCount = totalCount - failedCount;
+            
+            let body = `## 🏗️ Component Build Results\n\n`;
+            
+            if (failedCount === 0) {
+              body += `✅ **All ${totalCount} components built successfully!**\n\n`;
+            } else {
+              body += `⚠️ **Build Summary:**\n`;
+              body += `- ✅ Successful: ${successCount}/${totalCount}\n`;
+              body += `- ❌ Failed: ${failedCount}/${totalCount}\n\n`;
+              
+              if (summary.failures && summary.failures.length > 0) {
+                body += `### Failed Components:\n\n`;
+                summary.failures.forEach(failure => {
+                  body += `- **${failure.component}**: Build failed\n`;
+                });
+                body += `\n📥 Download the \`build-summary-report\` artifact for detailed error logs.\n`;
+                body += `\n🤖 GitHub Copilot can analyze the failure report to suggest fixes.\n`;
+              }
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+      - name: Fail workflow if any component failed
+        if: always()
+        run: |
+          if [ -d "failure-reports" ] && [ "$(ls -A failure-reports/*.json 2>/dev/null)" ]; then
+            echo "❌ Some components failed to build"
+            exit 1
+          else
+            echo "✅ All components built successfully"
+          fi

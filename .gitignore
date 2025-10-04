@@ -151,6 +151,10 @@ webpack-bundle-analyzer-report.html
 .size-limit.json
 size-report.json
 
+# Build reports
+build-reports/
+**/build-reports/
+
 # Storybook
 storybook-static/
 .storybook/public/
