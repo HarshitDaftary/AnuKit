@@ -11,7 +11,7 @@ const lib = "optimui";
 const l_prx = `${lib}-list`;
 
 // List item configuration
-export interface ListItemProps {
+interface ListItemProps {
   /** List item content */
   children?: React.ReactNode;
   
@@ -50,7 +50,7 @@ export interface ListItemProps {
 }
 
 // List configuration
-export interface ListProps {
+interface ListProps {
   /** List items */
   children?: React.ReactNode;
   
@@ -123,12 +123,10 @@ export const ListItemButton = forwardRef<HTMLButtonElement, ListItemProps>(
     const classes = cn(
       `${l_prx}-item`,
       `${l_prx}-item-button`,
-      {
-        [`${l_prx}-item--disabled`]: disabled,
-        [`${l_prx}-item--selected`]: selected,
-        [`${l_prx}-item--divider`]: divider,
-        [`${l_prx}-item--dense`]: dense,
-      },
+      disabled && `${l_prx}-item--disabled`,
+      selected && `${l_prx}-item--selected`,
+      divider && `${l_prx}-item--divider`,
+      dense && `${l_prx}-item--dense`,
       className
     );
     
@@ -184,13 +182,11 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
   }, ref) => {
     const classes = cn(
       `${l_prx}-item`,
-      {
-        [`${l_prx}-item--clickable`]: onClick,
-        [`${l_prx}-item--disabled`]: disabled,
-        [`${l_prx}-item--selected`]: selected,
-        [`${l_prx}-item--divider`]: divider,
-        [`${l_prx}-item--dense`]: dense,
-      },
+      onClick && `${l_prx}-item--clickable`,
+      disabled && `${l_prx}-item--disabled`,
+      selected && `${l_prx}-item--selected`,
+      divider && `${l_prx}-item--divider`,
+      dense && `${l_prx}-item--dense`,
       className
     );
     
@@ -265,10 +261,8 @@ export const List = forwardRef<HTMLElement, ListProps>(
     const classes = cn(
       l_prx,
       `optimui-list-${variant}`,
-      {
-        [`${l_prx}-subheader--dense`]: dense,
-        [`${l_prx}-subheader--interactive`]: interactive,
-      },
+      dense && `${l_prx}-subheader--dense`,
+      interactive && `${l_prx}-subheader--interactive`,
       className
     );
     
@@ -282,7 +276,7 @@ export const List = forwardRef<HTMLElement, ListProps>(
 );
 
 // Nested list (for collapsible lists)
-export interface NestedListProps extends Omit<ListItemProps, 'children'> {
+interface NestedListProps extends Omit<ListItemProps, 'children'> {
   /** Primary content */
   primary: React.ReactNode;
   

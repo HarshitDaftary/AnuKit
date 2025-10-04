@@ -11,7 +11,7 @@ const lib = "optimui";
 
 const l_prx = `${lib}-spinner`;
 
-export interface SpinnerProps {
+interface SpinnerProps {
   /** Spinner size */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
   
@@ -219,9 +219,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
       {renderSpinner()}
       {label && (
         <span
-          className={cn(`${l_prx}-label`, {
-            [`${l_prx}-label--hidden`]: labelHidden,
-          })}
+          className={cn(`${l_prx}-label`, labelHidden && `${l_prx}-label--hidden`)}
         >
           {label}
         </span>
@@ -241,7 +239,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
 });
 
 // Loading wrapper component
-export interface LoadingProps {
+interface LoadingProps {
   /** Whether to show loading state */
   loading: boolean;
   
@@ -330,5 +328,5 @@ export const useLoading = (initialLoading: boolean = false) => {
 Spinner.displayName = 'Spinner';
 Loading.displayName = 'Loading';
 
-export { Spinner };
-export type { SpinnerProps };
+export { Spinner, Loading };
+export type { SpinnerProps, LoadingProps };

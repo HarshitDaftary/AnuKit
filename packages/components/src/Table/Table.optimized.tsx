@@ -13,12 +13,12 @@ import { encodeSizeMode } from '@optimui/utils/sizeMode';
 const lib = "optimui";
 const l_prx = `${lib}-table`;
 
-// Re-export types from hooks for convenience
-export type { SortConfig } from './hooks/useTableSorting';
-export type { SelectionConfig } from './hooks/useTableSelection';
+// Re-export types from hooks for convenience - these will be re-exported at the end
+import type { SortConfig } from './hooks/useTableSorting';
+import type { SelectionConfig } from './hooks/useTableSelection';
 
 // Column definition types
-export interface ColumnDef<T = any> {
+interface ColumnDef<T = any> {
   /** Unique identifier for the column */
   id: string;
   
@@ -65,7 +65,7 @@ export interface ColumnDef<T = any> {
   footerCell?: (props: { column: ColumnDef<T> }) => React.ReactNode;
 }
 
-export interface TableProps<T = any> extends Omit<React.HTMLAttributes<HTMLTableElement>, 'onSelect'> {
+interface TableProps<T = any> extends Omit<React.HTMLAttributes<HTMLTableElement>, 'onSelect'> {
   /** Table data */
   data: T[];
   

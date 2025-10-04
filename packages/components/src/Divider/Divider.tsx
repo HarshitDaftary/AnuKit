@@ -11,7 +11,7 @@ const lib = "optimui";
 
 const l_prx = `${lib}-divider`;
 
-export interface DividerProps {
+interface DividerProps {
   /** Divider orientation */
   orientation?: 'horizontal' | 'vertical';
   
@@ -69,11 +69,9 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(({
     `${l_prx}-${variant}`,
     `${l_prx}-${thickness}`,
     `${l_prx}-margin-${margin}`,
-    {
-      [`${l_prx}--labeled`]: hasLabel,
-      [`${l_prx}-text-${textAlign}`]: hasLabel,
-      [`${l_prx}--fullsize`]: fullSize,
-    },
+    hasLabel && `${l_prx}--labeled`,
+    hasLabel && `${l_prx}-text-${textAlign}`,
+    fullSize && `${l_prx}--fullsize`,
     className
   );
   

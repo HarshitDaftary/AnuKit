@@ -12,7 +12,7 @@ import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
 
-export interface AvatarProps {
+interface AvatarProps {
   /** Image source URL */
   src?: string;
   
@@ -137,10 +137,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     `${lib}-avatar`,
     `optimui-avatar--${shape}`,
     `optimui-avatar--${size}`,
-    {
-      [`${lib}-avatar--clickable`]: onClick,
-      [`${lib}-avatar--loading`]: loading || avatarState.imageLoading,
-    },
+    onClick && `${lib}-avatar--clickable`,
+    (loading || avatarState.imageLoading) && `${lib}-avatar--loading`,
     className
   );
 
