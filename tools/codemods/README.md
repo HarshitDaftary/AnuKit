@@ -1,6 +1,6 @@
 # Codemods
 
-This directory contains codemods for the AnuKit/OptimUI project.
+This directory contains codemods for the AnuKit project.
 
 ## cn-object-to-conditions.js
 

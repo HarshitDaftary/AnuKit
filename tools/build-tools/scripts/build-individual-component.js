@@ -42,7 +42,7 @@ mkdirSync(reportsDir, { recursive: true });
 // Rollup configuration
 const inputOptions = {
   input: join(componentsDir, 'src', componentName, 'index.ts'),
-  external: ['react', 'react-dom', 'react/jsx-runtime', '@optimui/core', '@optimui/utils'],
+  external: ['react', 'react-dom', 'react/jsx-runtime', '@anukit/core', '@anukit/utils'],
   plugins: [
     nodeResolve({
       browser: true,

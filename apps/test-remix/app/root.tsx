@@ -23,23 +23,20 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        {/* Critical OptimUI styles for SSR */}
+        {/* Critical AnuKit styles for SSR */}
         <style
-          id="optimui-ssr-styles"
-          data-optimui-ssr-styles
+          id="anukit-ssr-styles"
+          data-anukit-ssr-styles
           dangerouslySetInnerHTML={{
             __html: `
-              .optimui-button { 
+                            .anukit-button { 
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                font-weight: 500;
                 border-radius: 0.375rem;
-                transition: background-color 0.2s;
+                transition: all 0.2s;
               }
-              .optimui-modal-open { 
-                overflow: hidden; 
-              }
+              .anukit-modal-open {
               .sr-only {
                 position: absolute;
                 width: 1px;

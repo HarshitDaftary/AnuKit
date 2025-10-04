@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Rule: optimui/no-cn-object-arg
+ * Rule: anukit/no-cn-object-arg
  * Disallow passing object literals to cn() where types expect strings/falsey.
  * Flags: cn({ foo: cond }) or cn(...{ a: cond }) and nested spreads like cn(className, { a: cond }).
  */

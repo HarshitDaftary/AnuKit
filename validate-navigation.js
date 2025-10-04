@@ -14,7 +14,7 @@ const STYLES_DIR = './packages/styles/src';
 // Expected navigation components
 const NAVIGATION_COMPONENTS = ['Tabs', 'Menu', 'Breadcrumb'];
 
-console.log('🔍 OptimUI Navigation Components Validation\n');
+console.log('🔍 AnuKit Navigation Components Validation\n');
 
 // Test 1: Check component files exist
 console.log('✅ Test 1: Component Files');
@@ -113,12 +113,12 @@ if (fs.existsSync(navigationCssPath)) {
   const cssContent = fs.readFileSync(navigationCssPath, 'utf8');
   
   const expectedClasses = [
-    'optimui-tabs',
-    'optimui-tab',
-    'optimui-menu',
-    'optimui-menu-item',
-    'optimui-breadcrumb',
-    'optimui-breadcrumb-item'
+    'anukit-tabs',
+    'anukit-tab',
+    'anukit-menu',
+    'anukit-menu-item',
+    'anukit-breadcrumb',
+    'anukit-breadcrumb-item'
   ];
   
   expectedClasses.forEach(className => {

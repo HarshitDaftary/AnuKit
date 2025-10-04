@@ -73,7 +73,7 @@ function validateComponents() {
     });
   }
   
-  console.log('🔍 Validating OptimUI Components...\n');
+  console.log('🔍 Validating AnuKit Components...\n');
   scanDirectory(componentsDir);
   
   console.log('\n📊 Validation Summary:');

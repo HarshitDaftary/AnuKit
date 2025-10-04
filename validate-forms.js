@@ -14,7 +14,7 @@ const STYLES_DIR = './packages/styles/src';
 // Expected form components
 const FORM_COMPONENTS = ['Select', 'Textarea', 'FormControl'];
 
-console.log('🔍 OptimUI Form Components Validation\n');
+console.log('🔍 AnuKit Form Components Validation\n');
 
 // Test 1: Check component files exist
 console.log('✅ Test 1: Component Files');
@@ -111,11 +111,11 @@ if (fs.existsSync(formCssPath)) {
   const cssContent = fs.readFileSync(formCssPath, 'utf8');
   
   const expectedClasses = [
-    'optimui-form-control',
-    'optimui-select',
-    'optimui-textarea',
-    'optimui-form-error',
-    'optimui-form-helper'
+    'anukit-form-control',
+    'anukit-select',
+    'anukit-textarea',
+    'anukit-form-error',
+    'anukit-form-helper'
   ];
   
   expectedClasses.forEach(className => {

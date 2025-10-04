@@ -14,7 +14,7 @@ const STYLES_DIR = './packages/styles/src';
 // Expected layout components
 const LAYOUT_COMPONENTS = ['Grid', 'Flex', 'Container', 'Stack'];
 
-console.log('🔍 OptimUI Layout Components Validation\n');
+console.log('🔍 AnuKit Layout Components Validation\n');
 
 // Test 1: Check component files exist
 console.log('✅ Test 1: Component Files');
@@ -115,10 +115,10 @@ if (fs.existsSync(layoutCssPath)) {
   const cssContent = fs.readFileSync(layoutCssPath, 'utf8');
   
   const expectedClasses = [
-    'optimui-container',
-    'optimui-grid',
-    'optimui-flex',
-    'optimui-stack'
+    'anukit-container',
+    'anukit-grid',
+    'anukit-flex',
+    'anukit-stack'
   ];
   
   expectedClasses.forEach(className => {

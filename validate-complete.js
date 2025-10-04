@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Enhanced OptimUI Library Validation Script
- * Tests all component categories with RELIABLE SYNTAX VALIDATION
+ * Enhanced AnuKit Library Validation Script
+ * Comprehensive validation for all components with enhanced error reporting
  */
 
 const fs = require('fs');
@@ -62,7 +62,7 @@ function validateComponentSyntax(filePath, content) {
   return issues;
 }
 
-console.log('🚀 Enhanced OptimUI Library Validation with Reliable Syntax Checking\n');
+console.log('🚀 Enhanced AnuKit Library Validation with Reliable Syntax Checking\n');
 
 let totalComponentsFound = 0;
 let totalComponentsExpected = 0;
@@ -280,7 +280,7 @@ if (avgComponentSize < 200) {
   console.log('  ⚠️  Some components might be too large');
 }
 
-console.log('\n🎉 OptimUI library validation complete!');
+console.log('\n🎉 AnuKit library validation complete!');
 console.log(`📊 Overall Health: ${totalSyntaxErrors === 0 ? '🟢 EXCELLENT' : totalSyntaxErrors < 10 ? '🟡 NEEDS WORK' : '🔴 CRITICAL'}`);
 
 // Exit with appropriate code

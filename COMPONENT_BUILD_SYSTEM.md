@@ -214,7 +214,7 @@ User: @workspace Here's my build report with 2 failures:
     {
       "component": "Button",
       "error": {
-        "message": "Cannot find module '@optimui/utils'",
+        "message": "Cannot find module '@anukit/utils'",
         "code": "MODULE_NOT_FOUND"
       }
     },
@@ -230,9 +230,9 @@ User: @workspace Here's my build report with 2 failures:
 
 Copilot: I can help fix these build failures:
 
-1. **Button** - MODULE_NOT_FOUND for '@optimui/utils'
+1. **Button** - MODULE_NOT_FOUND for '@anukit/utils'
    - Run: `pnpm install` to ensure dependencies are installed
-   - Check that @optimui/utils is listed in package.json dependencies
+   - Check that @anukit/utils is listed in package.json dependencies
    - Verify the import path in Button component
 
 2. **Modal** - PARSE_ERROR at line 42:10

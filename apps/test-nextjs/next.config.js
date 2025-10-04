@@ -1,4 +1,11 @@
-const { withSentryConfig } = require('@sentry/nextjs');
+// Optional Sentry integration - only if installed
+let withSentryConfig;
+try {
+  withSentryConfig = require('@sentry/nextjs').withSentryConfig;
+} catch (e) {
+  // Sentry not installed, use identity function
+  withSentryConfig = (config) => config;
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

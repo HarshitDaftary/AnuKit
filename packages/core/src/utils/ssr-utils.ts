@@ -1,5 +1,5 @@
 /**
- * SSR-safe utilities for OptimUI
+ * SSR-safe utilities for AnuKit
  */
 
 /**
@@ -81,7 +81,7 @@ export const getCSSProperty = (
 export const injectStyles = (css: string, id?: string): void => {
   if (!isClient()) return;
   
-  const styleId = id || `optimui-styles-${Date.now()}`;
+  const styleId = id || `anukit-styles-${Date.now()}`;
   
   // Remove existing style if it exists
   const existingStyle = document.getElementById(styleId);

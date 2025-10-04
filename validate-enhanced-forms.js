@@ -16,7 +16,7 @@ const STYLES_DIR = './packages/styles/src';
 const FORM_COMPONENTS = ['Select', 'Textarea', 'FormControl', 'TextField', 'DatePicker', 'Form'];
 const FORM_HOOKS = ['form-hooks'];
 
-console.log('🚀 Enhanced OptimUI Form System Validation\n');
+console.log('🚀 Enhanced AnuKit Form System Validation\n');
 
 // Test 1: Check all form component files exist
 console.log('✅ Test 1: Form Component Files');
@@ -147,14 +147,14 @@ if (fs.existsSync(formCssPath)) {
   const cssContent = fs.readFileSync(formCssPath, 'utf8');
   
   const requiredClasses = [
-    '.optimui-form-control',
-    '.optimui-select',
-    '.optimui-textarea',
-    '.optimui-textfield',
-    '.optimui-datepicker',
-    '.optimui-form',
-    '.optimui-form-error',
-    '.optimui-form-helper'
+    '.anukit-form-control',
+    '.anukit-select',
+    '.anukit-textarea',
+    '.anukit-textfield',
+    '.anukit-datepicker',
+    '.anukit-form',
+    '.anukit-form-error',
+    '.anukit-form-helper'
   ];
   
   requiredClasses.forEach(className => {

@@ -21,7 +21,7 @@ class SimpleBundleAnalyzer {
   }
 
   analyze() {
-    console.log('🔍 Analyzing OptimUI Bundle Sizes...\n');
+    console.log('🔍 Analyzing AnuKit Bundle Sizes...\n');
     
     const distPath = join(this.targetPath, 'dist');
     if (!existsSync(distPath)) {
@@ -139,7 +139,7 @@ class SimpleBundleAnalyzer {
     const components = Object.entries(this.results.components);
     const totalTargetMet = components.filter(([, data]) => data.targetMet).length;
     
-    return `# OptimUI Bundle Size Report
+    return `# AnuKit Bundle Size Report
 
 ## Summary
 
@@ -183,7 +183,7 @@ ${this.results.violations.length === 0 ?
 
 ## Tree-Shaking Effectiveness
 
-OptimUI implements advanced tree-shaking techniques:
+AnuKit implements advanced tree-shaking techniques:
 
 1. **Individual Component Builds**: Each component can be imported separately
 2. **PURE Annotations**: All components marked as side-effect free
@@ -193,11 +193,10 @@ OptimUI implements advanced tree-shaking techniques:
 ### Import Examples
 
 \`\`\`javascript
-// Import only Button (optimal - ~2KB)
-import { Button } from '@optimui/components/Button';
+import { Button } from '@anukit/components/Button';
 
-// Import multiple components (larger bundle)
-import { Button, Modal } from '@optimui/components';
+// Less optimal (still tree-shakeable):
+import { Button, Modal } from '@anukit/components';
 \`\`\`
 
 ## Recommendations

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Fast Syntax Validation Script for OptimUI Components
- * Focuses on catching real syntax errors without TypeScript compilation
+ * Fast Syntax Validation Script for AnuKit Components
+ * Quick syntax check without full compilation
  */
 
 const fs = require('fs');
@@ -63,7 +63,7 @@ function validateComponentSyntax(filePath, content) {
   return issues;
 }
 
-console.log('🔍 OptimUI Syntax Validation (Fast Mode)\n');
+console.log('🔍 AnuKit Syntax Validation (Fast Mode)\n');
 
 let totalComponents = 0;
 let cleanComponents = 0;
