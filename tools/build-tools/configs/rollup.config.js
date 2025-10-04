@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 /**
  * Creates a basic Rollup configuration for OptimUI packages
@@ -22,15 +23,18 @@ export function createRollupConfig(pkg, options = {}) {
         sourcemap: true
       }
     ],
-    external: [...external, 'react', 'react-dom'],
+    external: [...external, 'react', 'react-dom', 'react/jsx-runtime'],
     plugins: [
-      nodeResolve(),
+      nodeResolve({
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
+      }),
+      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         declaration: true,
         declarationDir: './dist',
         rootDir: './src',
-        exclude: ['**/__tests__/**']
+        exclude: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx', '**/testing/**']
       })
     ]
   };

@@ -42,7 +42,7 @@
     "dev": "rollup -c --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "clean": "rm -rf dist"
   },

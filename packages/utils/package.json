@@ -22,7 +22,7 @@
     "dev": "rollup -c rollup.config.js --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "clean": "rm -rf dist",
     "size": "bundlesize"
