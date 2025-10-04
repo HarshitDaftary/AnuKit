@@ -14,9 +14,9 @@
   "dependencies": {
     "@anukit/components": "workspace:*",
     "@anukit/core": "workspace:*",
+    "@anukit/icons": "workspace:*",
     "@anukit/styles": "workspace:*",
     "@anukit/tokens": "workspace:*",
-    "@anukit/icons": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0"
@@ -24,9 +24,13 @@
   "devDependencies": {
     "@anukit/eslint-config": "workspace:*",
     "@anukit/tsconfig": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@vitejs/plugin-react-swc": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^4.1.14",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
   }
