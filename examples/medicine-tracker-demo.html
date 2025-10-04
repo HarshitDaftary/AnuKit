@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Tracker - AnuKit Demo</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Glassmorphism styles */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+
+    .glass-header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Button styles */
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 4px 15px 0 rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px 0 rgba(102, 126, 234, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      box-shadow: 0 4px 15px 0 rgba(240, 147, 251, 0.4);
+    }
+
+    .btn-secondary:hover {
+      box-shadow: 0 6px 20px 0 rgba(240, 147, 251, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      color: white;
+      box-shadow: 0 4px 15px 0 rgba(250, 112, 154, 0.4);
+    }
+
+    .btn-danger:hover {
+      box-shadow: 0 6px 20px 0 rgba(250, 112, 154, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* Input styles */
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid rgba(102, 126, 234, 0.2);
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .input-field.error {
+      border-color: #fa709a;
+    }
+
+    .textarea-field {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-item {
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    /* Avatar */
+    .avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Error message */
+    .error-message {
+      color: #fa709a;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Label */
+    .label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #374151;
+    }
+
+    /* Hidden */
+    .hidden {
+      display: none !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // Simple state management
+    let state = {
+      isLoggedIn: false,
+      currentUser: null,
+      medicines: [],
+      searchQuery: '',
+      showAuthModal: false,
+      showAddModal: false,
+      isSignup: false,
+    };
+
+    // Load from localStorage
+    function loadState() {
+      const savedUser = localStorage.getItem('medicineTracker_user');
+      const savedMedicines = localStorage.getItem('medicineTracker_medicines');
+      
+      if (savedUser) {
+        state.currentUser = JSON.parse(savedUser);
+        state.isLoggedIn = true;
+      }
+      
+      if (savedMedicines) {
+        state.medicines = JSON.parse(savedMedicines).map(m => ({
+          ...m,
+          purchaseDate: new Date(m.purchaseDate),
+          createdAt: new Date(m.createdAt),
+        }));
+      }
+    }
+
+    // Save to localStorage
+    function saveMedicines() {
+      localStorage.setItem('medicineTracker_medicines', JSON.stringify(state.medicines));
+    }
+
+    function saveUser() {
+      localStorage.setItem('medicineTracker_user', JSON.stringify(state.currentUser));
+    }
+
+    // Format date
+    function formatDate(date) {
+      return new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }).format(new Date(date));
+    }
+
+    // Auth handlers
+    function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('auth-username').value;
+      const password = document.getElementById('auth-password').value;
+      const email = document.getElementById('auth-email')?.value;
+      
+      if (!username || !password || password.length < 6) {
+        alert('Please fill all fields. Password must be at least 6 characters.');
+        return;
+      }
+
+      state.currentUser = {
+        username: username,
+        email: email || username + '@example.com',
+      };
+      state.isLoggedIn = true;
+      state.showAuthModal = false;
+      
+      saveUser();
+      render();
+    }
+
+    function handleLogout() {
+      state.isLoggedIn = false;
+      state.currentUser = null;
+      localStorage.removeItem('medicineTracker_user');
+      render();
+    }
+
+    // Medicine handlers
+    function handleAddMedicine(e) {
+      e.preventDefault();
+      const name = document.getElementById('medicine-name').value;
+      const description = document.getElementById('medicine-description').value;
+      const purchaseDate = document.getElementById('medicine-date').value;
+      
+      if (!name || !description) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      const newMedicine = {
+        id: Date.now().toString(),
+        name: name,
+        description: description,
+        purchaseDate: new Date(purchaseDate || Date.now()),
+        createdAt: new Date(),
+      };
+
+      state.medicines.unshift(newMedicine);
+      state.showAddModal = false;
+      saveMedicines();
+      render();
+    }
+
+    function deleteMedicine(id) {
+      if (confirm('Are you sure you want to delete this medicine?')) {
+        state.medicines = state.medicines.filter(m => m.id !== id);
+        saveMedicines();
+        render();
+      }
+    }
+
+    function filterMedicines() {
+      return state.medicines.filter(medicine =>
+        medicine.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+        medicine.description.toLowerCase().includes(state.searchQuery.toLowerCase())
+      );
+    }
+
+    // Render functions
+    function renderHeader() {
+      return `
+        <header class="glass-header sticky top-0 z-50 shadow-lg">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center" style="transform: scale(1); transition: transform 0.3s;">
+                  <span class="text-white text-xl font-bold">💊</span>
+                </div>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600" style="background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                  Medicine Tracker
+                </h1>
+              </div>
+              
+              ${state.isLoggedIn ? `
+                <div class="flex items-center space-x-4">
+                  <div class="flex items-center space-x-2">
+                    <div class="avatar">
+                      ${state.currentUser.username.charAt(0).toUpperCase()}
+                    </div>
+                    <span class="text-gray-700 font-medium hidden sm:inline">
+                      ${state.currentUser.username}
+                    </span>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" onclick="handleLogout()">
+                    Logout
+                  </button>
+                </div>
+              ` : `
+                <button class="btn btn-primary" onclick="state.showAuthModal = true; state.isSignup = false; render();">
+                  Login
+                </button>
+              `}
+            </div>
+          </div>
+        </header>
+      `;
+    }
+
+    function renderWelcome() {
+      return `
+        <div class="flex flex-col items-center justify-center py-20">
+          <div class="text-center space-y-6 max-w-2xl">
+            <div class="inline-block p-6 glass-card rounded-3xl shadow-2xl" style="transition: transform 0.3s;">
+              <span class="text-8xl">💊</span>
+            </div>
+            <h2 class="text-4xl font-bold text-gray-900">
+              Welcome to Medicine Tracker
+            </h2>
+            <p class="text-lg text-gray-600">
+              Keep track of all your medicines, their descriptions, and purchase dates.
+              Search through your medicine history with ease.
+            </p>
+            <div class="flex space-x-4 justify-center pt-4">
+              <button class="btn btn-primary" onclick="state.showAuthModal = true; state.isSignup = false; render();">
+                Login
+              </button>
+              <button class="btn btn-secondary" onclick="state.showAuthModal = true; state.isSignup = true; render();">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMedicineList() {
+      const filtered = filterMedicines();
+      
+      return `
+        <div class="space-y-6">
+          <!-- Search Bar -->
+          <div class="glass-card rounded-2xl shadow-xl p-6">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                class="input-field flex-1"
+                placeholder="🔍 Search medicines by name or description..."
+                value="${state.searchQuery}"
+                oninput="state.searchQuery = this.value; render();"
+              />
+              <button class="btn btn-primary whitespace-nowrap" onclick="state.showAddModal = true; render();">
+                + Add Medicine
+              </button>
+            </div>
+          </div>
+
+          <!-- Count Badge -->
+          <div class="flex items-center space-x-2">
+            <span class="badge">
+              ${filtered.length} ${filtered.length === 1 ? 'Medicine' : 'Medicines'}
+            </span>
+            ${state.searchQuery ? `
+              <span class="text-sm text-gray-600">
+                (filtered from ${state.medicines.length} total)
+              </span>
+            ` : ''}
+          </div>
+
+          <!-- Medicine Cards -->
+          ${filtered.length === 0 ? `
+            <div class="glass-card rounded-2xl p-12 text-center">
+              <div class="text-6xl mb-4">📋</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                ${state.searchQuery ? 'No medicines found' : 'No medicines yet'}
+              </h3>
+              <p class="text-gray-600">
+                ${state.searchQuery ? 'Try adjusting your search query' : 'Click "Add Medicine" to get started'}
+              </p>
+            </div>
+          ` : `
+            <div class="grid gap-4">
+              ${filtered.map((medicine, index) => `
+                <div class="glass-card rounded-2xl p-6 card-item" style="animation-delay: ${index * 50}ms;">
+                  <div class="flex items-start justify-between">
+                    <div class="flex-1 space-y-3">
+                      <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                          <span class="text-white text-2xl">💊</span>
+                        </div>
+                        <div>
+                          <h3 class="text-xl font-bold text-gray-900">
+                            ${medicine.name}
+                          </h3>
+                          <p class="text-sm text-gray-500">
+                            Purchased on ${formatDate(medicine.purchaseDate)}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <p class="text-gray-700 leading-relaxed pl-15">
+                        ${medicine.description}
+                      </p>
+                      
+                      <div class="flex items-center space-x-2 text-xs text-gray-500 pl-15">
+                        <span>Added ${formatDate(medicine.createdAt)}</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn btn-sm btn-danger" onclick="deleteMedicine('${medicine.id}')">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `}
+        </div>
+      `;
+    }
+
+    function renderAuthModal() {
+      if (!state.showAuthModal) return '';
+      
+      return `
+        <div class="modal-overlay" onclick="if(event.target === this) { state.showAuthModal = false; render(); }">
+          <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6">
+              ${state.isSignup ? 'Create Account' : 'Welcome Back'}
+            </h2>
+            
+            <form onsubmit="handleLogin(event)">
+              <div class="space-y-4">
+                <div>
+                  <label class="label">Username</label>
+                  <input type="text" id="auth-username" class="input-field" placeholder="Enter your username" required />
+                </div>
+                
+                ${state.isSignup ? `
+                  <div>
+                    <label class="label">Email</label>
+                    <input type="email" id="auth-email" class="input-field" placeholder="Enter your email" required />
+                  </div>
+                ` : ''}
+                
+                <div>
+                  <label class="label">Password</label>
+                  <input type="password" id="auth-password" class="input-field" placeholder="Enter your password" required minlength="6" />
+                  <p class="text-sm text-gray-500 mt-1">Minimum 6 characters</p>
+                </div>
+                
+                <div class="flex justify-between items-center pt-4">
+                  <button type="button" class="text-sm text-blue-600 hover:text-blue-700 underline" 
+                          onclick="state.isSignup = !state.isSignup; render();">
+                    ${state.isSignup ? 'Already have an account? Login' : "Don't have an account? Sign up"}
+                  </button>
+                  
+                  <div class="flex space-x-2">
+                    <button type="button" class="btn btn-sm btn-secondary" 
+                            onclick="state.showAuthModal = false; render();">
+                      Cancel
+                    </button>
+                    <button type="submit" class="btn btn-sm btn-primary">
+                      ${state.isSignup ? 'Sign Up' : 'Login'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAddMedicineModal() {
+      if (!state.showAddModal) return '';
+      
+      const today = new Date().toISOString().split('T')[0];
+      
+      return `
+        <div class="modal-overlay" onclick="if(event.target === this) { state.showAddModal = false; render(); }">
+          <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6">Add New Medicine</h2>
+            
+            <form onsubmit="handleAddMedicine(event)">
+              <div class="space-y-4">
+                <div>
+                  <label class="label">Medicine Name</label>
+                  <input type="text" id="medicine-name" class="input-field" 
+                         placeholder="e.g., Aspirin, Vitamin C" required />
+                </div>
+                
+                <div>
+                  <label class="label">Description</label>
+                  <textarea id="medicine-description" class="input-field textarea-field" 
+                            placeholder="Enter medicine details, dosage, purpose, etc." required></textarea>
+                </div>
+                
+                <div>
+                  <label class="label">Purchase Date</label>
+                  <input type="date" id="medicine-date" class="input-field" 
+                         value="${today}" max="${today}" />
+                </div>
+                
+                <div class="flex justify-end space-x-2 pt-4">
+                  <button type="button" class="btn btn-sm btn-secondary" 
+                          onclick="state.showAddModal = false; render();">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-sm btn-primary">
+                    Add Medicine
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+    }
+
+    function render() {
+      const app = document.getElementById('app');
+      app.innerHTML = `
+        <div class="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+          ${renderHeader()}
+          
+          <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            ${state.isLoggedIn ? renderMedicineList() : renderWelcome()}
+          </main>
+          
+          ${renderAuthModal()}
+          ${renderAddMedicineModal()}
+        </div>
+        
+        <!-- Developer Note -->
+        <div style="position: fixed; bottom: 20px; right: 20px; max-width: 300px; padding: 15px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); z-index: 9999;">
+          <h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #667eea;">💡 AnuKit Example</h4>
+          <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #4a5568;">
+            This demonstrates a beautiful Medicine Tracker built with plastic/glassmorphism UI design.
+          </p>
+          <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 11px; color: #718096;">
+            <li>Smooth animations</li>
+            <li>LocalStorage persistence</li>
+            <li>Search functionality</li>
+            <li>Responsive design</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    // Initialize
+    loadState();
+    render();
+  </script>
+</body>
+</html>
