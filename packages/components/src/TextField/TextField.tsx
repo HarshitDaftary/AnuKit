@@ -202,6 +202,15 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   
   const inputClasses = cn(`${l_prx}-input`);
   
+  const textFieldClasses = cn(
+    isFocused ? `${l_prx}--focused` : false,
+    disabled ? `${l_prx}--disabled` : false,
+    readOnly ? `${l_prx}--readonly` : false,
+    loading ? `${l_prx}--loading` : false,
+    hasValue ? `${l_prx}--has-value` : false,
+    `${l_prx}--with-suffix`
+  );
+  
   return (
     <div className={wrapperClasses}>
       {label && (

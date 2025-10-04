@@ -126,7 +126,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
       <AvatarGroup
         users={group.users}
         max={group.max}
-        size={group.size || (typeof size === 'string' ? size : 'md')}
+        size={group.size || (typeof size === 'string' && (size === 'sm' || size === 'md' || size === 'lg') ? size : 'md')}
         shape={shape}
         className={className}
       />
@@ -137,11 +137,9 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
     `${lib}-avatar`,
     `optimui-avatar--${shape}`,
     `optimui-avatar--${size}`,
-    {
-      [`${lib}-avatar--clickable`]: onClick,
-      [`${lib}-avatar--loading`]: loading || avatarState.imageLoading,
-    },
-    className
+    className,
+    onClick ? `${lib}-avatar--clickable` : false,
+    loading || avatarState.imageLoading ? `${lib}-avatar--loading` : false
   );
 
   const containerStyle: React.CSSProperties = {
@@ -338,7 +336,6 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({
 Avatar.displayName = 'Avatar';
 
 export { Avatar };
-export type { AvatarProps };
 
 // Re-export sub-components
 export { AvatarGroup } from './AvatarGroup';

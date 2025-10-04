@@ -131,20 +131,11 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(({
   const colorClasses = getColorClasses(variant, color);
   
   const badgeClasses = cn(
-    l_prx,
-    colorClasses.base,
-    colorClasses.color,
-    `optimui-badge-${size}`,
-    {
-      [`optimui-badge-${position}`]: anchor && position !== 'inline',
-      [`${l_prx}-inline`]: !anchor || position === 'inline',
-      [`${l_prx}-clickable`]: onClick,
-      [`${l_prx}-pulse`]: pulse,
-      [`${l_prx}-disabled`]: disabled,
-      [`${l_prx}-with-icon`]: icon,
-      [`${l_prx}-dot`]: variant === 'dot',
-    },
-    className
+    anchor && position !== 'inline' ? `optimui-badge-${position}` : false,
+    !anchor || position === 'inline' ? `${l_prx}-inline` : false,
+    onClick ? `${l_prx}-clickable` : false,
+    `${l_prx}-pulse`,
+    `${l_prx}-dot`
   );
   
   const badgeStyle = {

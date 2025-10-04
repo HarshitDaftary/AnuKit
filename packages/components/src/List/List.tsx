@@ -182,16 +182,11 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
     indent = 0,
     ...props
   }, ref) => {
-    const classes = cn(
-      `${l_prx}-item`,
-      {
-        [`${l_prx}-item--clickable`]: onClick,
-        [`${l_prx}-item--disabled`]: disabled,
-        [`${l_prx}-item--selected`]: selected,
-        [`${l_prx}-item--divider`]: divider,
-        [`${l_prx}-item--dense`]: dense,
-      },
-      className
+    const itemClasses = cn(
+      disabled ? `${l_prx}-item--disabled` : false,
+      selected ? `${l_prx}-item--selected` : false,
+      divider ? `${l_prx}-item--divider` : false,
+      dense ? `${l_prx}-item--dense` : false
     );
     
     const style = {
@@ -219,8 +214,16 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
     );
     
     if (onClick) {
+      const clickableItemClasses = cn(
+        onClick !== undefined ? `${l_prx}-item--clickable` : false,
+        disabled ? `${l_prx}-item--disabled` : false,
+        selected ? `${l_prx}-item--selected` : false,
+        divider ? `${l_prx}-item--divider` : false,
+        dense ? `${l_prx}-item--dense` : false
+      );
+      
       return (
-        <li ref={ref} className={classes} style={style} {...props}>
+        <li ref={ref} className={itemClasses} style={style} {...props}>
           <button
             className={`${l_prx}-item-button-wrapper`}
             onClick={onClick}
@@ -233,7 +236,7 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
     }
     
     return (
-      <li ref={ref} className={classes} style={style} {...props}>
+      <li ref={ref} className={itemClasses} style={style} {...props}>
         {content}
       </li>
     );
@@ -257,24 +260,27 @@ export const List = forwardRef<HTMLElement, ListProps>(
     variant = 'plain',
     dense = false,
     className,
-    as: Component = 'ul',
+    as: Component: keyof JSX.IntrinsicElements = 'ul',
     subheader,
     interactive = false,
     ...props
   }, ref) => {
-    const classes = cn(
-      l_prx,
-      `optimui-list-${variant}`,
-      {
-        [`${l_prx}-subheader--dense`]: dense,
-        [`${l_prx}-subheader--interactive`]: interactive,
-      },
-      className
+    const subheaderClasses = cn(
+      dense ? `${l_prx}-subheader--dense` : false,
+      interactive ? `${l_prx}-subheader--interactive` : false
     );
     
     return (
-      <Component ref={ref} className={classes} {...props}>
-        {subheader && <ListSubheader>{subheader}</ListSubheader>}
+      <Component
+        ref={ref as React.Ref<HTMLElement | SVGElement>}
+        className={cn(
+          l_prx,
+          `optimui-list-${variant}`,
+          className
+        )}
+        {...props}
+      >
+        {subheader && <ListSubheader className={subheaderClasses}>{subheader}</ListSubheader>}
         {children}
       </Component>
     );
