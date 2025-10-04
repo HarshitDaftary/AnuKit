@@ -1,85 +1,160 @@
 /**
- * Codemod: cn-object-to-conditions
- * Transforms cn({ a: cond, b: true }) -> cn(cond && 'a', 'b')
- * and cn('x', { y: foo === 'bar' }, className) -> cn('x', foo === 'bar' && 'y', className)
- *
- * Usage:
- *  npx jscodeshift -t tools/codemods/cn-object-to-conditions.js packages \
- *    --extensions=ts,tsx,js,jsx --parser=tsx
+ * Codemod to transform object-style cn() calls to conditional string arguments
+ * 
+ * Transforms:
+ *   cn({ 'class-name': condition }) → cn(condition && 'class-name')
+ *   cn({ 'class-name': true }) → cn('class-name')
+ *   cn({ 'class-name': false }) → cn()
  */
 
-
-module.exports = function transformer(file, api, options) {
-  // Ensure TSX parser for TS/JSX files
-  const j = api.jscodeshift.withParser('tsx');
+module.exports = function transformer(file, api) {
+  const j = api.jscodeshift;
   const root = j(file.source);
+  let modified = false;
 
-  function isCnCallee(callee) {
-    return (
-      (callee.type === 'Identifier' && callee.name === 'cn') ||
-      (callee.type === 'MemberExpression' && callee.property && callee.property.type === 'Identifier' && callee.property.name === 'cn')
-    );
-  }
-
-  function transformObjectArg(objExpr, j) {
-    // Convert { key: value } -> (value && 'key') when value not Literal true/false
-    // If value is true -> 'key'; if false -> nothing
-    const parts = [];
-    for (const prop of objExpr.properties) {
-      if (prop.type !== 'Property' && prop.type !== 'ObjectProperty') continue;
-      // Determine the expression that represents the class name
-      let keyExpr = null;
-      if (prop.computed) {
-        // e.g., { [templateOrExpr]: cond }
-        keyExpr = prop.key;
-      } else if (prop.key.type === 'Identifier') {
-        keyExpr = j.literal(prop.key.name);
-      } else if (prop.key.type === 'Literal') {
-        keyExpr = j.literal(String(prop.key.value));
-      } else if (prop.key.type === 'TemplateLiteral') {
-        keyExpr = prop.key;
-      }
-      if (!keyExpr) continue;
-
+  // Helper to convert object expression to conditional arguments
+  function convertObjectToConditionals(objectExpr) {
+    const conditionalArgs = [];
+    
+    objectExpr.properties.forEach(prop => {
+      // Handle both ObjectProperty and Property nodes
+      const key = prop.key || prop.computed;
       const value = prop.value;
-      if (value.type === 'Literal') {
-        if (value.value === true) {
-          parts.push(keyExpr);
-        }
-        // false -> drop
+      
+      // Get the class name (handle both identifiers and literals)
+      let className;
+      if (key.type === 'StringLiteral' || key.type === 'Literal') {
+        className = key.value;
+      } else if (key.type === 'TemplateLiteral') {
+        // For template literals, we need to preserve them
+        className = null; // We'll handle this specially
+      } else if (key.type === 'Identifier') {
+        className = key.name;
       } else {
-        parts.push(j.logicalExpression('&&', value, keyExpr));
+        // For computed keys, skip transformation
+        return;
       }
-    }
-    return parts;
+
+      // Handle the value
+      if (value.type === 'BooleanLiteral' || (value.type === 'Literal' && typeof value.value === 'boolean')) {
+        // If true, just add the class name; if false, skip it
+        if (value.value === true) {
+          if (className !== null) {
+            conditionalArgs.push(j.stringLiteral(className));
+          } else {
+            conditionalArgs.push(key);
+          }
+        }
+        // If false, we don't add anything
+      } else if (value.type === 'UnaryExpression' && value.operator === '!') {
+        // Handle negation: !condition
+        if (className !== null) {
+          conditionalArgs.push(
+            j.logicalExpression(
+              '&&',
+              value,
+              j.stringLiteral(className)
+            )
+          );
+        } else {
+          conditionalArgs.push(
+            j.logicalExpression(
+              '&&',
+              value,
+              key
+            )
+          );
+        }
+      } else {
+        // For other expressions (variables, logical expressions, etc.)
+        // Create: condition && 'class-name'
+        if (className !== null) {
+          conditionalArgs.push(
+            j.logicalExpression(
+              '&&',
+              value,
+              j.stringLiteral(className)
+            )
+          );
+        } else {
+          // For template literals as keys, preserve the structure
+          conditionalArgs.push(
+            j.logicalExpression(
+              '&&',
+              value,
+              key
+            )
+          );
+        }
+      }
+    });
+
+    return conditionalArgs;
   }
 
-  root.find(j.CallExpression)
-    .filter(p => isCnCallee(p.node.callee))
-    .forEach(path => {
+  // Find all calls to cn() or utils.cn()
+  root.find(j.CallExpression, {
+    callee: {
+      name: 'cn'
+    }
+  }).forEach(path => {
     const args = path.node.arguments;
+    let hasObjectArg = false;
     const newArgs = [];
-    let changed = false;
 
-    for (const arg of args) {
+    args.forEach(arg => {
       if (arg.type === 'ObjectExpression') {
-        const parts = transformObjectArg(arg, j);
-        newArgs.push(...parts);
-        changed = true;
+        hasObjectArg = true;
+        const conditionalArgs = convertObjectToConditionals(arg);
+        newArgs.push(...conditionalArgs);
       } else if (arg.type === 'SpreadElement' && arg.argument.type === 'ObjectExpression') {
-        const parts = transformObjectArg(arg.argument, j);
-        // cannot spread conditionals directly; instead, append
-        newArgs.push(...parts);
-        changed = true;
+        // Handle spread objects: cn({ ...{ a: cond } })
+        hasObjectArg = true;
+        const conditionalArgs = convertObjectToConditionals(arg.argument);
+        newArgs.push(...conditionalArgs);
       } else {
         newArgs.push(arg);
       }
-    }
-
-    if (changed) {
-      path.node.arguments = newArgs.length ? newArgs : [j.literal("")];
-    }
     });
 
-  return root.toSource({ quote: 'single' });
+    if (hasObjectArg) {
+      path.node.arguments = newArgs;
+      modified = true;
+    }
+  });
+
+  // Also find member expressions: utils.cn()
+  root.find(j.CallExpression, {
+    callee: {
+      type: 'MemberExpression',
+      property: {
+        name: 'cn'
+      }
+    }
+  }).forEach(path => {
+    const args = path.node.arguments;
+    let hasObjectArg = false;
+    const newArgs = [];
+
+    args.forEach(arg => {
+      if (arg.type === 'ObjectExpression') {
+        hasObjectArg = true;
+        const conditionalArgs = convertObjectToConditionals(arg);
+        newArgs.push(...conditionalArgs);
+      } else if (arg.type === 'SpreadElement' && arg.argument.type === 'ObjectExpression') {
+        hasObjectArg = true;
+        const conditionalArgs = convertObjectToConditionals(arg.argument);
+        newArgs.push(...conditionalArgs);
+      } else {
+        newArgs.push(arg);
+      }
+    });
+
+    if (hasObjectArg) {
+      path.node.arguments = newArgs;
+      modified = true;
+    }
+  });
+
+  return modified ? root.toSource() : null;
 };

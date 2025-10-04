@@ -341,7 +341,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           {label}
         </label>
       )}
-      
       <div className={`${l_prx}-container`}>
         <input
           ref={inputElement}
@@ -451,7 +450,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           )}
         </button>
       </div>
-      
       {isOpen && (
         <div
           ref={calendarRef}
@@ -526,7 +524,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
                       isSelected && `${l_prx}-day--selected`,
                       isToday && `${l_prx}-day--today`,
                       isCurrentMonth && `${l_prx}-day--current-month`,
-                      isDisabled && `${l_prx}-day--disabled`,
+                      isDisabled && `${l_prx}-day--disabled`
                     )}
                     onClick={() => handleDateSelect(day)}
                     disabled={isDisabled}
@@ -541,7 +539,6 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
           </div>
         </div>
       )}
-      
       <div className={`${l_prx}-footer`}>
         {error && (
           <div

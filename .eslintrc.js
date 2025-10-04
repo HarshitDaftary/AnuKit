@@ -123,6 +123,27 @@ module.exports = {
         },
       ],
     }],
+
+    // Custom rules to prevent cn() object arguments
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'CallExpression[callee.name="cn"] > ObjectExpression',
+        message: 'Object literals are not allowed in cn() calls. Use conditional strings instead: cn(condition && "class-name")',
+      },
+      {
+        selector: 'CallExpression[callee.property.name="cn"] > ObjectExpression',
+        message: 'Object literals are not allowed in cn() calls. Use conditional strings instead: cn(condition && "class-name")',
+      },
+      {
+        selector: 'CallExpression[callee.name="cn"] > SpreadElement > ObjectExpression',
+        message: 'Object literals are not allowed in cn() calls. Use conditional strings instead: cn(condition && "class-name")',
+      },
+      {
+        selector: 'CallExpression[callee.property.name="cn"] > SpreadElement > ObjectExpression',
+        message: 'Object literals are not allowed in cn() calls. Use conditional strings instead: cn(condition && "class-name")',
+      },
+    ],
   },
   overrides: [
     {

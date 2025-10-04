@@ -41,7 +41,8 @@
     "lighthouse": "turbo run lighthouse",
     "docs:build": "turbo run build --filter=@optimui/docs",
     "docs:deploy": "npm run docs:build && npm run docs:export",
-    "setup": "npm install && npm run build:packages"
+    "setup": "npm install && npm run build:packages",
+    "codemod:cn": "pnpm dlx jscodeshift -t tools/codemods/cn-object-to-conditions.js packages --extensions=ts,tsx,js,jsx --parser=tsx"
   },
   "devDependencies": {
     
