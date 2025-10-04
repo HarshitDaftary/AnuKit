@@ -10,6 +10,7 @@ export interface UseDatePickerProps {
   value?: Date | null;
   defaultValue?: Date | null;
   onChange?: (date: Date | null) => void;
+  onOpenChange?: (open: boolean) => void;
   format?: string;
   minDate?: Date;
   maxDate?: Date;
@@ -69,7 +70,7 @@ export const useDatePicker = ({
     value || defaultValue || null
   );
   const [inputValue, setInputValue] = useState(
-    formatDate(value || defaultValue, format)
+    formatDate((value || defaultValue) ?? null, format)
   );
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [currentMonth, setCurrentMonth] = useState(

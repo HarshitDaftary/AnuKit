@@ -55,6 +55,24 @@ export interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInpu
   /** Whether calendar should close on date selection */
   closeOnSelect?: boolean;
   
+  /** Locale for date formatting */
+  locale?: string;
+  
+  /** Whether to show time selection */
+  showTime?: boolean;
+  
+  /** Time format when showTime is enabled */
+  timeFormat?: string;
+  
+  /** Whether to take full width */
+  fullWidth?: boolean;
+  
+  /** Loading state indicator */
+  loading?: boolean;
+  
+  /** Callback when calendar open state changes */
+  onOpenChange?: (open: boolean) => void;
+  
   /** Custom input component */
   renderInput?: (props: any) => React.ReactNode;
   

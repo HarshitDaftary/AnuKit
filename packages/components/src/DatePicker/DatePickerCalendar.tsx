@@ -16,6 +16,9 @@ export interface DatePickerCalendarProps {
   onMonthChange: (month: Date) => void;
   isDateDisabled: (date: Date) => boolean;
   showWeekNumbers?: boolean;
+  showTime?: boolean;
+  timeFormat?: string;
+  locale?: string;
   firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   className?: string;
 }
@@ -34,6 +37,9 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
   onMonthChange,
   isDateDisabled,
   showWeekNumbers = false,
+  showTime = false,
+  timeFormat,
+  locale,
   firstDayOfWeek = 0,
   className,
 }) => {
