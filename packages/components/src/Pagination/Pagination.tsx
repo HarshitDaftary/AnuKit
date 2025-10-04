@@ -19,11 +19,8 @@ interface PaginationConfig {
   /** Total number of items */
   totalItems: number;
   
-  /** Items per page *    </div>
-  );
-});
-
-Pagination.displayName = 'Pagination';temsPerPage: number;
+  /** Items per page */
+  itemsPerPage: number;
   
   /** Callback when page changes */
   onPageChange: (page: number) => void;
@@ -276,8 +273,8 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
     isDisabled: boolean,
     label: string
   ) => {
-    if (renderNavBtn) {
-      return renderNavBtn({
+    if (renderNavButton) {
+      return renderNavButton({
         type,
         onClick,
         disabled: disabled || isDisabled,
@@ -414,5 +411,5 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
 
 Pagination.displayName = 'Pagination';
 
-export { Pagination, usePagination };
+export { Pagination };
 export type { PaginationProps, PaginationConfig, PaginationDisplayConfig };

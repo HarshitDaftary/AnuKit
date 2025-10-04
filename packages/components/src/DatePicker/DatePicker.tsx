@@ -10,7 +10,7 @@ const lib = "optimui";
 
 const l_prx = `${lib}-datepicker`;
 
-interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size'> {
+interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size' | 'defaultValue'> {
   /** Visual variant of the date picker */
   variant?: 'default' | 'outlined' | 'filled' | 'error' | 'success';
   
@@ -160,7 +160,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   ...props
 }, ref) => {
   const [internalValue, setInternalValue] = useState<Date | null>(value || defaultValue || null);
-  const [inputValue, setInputValue] = useState(formatDate(value || defaultValue, format));
+  const [inputValue, setInputValue] = useState(formatDate((value ?? defaultValue) ?? null, format));
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [isFocused, setIsFocused] = useState(false);

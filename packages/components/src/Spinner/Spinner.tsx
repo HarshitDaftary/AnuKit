@@ -326,5 +326,5 @@ export const useLoading = (initialLoading: boolean = false) => {
 Spinner.displayName = 'Spinner';
 Loading.displayName = 'Loading';
 
-export { Spinner, Loading };
+export { Spinner };
 export type { SpinnerProps, LoadingProps };
