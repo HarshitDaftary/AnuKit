@@ -233,17 +233,17 @@ OPTIMIZATION_*.md
 COMPETITIVE_*.md
 PHASE_*.md
 
-# Development scripts (if temporary)
-analyze-*.js
-apply-*.js
-debug-*.js
-diagnostic-*.js
-estimate-*.js
-implement-*.js
-update-*.js
-validate-*.js
-comprehensive-*.js
-simple-*.js
+# Development scripts (if temporary - in packages only)
+packages/**/analyze-*.js
+packages/**/apply-*.js
+packages/**/debug-*.js
+packages/**/diagnostic-*.js
+packages/**/estimate-*.js
+packages/**/implement-*.js
+packages/**/update-*.js
+packages/**/validate-*.js
+packages/**/comprehensive-*.js
+packages/**/simple-*.js
 
 # Shell scripts for automation
 *.sh
