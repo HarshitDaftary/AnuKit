@@ -11,7 +11,7 @@ const lib = "optimui";
 const l_prx = `${lib}-avatar`;
 
 // Avatar configuration
-export interface AvatarProps {
+interface AvatarProps {
   /** Image source URL */
   src?: string;
   

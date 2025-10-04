@@ -12,7 +12,7 @@ const lib = "optimui";
 const l_prx = `${lib}-badge`;
 
 // Badge configuration
-export interface BadgeProps {
+interface BadgeProps {
   /** Badge content (text or number) */
   children?: React.ReactNode;
   

@@ -11,7 +11,7 @@ const lib = "optimui";
 
 const l_prx = `${lib}-divider`;
 
-export interface DividerProps {
+interface DividerProps {
   /** Divider orientation */
   orientation?: 'horizontal' | 'vertical';
   

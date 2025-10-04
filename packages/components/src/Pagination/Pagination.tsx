@@ -12,7 +12,7 @@ const lib = "optimui";
 const l_prx = `${lib}-pagination`;
 
 // Pagination configuration
-export interface PaginationConfig {
+interface PaginationConfig {
   /** Current page (1-based) */
   currentPage: number;
   
@@ -33,7 +33,7 @@ Pagination.displayName = 'Pagination';temsPerPage: number;
 }
 
 // Display configuration
-export interface PaginationDisplayConfig {
+interface PaginationDisplayConfig {
   /** Show page size selector */
   showPageSizeSelector?: boolean;
   
@@ -73,7 +73,7 @@ export interface PaginationDisplayConfig {
   };
 }
 
-export interface PaginationProps extends PaginationConfig, PaginationDisplayConfig {
+interface PaginationProps extends PaginationConfig, PaginationDisplayConfig {
   /** Additional CSS class */
   className?: string;
   

@@ -11,7 +11,7 @@ const lib = "optimui";
 const l_prx = `${lib}-list`;
 
 // List item configuration
-export interface ListItemProps {
+interface ListItemProps {
   /** List item content */
   children?: React.ReactNode;
   
@@ -50,7 +50,7 @@ export interface ListItemProps {
 }
 
 // List configuration
-export interface ListProps {
+interface ListProps {
   /** List items */
   children?: React.ReactNode;
   
@@ -282,7 +282,7 @@ export const List = forwardRef<HTMLElement, ListProps>(
 );
 
 // Nested list (for collapsible lists)
-export interface NestedListProps extends Omit<ListItemProps, 'children'> {
+interface NestedListProps extends Omit<ListItemProps, 'children'> {
   /** Primary content */
   primary: React.ReactNode;
   

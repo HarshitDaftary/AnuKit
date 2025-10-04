@@ -12,7 +12,7 @@ import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
 
-export interface AvatarProps {
+interface AvatarProps {
   /** Image source URL */
   src?: string;
   
