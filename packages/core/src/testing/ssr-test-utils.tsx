@@ -1,12 +1,14 @@
-import { render, hydrate } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import { SSRProvider } from '@optimui/core/providers/SSRProvider';
+import { hydrateRoot } from 'react-dom/client';
+import type { ComponentType } from 'react';
+import { SSRProvider } from '../providers/SSRProvider';
 
 /**
  * Test utility to verify SSR compatibility
  * Ensures no hydration mismatches occur
  */
-export const testSSRCompatibility = async (Component: React.ComponentType) => {
+export const testSSRCompatibility = async (Component: ComponentType) => {
   // Create a container for server rendering
   const container = document.createElement('div');
   document.body.appendChild(container);
@@ -22,11 +24,11 @@ export const testSSRCompatibility = async (Component: React.ComponentType) => {
 
   // Hydrate the component (client-side)
   await act(async () => {
-    hydrate(
+    hydrateRoot(
+      container,
       <SSRProvider>
         <Component />
-      </SSRProvider>,
-      container
+      </SSRProvider>
     );
   });
 
@@ -41,11 +43,11 @@ export const testSSRCompatibility = async (Component: React.ComponentType) => {
  * Test progressive enhancement behavior
  */
 export const testProgressiveEnhancement = async (
-  Component: React.ComponentType,
+  Component: ComponentType,
   clientOnlyFeature: string
 ) => {
   // Mock server environment
-  const originalWindow = global.window;
+  const originalWindow = (global as any).window;
   delete (global as any).window;
 
   // Render in server environment
@@ -59,7 +61,7 @@ export const testProgressiveEnhancement = async (
   expect(serverContainer.innerHTML).not.toContain(clientOnlyFeature);
 
   // Restore client environment
-  global.window = originalWindow;
+  (global as any).window = originalWindow;
 
   // Render in client environment
   const { container: clientContainer } = render(
@@ -79,7 +81,7 @@ export const testProgressiveEnhancement = async (
 /**
  * Performance testing utilities
  */
-export const measureHydrationTime = async (Component: React.ComponentType): Promise<number> => {
+export const measureHydrationTime = async (Component: ComponentType): Promise<number> => {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
@@ -95,11 +97,11 @@ export const measureHydrationTime = async (Component: React.ComponentType): Prom
   const startTime = performance.now();
   
   await act(async () => {
-    hydrate(
+    hydrateRoot(
+      container,
       <SSRProvider>
         <Component />
-      </SSRProvider>,
-      container
+      </SSRProvider>
     );
   });
 
@@ -114,7 +116,7 @@ export const measureHydrationTime = async (Component: React.ComponentType): Prom
 /**
  * Test accessibility in SSR context
  */
-export const testSSRAccessibility = async (Component: React.ComponentType) => {
+export const testSSRAccessibility = async (Component: ComponentType) => {
   const { container } = render(
     <SSRProvider>
       <Component />
@@ -124,16 +126,17 @@ export const testSSRAccessibility = async (Component: React.ComponentType) => {
   // Check for proper ARIA attributes
   const buttons = container.querySelectorAll('button');
   buttons.forEach(button => {
-    expect(button).toHaveAttribute('type');
+    // Basic attribute existence checks without jest-dom matchers
+    expect(button.getAttribute('type')).not.toBeNull();
     if (button.disabled) {
-      expect(button).toHaveAttribute('aria-disabled', 'true');
+      expect(button.getAttribute('aria-disabled')).toBe('true');
     }
   });
 
   // Check for proper heading structure
   const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
   headings.forEach(heading => {
-    expect(heading).toHaveTextContent(/\S/); // Non-empty
+    expect(/\S/.test(heading.textContent || '')).toBe(true); // Non-empty
   });
 
   // Check for proper focus management
@@ -147,7 +150,7 @@ export const testSSRAccessibility = async (Component: React.ComponentType) => {
 /**
  * Test component with different themes
  */
-export const testThemeCompatibility = async (Component: React.ComponentType) => {
+export const testThemeCompatibility = async (Component: ComponentType) => {
   const themes = ['light', 'dark', 'auto'];
   
   for (const theme of themes) {
@@ -161,7 +164,7 @@ export const testThemeCompatibility = async (Component: React.ComponentType) => 
     );
     
     // Verify component renders without errors
-    expect(container).toBeInTheDocument();
+  expect(container).toBeTruthy();
     
     // Verify theme-specific styles are applied
     const styledElements = container.querySelectorAll('[class*="optimui"]');
@@ -175,7 +178,7 @@ export const testThemeCompatibility = async (Component: React.ComponentType) => 
 /**
  * Test responsive behavior in SSR
  */
-export const testResponsiveSSR = async (Component: React.ComponentType) => {
+export const testResponsiveSSR = async (Component: ComponentType) => {
   // Mock different screen sizes
   const screenSizes = [
     { width: 320, height: 568 }, // Mobile
@@ -204,7 +207,7 @@ export const testResponsiveSSR = async (Component: React.ComponentType) => {
     );
 
     // Verify component renders at all screen sizes
-    expect(container).toBeInTheDocument();
+  expect(container).toBeTruthy();
     
     // Trigger resize event
     act(() => {

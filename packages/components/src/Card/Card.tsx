@@ -62,7 +62,7 @@ const getVariantClasses = (variant: 'default' | 'outlined' | 'elevated' | 'ghost
 };
 
 /* @__PURE__ */
-const Card = forwardRef<HTMLDivElement, CardProps>(({
+const Card = forwardRef<HTMLDivElement, CardProps>(({ 
   variant = 'default',
   size = 'md',
   interactive = false,
@@ -82,6 +82,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
     l_prx,
     getSizeClasses(size),
     getVariantClasses(variant),
+    `${l_prx}-${encodeSizeMode(size)}`,
     interactive && `${l_prx}-interactive`,
     fullWidth && `${l_prx}-full-width`,
     loading && `${l_prx}-loading`,
@@ -89,19 +90,14 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
     className
   );
   
-  // Determine if we should render as button for accessibility
-  const Component = interactive && onClick ? 'button' : 'div';
-  const isButton = Component === 'button';
-
   return (
-    <Component
-      ref={ref as any}
+    <div
+      ref={ref}
       className={cardClasses}
-      onClick={disabled ? undefined : onClick}
-      disabled={isButton ? disabled : undefined}
       tabIndex={interactive && !disabled ? 0 : undefined}
-      role={interactive && !isButton ? 'button' : undefined}
+      role={interactive ? 'button' : undefined}
       aria-disabled={disabled}
+      onClick={disabled ? undefined : onClick}
       {...props}
     >
       {loading && (
@@ -133,7 +129,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
           {footer}
         </div>
       )}
-    </Component>
+    </div>
   );
 });
 

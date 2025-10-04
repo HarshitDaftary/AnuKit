@@ -184,6 +184,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   const wrapperClasses = cn(
     l_prx,
     getSizeClass(),
+    `${l_prx}-${encodeSizeMode(size)}`,
     getVariantClass(),
     isFocused && `${l_prx}--focused`,
     disabled && `${l_prx}--disabled`,

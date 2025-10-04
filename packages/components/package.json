@@ -1,7 +1,20 @@
 {
   "name": "@optimui/components",
   "version": "0.1.0",
-  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
     "build": "rollup -c rollup.config.simple.js",
     "analyze": "node ../../tools/simple-bundle-analyzer.js .",
@@ -12,6 +25,10 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@optimui/core": "workspace:*",
+    "@optimui/utils": "workspace:*"
   },
   "devDependencies": {
     "rollup": "^4.2.0",

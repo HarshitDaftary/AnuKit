@@ -94,13 +94,14 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   const helperTextId = helperText ? `${selectId}-helper` : undefined;
   
   const hasError = encodeSizeMode(variant) === encodeSizeMode('error') || Boolean(error);
+  const hasLeftIcon = Boolean(leftIcon);
   
   // Build CSS classes
   const selectClasses = cn(
     l_prx,
     getSizeClasses(size),
     getVariantClasses(variant, hasError),
-    leftIcon && `${l_prx}-with-icon`,
+    hasLeftIcon && `${l_prx}-with-icon`,
     fullWidth && `${l_prx}-full-width`,
     loading && `${l_prx}-loading`,
     className
@@ -123,7 +124,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       )}
       
       <div className={`${l_prx}-container`}>
-        {leftIcon && (
+        {hasLeftIcon && (
           <div className={`${l_prx}-icon optimui-select-icon-left`}>
             {leftIcon}
           </div>

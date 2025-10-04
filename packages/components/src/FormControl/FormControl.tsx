@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
+const l_prx = `${lib}-form-control`;
 
 // Inlined utilities to avoid external dependencies
 const cn = (...classes: (string | undefined | null | false)[]): string => {
@@ -69,7 +69,7 @@ const FormControl = forwardRef<HTMLDivElement, FormControlProps>(({
   
   // Build CSS classes
   const controlClasses = cn(
-    `${lib}-form-control`,
+  `${lib}-form-control`,
     getSizeClasses(size),
     hasError && `${lib}-form-control-error`,
     disabled && `${lib}-form-control-disabled`,

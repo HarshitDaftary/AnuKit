@@ -247,7 +247,7 @@ export const ListSubheader: React.FC<{
 );
 
 // Narrowing `as` property and explicitly typing `ref`
-export const List = forwardRef<HTMLElement | SVGElement, Omit<ListProps, 'as'> & { as?: 'ul' | 'ol' | 'div' | 'svg' }>(
+const List = forwardRef<HTMLElement | SVGElement, Omit<ListProps, 'as'> & { as?: 'ul' | 'ol' | 'div' | 'svg' }>(
   ({
     children,
     variant = 'plain',
@@ -411,3 +411,4 @@ List.displayName = 'List';
 NestedList.displayName = 'NestedList';
 
 export type { ListProps, ListItemProps, NestedListProps };
+export { List };

@@ -305,7 +305,7 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(({
   
   const wrapperClasses = cn(
     l_prx,
-    `${l_prx}-${size}`,
+    `${l_prx}-${encodeSizeMode(size)}`,
     compact && `${l_prx}--compact`,
     disabled && `${l_prx}--disabled`,
     className

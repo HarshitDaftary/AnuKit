@@ -193,6 +193,7 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(({
   const breadcrumbClasses = cn(
     l_prx,
     getSizeClasses(size),
+    `${l_prx}-${encodeSizeMode(size)}`,
     className
   );
 

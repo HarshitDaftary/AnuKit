@@ -69,7 +69,7 @@ export const useDatePicker = ({
     value || defaultValue || null
   );
   const [inputValue, setInputValue] = useState(
-    formatDate(value || defaultValue, format)
+    formatDate((value ?? defaultValue) ?? null, format)
   );
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [currentMonth, setCurrentMonth] = useState(

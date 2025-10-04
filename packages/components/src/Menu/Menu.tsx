@@ -280,6 +280,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(({
   const menuClasses = cn(
     l_prx,
     getSizeClasses(size),
+    `${l_prx}-${encodeSizeMode(size)}`,
     getPlacementClasses(placement),
     isOpen && `${l_prx}-open`,
     modal && `${l_prx}-modal`,

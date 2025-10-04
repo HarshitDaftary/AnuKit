@@ -343,6 +343,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(({
     size === 'sm' && `${l_prx}--size-sm`,
     size === 'md' && `${l_prx}--size-md`,
     size === 'lg' && `${l_prx}--size-lg`,
+    `${l_prx}-${encodeSizeMode(size)}`,
     fullWidth && `${l_prx}--full-width`,
     isSubmitting && `${l_prx}--submitting`,
     hasErrors && `${l_prx}--has-errors`,

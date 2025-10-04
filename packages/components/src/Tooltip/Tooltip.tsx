@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
-import { useKeyboardNavigation, useHover, useFocus } from '@optimui/core/hooks/accessibility-hooks';
-import { encodeSizeMode } from '@optimui/utils/sizeMode';
+import { useSSRSafeId, useKeyboardNavigation, useHover, useFocus } from '@optimui/core';
 
 const lib = "optimui";
 const l_prx = `${lib}-tooltip`;
@@ -41,6 +39,24 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const tooltipId = useSSRSafeId('tooltip');
+
+  // Define handlers before hooks that reference them
+  const showTooltip = () => {
+    if (disabled) return;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+  };
+
+  const hideTooltip = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsVisible(false);
+  };
 
   // Enhanced interaction hooks
   const { isHovered, hoverProps } = useHover({
@@ -96,24 +112,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(({
     setPosition({ x, y });
   };
 
-  const showTooltip = () => {
-    if (disabled) return;
-    
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    
-    timeoutRef.current = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
-  };
-
-  const hideTooltip = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsVisible(false);
-  };
+  
 
   useEffect(() => {
     if (isVisible) {

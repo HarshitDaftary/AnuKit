@@ -18,8 +18,10 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@optimui/utils": ["../utils/src/index.ts"],
-      "@optimui/utils/*": ["../utils/src/*"]
+      "@optimui/utils": ["../utils/dist/index.d.ts"],
+      "@optimui/utils/*": ["../utils/dist/*.d.ts"],
+      "@optimui/core": ["../core/dist/index.d.ts"],
+      "@optimui/core/*": ["../core/dist/*"]
     }
   },
   "include": [
@@ -27,6 +29,12 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    // Exclude tests from build/type emission
+    "src/__tests__/**",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/__tests__/**",
+    "src/**/tests/**"
   ]
 }

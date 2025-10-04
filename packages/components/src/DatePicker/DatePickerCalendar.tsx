@@ -172,7 +172,7 @@ const DatePickerCalendar: React.FC<DatePickerCalendarProps> = ({
                       isToday && `${lib}-datepicker-day--today`
                     )}
                     aria-label={`${date.toDateString()}`}
-                    aria-selected={isSelected}
+                    aria-selected={isSelected || undefined}
                   >
                     {date.getDate()}
                   </button>

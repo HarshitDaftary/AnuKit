@@ -115,6 +115,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     ...baseClasses,
     ...getVariantClasses(variant),
     ...getSizeClasses(size),
+    `${l_prx}-${encodeSizeMode(size)}`,
     className
   );
 

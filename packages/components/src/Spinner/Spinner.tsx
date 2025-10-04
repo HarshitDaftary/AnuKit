@@ -177,6 +177,8 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({
     l_prx,
     `${l_prx}-${variant}`,
     `${l_prx}-${color}`,
+    // add encoded size token for consistent styling hooks
+    typeof size !== 'number' && `${l_prx}-${enc(size)}`,
     `${l_prx}-${speed}`,
     center && `${l_prx}--center`,
     overlay && `${l_prx}--overlay`,

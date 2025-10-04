@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
+import { useSSRSafeId } from '@optimui/core';
 import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
@@ -100,7 +100,8 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(({
   const trackClasses = [
     ...baseTrackClasses,
     ...stateClasses,
-    getSizeClasses(size).track
+    getSizeClasses(size).track,
+    `${l_prx}-${encodeSizeMode(size)}`
   ].join(' ');
 
   const thumbClasses = [

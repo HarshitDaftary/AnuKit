@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useSSRSafeId } from '@optimui/core/providers/SSRProvider';
+import { useSSRSafeId } from '@optimui/core';
 import { encodeSizeMode } from '@optimui/utils/sizeMode';
 
 const lib = "optimui";
 const l_prx = `${lib}-radio`;
 
-export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   size?: 'sm' | 'md' | 'lg';
   label?: string;
   description?: string;
@@ -103,6 +103,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({
     ...baseRadioClasses,
     ...stateClasses,
     getSizeClasses(size).radio,
+    `${l_prx}-${encodeSizeMode(size)}`,
     className
   ].filter(Boolean).join(' ');
 

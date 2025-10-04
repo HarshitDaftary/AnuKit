@@ -4,6 +4,7 @@
  * Supports light/dark modes with seamless switching
  */
 
+import React from 'react'
 import { tokens } from './tokens'
 
 /**
@@ -151,7 +152,8 @@ export const darkTheme = {
   // Border colors
   'semantic-border-default': tokens.colors.neutral[700],        // Medium border
   'semantic-border-muted': tokens.colors.neutral[800],          // Dark border
-  'semantic-border-subtle': tokens.colors.neutral[850],         // Very dark border
+  // Use nearest available neutral shade (800) for subtle border
+  'semantic-border-subtle': tokens.colors.neutral[800],         // Very dark border
   'semantic-border-strong': tokens.colors.neutral[600],         // Light border
 
   // Primary colors (adjusted for dark mode)
@@ -528,4 +530,4 @@ export function validateThemeAccessibility(theme: Record<string, string>): {
 // Export types
 export type ThemeName = keyof typeof themes
 export type SemanticColorToken = keyof typeof semanticColors
-export type { ThemeConfig }
+// ThemeConfig type is already exported above; avoid duplicate export declaration
