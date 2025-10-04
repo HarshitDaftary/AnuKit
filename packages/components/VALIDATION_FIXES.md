@@ -34,8 +34,7 @@ export type { AvatarProps }; // Single export point
 ```
 
 **Files Fixed**:
-1. **Avatar/Avatar.optimized.tsx** - AvatarProps
-2. **Avatar/Avatar.tsx** - AvatarProps
+1. **Avatar/Avatar.tsx** - AvatarProps
 3. **Badge/Badge.tsx** - BadgeProps
 4. **List/List.tsx** - ListProps, ListItemProps, NestedListProps
 5. **Divider/Divider.tsx** - DividerProps
@@ -70,8 +69,7 @@ const classes = cn(
 ```
 
 **Files Fixed**:
-1. **Avatar/Avatar.optimized.tsx** - containerClasses (2 conditions)
-2. **Avatar/Avatar.tsx** - containerClasses (2 conditions)
+1. **Avatar/Avatar.tsx** - containerClasses (2 conditions)
 3. **Badge/Badge.tsx** - badgeClasses (7 conditions)
 4. **List/List.tsx** - 3 instances:
    - ListItemButton classes (4 conditions)
@@ -148,7 +146,6 @@ export type { TableProps, ColumnDef, SortConfig, SelectionConfig }; // Single ex
 
 | File | Export Fixes | Type Fixes | Total Changes |
 |------|-------------|------------|---------------|
-| Avatar/Avatar.optimized.tsx | ✓ | ✓ | 2 |
 | Avatar/Avatar.tsx | ✓ | ✓ | 2 |
 | Badge/Badge.tsx | ✓ | ✓ | 2 |
 | List/List.tsx | ✓ | ✓✓✓ | 4 |
