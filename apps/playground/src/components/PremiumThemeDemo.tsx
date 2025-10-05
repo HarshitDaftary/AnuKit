@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Button, TextField, Textarea } from '@anukit/components';
 
+// Add custom styles for form field spacing
+const formFieldStyles = `
+  .form-field {
+    margin-bottom: 1.5rem;
+  }
+  .form-field .anukit-textfield-label,
+  .form-field .anukit-label {
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+  }
+  .form-actions {
+    margin-top: 2rem;
+  }
+`;
+
 type Theme = {
   name: string;
   colors: {
@@ -74,15 +89,17 @@ const PremiumThemeDemo: React.FC = () => {
   const theme = themes[currentTheme];
 
   return (
-    <div
-      className="min-h-screen transition-all duration-300"
-      style={{
-        background: theme.colors.background,
-        color: theme.colors.text,
-        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        fontSize: '16px',
-        lineHeight: '1.6'
-      }}
+    <>
+      <style dangerouslySetInnerHTML={{ __html: formFieldStyles }} />
+      <div
+        className="min-h-screen transition-all duration-300"
+        style={{
+          background: theme.colors.background,
+          color: theme.colors.text,
+          fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          fontSize: '16px',
+          lineHeight: '1.6'
+        }}
     >
       {/* Navigation Header */}
       <nav 
@@ -220,8 +237,8 @@ const PremiumThemeDemo: React.FC = () => {
               <h4 className="text-xl font-semibold mb-6" style={{ color: theme.colors.text }}>
                 Premium Form
               </h4>
-              <div className="space-y-4">
-                <div>
+              <form className="space-y-6">
+                <div className="form-field">
                   <TextField
                     label="Email Address"
                     type="email"
@@ -230,7 +247,7 @@ const PremiumThemeDemo: React.FC = () => {
                     fullWidth
                   />
                 </div>
-                <div>
+                <div className="form-field">
                   <Textarea
                     label="Message"
                     placeholder="Your message..."
@@ -239,10 +256,12 @@ const PremiumThemeDemo: React.FC = () => {
                     fullWidth
                   />
                 </div>
-                <Button className="w-full">
-                  Send Message
-                </Button>
-              </div>
+                <div className="form-actions pt-2">
+                  <Button className="w-full">
+                    Send Message
+                  </Button>
+                </div>
+              </form>
             </div>
 
             {/* Stats Card */}
@@ -307,97 +326,118 @@ const PremiumThemeDemo: React.FC = () => {
               <h4 className="text-xl font-semibold mb-6" style={{ color: theme.colors.text }}>
                 Ant Design Style Form Controls
               </h4>
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="form-field">
+                    <TextField
+                      label="First Name"
+                      placeholder="Enter first name"
+                      size="md"
+                      fullWidth
+                    />
+                  </div>
+                  <div className="form-field">
+                    <TextField
+                      label="Last Name"
+                      placeholder="Enter last name"
+                      size="md"
+                      fullWidth
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-field">
                   <TextField
-                    label="First Name"
-                    placeholder="Enter first name"
-                    size="md"
-                    fullWidth
-                  />
-                  <TextField
-                    label="Last Name"
-                    placeholder="Enter last name"
+                    label="Email Address"
+                    type="email"
+                    placeholder="Enter your email"
                     size="md"
                     fullWidth
                   />
                 </div>
                 
-                <TextField
-                  label="Email Address"
-                  type="email"
-                  placeholder="Enter your email"
-                  size="md"
-                  fullWidth
-                />
-                
-                <TextField
-                  label="Password"
-                  type="password"
-                  placeholder="Enter password"
-                  size="md"
-                  fullWidth
-                />
-                
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="form-field">
                   <TextField
-                    label="Small Input"
-                    placeholder="Small size"
-                    size="sm"
-                    fullWidth
-                  />
-                  <TextField
-                    label="Medium Input"
-                    placeholder="Medium size"
-                    size="md"
-                    fullWidth
-                  />
-                  <TextField
-                    label="Large Input"
-                    placeholder="Large size"
-                    size="lg"
-                    fullWidth
-                  />
-                </div>
-                
-                <Textarea
-                  label="Message"
-                  placeholder="Enter your message here..."
-                  size="md"
-                  rows={4}
-                  fullWidth
-                />
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <TextField
-                    label="Error State"
-                    placeholder="This field has an error"
-                    variant="error"
-                    error="This field is required"
-                    size="md"
-                    fullWidth
-                  />
-                  <TextField
-                    label="Success State"
-                    placeholder="This field is valid"
-                    variant="success"
-                    helperText="Looks good!"
+                    label="Password"
+                    type="password"
+                    placeholder="Enter password"
                     size="md"
                     fullWidth
                   />
                 </div>
                 
-                <div className="flex gap-4 pt-4">
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="form-field">
+                    <TextField
+                      label="Small Input"
+                      placeholder="Small size"
+                      size="sm"
+                      fullWidth
+                    />
+                  </div>
+                  <div className="form-field">
+                    <TextField
+                      label="Medium Input"
+                      placeholder="Medium size"
+                      size="md"
+                      fullWidth
+                    />
+                  </div>
+                  <div className="form-field">
+                    <TextField
+                      label="Large Input"
+                      placeholder="Large size"
+                      size="lg"
+                      fullWidth
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-field">
+                  <Textarea
+                    label="Message"
+                    placeholder="Enter your message here..."
+                    size="md"
+                    rows={4}
+                    fullWidth
+                  />
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="form-field">
+                    <TextField
+                      label="Error State"
+                      placeholder="This field has an error"
+                      variant="error"
+                      error="This field is required"
+                      size="md"
+                      fullWidth
+                    />
+                  </div>
+                  <div className="form-field">
+                    <TextField
+                      label="Success State"
+                      placeholder="This field is valid"
+                      variant="success"
+                      helperText="Looks good!"
+                      size="md"
+                      fullWidth
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-actions flex gap-4 pt-4">
                   <Button variant="primary" size="md">Submit</Button>
                   <Button variant="secondary" size="md">Cancel</Button>
                   <Button variant="ghost" size="md">Reset</Button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
