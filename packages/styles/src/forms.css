@@ -3,11 +3,16 @@
  * Styles for Input, Select, Textarea, and FormControl components
  */
 
-/* Form Control Wrapper */
+/* Form Control Wrapper - Using semantic form spacing tokens */
 .anukit-form-control {
   display: flex;
   flex-direction: column;
-  gap: var(--anukit-space-2);
+  gap: var(--anukit-form-label-gap); /* 4px - semantic spacing for label to input */
+  width: 100%; /* Ensure full width containment */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  margin: 0 !important; /* Ensure no margins that could cause overlapping */
+  position: relative !important; /* Ensure proper stacking context */
+  z-index: auto !important; /* Let browser handle stacking naturally */
 }
 
 .anukit-form-control-full-width {
@@ -15,11 +20,11 @@
 }
 
 .anukit-form-control-sm {
-  gap: var(--anukit-space-1-5);
+  gap: var(--anukit-space-0-5); /* 2px for small size */
 }
 
 .anukit-form-control-lg {
-  gap: var(--anukit-space-3);
+  gap: var(--anukit-space-1-5); /* 6px for large size */
 }
 
 .anukit-form-control-disabled {
@@ -31,9 +36,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 0 !important; /* Ensure no margins */
+  padding: 0 !important; /* Ensure no padding */
 }
 
-/* Labels - Ant Design inspired */
+/* Labels - Improved spacing to work with FormControl gap */
 .anukit-form-label,
 .anukit-label {
   display: block !important;
@@ -41,7 +48,7 @@
   font-weight: 500 !important;
   color: rgba(0, 0, 0, 0.88) !important;
   line-height: 1.5715 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0 !important; /* Removed redundant margin - let gap handle spacing */
   margin-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -363,10 +370,11 @@
 .anukit-textfield {
   display: flex;
   flex-direction: column;
-  gap: 0 !important;
   width: 100%;
   box-sizing: border-box;
   min-width: 0;
+  margin: 0 !important; /* Ensure no external margins */
+  padding: 0 !important; /* Ensure no external padding */
 }
 
 .anukit-textfield-full-width {
@@ -379,7 +387,7 @@
   font-weight: 500 !important;
   color: rgba(0, 0, 0, 0.88) !important;
   line-height: 1.5715 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: var(--anukit-form-label-gap) !important; /* Use consistent label gap */
   margin-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -879,5 +887,113 @@
   
   .anukit-spinner {
     animation: none;
+  }
+}
+
+/* Form Layout Utilities - Semantic spacing for better defaults */
+.anukit-form-field-gap {
+  gap: var(--anukit-form-field-gap); /* 16px between form fields */
+}
+
+.anukit-form-section-gap {
+  gap: var(--anukit-form-section-gap); /* 24px between form sections */
+}
+
+.anukit-form-group-gap {
+  gap: var(--anukit-form-group-gap); /* 32px between form groups */
+}
+
+/* Default form layout spacing */
+.anukit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--anukit-form-group-gap); /* 32px between major form sections */
+}
+
+/* Ensure all form elements follow natural document flow */
+.anukit-form *,
+.anukit-form-section *,
+.anukit-form-row *,
+.anukit-form-control * {
+  box-sizing: border-box !important;
+  float: none !important; /* Prevent any floating */
+  clear: none !important; /* Prevent any clearing */
+}
+
+.anukit-form-section {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  clear: both !important; /* Ensure section clears any floats */
+}
+
+.anukit-form-section__header {
+  margin-bottom: var(--anukit-space-3) !important; /* 12px spacing after header */
+}
+
+.anukit-form-section__title {
+  font-size: var(--anukit-text-lg) !important;
+  font-weight: 600 !important;
+  color: var(--anukit-color-text-primary) !important;
+  margin: 0 0 var(--anukit-space-1) 0 !important;
+  line-height: 1.4 !important;
+}
+
+.anukit-form-section__description {
+  font-size: var(--anukit-text-sm) !important;
+  color: var(--anukit-color-text-secondary) !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.anukit-form-section__content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--anukit-form-field-gap) !important; /* 16px between all child elements */
+  width: 100% !important;
+}
+
+/* Form Row - Clean flexbox layout without positioning issues */
+.anukit-form-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: var(--anukit-form-field-gap) !important; /* 16px consistent gap */
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.anukit-form-row > * {
+  min-width: 0 !important;
+  flex: 1 1 auto !important; /* Allow natural shrinking and growing */
+  box-sizing: border-box !important;
+}
+
+/* Simplified multi-column layouts with proper spacing */
+.anukit-form-row--2-cols > * {
+  flex: 1 1 calc(50% - 8px) !important; /* Account for gap */
+  max-width: calc(50% - 8px) !important;
+}
+
+.anukit-form-row--3-cols > * {
+  flex: 1 1 calc(33.333% - 11px) !important; /* Account for gap */
+  max-width: calc(33.333% - 11px) !important;
+}
+
+.anukit-form-row--4-cols > * {
+  flex: 1 1 calc(25% - 12px) !important; /* Account for gap */
+  max-width: calc(25% - 12px) !important;
+}
+
+/* Mobile responsive behavior - force single column on small screens */
+@media (max-width: 767px) {
+  .anukit-form-row--2-cols > *,
+  .anukit-form-row--3-cols > *,
+  .anukit-form-row--4-cols > * {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
   }
 }

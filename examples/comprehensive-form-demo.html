@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnuKit - Comprehensive Form Example</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        
+        /* Custom slider styles */
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .slider::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider::-moz-range-thumb:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .slider::-webkit-slider-track {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        
+        .slider::-moz-range-track {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            border: none;
+        }
+        
+        /* Basic form styles for demonstration */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.15s ease-in-out;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            min-height: 100px;
+            resize: vertical;
+            transition: all 0.15s ease-in-out;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            background-color: white;
+            transition: all 0.15s ease-in-out;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-radio {
+            margin-right: 0.5rem;
+        }
+        
+        .form-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .form-radio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        
+        .form-radio-label {
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-radio-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .form-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+        }
+        
+        .form-button-primary {
+            background-color: #3b82f6;
+            color: white;
+            border: 1px solid #3b82f6;
+        }
+        
+        .form-button-primary:hover {
+            background-color: #2563eb;
+            border-color: #2563eb;
+        }
+        
+        .form-button-secondary {
+            background-color: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .form-button-secondary:hover {
+            background-color: #f9fafb;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            padding: 2rem;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        
+        .error-text {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .helper-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ComprehensiveFormDemo = () => {
+            const [formData, setFormData] = useState({
+                firstName: '',
+                lastName: '',
+                email: '',
+                bio: '',
+                age: 25,
+                experience: 'intermediate',
+                department: '',
+                volume: 50
+            });
+
+            const [errors, setErrors] = useState({});
+
+            const departmentOptions = [
+                { value: '', label: 'Select a department' },
+                { value: 'engineering', label: 'Engineering' },
+                { value: 'design', label: 'Design' },
+                { value: 'marketing', label: 'Marketing' },
+                { value: 'sales', label: 'Sales' },
+                { value: 'hr', label: 'Human Resources' },
+                { value: 'finance', label: 'Finance' }
+            ];
+
+            const handleInputChange = (field, value) => {
+                setFormData(prev => ({
+                    ...prev,
+                    [field]: value
+                }));
+                
+                if (errors[field]) {
+                    setErrors(prev => ({
+                        ...prev,
+                        [field]: ''
+                    }));
+                }
+            };
+
+            const validateForm = () => {
+                const newErrors = {};
+
+                if (!formData.firstName.trim()) {
+                    newErrors.firstName = 'First name is required';
+                }
+
+                if (!formData.lastName.trim()) {
+                    newErrors.lastName = 'Last name is required';
+                }
+
+                if (!formData.email.trim()) {
+                    newErrors.email = 'Email is required';
+                } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+                    newErrors.email = 'Please enter a valid email address';
+                }
+
+                if (!formData.bio.trim()) {
+                    newErrors.bio = 'Bio is required';
+                } else if (formData.bio.length < 10) {
+                    newErrors.bio = 'Bio must be at least 10 characters long';
+                }
+
+                if (!formData.department) {
+                    newErrors.department = 'Please select a department';
+                }
+
+                setErrors(newErrors);
+                return Object.keys(newErrors).length === 0;
+            };
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    alert('Form submitted successfully!\\n\\n' + JSON.stringify(formData, null, 2));
+                }
+            };
+
+            const handleReset = () => {
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    bio: '',
+                    age: 25,
+                    experience: 'intermediate',
+                    department: '',
+                    volume: 50
+                });
+                setErrors({});
+            };
+
+            return (
+                <div className="card">
+                    <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                        AnuKit - Comprehensive Form Example
+                    </h1>
+                    <p className="text-gray-600 mb-8">
+                        This form demonstrates all available input field types including
+                        text fields, textarea, sliders, radio buttons, and dropdowns.
+                    </p>
+
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Text Fields Section */}
+                        <div>
+                            <h2 className="section-title">Personal Information</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div className="form-group">
+                                    <label className="form-label">First Name</label>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        placeholder="Enter your first name"
+                                        value={formData.firstName}
+                                        onChange={(e) => handleInputChange('firstName', e.target.value)}
+                                        style={errors.firstName ? {borderColor: '#dc2626'} : {}}
+                                    />
+                                    {errors.firstName && <div className="error-text">{errors.firstName}</div>}
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="form-label">Last Name</label>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        placeholder="Enter your last name"
+                                        value={formData.lastName}
+                                        onChange={(e) => handleInputChange('lastName', e.target.value)}
+                                        style={errors.lastName ? {borderColor: '#dc2626'} : {}}
+                                    />
+                                    {errors.lastName && <div className="error-text">{errors.lastName}</div>}
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label className="form-label">Email Address</label>
+                                <input
+                                    type="email"
+                                    className="form-input"
+                                    placeholder="your.email@example.com"
+                                    value={formData.email}
+                                    onChange={(e) => handleInputChange('email', e.target.value)}
+                                    style={errors.email ? {borderColor: '#dc2626'} : {}}
+                                />
+                                {errors.email && <div className="error-text">{errors.email}</div>}
+                                <div className="helper-text">We'll never share your email with anyone else</div>
+                            </div>
+                        </div>
+
+                        {/* Textarea Section */}
+                        <div>
+                            <h2 className="section-title">About You</h2>
+                            <div className="form-group">
+                                <label className="form-label">Bio</label>
+                                <textarea
+                                    className="form-textarea"
+                                    placeholder="Tell us about yourself..."
+                                    value={formData.bio}
+                                    onChange={(e) => handleInputChange('bio', e.target.value)}
+                                    maxLength={500}
+                                    style={errors.bio ? {borderColor: '#dc2626'} : {}}
+                                />
+                                {errors.bio && <div className="error-text">{errors.bio}</div>}
+                                <div className="helper-text">{formData.bio.length}/500 characters</div>
+                            </div>
+                        </div>
+
+                        {/* Slider Section */}
+                        <div>
+                            <h2 className="section-title">Preferences</h2>
+                            <div className="form-group">
+                                <label className="form-label">Age: {formData.age} years</label>
+                                <input
+                                    type="range"
+                                    className="slider w-full"
+                                    min="18"
+                                    max="100"
+                                    value={formData.age}
+                                    onChange={(e) => handleInputChange('age', parseInt(e.target.value))}
+                                />
+                                <div className="slider-label">
+                                    <span>18</span>
+                                    <span>100</span>
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label className="form-label">Volume: {formData.volume}%</label>
+                                <input
+                                    type="range"
+                                    className="slider w-full"
+                                    min="0"
+                                    max="100"
+                                    value={formData.volume}
+                                    onChange={(e) => handleInputChange('volume', parseInt(e.target.value))}
+                                />
+                                <div className="slider-label">
+                                    <span>0%</span>
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Radio Buttons Section */}
+                        <div>
+                            <h2 className="section-title">Experience Level</h2>
+                            <div className="form-radio-group">
+                                <div className="form-radio-item">
+                                    <input
+                                        type="radio"
+                                        name="experience"
+                                        value="beginner"
+                                        checked={formData.experience === 'beginner'}
+                                        onChange={(e) => handleInputChange('experience', e.target.value)}
+                                        className="form-radio"
+                                    />
+                                    <div>
+                                        <div className="form-radio-label">Beginner</div>
+                                        <div className="form-radio-description">Just starting out, learning the basics</div>
+                                    </div>
+                                </div>
+                                <div className="form-radio-item">
+                                    <input
+                                        type="radio"
+                                        name="experience"
+                                        value="intermediate"
+                                        checked={formData.experience === 'intermediate'}
+                                        onChange={(e) => handleInputChange('experience', e.target.value)}
+                                        className="form-radio"
+                                    />
+                                    <div>
+                                        <div className="form-radio-label">Intermediate</div>
+                                        <div className="form-radio-description">Some experience, comfortable with common tasks</div>
+                                    </div>
+                                </div>
+                                <div className="form-radio-item">
+                                    <input
+                                        type="radio"
+                                        name="experience"
+                                        value="advanced"
+                                        checked={formData.experience === 'advanced'}
+                                        onChange={(e) => handleInputChange('experience', e.target.value)}
+                                        className="form-radio"
+                                    />
+                                    <div>
+                                        <div className="form-radio-label">Advanced</div>
+                                        <div className="form-radio-description">Extensive experience, able to handle complex challenges</div>
+                                    </div>
+                                </div>
+                                <div className="form-radio-item">
+                                    <input
+                                        type="radio"
+                                        name="experience"
+                                        value="expert"
+                                        checked={formData.experience === 'expert'}
+                                        onChange={(e) => handleInputChange('experience', e.target.value)}
+                                        className="form-radio"
+                                    />
+                                    <div>
+                                        <div className="form-radio-label">Expert</div>
+                                        <div className="form-radio-description">Deep expertise, able to mentor others</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Dropdown Section */}
+                        <div>
+                            <h2 className="section-title">Professional Information</h2>
+                            <div className="form-group">
+                                <label className="form-label">Department</label>
+                                <select
+                                    className="form-select"
+                                    value={formData.department}
+                                    onChange={(e) => handleInputChange('department', e.target.value)}
+                                    style={errors.department ? {borderColor: '#dc2626'} : {}}
+                                >
+                                    {departmentOptions.map(option => (
+                                        <option key={option.value} value={option.value}>
+                                            {option.label}
+                                        </option>
+                                    ))}
+                                </select>
+                                {errors.department && <div className="error-text">{errors.department}</div>}
+                                <div className="helper-text">Select the department you work in or are interested in</div>
+                            </div>
+                        </div>
+
+                        {/* Form Actions */}
+                        <div className="border-t pt-6">
+                            <div className="flex justify-end gap-4">
+                                <button
+                                    type="button"
+                                    className="form-button form-button-secondary"
+                                    onClick={handleReset}
+                                >
+                                    Reset Form
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="form-button form-button-primary"
+                                >
+                                    Submit Form
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    {/* Form Data Preview */}
+                    <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+                        <h3 className="text-md font-semibold text-gray-900 mb-2">Current Form Data:</h3>
+                        <pre className="text-sm text-gray-600 overflow-x-auto">
+                            {JSON.stringify(formData, null, 2)}
+                        </pre>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<ComprehensiveFormDemo />, document.getElementById('root'));
+    </script>
+</body>
+</html>

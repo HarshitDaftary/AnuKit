@@ -41,6 +41,12 @@
   --anukit-space-80: 20rem;      /* 320px */
   --anukit-space-96: 24rem;      /* 384px */
 
+  /* Form-specific spacing tokens for consistent form layouts */
+  --anukit-form-label-gap: var(--anukit-space-1);        /* 4px - Label to input */
+  --anukit-form-field-gap: var(--anukit-space-4);        /* 16px - Between fields */
+  --anukit-form-section-gap: var(--anukit-space-6);      /* 24px - Between sections */
+  --anukit-form-group-gap: var(--anukit-space-8);        /* 32px - Between form groups */
+
   /* Breakpoint Values */
   --anukit-breakpoint-sm: 640px;
   --anukit-breakpoint-md: 768px;

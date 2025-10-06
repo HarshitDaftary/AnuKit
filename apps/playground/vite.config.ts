@@ -7,6 +7,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@anukit/components': path.resolve(__dirname, '../../packages/components/src'),
+      '@anukit/styles': path.resolve(__dirname, '../../packages/styles/src'),
+      '@anukit/tokens': path.resolve(__dirname, '../../packages/tokens/src'),
+      '@anukit/utils': path.resolve(__dirname, '../../packages/utils/src'),
+      '@anukit/core': path.resolve(__dirname, '../../packages/core/src'),
     },
   },
   server: {

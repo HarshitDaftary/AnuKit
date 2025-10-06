@@ -1,4 +1,44 @@
-# Medicine Tracker Example
+# AnuKit Examples
+
+This directory contains comprehensive examples demonstrating the usage of AnuKit components.
+
+## Examples
+
+### 1. Comprehensive Form Example
+**File**: `ComprehensiveFormExample.tsx`
+**Demo**: `comprehensive-form-demo.html`
+
+A complete form demonstration showcasing all available form input types in AnuKit:
+
+#### Form Components Demonstrated:
+- **Text Fields**: First Name, Last Name, Email (using TextField component)
+- **Textarea**: Bio section with character count (using Textarea component)
+- **Range Sliders**: Age and Volume sliders (using Input with type="range")
+- **Radio Buttons**: Experience level selection (using Radio and RadioGroup components)
+- **Dropdown Select**: Department selection (using Select component)
+
+#### Features:
+- **Form Validation**: Client-side validation with error messages
+- **Real-time Updates**: Form data preview updates as you type
+- **Responsive Design**: Grid layout that adapts to screen size
+- **Accessibility**: Proper labels, ARIA attributes, and keyboard navigation
+- **Error Handling**: Visual feedback for validation errors
+- **Form Reset**: Reset all fields to default values
+
+#### Usage:
+```tsx
+import { ComprehensiveFormExample } from './examples/ComprehensiveFormExample';
+
+// Use in your React app
+<ComprehensiveFormExample />
+```
+
+#### Demo:
+Open `comprehensive-form-demo.html` in a browser to see a standalone demo without needing to build the project.
+
+---
+
+### 2. Medicine Tracker Example
 
 A comprehensive example application built with AnuKit components, showcasing how to build a beautiful, production-ready medicine tracking application with plastic/glassmorphism UI and smooth animations.
 
