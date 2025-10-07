@@ -23,6 +23,8 @@ export type { FormControlProps } from './FormControl/FormControl';
 export type { TextFieldProps } from './TextField/TextField';
 export type { DatePickerProps } from './DatePicker/DatePicker';
 export type { FormProps, ValidationRule, FieldState, FormState } from './Form/Form';
+export type { FormSectionProps } from './FormSection/FormSection';
+export type { FormRowProps } from './FormRow/FormRow';
 
 // Navigation component types
 export type { TabsProps, TabItem } from './Tabs/Tabs';
@@ -65,6 +67,8 @@ export { FormControl } from './FormControl/FormControl';
 export { TextField } from './TextField/TextField';
 export { DatePicker } from './DatePicker/DatePicker';
 export { Form, useFormContext, useFormField } from './Form/Form';
+export { FormSection } from './FormSection/FormSection';
+export { FormRow } from './FormRow/FormRow';
 
 // Navigation component exports
 export { Tabs } from './Tabs/Tabs';

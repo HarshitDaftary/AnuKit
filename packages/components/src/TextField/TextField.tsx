@@ -167,7 +167,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   
   const wrapperClasses = cn(
     l_prx,
-    getSizeClass(),
+    `${l_prx}-${size}`,  // Use textfield-specific size class instead of input size class
     getVariantClass(),
     isFocused && `${l_prx}--focused`,
     disabled && `${l_prx}--disabled`,
